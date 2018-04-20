@@ -1,9 +1,4 @@
-/* Downloaded from https://www.kode.to/ */
-html,
-body {
-  height: 100%;
-}
-
+/* Auf Grundlage von https://www.kode.to/ */
  
 .cards {
   bottom: 0;
@@ -13,22 +8,21 @@ body {
   height: 150px;
   padding: 0 50px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 
 }
  
 .card {
-  height: 150px;
+  height: 300px;
   /*wieviel abstand zwischen karten */
-  margin: 0 -25px;
+  margin: 0 -30px;
   position: relative;
-  width: 100px;
+  width: 200px;
   background-color: transparent;
+  border: none;
 }
 .card:after {
-  bottom: 0;
-  content: '';
   left: -60px;
   position: absolute;
   right: -60px;
@@ -69,6 +63,31 @@ body {
   padding: 15px 0 0 15px;
 }
  
+.card:nth-child(1):hover .card-face,
+.card:nth-child(2):hover .card-face,
+.card:nth-child(3):hover .card-face,
+.card:nth-child(4):hover .card-face {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 153, 153, 0.75);
+  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
+          transform: translateY(-100px) rotate(0deg) scale(2);
+  -webkit-transition-duration: 0ms;
+          transition-duration: 0ms;
+  z-index: 5;
+}
+.card:nth-child(1):hover .card-face:after,
+.card:nth-child(2):hover .card-face:after
+.card:nth-child(3):hover .card-face:after
+.card:nth-child(4):hover .card-face:after {
+  -webkit-animation: fade 250ms ease-out forwards;
+          animation: fade 250ms ease-out forwards;
+}
+.card:nth-child(1):hover:after,
+.card:nth-child(2):hover:after,
+.card:nth-child(3):hover:after,
+.card:nth-child(4):hover:after {
+  top: -175px;
+}
+
 .card:nth-child(1) .card-face {
   background: -webkit-linear-gradient(225deg, #ff9999, #da0b0b);
   background: linear-gradient(-135deg, #ff9999, #da0b0b);
@@ -80,104 +99,44 @@ body {
   color: #db0000;
   text-shadow: -0.025em 0.025em 0 #ff8080;
 }
-.card:nth-child(1):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 153, 153, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(1):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(1):hover:after {
-  top: -175px;
-}
  
 .card:nth-child(2) .card-face {
-  background: -webkit-linear-gradient(225deg, #ff99d6, #da0b87);
-  background: linear-gradient(-135deg, #ff99d6, #da0b87);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 153, 214, 0.75);
-  -webkit-transform: translateY(35px) rotate(-21.875deg);
-          transform: translateY(35px) rotate(-21.875deg);
+  background: -webkit-linear-gradient(225deg, #99c2ff, #0b5eda);
+  background: linear-gradient(-135deg, #99c2ff, #0b5eda);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 194, 255, 0.75);
+  -webkit-transform: translateY(5px) rotate(-3.125deg);
+          transform: translateY(5px) rotate(-3.125deg);
 }
 .card:nth-child(2) .card-face .card-label {
   color: #db0084;
   text-shadow: -0.025em 0.025em 0 #ff80cc;
 }
-.card:nth-child(2):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 153, 214, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(2):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(2):hover:after {
-  top: -175px;
-}
  
 .card:nth-child(3) .card-face {
-  background: -webkit-linear-gradient(225deg, #eb99ff, #b10bda);
-  background: linear-gradient(-135deg, #eb99ff, #b10bda);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(235, 153, 255, 0.75);
-  -webkit-transform: translateY(25px) rotate(-15.625deg);
-          transform: translateY(25px) rotate(-15.625deg);
+  background: -webkit-linear-gradient(225deg, #99ffc2, #0bda5e);
+  background: linear-gradient(-135deg, #99ffc2, #0bda5e);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 255, 194, 0.75);
+  -webkit-transform: translateY(15px) rotate(9.375deg);
+          transform: translateY(15px) rotate(9.375deg);
 }
 .card:nth-child(3) .card-face .card-label {
   color: #af00db;
   text-shadow: -0.025em 0.025em 0 #e680ff;
 }
-.card:nth-child(3):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(235, 153, 255, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(3):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(3):hover:after {
-  top: -175px;
-}
  
 .card:nth-child(4) .card-face {
-  background: -webkit-linear-gradient(225deg, #ad99ff, #350bda);
-  background: linear-gradient(-135deg, #ad99ff, #350bda);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(173, 153, 255, 0.75);
-  -webkit-transform: translateY(15px) rotate(-9.375deg);
-          transform: translateY(15px) rotate(-9.375deg);
+  background: -webkit-linear-gradient(225deg, #ebff99, #b1da0b);
+  background: linear-gradient(-135deg, #ebff99, #b1da0b);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(235, 255, 153, 0.75);
+  -webkit-transform: translateY(35px) rotate(21.875deg);
+          transform: translateY(35px) rotate(21.875deg);
 }
 .card:nth-child(4) .card-face .card-label {
   color: #2c00db;
   text-shadow: -0.025em 0.025em 0 #9980ff;
 }
-.card:nth-child(4):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(173, 153, 255, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(4):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(4):hover:after {
-  top: -175px;
-}
  
-.card:nth-child(5) .card-face {
+/*.card:nth-child(5) .card-face {
   background: -webkit-linear-gradient(225deg, #99c2ff, #0b5eda);
   background: linear-gradient(-135deg, #99c2ff, #0b5eda);
   box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 194, 255, 0.75);
@@ -337,7 +296,7 @@ body {
 }
 .card:nth-child(10):hover:after {
   top: -175px;
-}
+}*/
  
 @-webkit-keyframes fade {
   0% {
