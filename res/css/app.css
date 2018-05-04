@@ -12,10 +12,10 @@ body {
 }
 
 /* fallback */
-@font-face {
+/*@font-face {
   font-family: 'Magic';
   src: url('../assets/font/magic/MagicSchoolOne.ttf');
-}
+}*/
 
 .content {
   margin: 2%;
