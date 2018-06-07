@@ -20,29 +20,33 @@ var hp = (function () {
 
   function initModel() {
     model = new hp.hpModel();
-    //model.init();
+    model.addEventListener("rootAvailable", onRootAvailable);
   }
 
   function initActionsView() {
-    actionsView = hp.hpActionsView();
+    actionsView = new hp.hpActionsView();
   }
 
   function initMainView() {
-    mainView = hp.hpMainView();
-    console.log("main");
+    mainView = new hp.hpMainView();
   }
 
   function initRelationsView() {
-    relationsView = hp.hpRelationsView();
+    relationsView = new hp.hpRelationsView();
   }
 
   function initSpellView() {
-    spellView = hp.hpSpellView();
+    spellView = new hp.hpSpellView();
   }
+    
+    function onRootAvailable(event){
+        console.log(event.data);
+        actionsView.createSVG(event.data);
+    }
 
   function onCardClicked() {
-    console.log("cardclicked");
-    actionsView.bubbleChart();
+    actionsView.createChart();
+      model.loadData();
   }
 
 	that.init = init;
