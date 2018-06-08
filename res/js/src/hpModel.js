@@ -14,7 +14,8 @@ hp.hpModel = function() {
     }
 
     function loadData() {
-        d3.csv("res/assets/data/elements-by-episode.csv", function(data) {
+        d3.json("res/assets/data/test.json", function(data) {
+          console.log(data);
             createBubbleData(data);
         });
     }
@@ -23,13 +24,15 @@ hp.hpModel = function() {
     function createBubbleData(data) {
         var object = {name: "root", children: []};
         //daten umwandeln
-        for(var i = 2; i < data.columns.length; i++) {
-            let name = data.columns[i], value = 0;
-            for (var j = 1; j < data.length; j++) {
-                value = value + +data[j][name];
-            }
-            let el = {name,value}; 
-            object.children.push(el); 
+        for(var i = 0; i < data.markers.length; i++) {
+          var json = data.markers;
+          console.log(json[i]);
+          let name = json[i].name, value = json[i].name.group;
+            // for (var j = 1; j < data.length; j++) {
+            //     value = value + +data[j][name];
+            // }
+            let el = {name,value};
+            object.children.push(el);
         }
 
         //Diagramm erstellen
@@ -42,10 +45,10 @@ hp.hpModel = function() {
         nodeFkt(root);
         that.notifyAll("rootAvailable", root);
     }
-    
-    
-  that.init = init;
+
+
+    that.init = init;
     that.loadData = loadData;
-  return that;
+    return that;
 
 };

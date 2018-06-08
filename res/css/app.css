@@ -30,3 +30,7 @@ body {
   position: relative;
   z-index: 50;
 }
+
+#myChart {
+  margin-left: 20%;
+}
