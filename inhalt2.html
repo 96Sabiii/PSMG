@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Harry Potter</title>
+	<link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+<!-- 	<link type="text/css" rel="stylesheet" href="res/css/materialize/css/materialize.css" /> -->
+	<link type="text/css" rel="stylesheet" href="res/css/font-awesome/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="res/css/cards.css">
+	<link type="text/css" rel="stylesheet" href="res/css/app.css">
+</head>
+
+<body>
+	<header>
+		<img src="res/assets/img/quibbler1.png">
+	<!--
+		<svg id="myChart" height="1000", width="1000">
+		</svg>
+	-->
+	</header>
+	<main>
+
+
+<!-- Einbettungscode Anfang -->
+<div class='tableauPlaceholder' id='viz1529236427922' style='margin:0 auto; '>
+  <noscript>
+    <a href='#'>
+      <img alt='Harry Potter Spells ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheSpellsofHarryPotter&#47;HarryPotterSpells&#47;1_rss.png' style='border: none' />
+    </a>
+  </noscript>
+
+  <object class='tableauViz'  style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+    <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' />
+    <param name='name' value='TheSpellsofHarryPotter&#47;HarryPotterSpells' />
+    <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheSpellsofHarryPotter&#47;HarryPotterSpells&#47;1.png' />
+    <param name='animate_transition' value='yes' />
+    <param name='display_static_image' value='yes' />
+    <param name='display_spinner' value='yes' />
+    <param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' />
+  </object>
+</div>
+<script type='text/javascript'>
+  var divElement = document.getElementById('viz1529236427922');
+  var vizElement = divElement.getElementsByTagName('object')[0];
+  if ( divElement.offsetWidth > 800 ) { vizElement.style.width='750px';vizElement.style.height='727px';}
+  else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='750px';vizElement.style.height='727px';}
+  else { vizElement.style.width='100%';vizElement.style.height='727px';}
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+<!-- Einbettungscode Ende -->
+
+
+
+
+	</main>
+</body>
+<script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="res/js/lib/events.js"></script>
+<script type="text/javascript" src="res/js/lib/d3/d3.js"></script>
+<script type="text/javascript" src="res/js/src/hp.js"></script>
+<script type="text/javascript" src="res/js/src/hpModel.js"></script>
+<script type="text/javascript" src="res/js/src/hpSpellView.js"></script>
+<script type="text/javascript" src="res/js/src/hpActionsView.js"></script>
+<script type="text/javascript" src="res/js/src/hpMainView.js"></script>
+<script type="text/javascript" src="res/js/src/hpRelationView.js"></script>
+<script>
+	hp.init();
+//	hp.onCardClicked();
+</script>
+
+</html>

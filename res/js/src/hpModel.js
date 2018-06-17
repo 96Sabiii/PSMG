@@ -28,8 +28,8 @@ hp.hpModel = function() {
             for (var j = 1; j < data.length; j++) {
                 value = value + +data[j][name];
             }
-            let el = {name,value}; 
-            object.children.push(el); 
+            let el = {name,value};
+            object.children.push(el);
         }
 
         //Diagramm erstellen
@@ -42,8 +42,8 @@ hp.hpModel = function() {
         nodeFkt(root);
         that.notifyAll("rootAvailable", root);
     }
-    
-    
+
+
   that.init = init;
     that.loadData = loadData;
   return that;
