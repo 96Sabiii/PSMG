@@ -36,7 +36,8 @@ hp.hpActionsView = function() {
         
         nodes.append("circle").attr("r", function(d) {return d.r })
             .style("fill", function(d) {return colorCircles(d.value)} )
-                .on("mouseover", function(d) {		
+                .on("mouseover", function(d) {	
+                d3.select(this).style("stroke-width", 3).style("stroke", "black");
                 div.transition()		
                     .duration(200)		
                     .style("opacity", .9);		
@@ -45,6 +46,7 @@ hp.hpActionsView = function() {
                     .style("top", (d3.event.pageY - 28) + "px");	
                 })					
                 .on("mouseout", function(d) {		
+                    d3.select(this).style("stroke", "none");
                     div.transition()		
                         .duration(500)		
                         .style("opacity", 0);
