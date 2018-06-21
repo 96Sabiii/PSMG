@@ -14,7 +14,7 @@ hp.hpModel = function() {
     }
 
     function loadData() {
-        d3.json("res/assets/data/test.json", function(data) {
+        d3.json("res/assets/data/spellsData.json", function(data) {
           console.log(data);
             createBubbleData(data);
         });
@@ -24,14 +24,14 @@ hp.hpModel = function() {
     function createBubbleData(data) {
         var object = {name: "root", children: []};
         //daten umwandeln
-        for(var i = 0; i < data.markers.length; i++) {
-          var json = data.markers;
+        for(var i = 0; i < data.spellsData.length; i++) {
+          var json = data.spellsData;
           console.log(json[i]);
-          let name = json[i].name, value = json[i].name.group;
+          let name = json[i].name, value = json[i].totalCount, effect = json[i].effect;
             // for (var j = 1; j < data.length; j++) {
             //     value = value + +data[j][name];
             // }
-            let el = {name,value};
+            let el = {name,value, effect};
             object.children.push(el);
         }
 
