@@ -14,21 +14,25 @@ hp.hpModel = function() {
     }
 
     function loadData() {
-        d3.csv("res/assets/data/elements-by-episode.csv", function(data) {
+        d3.json("res/assets/data/spellsData.json", function(data) {
+          console.log(data);
             createBubbleData(data);
         });
     }
 
 
+
     function createBubbleData(data) {
         var object = {name: "root", children: []};
         //daten umwandeln
-        for(var i = 2; i < data.columns.length; i++) {
-            let name = data.columns[i], value = 0;
-            for (var j = 1; j < data.length; j++) {
-                value = value + +data[j][name];
-            }
-            let el = {name,value};
+        for(var i = 0; i < data.spellsData.length; i++) {
+          var json = data.spellsData;
+          console.log(json[i]);
+          let name = json[i].name, value = json[i].totalCount, effect = json[i].effect;
+            // for (var j = 1; j < data.length; j++) {
+            //     value = value + +data[j][name];
+            // }
+            let el = {name,value, effect};
             object.children.push(el);
         }
 
@@ -44,8 +48,8 @@ hp.hpModel = function() {
     }
 
 
-  that.init = init;
+    that.init = init;
     that.loadData = loadData;
-  return that;
+    return that;
 
 };

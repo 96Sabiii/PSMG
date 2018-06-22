@@ -38,9 +38,8 @@ var hp = (function () {
   function initSpellView() {
     spellView = new hp.hpSpellView();
   }
-    
+
     function onRootAvailable(event){
-        console.log(event.data);
         actionsView.createSVG(event.data);
     }
 
