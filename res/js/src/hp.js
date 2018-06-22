@@ -4,7 +4,7 @@ var hp = (function () {
   "use strict";
 
   	var that = {},
-    model,
+    actionsModel,
     actionsView,
     mainView,
     relationsView,
@@ -21,13 +21,13 @@ var hp = (function () {
 	}
 
   function initModel() {
-    model = new hp.hpModel();
-    model.addEventListener("actionsRootAvailable", onActionsRootAvailable);
+    actionsModel = new hp.hpActionsModel();
+    actionsModel.addEventListener("actionsRootAvailable", onActionsRootAvailable);
   }
 
   function initSpellModel() {
     spellModel = new hp.hpSpellModel();
-    model.addEventListener("spellRootAvailable", onSpellRootAvailable);
+    spellModel.addEventListener("spellRootAvailable", onSpellRootAvailable);
   }
 
   function initActionsView() {
@@ -47,16 +47,16 @@ var hp = (function () {
   }
 
     function onActionsRootAvailable(event){
-        actionsView.createSVG(event.data);
+        actionsView.createActionsSVG(event.data);
     }
 
     function onSpellRootAvailable(event){
-        spellView.createSVG(event.data);
+        spellView.createSpellSVG(event.data);
     }
 
   function onCardOneClicked() {
     actionsView.createActionsChart();
-      model.loadBubbleData();
+      actionsModel.loadBubbleData();
     //model.createChord();
   }
 

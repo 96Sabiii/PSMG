@@ -7,10 +7,11 @@
 var hp = hp || {};
 hp.hpSpellView = function() {
   "use strict";
-  var that = new EventPublisher();
+  var that = new EventPublisher(),
+      div;
 
   function createSpellChart(){
-      var chart = document.getElementById("myChart");
+      var chart = document.getElementById("Chart2");
       chart.style.height = "800";
       chart.style.width = "800";
 
@@ -22,7 +23,7 @@ hp.hpSpellView = function() {
 
           function createSpellSVG(root) {
               //SVG erstellen
-              var selection = d3.select("#myChart"),
+              var selection = d3.select("#Chart2"),
                   g = selection.append("g").attr("transform", "translate(2,2)"),
                   colorCircles = d3.scaleOrdinal(d3.schemeCategory20);
 

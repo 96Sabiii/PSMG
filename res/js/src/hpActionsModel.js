@@ -4,16 +4,13 @@
 /**
   * Hier werden die Hintergrunddaten berechnet
   */
+
 var hp = hp || {};
-hp.hpModel = function() {
-    "use strict";
-    var that = new EventPublisher(),
-        root;
+hp.hpActionsModel = function() {
+  "use strict";
+  var that = new EventPublisher();
 
-    function init () {
-    }
-
-    function loadBubbleData() {
+        function loadBubbleData() {
         d3.json("res/assets/data/spellsData.json", function(data) {
             createBubbleData(data);
         });
@@ -36,7 +33,7 @@ hp.hpModel = function() {
         //Diagramm erstellen
         var nodeFkt = d3.pack().size([700, 700]);
 
-        root = d3.hierarchy(object)
+        var root = d3.hierarchy(object)
             .sum(function(d) { return d.value; })
             .sort(function(a, b) { return b.value - a.value; });
 
@@ -128,6 +125,7 @@ hp.hpModel = function() {
     .attr("class", "chord")
     .style("fill", function(d) { return cities[d.source.index].color; })
     .attr("d", path);
+
     // Add an elaborate mouseover title for each chord.
      chord.append("title").text(function(d) {
      return cities[d.source.index].name
@@ -149,9 +147,11 @@ hp.hpModel = function() {
 
   }*/
 
-    that.init = init;
     that.loadBubbleData = loadBubbleData;
     //that.createChord = createChord;
     return that;
+
+    
+  return that;
 
 };

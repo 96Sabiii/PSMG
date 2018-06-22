@@ -12,7 +12,7 @@ hp.hpActionsView = function() {
         div;
 
     function createActionsChart(){
-        var chart = document.getElementById("myChart");
+        var chart = document.getElementById("Chart1");
         chart.style.height = "800";
         chart.style.width = "800";
 
@@ -24,7 +24,7 @@ hp.hpActionsView = function() {
 
     function createActionsSVG(root) {
         //SVG erstellen
-        var selection = d3.select("#myChart"),
+        var selection = d3.select("#Chart1"),
             g = selection.append("g").attr("transform", "translate(2,2)"),
             colorCircles = d3.scaleOrdinal(d3.schemeCategory20);
 
