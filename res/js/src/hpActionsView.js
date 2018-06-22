@@ -52,7 +52,7 @@ hp.hpActionsView = function() {
                         .style("opacity", 0);
         });
 
-        nodes.append("text").style("text-anchor", "middle").text(function(d) {return d.data.name });
+        nodes.append("text").style("text-anchor", "middle").text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
     }
 
