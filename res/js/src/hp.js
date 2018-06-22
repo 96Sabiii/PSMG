@@ -8,7 +8,8 @@ var hp = (function () {
     actionsView,
     mainView,
     relationsView,
-    spellView;
+    spellView,
+    spellModel;
 
 	function init()  {
     initModel();
@@ -16,11 +17,17 @@ var hp = (function () {
     initMainView();
     initRelationsView();
     initSpellView();
+    initSpellModel();
 	}
 
   function initModel() {
     model = new hp.hpModel();
-    model.addEventListener("rootAvailable", onRootAvailable);
+    model.addEventListener("actionsRootAvailable", onActionsRootAvailable);
+  }
+
+  function initSpellModel() {
+    spellModel = new hp.hpSpellModel();
+    model.addEventListener("spellRootAvailable", onSpellRootAvailable);
   }
 
   function initActionsView() {
@@ -39,17 +46,28 @@ var hp = (function () {
     spellView = new hp.hpSpellView();
   }
 
-    function onRootAvailable(event){
+    function onActionsRootAvailable(event){
         actionsView.createSVG(event.data);
     }
 
-  function onCardClicked() {
-    actionsView.createChart();
-      model.loadData();
+    function onSpellRootAvailable(event){
+        spellView.createSVG(event.data);
+    }
+
+  function onCardOneClicked() {
+    actionsView.createActionsChart();
+      model.loadBubbleData();
+    //model.createChord();
+  }
+
+  function onCardTwoClicked() {
+    spellView.createSpellChart();
+      spellModel.loadBubbleData();
   }
 
 	that.init = init;
-  that.onCardClicked = onCardClicked;
+  that.onCardOneClicked = onCardOneClicked;
+  that.onCardTwoClicked = onCardTwoClicked;
 	return that;
 
 }());
