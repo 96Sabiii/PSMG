@@ -15,26 +15,15 @@
 <body>
 	<header>
 		<img src="res/assets/img/quibbler1.png">
-		<h1>The spells of Harry Potter</h1>
-		<h2>This visualization considers only the spell that were explicitly said aloud in the books.<br>
-				Therefore it excludes non-verbal and implied magic.</h2>
 	</header>
 	<main>
-		<div position:relative; width="1000" height="400px">
-			<div width="721px" height="1000px" style="float:left">
-				<h3>Hover over a bubble to see the distribution of the spell throughout the books.</h3>
-				<svg id="Chart2">
-				</svg>
-			</div>
-			<div width="1000px" height="300px" style="float:left">
-				<h3>Distribution</h3>
-				<svg id="piechart">
-				</svg>
-			</div>
-		</div>
+		<svg id="Chart4" height="1000", width="1000">
+		</svg>
 	</main>
 </body>
 <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
 <script type="text/javascript" src="res/js/lib/events.js"></script>
 <script type="text/javascript" src="res/js/lib/d3/d3.js"></script>
 <script type="text/javascript" src="res/js/src/hp.js"></script>
@@ -44,15 +33,9 @@
 <script type="text/javascript" src="res/js/src/hpActionsView.js"></script>
 <script type="text/javascript" src="res/js/src/hpMainView.js"></script>
 <script type="text/javascript" src="res/js/src/hpRelationView.js"></script>
-
-<!--Zusätzliche Scripte aus dem Netz -->
-<script src="https://d3js.org/d3.v4.min.js"></script>
-
-
-
 <script>
 	hp.init();
-	hp.onCardTwoClicked();
+	//hp.onCardFourClicked();
 </script>
 
 </html>
