@@ -23,6 +23,7 @@ hp.hpSpellView = function() {
 
           function createSpellSVG(root) {
               //SVG erstellen
+              console.log(root);
               var selection = d3.select("#Chart2"),
                   g = selection.append("g").attr("transform", "translate(2,2)"),
                   colorCircles = d3.scaleOrdinal(d3.schemeCategory20);
@@ -33,82 +34,78 @@ hp.hpSpellView = function() {
                 .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
                 .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-                //hier bubble anpassungen
+                //hier Bubble anpassungen
               nodes.append("circle").attr("r", function(d) {return d.r })
                   .style("fill", function(d) {return colorCircles(d.value)} )
                       .on("mouseover", function(d) {
                       d3.select(this).style("stroke-width", 3).style("stroke", "black");
                       div.transition()
+                          .attr("id","pie")
                           .duration(200)
                           .style("opacity", .9);
-                      div.html("<b>" + d.data.name + "</b>: <br/> <br/>" + d.data.effect
+                      div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
                                 + "<br/> Classification: " + d.data.classification)
-                          .style("left", (d3.event.pageX) + "px")
-                          .style("top", (d3.event.pageY - 28) + "px");
+                                .style("left", (d3.event.pageX) + "px")
+                                .style("top", (d3.event.pageY - 28) + "px");
+
+
+                      //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
+                      var width="150",
+                          height="150",
+                          radius = Math.min(width, height)/2;
+                      var color = d3.scaleOrdinal()
+    	                          .range(["#2C93E8","#838690","#F56C4E"]);
+
+
+                      var testdata = [{"letter":"q","presses":1},{"letter":"w","presses":5},{"letter":"e","presses":2}];
+                      //Man muss die spellsdata aufbereiten
+
+                      //var pie = d3.pie().value(function(d){return d.dh;})(d.data);
+                      var pie = d3.pie().value(function(d){return d.presses;})(testdata);
+
+                      var arc = d3.arc()
+	                         .outerRadius(radius - 10)
+	                         .innerRadius(0);
+
+                      var labelArc = d3.arc()
+                              .outerRadius(radius - 40)
+                              .innerRadius(radius - 40);
+
+                      var svg = d3.select("#pie")
+                              .append("svg")
+                              .attr("width", width)
+                              .attr("height", height)
+                                    .append("g")
+                                    .attr("transform", "translate(" + width/2 + "," + height/2 +")");
+
+                      var g = svg.selectAll("arc")
+              	            .data(pie)
+              	            .enter().append("g")
+              	            .attr("class", "arc");
+
+                      g.append("path")
+      	               .attr("d", arc)
+      	               .style("fill", function(d) { return colorCircles(d.value);});
+
+                      //Hier Bennenung der Kuchenteile
+                      g.append("text")
+   	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+   	                    .text(function(d) { return d.data.letter;})
+   	                    .style("fill", "#fff");
+
                       })
+
+                      //-------End of piechart-------
+
                       .on("mouseout", function(d) {
                           d3.select(this).style("stroke", "none");
                           div.transition()
                               .duration(500)
                               .style("opacity", 0);
 
-
-                      //piechart
-                      // .on("click", function(d){
-                      //
-                      // });
-
-
-
               });
 
-              nodes.append("text").style("text-anchor", "middle").text(function(d) {return d.data.name });
-
-
-              //TestData
-
-              var data = [10, 20, 100];
-
-              var width = 300,
-                  height = 300,
-                  radius = Math.min(width, height) / 2;
-
-              var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-              var arc = d3.arc()
-                  .outerRadius(radius - 10)
-                  .innerRadius(0);
-
-              var labelArc = d3.arc()
-                  .outerRadius(radius - 40)
-                  .innerRadius(radius - 40);
-
-              var pie = d3.pie()
-                  .sort(null)
-                  .value(function(d) { return d; });
-
-              var svg = d3.select("#piechart")
-                  .attr("width", width)
-                  .attr("height", height)
-                .append("g")
-                  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-                var g = svg.selectAll(".arc")
-                    .data(pie(data))
-                  .enter().append("g")
-                    .attr("class", "arc");
-
-                g.append("path")
-                    .attr("d", arc)
-                    .style("fill", function(d) { return color(d.data); });
-
-                g.append("text")
-                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-                    .attr("dy", ".35em")
-                    .text(function(d) { return d.data; });
-
-
-
+              nodes.append("text").style("text-anchor", "middle").text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
   }
 

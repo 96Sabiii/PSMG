@@ -151,7 +151,7 @@ hp.hpActionsModel = function() {
     //that.createChord = createChord;
     return that;
 
-    
+
   return that;
 
 };
