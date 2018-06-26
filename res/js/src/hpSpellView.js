@@ -32,7 +32,6 @@ hp.hpSpellView = function() {
               .enter().append("g")
                 .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
                 .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
                 //hier Bubble anpassungen
               nodes.append("circle").attr("r", function(d) {return d.r })
                   .style("fill", function(d) {return colorCircles(d.value)} )

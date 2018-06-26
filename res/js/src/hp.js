@@ -8,6 +8,7 @@ var hp = (function () {
     actionsView,
     mainView,
     relationsView,
+    relationsModel,
     spellView,
     spellModel;
 
@@ -15,7 +16,8 @@ var hp = (function () {
     initModel();
     initActionsView();
     initMainView();
-    //initRelationsView();
+    initRelationsView();
+    initRelationsModel();
     initSpellView();
     initSpellModel();
 	}
@@ -38,9 +40,14 @@ var hp = (function () {
     mainView = new hp.hpMainView();
   }
 
-  /*function initRelationsView() {
+  function initRelationsView() {
     relationsView = new hp.hpRelationsView();
-  }*/
+  }
+    
+    function initRelationsModel() {
+    relationsModel = new hp.hpRelationsModel();
+    relationsModel.addEventListener("relationsDataFinish", onRelationsDataFinish);
+  }
 
   function initSpellView() {
     spellView = new hp.hpSpellView();
@@ -53,21 +60,30 @@ var hp = (function () {
     function onSpellRootAvailable(event){
         spellView.createSpellSVG(event.data);
     }
+    
+    function onRelationsDataFinish(event) {
+        relationsView.showRelationsChart(event.data);
+    }
 
   function onCardOneClicked() {
     actionsView.createActionsChart();
-      actionsModel.loadBubbleData();
+    actionsModel.loadBubbleData();
     //model.createChord();
   }
 
   function onCardTwoClicked() {
     spellView.createSpellChart();
-      spellModel.loadBubbleData();
+    spellModel.loadBubbleData();
+  }
+    
+    function onCardThreeClicked() {
+    relationsModel.loadRelationsData(relationsView.createRelationsChart());
   }
 
 	that.init = init;
   that.onCardOneClicked = onCardOneClicked;
   that.onCardTwoClicked = onCardTwoClicked;
+    that.onCardThreeClicked = onCardThreeClicked
 	return that;
 
 }());
