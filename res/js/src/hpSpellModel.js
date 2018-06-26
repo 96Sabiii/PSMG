@@ -25,15 +25,21 @@ hp.hpSpellModel = function() {
         //daten umwandeln
         for(var i = 0; i < data.spellsData.length; i++) {
           var json = data.spellsData;
-          let name = json[i].name, value = json[i].totalCount, effect = json[i].effect;
+          let name = json[i].name, value = json[i].totalCount,
+              effect = json[i].effect, classification = json[i].classification,
+              dh = json[i].DHCount, hbp = json[i].HBPCount,
+              ootp = json[i].OotPCount, gof = json[i].GoFCount,
+              poa = json[i].PoACount, cos = json[i].CoSCount,
+              ss = json[i].SSCount;
             // for (var j = 1; j < data.length; j++) {
             //     value = value + +data[j][name];
             // }
-            let el = {name,value, effect};
+            let el = {name, value, effect, classification,
+                      dh, hbp, ootp, gof, poa, cos, ss};
             object.children.push(el);
         }
 
-        //Diagramm erstellen
+        //Bubblechart erstellen
         var nodeFkt = d3.pack().size([700, 700]);
 
         root = d3.hierarchy(object)
@@ -42,6 +48,7 @@ hp.hpSpellModel = function() {
 
         nodeFkt(root);
         that.notifyAll("spellRootAvailable", root);
+
     }
 
     that.init = init;

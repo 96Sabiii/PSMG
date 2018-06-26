@@ -20,6 +20,7 @@ hp.hpModel = function() {
     }
 
 
+
     function createBubbleData(data) {
         var object = {name: "root", children: []};
         //daten umwandeln

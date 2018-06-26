@@ -15,10 +15,21 @@
 <body>
 	<header>
 		<img src="res/assets/img/quibbler1.png">
+		<h1>The spells of Harry Potter</h1>
+		<h2>Hover over a bubble to see the distribution of the spell throughout the books.</h2>
 	</header>
 	<main>
-		<svg id="Chart2" height="1000", width="1000">
-		</svg>
+		<div position:relative; width="1000" height="400px">
+			<div width="721px" height="1000px" style="float:center">
+				<svg id="Chart2">
+				</svg>
+			</div>
+			<!-- <div width="1000px" height="300px" style="float:left">
+				<h3>Distribution</h3>
+				<svg id="piechart">
+				</svg>
+			</div> -->
+		</div>
 	</main>
 </body>
 <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
@@ -30,7 +41,17 @@
 <script type="text/javascript" src="res/js/src/hpSpellView.js"></script>
 <script type="text/javascript" src="res/js/src/hpActionsView.js"></script>
 <script type="text/javascript" src="res/js/src/hpMainView.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript" src="res/js/src/hpRelationsView.js"></script>
+=======
+<script type="text/javascript" src="res/js/src/hpRelationView.js"></script>
+
+<!--Zusätzliche Scripte aus dem Netz -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+
+>>>>>>> 5285b17f05304d38c35923f90628f8ec64342f19
 <script>
 	hp.init();
 	hp.onCardTwoClicked();
