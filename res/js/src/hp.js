@@ -15,7 +15,7 @@ var hp = (function () {
     initModel();
     initActionsView();
     initMainView();
-    initRelationsView();
+    //initRelationsView();
     initSpellView();
     initSpellModel();
 	}
@@ -38,9 +38,9 @@ var hp = (function () {
     mainView = new hp.hpMainView();
   }
 
-  function initRelationsView() {
+  /*function initRelationsView() {
     relationsView = new hp.hpRelationsView();
-  }
+  }*/
 
   function initSpellView() {
     spellView = new hp.hpSpellView();
