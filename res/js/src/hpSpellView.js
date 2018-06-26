@@ -23,7 +23,6 @@ hp.hpSpellView = function() {
 
           function createSpellSVG(root) {
               //SVG erstellen
-              console.log(root);
               var selection = d3.select("#Chart2"),
                   g = selection.append("g").attr("transform", "translate(2,2)"),
                   colorCircles = d3.scaleOrdinal(d3.schemeCategory20);
@@ -55,13 +54,13 @@ hp.hpSpellView = function() {
                           radius = Math.min(width, height)/2;
                       var color = d3.scaleOrdinal()
     	                          .range(["#2C93E8","#838690","#F56C4E"]);
+            
+                  //daten anpassen
+                        var data = [{"name":"ss","count":d.data.ss},{"name":"cos","count":d.data.cos},{"name":"poa","count":d.data.poa},{"name":"gof","count":d.data.gof},{"name":"ootp","count":d.data.ootp},{"name":"hbp","count":d.data.hbp},{"name":"dh","count":d.data.dh}];
 
-
-                      var testdata = [{"letter":"q","presses":1},{"letter":"w","presses":5},{"letter":"e","presses":2}];
-                      //Man muss die spellsdata aufbereiten
-
-                      //var pie = d3.pie().value(function(d){return d.dh;})(d.data);
-                      var pie = d3.pie().value(function(d){return d.presses;})(testdata);
+                      var pie = d3.pie().value(function(e){return e.count;})(
+                        data
+                      );
 
                       var arc = d3.arc()
 	                         .outerRadius(radius - 10)
@@ -90,10 +89,11 @@ hp.hpSpellView = function() {
                       //Hier Bennenung der Kuchenteile
                       g.append("text")
    	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-   	                    .text(function(d) { return d.data.letter;})
+   	                    .text(function(f) { return f.data.name;})
    	                    .style("fill", "#fff");
-
+                  
                       })
+             
 
                       //-------End of piechart-------
 
