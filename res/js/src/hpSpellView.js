@@ -15,6 +15,7 @@ hp.hpSpellView = function() {
       chart.style.height = "800";
       chart.style.width = "800";
 
+
       // Define the div for the tooltip
       div = d3.select("body").append("div")
           .attr("class", "tooltip")
@@ -40,7 +41,10 @@ hp.hpSpellView = function() {
                       div.transition()
                           .attr("id","pie")
                           .duration(200)
-                          .style("opacity", .9);
+                          .style("opacity", .9)
+                          .style("width","220px")
+                          .style("height","250px")
+                          .style("text-align","center");
                       div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
                                 + "<br/> Classification: " + d.data.classification)
                                 .style("left", (d3.event.pageX) + "px")
@@ -53,9 +57,9 @@ hp.hpSpellView = function() {
                           radius = Math.min(width, height)/2;
                       var color = d3.scaleOrdinal()
     	                          .range(["#2C93E8","#838690","#F56C4E"]);
-            
-                  //daten anpassen
-                        var data = [{"name":"ss","count":d.data.ss},{"name":"cos","count":d.data.cos},{"name":"poa","count":d.data.poa},{"name":"gof","count":d.data.gof},{"name":"ootp","count":d.data.ootp},{"name":"hbp","count":d.data.hbp},{"name":"dh","count":d.data.dh}];
+
+                     //Datenzuweisung
+                        var data = [{"name":"ps","count":d.data.ss},{"name":"cos","count":d.data.cos},{"name":"poa","count":d.data.poa},{"name":"gof","count":d.data.gof},{"name":"ootp","count":d.data.ootp},{"name":"hbp","count":d.data.hbp},{"name":"dh","count":d.data.dh}];
 
                       var pie = d3.pie().value(function(e){return e.count;})(
                         data
@@ -71,10 +75,12 @@ hp.hpSpellView = function() {
 
                       var svg = d3.select("#pie")
                               .append("svg")
-                              .attr("width", width)
-                              .attr("height", height)
+                              // .style("display","block")
+                              // .style("margin","auto")
+                              .attr("width", "200px")
+                              .attr("height", "200px")
                                     .append("g")
-                                    .attr("transform", "translate(" + width/2 + "," + height/2 +")");
+                                    .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
 
                       var g = svg.selectAll("arc")
               	            .data(pie)
@@ -83,16 +89,43 @@ hp.hpSpellView = function() {
 
                       g.append("path")
       	               .attr("d", arc)
-      	               .style("fill", function(d) { return colorCircles(d.value);});
+      	               //.style("fill", function(f) { return colorCircles(f.value);});
+                       .style("fill", function(){ return "hsl(" + Math.random() * 360 + ", 100%, 50%)";});
 
-                      //Hier Bennenung der Kuchenteile
+
+                      //Text innerhalb den Kuchenteilen
                       g.append("text")
    	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-   	                    .text(function(f) { return f.data.name;})
-   	                    .style("fill", "#fff");
-                  
+   	                    //.text(function(d) { return d.data.name;})
+                        .text(function(d) { if(d.data.count > 0) {return d.data.count} })
+                        .style("fill", "#000")
+                        .style("font-size", "120%");
+
+                      //Text außerhalb der Kuchenteile
+                      g.append("text")
+                        .attr("transform", function(d) {
+                          var c = arc.centroid(d),
+                          x = c[0],
+                          y = c[1],
+                          // pythagorean theorem for hypotenuse
+                          h = Math.sqrt(x*x + y*y);
+                          return "translate(" + (x/h * radius) +  ',' +
+                          (y/h * radius) +  ")";
+                        })
+                        .attr("text-anchor", function(d) {
+                          // are we past the center?
+                          return (d.endAngle + d.startAngle)/2 > Math.PI ?
+                          "end" : "start";
+                        })
+                        .text(function(d) { if(d.data.count > 0) {return d.data.name} });
+
+
+
+
+
+
                       })
-             
+
 
                       //-------End of piechart-------
 
