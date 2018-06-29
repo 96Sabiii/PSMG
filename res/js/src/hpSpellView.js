@@ -26,7 +26,9 @@ hp.hpSpellView = function() {
               //SVG erstellen
               var selection = d3.select("#Chart2"),
                   g = selection.append("g").attr("transform", "translate(2,2)"),
-                  colorCircles = d3.scaleOrdinal(d3.schemeCategory20);
+                  colorCircles = d3.scaleSequential()
+        .domain([55, 100])
+        .interpolator(d3.interpolateRainbow);
 
               var nodes = g.selectAll(".node")
               .data(root.descendants().slice(1))
@@ -37,7 +39,7 @@ hp.hpSpellView = function() {
               nodes.append("circle").attr("r", function(d) {return d.r })
                   .style("fill", function(d) {return colorCircles(d.value)} )
                       .on("mouseover", function(d) {
-                      d3.select(this).style("stroke-width", 3).style("stroke", "black");
+                      d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
                       div.transition()
                           .attr("id","pie")
                           .duration(200)
@@ -56,7 +58,7 @@ hp.hpSpellView = function() {
                           height="150",
                           radius = Math.min(width, height)/2;
                       var color = d3.scaleOrdinal()
-    	                          .range(["#FF3B30","#4CD964","#007AFF","#E91E63","#FFCC00","#FF9500","#8e8e93"]);
+    	                          .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
 
                      //Datenzuweisung
                         var data = [{"name":"ps","count":d.data.ss},{"name":"cos","count":d.data.cos},{"name":"poa","count":d.data.poa},{"name":"gof","count":d.data.gof},{"name":"ootp","count":d.data.ootp},{"name":"hbp","count":d.data.hbp},{"name":"dh","count":d.data.dh}];
