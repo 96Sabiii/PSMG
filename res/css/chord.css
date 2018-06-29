@@ -6,13 +6,24 @@ pointer-events: all;
  
 .group path {
 fill-opacity: .5;
+cursor: pointer;
 }
  
 path.chord {
-stroke: #000;
-stroke-width: .25px;
+stroke: #aeb4bf;
+stroke-width: .40px;
+  fill-opacity: .80;
 }
  
 #circle:hover path.fade {
 display: none;
 }
+
+#Chart3 {
+  height: 1000px;
+  width: 870px;
+}
+
+
+
+		
