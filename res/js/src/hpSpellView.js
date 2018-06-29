@@ -56,7 +56,7 @@ hp.hpSpellView = function() {
                           height="150",
                           radius = Math.min(width, height)/2;
                       var color = d3.scaleOrdinal()
-    	                          .range(["#2C93E8","#838690","#F56C4E"]);
+    	                          .range(["#FF3B30","#4CD964","#007AFF","#E91E63","#FFCC00","#FF9500","#8e8e93"]);
 
                      //Datenzuweisung
                         var data = [{"name":"ps","count":d.data.ss},{"name":"cos","count":d.data.cos},{"name":"poa","count":d.data.poa},{"name":"gof","count":d.data.gof},{"name":"ootp","count":d.data.ootp},{"name":"hbp","count":d.data.hbp},{"name":"dh","count":d.data.dh}];
@@ -90,7 +90,8 @@ hp.hpSpellView = function() {
                       g.append("path")
       	               .attr("d", arc)
       	               //.style("fill", function(f) { return colorCircles(f.value);});
-                       .style("fill", function(){ return "hsl(" + Math.random() * 360 + ", 100%, 50%)";});
+                       //.style("fill", function(){ return "hsl(" + Math.random() * 360 + ", 100%, 50%)";});
+                       .style("fill", function(d){return color(d.data.name)});
 
 
                       //Text innerhalb den Kuchenteilen
