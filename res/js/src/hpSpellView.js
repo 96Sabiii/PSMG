@@ -27,8 +27,8 @@ hp.hpSpellView = function() {
               var selection = d3.select("#Chart2"),
                   g = selection.append("g").attr("transform", "translate(2,2)"),
                   colorCircles = d3.scaleSequential()
-        .domain([55, 100])
-        .interpolator(d3.interpolateRainbow);
+                  .domain([55, 100])
+                  .interpolator(d3.interpolateRainbow);
 
               var nodes = g.selectAll(".node")
               .data(root.descendants().slice(1))
@@ -36,7 +36,11 @@ hp.hpSpellView = function() {
                 .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
                 .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
                 //hier Bubble anpassungen
-              nodes.append("circle").attr("r", function(d) {return d.r })
+              nodes.append("circle")
+                .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
+                //.attr("r", function(d) {return d.r })
+                .attr("r", 0)
+
                   .style("fill", function(d) {return colorCircles(d.value)} )
                       .on("mouseover", function(d) {
                       d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
@@ -61,7 +65,13 @@ hp.hpSpellView = function() {
     	                          .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
 
                      //Datenzuweisung
-                        var data = [{"name":"ps","count":d.data.ss},{"name":"cos","count":d.data.cos},{"name":"poa","count":d.data.poa},{"name":"gof","count":d.data.gof},{"name":"ootp","count":d.data.ootp},{"name":"hbp","count":d.data.hbp},{"name":"dh","count":d.data.dh}];
+                      var data = [{"name":"ps","count":d.data.ss},
+                                  {"name":"cos","count":d.data.cos},
+                                  {"name":"poa","count":d.data.poa},
+                                  {"name":"gof","count":d.data.gof},
+                                  {"name":"ootp","count":d.data.ootp},
+                                  {"name":"hbp","count":d.data.hbp},
+                                  {"name":"dh","count":d.data.dh}];
 
                       var pie = d3.pie().value(function(e){return e.count;})(
                         data
@@ -77,11 +87,10 @@ hp.hpSpellView = function() {
 
                       var svg = d3.select("#pie")
                               .append("svg")
-                              // .style("display","block")
-                              // .style("margin","auto")
                               .attr("width", "200px")
                               .attr("height", "200px")
                                     .append("g")
+                                    //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
                                     .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
 
                       var g = svg.selectAll("arc")
@@ -91,15 +100,12 @@ hp.hpSpellView = function() {
 
                       g.append("path")
       	               .attr("d", arc)
-      	               //.style("fill", function(f) { return colorCircles(f.value);});
-                       //.style("fill", function(){ return "hsl(" + Math.random() * 360 + ", 100%, 50%)";});
                        .style("fill", function(d){return color(d.data.name)});
 
 
                       //Text innerhalb den Kuchenteilen
                       g.append("text")
    	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-   	                    //.text(function(d) { return d.data.name;})
                         .text(function(d) { if(d.data.count > 0) {return d.data.count} })
                         .style("fill", "#000")
                         .style("font-size", "120%");
@@ -121,15 +127,7 @@ hp.hpSpellView = function() {
                           "end" : "start";
                         })
                         .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-
-
-
-
-
-
                       })
-
-
                       //-------End of piechart-------
 
                       .on("mouseout", function(d) {
@@ -137,12 +135,172 @@ hp.hpSpellView = function() {
                           div.transition()
                               .duration(500)
                               .style("opacity", 0);
-
               });
 
-              nodes.append("text").style("text-anchor", "middle").text(function(d) { if(d.data.value > 3) {return d.data.name} });
+              d3.selectAll(".leaf.node.circle")
+                .transition()
+                .duration(2000)
+                .attr("r", function(d){return d.r;});
 
-  }
+              nodes.append("text")
+                .attr("class", function(d){return d.children ? "node" : "leaf node text";})
+                .style("text-anchor", "middle")
+                .attr("font-size", 0)
+                .text(function(d) { if(d.data.value > 3) {return d.data.name} });
+
+              d3.selectAll(".leaf.node.text")
+                .transition()
+                .duration(2100)
+                .attr("font-size", 15);
+
+
+
+
+
+
+
+              //-------Start of Animation Code-------
+              var width = 1400;
+              var height = 1400;
+
+              var center = { x: width/2, y: height/2 };
+
+              var bookCenters = {
+                PS: { x: width/7, y: height/2},
+                COS: { x: 2 * width/7, y: height/2},
+                POA: { x: 3 * width/7, y: height/2},
+                GOF: { x: width/2, y: height/2},
+                OOTP: { x: 4 * width/7, y: height/2},
+                HBP: { x: 5 * width/7, y: height/2},
+                DH: { x: 6 * width/7, y: height/2}
+              };
+
+              var booksTitleX = {
+                PS: 200,
+                COS: 350,
+                POA: 500,
+                GOF: 700,
+                OOTP: 850,
+                HBP: 900,
+                DH: 1050
+              };
+
+              var damper = 0.102;
+
+              function charge(d){
+                return -Math.pow(d.r, 2.0) / 8;
+              }
+
+              var force = d3.layout.force()
+                .size([width, height])
+                .charge(charge)
+                .gravity(-0.01)
+                .friction(0.9);
+
+                function groupBubbles(){
+                  hideBooks();
+
+                  force.on("tick", function(e){
+                    nodes.each(moveToCenter(e.alpha))
+                      .attr("cx", function(d){return d.x;})
+                      .attr("cx", function(d){return d.y;});
+                  });
+
+                  force.start();
+                }
+
+                function moveToCenter(alpha){
+                  return function(d){
+                    d.x = d.x + (center.x - d.x) * damper * alpha;
+                    d.y = d.y + (center.y - d.y) * damper * alpha;
+                  }
+                }
+
+                function splitBubbles(){
+                  showBooks();
+
+                  force.on("tick", function(e){
+                    nodes.each(moveToBooks(e.alpha))
+                      .attr('cx', function (d) { return d.x; })
+                      .attr('cy', function (d) { return d.y; });
+                  });
+
+                  force.start();
+                }
+
+                function moveToBooks(alpha){
+                  return function(d){
+                    var target = bookCenters[d.name];
+                    d.x = d.x + (target.x - d.x) * damper * alpha * 1.1;
+                    d.y = d.y + (target.y - d.y) * damper * alpha * 1.1;
+                  };
+                }
+
+                function hideBooks(){
+                  svg.selectAll(".book").remove();
+                }
+
+                function showBooks(){
+                  var booksData = d3.key(booksTitleX);
+                  var books = svg.selectAll(".book")
+                    .data(booksData);
+
+                  books.enter().append("text")
+                    .attr("class", "book")
+                    .attr("x", function(d){return booksTitleX[d];})
+                    .attr("y", 300)
+                    .attr("text-anchor","middle")
+                    .text(function(d){return d;});
+                }
+
+                // chart.toggleDisplay = function(displayName){
+                //   if(displayName === "book"){
+                //     splitBubbles();
+                //   }else{
+                //     groupBubbles();
+                //   }
+                // };
+
+
+
+              console.log("succ");
+
+
+
+
+
+
+
+
+              //-------End of Animation Code-------
+
+
+
+            }
+
+            function setupButtons(){
+              d3.select("#toolbar")
+                .selectAll(".button")
+                .on("click", function(){
+                  //remove active class from all buttons
+                  d3.selectAll(".button").classed("active", false);
+                  //find the button just clicked
+                  var button = d3.select(this);
+
+                  //Set it as the active button
+                  button.classed("active", true);
+
+                  //get the id of the button
+                  var buttonId = button.attr("id");
+
+                  //toggle the bubble chart based on
+                  //the currently clicked buttton.
+                  myBubbleChart.toggleDisplay(buttonId);
+                });
+            }
+
+            setupButtons();
+
 
   that.createSpellChart = createSpellChart;
   that.createSpellSVG = createSpellSVG;
