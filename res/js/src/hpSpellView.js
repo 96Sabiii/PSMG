@@ -23,6 +23,8 @@ hp.hpSpellView = function() {
   }
 
           function createSpellSVG(root) {
+          // var chart = function createSpellSVG(root){
+
               //SVG erstellen
               var selection = d3.select("#Chart2"),
                   g = selection.append("g").attr("transform", "translate(2,2)"),
@@ -154,48 +156,16 @@ hp.hpSpellView = function() {
                 .attr("font-size", 15);
 
 
+              // set initial layout to single group
+              //groupBubbles();
+
+
 
 
 
 
 
               //-------Start of Animation Code-------
-              var width = 1400;
-              var height = 1400;
-
-              var center = { x: width/2, y: height/2 };
-
-              var bookCenters = {
-                PS: { x: width/7, y: height/2},
-                COS: { x: 2 * width/7, y: height/2},
-                POA: { x: 3 * width/7, y: height/2},
-                GOF: { x: width/2, y: height/2},
-                OOTP: { x: 4 * width/7, y: height/2},
-                HBP: { x: 5 * width/7, y: height/2},
-                DH: { x: 6 * width/7, y: height/2}
-              };
-
-              var booksTitleX = {
-                PS: 200,
-                COS: 350,
-                POA: 500,
-                GOF: 700,
-                OOTP: 850,
-                HBP: 900,
-                DH: 1050
-              };
-
-              var damper = 0.102;
-
-              function charge(d){
-                return -Math.pow(d.r, 2.0) / 8;
-              }
-
-              var force = d3.layout.force()
-                .size([width, height])
-                .charge(charge)
-                .gravity(-0.01)
-                .friction(0.9);
 
                 function groupBubbles(){
                   hideBooks();
@@ -236,10 +206,6 @@ hp.hpSpellView = function() {
                   };
                 }
 
-                function hideBooks(){
-                  svg.selectAll(".book").remove();
-                }
-
                 function showBooks(){
                   var booksData = d3.key(booksTitleX);
                   var books = svg.selectAll(".book")
@@ -253,55 +219,81 @@ hp.hpSpellView = function() {
                     .text(function(d){return d;});
                 }
 
-                // chart.toggleDisplay = function(displayName){
-                //   if(displayName === "book"){
-                //     splitBubbles();
-                //   }else{
-                //     groupBubbles();
-                //   }
-                // };
+                function hideBooks(){
+                  d3.selectAll(".book").remove();
+                }
 
-
-
-              console.log("succ");
-
-
-
-
-
-
-
+                chart.toggleDisplay = function(displayName){
+                  if(displayName === "book"){
+                    splitBubbles();
+                  }else{
+                    groupBubbles();
+                  }
+                };
 
               //-------End of Animation Code-------
 
+            } //End of CreateSpellSVG()
 
+            var width = 1400;
+            var height = 1400;
 
+            var center = { x: width/2, y: height/2 };
+
+            var bookCenters = {
+              PS: { x: width/7, y: height/2},
+              COS: { x: 2 * width/7, y: height/2},
+              POA: { x: 3 * width/7, y: height/2},
+              GOF: { x: width/2, y: height/2},
+              OOTP: { x: 4 * width/7, y: height/2},
+              HBP: { x: 5 * width/7, y: height/2},
+              DH: { x: 6 * width/7, y: height/2}
+            };
+
+            var booksTitleX = {
+              PS: 200,
+              COS: 350,
+              POA: 500,
+              GOF: 700,
+              OOTP: 850,
+              HBP: 900,
+              DH: 1050
+            };
+
+            var damper = 0.102;
+
+            function charge(d){
+              return -Math.pow(d.r, 2.0) / 8;
             }
 
-            function setupButtons(){
-              d3.select("#toolbar")
-                .selectAll(".button")
-                .on("click", function(){
-                  //remove active class from all buttons
-                  d3.selectAll(".button").classed("active", false);
-                  //find the button just clicked
-                  var button = d3.select(this);
+            var force = d3.layout.force()
+              .size([width, height])
+              .charge(charge)
+              .gravity(-0.01)
+              .friction(0.9);
 
-                  //Set it as the active button
-                  button.classed("active", true);
+  function setupButtons(){
+    d3.select("#toolbar")
+      .selectAll(".button")
+      .on("click", function(){
+    //remove active class from all buttons
+    d3.selectAll(".button").classed("active", false);
+    //find the button just clicked
+    var button = d3.select(this);
 
-                  //get the id of the button
-                  var buttonId = button.attr("id");
+    //Set it as the active button
+    button.classed("active", true);
 
-                  //toggle the bubble chart based on
-                  //the currently clicked buttton.
-                  myBubbleChart.toggleDisplay(buttonId);
-                });
-            }
+    //get the id of the button
+    var buttonId = button.attr("id");
 
-            setupButtons();
+    //toggle the bubble chart based on
+    //the currently clicked buttton.
+    myBubbleChart.toggleDisplay(buttonId);
+    });
+  }
 
-
+  setupButtons();
   that.createSpellChart = createSpellChart;
   that.createSpellSVG = createSpellSVG;
   return that;

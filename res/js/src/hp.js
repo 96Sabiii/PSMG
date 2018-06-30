@@ -43,7 +43,7 @@ var hp = (function () {
   function initRelationsView() {
     relationsView = new hp.hpRelationsView();
   }
-    
+
     function initRelationsModel() {
     relationsModel = new hp.hpRelationsModel();
     relationsModel.addEventListener("relationsDataFinish", onRelationsDataFinish);
@@ -60,7 +60,7 @@ var hp = (function () {
     function onSpellRootAvailable(event){
         spellView.createSpellSVG(event.data);
     }
-    
+
     function onRelationsDataFinish(event) {
         relationsView.showRelationsChart(event.data);
     }
@@ -75,7 +75,7 @@ var hp = (function () {
     spellView.createSpellChart();
     spellModel.loadBubbleData();
   }
-    
+
     function onCardThreeClicked() {
     relationsModel.loadRelationsData(relationsView.createRelationsChart());
   }
