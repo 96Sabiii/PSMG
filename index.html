@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Harry Potter</title>
 	<link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
 <!-- 	<link type="text/css" rel="stylesheet" href="res/css/materialize/css/materialize.css" /> -->
 	<link type="text/css" rel="stylesheet" href="res/css/font-awesome/css/font-awesome.min.css">
 	<link type="text/css" rel="stylesheet" href="res/css/cards.css">
@@ -75,7 +77,7 @@
 								<div class="fc-event inner text-color">
 									Text color <input id="textColorPicker" type='color'/>
 								</div>
-							</div>						
+							</div>
 							<div id="pictureButton" class="fc-event"><i class="fa fa-file-image-o"></i>&nbsp; Picture</div>
 							<div id="pictureOptions" style="display: none">
 								<div class="fc-event inner text-color">
@@ -99,24 +101,24 @@
 		<img src="res/assets/img/quibbler1.png" alt="Quibbler Logo">
 	</header>
 	<main>
-		<div class="content"> Harry Potter Statistiken blabla</div>
+		<div class="content"> Click on a card to see some magic!</div>
 		<div class='cards'>
 			<a class='card' href="inhalt1.html">
 			    <div class='card-face'>
 				    <div class='card-label'>Statistik 1</div>
 			    </div>
 			</a>
-			<a class='card' href="inhalt1.html">
+			<a class='card' href="inhalt2.html">
 			    <div class='card-face'>
-				    <div class='card-label'> Statistik 2</div>
+				    <div class='card-label'> The spells of Harry Potter</div>
 			    </div>
 			</a>
-			<a class='card' href="inhalt1.html">
+			<a class='card' href="inhalt3.html">
 			    <div class='card-face'>
 				    <div class='card-label'>Statistik 3</div>
 			    </div>
 			</a>
-			<a class='card' href="inhalt1.html">
+			<a class='card' href="inhalt4.html">
 			    <div class='card-face'>
 				    <div class='card-label'>Statistik 4</div>
 			    </div>
@@ -128,9 +130,18 @@
 	</main>
 </body>
 <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="res/js/lib/events.js"></script>
+<script type="text/javascript" src="res/js/lib/d3/d3.js"></script>
 <script type="text/javascript" src="res/js/src/hp.js"></script>
-<!-- <script>
+<script type="text/javascript" src="res/js/src/hpActionsModel.js"></script>
+<script type="text/javascript" src="res/js/src/hpSpellModel.js"></script>
+<script type="text/javascript" src="res/js/src/hpSpellView.js"></script>
+<script type="text/javascript" src="res/js/src/hpActionsView.js"></script>
+<script type="text/javascript" src="res/js/src/hpMainView.js"></script>
+<script type="text/javascript" src="res/js/src/hpRelationsView.js"></script>
+<script type="text/javascript" src="res/js/src/hpRelationsModel.js"></script>
+<script>
 	hp.init();
-</script> -->
+</script>
 
 </html>

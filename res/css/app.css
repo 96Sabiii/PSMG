@@ -1,25 +1,34 @@
 html {
   background-color: #385769;
+
 }
+
 
 body {
   width: 1200px;
+  height: 1300px;
   margin: 1% auto;
   text-align: center;
   font-size: 14px;
-  font-family: 'Antic Slab', serif;
+ font-family: 'Fredericka the Great', cursive;
   background-color: #5b7f8f;
 }
 
-/* fallback */
-@font-face {
-  font-family: 'Magic';
-  src: url('../assets/font/magic/MagicSchoolOne.ttf');
+h1{
+  font-family: 'Lovers Quarrel', cursive;
+  font-size: 85px;
+  margin-bottom: 0px;
+}
+
+h2{
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 20px;
+  margin-top: 0px;
 }
 
 .content {
   margin: 2%;
-  font-family: 'Magic';
+ font-family: 'Lovers Quarrel', cursive;
   font-size: 400%;
 }
 
@@ -29,4 +38,52 @@ body {
   margin-left: 50%;
   position: relative;
   z-index: 50;
+}
+
+#circle circle {
+fill: none;
+pointer-events: all;
+}
+
+.group path {
+fill-opacity: .5;
+}
+
+path.chord {
+stroke: #000;
+stroke-width: .25px;
+}
+
+#circle:hover path.fade {
+display: none;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    padding: 4px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 14px;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+#myChart {
+  margin-left: 20%;
+}
+
+#Chart2 {
+  height: 1000px;
+  width: 720px;
+  font-family: 'Kaushan Script', cursive;
+}
+
+
+
+#piechart {
+  height: 300px;
+  width: 300px;
 }

@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Harry Potter</title>
 	<link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet"> 
 <!-- 	<link type="text/css" rel="stylesheet" href="res/css/materialize/css/materialize.css" /> -->
 	<link type="text/css" rel="stylesheet" href="res/css/font-awesome/css/font-awesome.min.css">
 	<link type="text/css" rel="stylesheet" href="res/css/cards.css">
@@ -15,14 +18,36 @@
 <body>
 	<header>
 		<img src="res/assets/img/quibbler1.png">
+		<h1>The spells of Harry Potter</h1>
+		<h2>Hover over a bubble to see the distribution of the spell throughout the books.</h2>
+		<div color="lightblue">
+			<p>Code:<br>
+				<b><font color="#930447">The Philosopher's Stone: ps </font> <br>
+				<font color="#82b74b">The Chambers of Secrets: cos</font><br>
+				<font color=" #80ced6">The Prisoner of Azkaban: poa</font><br>
+				<font color="#d96459">The Goblet of Fire: gof</font><br>
+				<font color="#de8be0">The Order of the Phoenix: otp</font><br>
+				<font color="#4040a1">The Half-Blood Prince: hbp</font><br>
+				<font color="#e8e36a">The Deathly Hallows: dh</font></b> </p>
+		</div>
 	</header>
 	<main>
-		<svg id="Chart1" height="1000", width="1000">
-		</svg>
+		<div position="relative" width="1000" height="400px">
+			<div width="721px" height="1000px" style="float:center">
+				<svg id="Chart2">
+				</svg>
+			</div>
+
+
+			<!-- <div width="1000px" height="300px" style="float:left">
+				<h3>Distribution</h3>
+				<svg id="piechart">
+				</svg>
+			</div> -->
+		</div>
 	</main>
 </body>
 <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
 <script type="text/javascript" src="res/js/lib/events.js"></script>
 <script type="text/javascript" src="res/js/lib/d3/d3.js"></script>
 <script type="text/javascript" src="res/js/src/hp.js"></script>
@@ -33,9 +58,16 @@
 <script type="text/javascript" src="res/js/src/hpMainView.js"></script>
 <script type="text/javascript" src="res/js/src/hpRelationsView.js"></script>
 <script type="text/javascript" src="res/js/src/hpRelationsModel.js"></script>
+
+<!--Zusätzliche Scripte aus dem Netz -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+
+>>>>>>> 5285b17f05304d38c35923f90628f8ec64342f19
 <script>
 	hp.init();
-	hp.onCardOneClicked();
+	hp.onCardTwoClicked();
 </script>
 
 </html>
