@@ -165,8 +165,8 @@ hp.hpSpellView = function() {
 
 
 
-              //-------Start of Animation Code-------
-
+              //-------Start of Animation Code------- (Code: https://github.com/vlandham/bubble_chart)
+              //Tutorial: http://vallandingham.me/bubble_charts_in_js.html
                 function groupBubbles(){
                   hideBooks();
 
