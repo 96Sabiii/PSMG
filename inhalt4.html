@@ -1,41 +1,86 @@
+
+
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Harry Potter</title>
-	<link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
-<!-- 	<link type="text/css" rel="stylesheet" href="res/css/materialize/css/materialize.css" /> -->
-	<link type="text/css" rel="stylesheet" href="res/css/font-awesome/css/font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="res/css/cards.css">
-	<link type="text/css" rel="stylesheet" href="res/css/app.css">
-</head>
-
-<body>
-	<header>
-		<img src="res/assets/img/quibbler1.png">
-	</header>
-	<main>
-		<svg id="Chart4" height="1000", width="1000">
-		</svg>
-	</main>
-</body>
-<script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
-<script type="text/javascript" src="res/js/lib/events.js"></script>
-<script type="text/javascript" src="res/js/lib/d3/d3.js"></script>
-<script type="text/javascript" src="res/js/src/hp.js"></script>
-<script type="text/javascript" src="res/js/src/hpActionsModel.js"></script>
-<script type="text/javascript" src="res/js/src/hpSpellModel.js"></script>
-<script type="text/javascript" src="res/js/src/hpSpellView.js"></script>
-<script type="text/javascript" src="res/js/src/hpActionsView.js"></script>
-<script type="text/javascript" src="res/js/src/hpMainView.js"></script>
-<script type="text/javascript" src="res/js/src/hpRelationsView.js"></script>
-<script type="text/javascript" src="res/js/src/hpRelationsModel.js"></script>
-<script>
-	hp.init();
-	//hp.onCardFourClicked();
-</script>
-
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Harry Potter</title>
+      <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+      <!-- 	<link type="text/css" rel="stylesheet" href="res/css/materialize/css/materialize.css" /> -->
+      <link type="text/css" rel="stylesheet" href="res/css/font-awesome/css/font-awesome.min.css">
+      <link type="text/css" rel="stylesheet" href="res/css/cards.css">
+      <link type="text/css" rel="stylesheet" href="res/css/app.css">
+      <link type="text/css" rel="stylesheet" href="res/css/charts.css">
+   </head>
+   <body>
+      <header>
+         <div class="subhead">
+            <nav>
+               <a href="index.html">Welcome</a>&nbsp;
+               <a href="inhalt1.html">Actions</a>&nbsp;
+               <a href="inhalt2.html">Spells</a>&nbsp;
+               <a href="inhalt3.html">Characters</a>&nbsp;
+               <a href="inhalt4.html">Facts</a>&nbsp;
+            </nav>
+         </div>
+      </header>
+      </header>
+      <main>
+         <!--  nach http://harrypotter.wikia.com/wiki/The_Quibbler_articles 
+            http://www.hogwartsishere.com/library/book/6198/chapter/2/-->
+         <div class="collumns">
+            <div class="collumn">
+               <div class="head">
+                  <span class="headline h1">DUMBLEDORE — THE TRUTH AND LIES"</span>
+                  <p><span class="subheadline h1">sdfghjkl</span></p>
+               </div>
+               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+               <figure class="figure">
+                  <img class="media" src="https://media.giphy.com/media/10EDQ56v0Fl5Go/giphy.gif" alt="Snape clapping Gif">
+                  <figcaption class="figcaption">This is a happy Potions Master</figcaption>
+               </figure>
+            </div>
+            <div class="collumn">
+               <div class="head">
+                  <span class="headline h2">"MORE LIES ABOUT DUMBLEDORE!" </span>
+                  <p><span class="subheadline h2">FINALLY FOUND AFTER 16 YEARS</span></p>
+               </div>
+               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+               <figure class="figure">
+                  <img class="media" src="https://media.giphy.com/media/sOoX5jiJhVb0I/giphy.gif" alt="Ron hit by broom Gif">
+                  <figcaption class="figcaption">Beware - Agressive Brooms Sighted!</figcaption>
+               </figure>
+               <p>ILorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="collumn">
+               <div class="head">
+                  <span class="headline h3">"DUMBLEDORE — THE TRUE AND THE WISE!" </span>
+                  <p><span class="subheadline h3">"Dumbledore Death Deceit Discredited!" </span></p>
+                  <svg class="expand" id="Chart4"  viewBox="0 0 1250 1250"></svg>
+               </div>
+            </div>
+         </div>
+      </main>
+   </body>
+   <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
+   <script type="text/javascript" src="res/js/lib/events.js"></script>
+   <script type="text/javascript" src="res/js/lib/d3/d3.js"></script>
+   <script type="text/javascript" src="res/js/src/hp.js"></script>
+   <script type="text/javascript" src="res/js/src/hpActionsModel.js"></script>
+   <script type="text/javascript" src="res/js/src/hpSpellModel.js"></script>
+   <script type="text/javascript" src="res/js/src/hpSpellView.js"></script>
+   <script type="text/javascript" src="res/js/src/hpActionsView.js"></script>
+   <script type="text/javascript" src="res/js/src/hpMainView.js"></script>
+   <script type="text/javascript" src="res/js/src/hpRelationsView.js"></script>
+   <script type="text/javascript" src="res/js/src/hpRelationsModel.js"></script>
+   <script>
+      hp.init();
+      //hp.onCardFourClicked();
+   </script>
 </html>
+

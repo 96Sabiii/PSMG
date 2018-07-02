@@ -1,0 +1,58 @@
+ div.tooltip {
+     position: absolute;
+     text-align: center;
+     width: 200px;
+     padding: 4px;
+     font-family: 'Fredericka the Great', cursive;
+     font-size: 14px;
+     background: #b0dedd;
+     border: 0px;
+     border-radius: 8px;
+     pointer-events: none;
+}
+ #circle circle {
+     fill: none;
+     pointer-events: all;
+}
+ .group path {
+     fill-opacity: .5;
+     cursor: pointer;
+}
+ path.chord {
+     stroke: #aeb4bf;
+     stroke-width: .40px;
+     fill-opacity: .80;
+}
+ #circle:hover path.fade {
+     display: none;
+}
+ #Chart1{
+     height: 450px;
+     width: 450px;
+     font-family: 'Kaushan Script', cursive;
+}
+ #Chart2 {
+     height: 450px;
+     width: 450px;
+     font-family: 'Kaushan Script', cursive;
+}
+ #piechart {
+     height: 300px;
+     width: 300px;
+}
+ #Chart3 {
+     height: 450px;
+     width: 450px;
+     font-family: 'Kaushan Script', cursive;
+}
+ .expand:hover {
+     transform: scale(2.2);
+     background-size: 50% auto;
+     background-color: white;
+     opacity: .9;
+}
+ .expand {
+     transition: all 1s;
+     transform-origin: center;
+}
+ 

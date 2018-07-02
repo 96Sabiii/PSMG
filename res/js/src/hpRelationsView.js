@@ -1,3 +1,4 @@
+
   /* eslint-env browser */
   /* global EventPublisher */
 
@@ -46,11 +47,6 @@
 
 
   svg = d3.select("#Chart3").append("svg")
-  /*.attr("width", width)
-  .attr("height", height)
-  .append("g")
-  .attr("id", "circle")
-  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");*/
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")

@@ -1,6 +1,10 @@
 	/* eslint-env browser */
 	/* global EventPublisher */
 
+//nach https://bl.ocks.org/nbremer
+//http://projects.delimited.io/experiments/chord-transitions/demos/trade.html
+
+
 // Hier werden die Hintergrunddaten berechnet
   
   var hp = hp || {};
