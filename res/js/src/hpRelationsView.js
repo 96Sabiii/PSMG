@@ -14,8 +14,8 @@
     innerRadius, 
     outerRadius,
     div,
-    m = 110,
-    size = 900;
+    m = 150,
+    size = 1200;
 
 
   function createRelationsChart() {

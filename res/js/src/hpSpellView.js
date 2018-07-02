@@ -12,8 +12,7 @@ hp.hpSpellView = function() {
 
   function createSpellChart(){
       var chart = document.getElementById("Chart2");
-      chart.style.height = "800";
-      chart.style.width = "800";
+   //größe chart ggf anpassen   chart.style.height = 280px; chart.style.width = 280px;
 
 
       // Define the div for the tooltip
@@ -35,8 +34,10 @@ hp.hpSpellView = function() {
               .enter().append("g")
                 .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
                 .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
                 //hier Bubble anpassungen
               nodes.append("circle").attr("r", function(d) {return d.r })
+              
                   .style("fill", function(d) {return colorCircles(d.value)} )
                       .on("mouseover", function(d) {
                       d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
@@ -98,6 +99,7 @@ hp.hpSpellView = function() {
 
                       //Text innerhalb den Kuchenteilen
                       g.append("text")
+                  .style("text-anchor", "middle")
    	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
    	                    //.text(function(d) { return d.data.name;})
                         .text(function(d) { if(d.data.count > 0) {return d.data.count} })

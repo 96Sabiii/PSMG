@@ -8,7 +8,8 @@ var hp = hp || {};
 hp.hpSpellModel = function() {
     "use strict";
     var that = new EventPublisher(),
-        root;
+        root,
+        size = 1250;
 
     function init () {
     }
@@ -40,7 +41,7 @@ hp.hpSpellModel = function() {
         }
 
         //Bubblechart erstellen
-        var nodeFkt = d3.pack().size([700, 700]);
+        var nodeFkt = d3.pack().size([size, size]);
 
         root = d3.hierarchy(object)
             .sum(function(d) { return d.value; })
