@@ -169,4 +169,16 @@ html {
      mix-blend-mode: multiply;
      width: 100%;
 }
+
+.legendBox {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border: 2px solid;
+}
+
+#legend {
+    text-align: justify;
+    
+}
  
