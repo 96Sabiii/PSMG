@@ -104,7 +104,7 @@ hp.hpSpellView = function() {
    	                    //.text(function(d) { return d.data.name;})
                         .text(function(d) { if(d.data.count > 0) {return d.data.count} })
                         .style("fill", "#000")
-                        .style("font-size", "120%");
+                        .style("font-size", "100%");
 
                       //Text außerhalb der Kuchenteile
                       g.append("text")
@@ -142,7 +142,7 @@ hp.hpSpellView = function() {
 
               });
 
-              nodes.append("text").style("text-anchor", "middle").text(function(d) { if(d.data.value > 3) {return d.data.name} });
+              nodes.append("text").style("text-anchor", "middle").style("font-size", "25px").text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
   }
 

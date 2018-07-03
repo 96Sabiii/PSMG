@@ -13,21 +13,30 @@ html {
      font-family: 'Fredericka the Great', cursive;
      border-width: 40px;
 }
+
+#frontpage{
+  background-image: url("images/quibblerfrontpage.png");
+     background-size: 100%;
+}
+
  .subhead {
      border-left: 20%;
      padding: 12px 0 12px 0;
      font-size: 16px;
 }
+}
  h1{
      font-family: 'Lovers Quarrel', cursive;
-     font-size: 400%;
+     font-size: 65px;
      margin-bottom: 0px;
-     margin-top: 10px;
+     margin-top: 15px;
 }
  h2{
      font-family: 'Fredericka the Great', cursive;
      font-size: 20px;
      margin-top: 0px;
+     padding-bottom: 3px;
+     border-bottom: 1px solid #00102b;
 }
  a:link{
      color:#00102b;
@@ -38,17 +47,14 @@ html {
  a:hover{
      color:#0c000a;
 }
- a:active{
-     color:#960075;
+
+#aktuell{
+  
+  border: 3px dotted #00102b;
+  padding: 1.5px;
+  opacity: .7;
 }
- .centerLogo{
-     max-width: 100%;
-     height: auto;
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
-     width: 50%;
-     padding-top: 5%;
+
 }
  #circle circle {
      fill: none;

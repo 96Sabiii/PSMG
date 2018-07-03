@@ -28,7 +28,9 @@ hp.hpActionsView = function() {
         
         //SVG erstellen
         var selection = d3.select("#Chart1"),
-            colorCircles = d3.scaleOrdinal(d3.schemeCategory20);
+            colorCircles =d3.scaleSequential()
+                .domain([75, 100])
+                .interpolator(d3.interpolateRainbow);
 
         var nodes = selection.selectAll(".node")
         .data(pack(root).leaves())
@@ -54,7 +56,7 @@ hp.hpActionsView = function() {
                         .style("opacity", 0);
         });
 
-        nodes.append("text").style("text-anchor", "middle").text(function(d) { if(d.data.value > 3) {return d.data.name} });
+        nodes.append("text").style("text-anchor", "middle").style("font-size", "23px").text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
     }
 
