@@ -6,11 +6,11 @@ html {
 
 body {
   width: 1400px;
-  height: 1400px;
+  height: 1500px;
   margin: 1% auto;
   text-align: center;
   font-size: 14px;
- font-family: 'Fredericka the Great', cursive;
+  font-family: 'Fredericka the Great', cursive;
   background-color: #5b7f8f;
 }
 
@@ -28,7 +28,7 @@ h2{
 
 .content {
   margin: 2%;
- font-family: 'Lovers Quarrel', cursive;
+  font-family: 'Lovers Quarrel', cursive;
   font-size: 400%;
 }
 
