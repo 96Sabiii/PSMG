@@ -1,4 +1,4 @@
-ToDo, Ideen, Verbesserungen, Bugs, etc.:
+﻿ToDo, Ideen, Verbesserungen, Bugs, etc.:
 
 
 Allgemein:
@@ -19,7 +19,7 @@ Welcome:
 Actions:
 -	Halo Chart fertig machen, so irgendwie -> http://bl.ocks.org/nbremer/6599644129c034d0cb17fcdc452c310b
 
--	"Wingardium Leviosa" dazu bewegen innerhalb seiner Bubble zu bleiben (sihe Spell Chart, da gehts auch^^)
+-	"Wingardium Leviosa" dazu bewegen innerhalb seiner Bubble zu bleiben (siehe Spell Chart, da gehts auch^^)
 
 Spells:
 -	Spell Chart samt Buttons als Pop-up Fenster (-> CSS "Modals" als Lösung?),
@@ -38,7 +38,7 @@ Spells:
 	
 Characters:
 -	Harry Potter im Characters Chart zu schmal-> mehr als 50 Interaktionen, die meisten
-	davon gehen zu ihm hin (er ist öfter Source als Target), Fehler suchen-> Code, Matrix, Csv?
+	davon gehen zu ihm hin (er ist öfter Target als Source), Fehler suchen-> Code, Matrix, Csv?
 
 
 FunFacts:
