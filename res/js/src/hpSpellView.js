@@ -10,6 +10,7 @@ hp.hpSpellView = function() {
   var that = new EventPublisher(),
       div,
       size = 1400,
+      smalSize =1300,
       chart,
       center = { x: size/2, y: size/2 };
     //chart braucht man nicht? ändert nichts
@@ -38,8 +39,6 @@ hp.hpSpellView = function() {
 
     function createSpellChart(){
       chart = document.getElementById("Chart2");
-      chart.style.height = "800";
-      chart.style.width = "800";
 
       // Define the div for the tooltip
       div = d3.select("body").append("div")
@@ -209,9 +208,6 @@ function spellsByAllSort(){
           object.children.push(el);
       }
 
-      //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([700, 700]);
-
       root = d3.hierarchy(object)
           .sum(function(d) { return d.value; })
           .sort(function(a, b) { return b.value - a.value; });
@@ -378,7 +374,7 @@ function spellsByPSSort() {
             }
 
             //Bubblechart erstellen
-            var nodeFkt = d3.pack().size([700, 700]);
+            var nodeFkt = d3.pack().size([smalSize, smalSize]);
 
             root = d3.hierarchy(object)
                 .sum(function(d) { return d.ss; })
@@ -548,7 +544,7 @@ function spellsByCOSSort() {
         }
 
         //Bubblechart erstellen
-        var nodeFkt = d3.pack().size([700, 700]);
+        var nodeFkt = d3.pack().size([1200, 1200]);
 
         root = d3.hierarchy(object)
             .sum(function(d) { return d.cos; })
@@ -715,7 +711,7 @@ function spellsByPOASort(){
       }
 
       //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([700, 700]);
+      var nodeFkt = d3.pack().size([smalSize, smalSize]);
 
       root = d3.hierarchy(object)
           .sum(function(d) { return d.poa; })
@@ -882,7 +878,7 @@ function spellsByGOFSort(){
       }
 
       //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([700, 700]);
+      var nodeFkt = d3.pack().size([smalSize, smalSize]);
 
       root = d3.hierarchy(object)
           .sum(function(d) { return d.gof; })
@@ -1049,7 +1045,7 @@ function spellsByOOTPSort(){
       }
 
       //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([700, 700]);
+      var nodeFkt = d3.pack().size([smalSize, smalSize]);
 
       root = d3.hierarchy(object)
           .sum(function(d) { return d.ootp; })
@@ -1216,7 +1212,7 @@ function spellsByHBPSort(){
       }
 
       //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([700, 700]);
+      var nodeFkt = d3.pack().size([smalSize, smalSize]);
 
       root = d3.hierarchy(object)
           .sum(function(d) { return d.hbp; })
@@ -1383,7 +1379,7 @@ function spellsByDHSort(){
       }
 
       //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([700, 700]);
+      var nodeFkt = d3.pack().size([smalSize, smalSize]);
 
       root = d3.hierarchy(object)
           .sum(function(d) { return d.dh; })
