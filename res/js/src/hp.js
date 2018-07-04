@@ -58,7 +58,7 @@ var hp = (function () {
     }
 
     function onSpellRootAvailable(event){
-        spellView.createSpellSVG(event.data);
+        spellView.createSVG(event.data);
     }
 
     function onRelationsDataFinish(event) {
@@ -67,14 +67,14 @@ var hp = (function () {
 
   function onCardOneClicked() {
     actionsView.createActionsChart();
-    actionsModel.loadBubbleData();
+    actionsModel.loadBubbleData("all");
     //model.createChord();
   }
 
   function onCardTwoClicked() {
     spellView.createSpellChart();
-    spellModel.loadBubbleData();
-    spellView.setupButtons();
+    spellModel.loadBubbleData("all");
+    spellModel.setupButtons();
   }
 
     function onCardThreeClicked() {

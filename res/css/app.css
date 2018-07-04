@@ -72,8 +72,8 @@ html {
 }
 
 .button {
-  min-width: 130px;
-  padding: 4px 5px;
+  min-width: 100px;
+  padding: 4px 3px;
   cursor: pointer;
   text-align: center;
   font-size: 13px;
