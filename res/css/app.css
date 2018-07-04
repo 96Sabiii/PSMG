@@ -3,7 +3,7 @@ html {
      font-family: 'Fredericka the Great', cursive;
 }
  body {
-     background-image: url("images/quibblerBackground.png");
+     background-image: url("images/quibblerborder.png");
      background-size: 100%;
      width: 1000px;
      height: 1200px;
@@ -19,12 +19,17 @@ html {
      background-size: 100%;
 }
 
- .subhead {
+/*Auf der Welcome Seite passts noch nicht, wird geändert wenn alles gemerged ist*/
+ .navigation {
      border-left: 20%;
-     padding: 12px 0 12px 0;
+     padding-top:  50px;
+     padding-bottom: 5px;
      font-size: 16px;
 }
-}
+
+
+
+
  h1{
      font-family: 'Lovers Quarrel', cursive;
      font-size: 65px;
@@ -49,8 +54,7 @@ html {
 }
 
 #aktuell{
-  
-  border: 3px dotted #00102b;
+   border: 3px dotted #00102b;
   padding: 1.5px;
   opacity: .7;
 }
@@ -63,14 +67,12 @@ html {
  #circle:hover path.fade {
      display: none;
 }
- .quibblerLogo{
-     max-width: 100%;
-     width:20%;
-     height: auto;
-     padding-top: 3%;
-     margin-left: 70%;
-}
- //Newspaper Layout // .collumns {
+
+
+ 
+ //Newspaper Layout // 
+
+ .collumns {
 }
  .collumn {
      font-size: 14px;
