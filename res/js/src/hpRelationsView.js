@@ -27,7 +27,7 @@
   outerRadius = innerRadius + 15;
   
   arc = d3.svg.arc()
-  .innerRadius(innerRadius)
+  .innerRadius(innerRadius *1.01) //Abstand zwischen innerem und äußerem Kreis
   .outerRadius(outerRadius);
 
 

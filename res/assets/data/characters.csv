@@ -3,14 +3,14 @@ id,name,bio
 1,Sirius Black,Best friend of James Potter and godfather of Harry.
 2,Lavender Brown,Killed by a werewolf. She was a gryffindor student who dated Ron. 
 3,Cho Chang,Ravenclaw student who dated Cedric Diggory and Harry Potter.
-4,Vincent Crabbe Sr.,Father of Crabbe and death-eater who escaped Azkaban.
+4,Vincent Crabbe Sr.,Father of Crabbe and Death Eater who escaped Azkaban.
 5,Vincent Crabbe,Slytherin student who was best friends with Goyle and followed Draco.
-6,"Bartemius ""Barty"" Crouch Sr.",Head of the department of Internation Magical Cooperation. Killed by his son.
+6,"Bartemius ""Barty"" Crouch Sr.",Head of the Department of International Magical Cooperation. Killed by his son.
 7,"Bartemius ""Barty"" Crouch Jr.",Death Eater who impersonated Alastor Moody.
 8,Fleur Delacour,Participated in the Triwizard tournament and married Bill Weasley.
-9,Cedric Diggory,Participated in the Triwizard tournament and got killed by Voldemort.
-10,Aberforth Dumbledore,Albus' brother and owner of Hog's Head.
-11,Albus Dumbledore,Headmaster of Hogwarts killed by Snape.
+9,Cedric Diggory,Hufflepuff stutdent who participated in the Triwizard Tournament. He got killed by Voldemort.
+10,Aberforth Dumbledore,Albus' brother and owner of the Hog's Head.
+11,Albus Dumbledore,Headmaster of Hogwarts School of Witchcraft and Wizardry. Was killed by Snape to maintain his status as a syp.
 12,Dudley Dursley,Muggle son of Vernon and Petunia and first-cousin of Harry.
 13,Petunia Dursley,Harry's aunt and sister of Lily.
 14,Vernon Dursley,Harry's muggle uncle.
@@ -21,8 +21,8 @@ id,name,bio
 19,Goyle Sr.,Death Eater and father of Gregory Goyle.
 20,Gregory Goyle,Best friend of Crabbe. Slytherin student who dies by falling into Fiendfyre.
 21,Hermione Granger,One of Harry's best friend who marries Ron Weasley.
-22,Rubeus Hagrid,Half-giant who loves Harry. He was the keeper of Keys and Grounds at Hogwarts.
-23,Igor Karkaroff,Highmaster of Durmstrang and reformed death-eater.
+22,Rubeus Hagrid,Half-giant who loves Harry like a son. He was the Keeper of Keys and Grounds at Hogwarts.
+23,Igor Karkaroff,Highmaster of Durmstrang and reformed Death Eater.
 24,Viktor Krum,Participant in the Triwizard Tournament. Dated Hermione.
 25,Bellatrix Lestrange,Death Eater who was killed by Molly Weasley.
 26,Alice Longbottom,Mother of Neville who was tortured to insanity by Bellatrix.
@@ -46,21 +46,21 @@ id,name,bio
 44,Mary Riddle,Muggle mother of Voldemort who was killed by him.
 45,Lord Voldemort,The antagonist of the series who murdered many.
 46,Rita Skeeter,Reporter at the Daily Prophet.
-47,Severus Snape,Head of Slytherin house. Saved Harry in many occasions.
-48,Nymphadora Tonks,Married to Remus Lupin. Was killed by Bellatrix.
+47,Severus Snape,Head of Slytherin house. Betrayed Voldemort by becoming a spy to save Harry`s mother and saved Harry on many occasions.
+48,Nymphadora Tonks,Married to Remus Lupin. Was killed by her aunt Bellatrix.
 49,Dolores Janes Umbridge,Senior undersecretary to the Minister of Magic. Eventually sent to Azkaban Prison.
 50,Arthur Weasley,Father of the Weasleys and member of the Order of the Phoenix.
 51,Bill Weasley,Oldest son of Arthur and Molly. Husband of Fleur. 
 52,Charlie Weasley,Second son of Arthur and Molly. Works with dragons in Romania.
-53,Fred Weasley,Identical twin with George and co-owner of Weasleys' Wizard Wheezes
-54,George Weasley,Identical twin with Fred and co-owner of Weasleys' Wizard Wheezes
+53,Fred Weasley,Identical twin of George and co-owner of Weasleys' Wizard Wheezes.
+54,George Weasley,Identical twin of Fred and co-owner of Weasleys' Wizard Wheezes.
 55,Ginny Weasley,Marries Harry Potter. Only daughter of Molly and Arthur Weasley.
 56,Molly Weasley,Wife of Arthur and mother of the Weasleys. Kills Bellatrix.
 57,Percy Weasley,Third son of Arthur and Molly. He is a Gryffindor prefect.
 58,Ron Weasley,Harry's best friend. Marries Hermione.
 59,Dobby,House elf and friend of Harry. He is killed by Bellatrix.
 60,Fluffy,Three-headed dog belonging to Rubeus Hagrid.
-61,Hedwig,Harry's owl.
+61,Hedwig,Harry's pet owl.
 62,Moaning Myrtle,Ghost at Hogwarts.
 63,Aragog,Acromantula belonging to Rubeus Hagrid.
 64,Grawp,Giant-half brother of Hagrid.
