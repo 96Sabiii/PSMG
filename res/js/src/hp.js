@@ -74,6 +74,7 @@ var hp = (function () {
   function onCardTwoClicked() {
     spellView.createSpellChart();
     spellModel.loadBubbleData();
+    spellView.setupButtons();
   }
 
     function onCardThreeClicked() {

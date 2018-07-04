@@ -1529,7 +1529,7 @@ function spellsByDHSort(){
     }
 
 
-  setupButtons();
+  that.setupButtons = setupButtons;
   that.createSpellChart = createSpellChart;
   that.createSpellSVG = createSpellSVG;
   return that;
