@@ -9,12 +9,11 @@ var hp = hp || {};
 hp.hpActionsView = function() {
     "use strict";
     var that = new EventPublisher(),
-        div;
+        div,
+        size=1250;
 
     function createActionsChart(){
-        var chart = document.getElementById("Chart1");
-        chart.style.height = "800";
-        chart.style.width = "800";
+        var chart = d3.select('#Chart1');
 
         // Define the div for the tooltip
         div = d3.select("body").append("div")
@@ -23,13 +22,18 @@ hp.hpActionsView = function() {
     }
 
     function createActionsSVG(root) {
+        var pack = d3.pack()
+            .size([size, size])
+            .padding(1.5);
+        
         //SVG erstellen
         var selection = d3.select("#Chart1"),
-            g = selection.append("g").attr("transform", "translate(2,2)"),
-            colorCircles = d3.scaleOrdinal(d3.schemeCategory20);
+            colorCircles =d3.scaleSequential()
+                .domain([75, 100])
+                .interpolator(d3.interpolateRainbow);
 
-        var nodes = g.selectAll(".node")
-        .data(root.descendants().slice(1))
+        var nodes = selection.selectAll(".node")
+        .data(pack(root).leaves())
         .enter().append("g")
           .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
@@ -37,7 +41,7 @@ hp.hpActionsView = function() {
         nodes.append("circle").attr("r", function(d) {return d.r })
             .style("fill", function(d) {return colorCircles(d.value)} )
                 .on("mouseover", function(d) {
-                d3.select(this).style("stroke-width", 3).style("stroke", "black");
+                d3.select(this).style("stroke-width", 3).style("stroke", "#aeb4bf");
                 div.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -52,7 +56,7 @@ hp.hpActionsView = function() {
                         .style("opacity", 0);
         });
 
-        nodes.append("text").style("text-anchor", "middle").text(function(d) { if(d.data.value > 3) {return d.data.name} });
+        nodes.append("text").style("text-anchor", "middle").style("font-size", "23px").text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
     }
 

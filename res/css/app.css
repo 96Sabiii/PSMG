@@ -1,89 +1,192 @@
 html {
-  background-color: #385769;
-
+     background-color: #00102b;
+     font-family: 'Fredericka the Great', cursive;
+}
+ body {
+     background-image: url("images/quibblerborder.png");
+     background-size: 100%;
+     width: 1000px;
+     height: 1200px;
+     margin: 1% auto;
+     text-align: center;
+     font-size: 14px;
+     font-family: 'Fredericka the Great', cursive;
+     border-width: 40px;
 }
 
-
-body {
-  width: 1200px;
-  height: 1300px;
-  margin: 1% auto;
-  text-align: center;
-  font-size: 14px;
- font-family: 'Fredericka the Great', cursive;
-  background-color: #5b7f8f;
+#frontpage{
+  background-image: url("images/quibblerfrontpage.png");
+     background-size: 100%;
 }
 
-h1{
-  font-family: 'Lovers Quarrel', cursive;
-  font-size: 85px;
-  margin-bottom: 0px;
-}
-
-h2{
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 20px;
-  margin-top: 0px;
-}
-
-.content {
-  margin: 2%;
- font-family: 'Lovers Quarrel', cursive;
-  font-size: 400%;
-}
-
-.image {
-  padding-bottom: 2%;
-  margin-top:5%;
-  margin-left: 50%;
-  position: relative;
-  z-index: 50;
-}
-
-#circle circle {
-fill: none;
-pointer-events: all;
-}
-
-.group path {
-fill-opacity: .5;
-}
-
-path.chord {
-stroke: #000;
-stroke-width: .25px;
-}
-
-#circle:hover path.fade {
-display: none;
-}
-
-div.tooltip {
-    position: absolute;
-    text-align: center;
-    width: 200px;
-    padding: 4px;
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 14px;
-    background: lightsteelblue;
-    border: 0px;
-    border-radius: 8px;
-    pointer-events: none;
-}
-
-#myChart {
-  margin-left: 20%;
-}
-
-#Chart2 {
-  height: 1000px;
-  width: 720px;
-  font-family: 'Kaushan Script', cursive;
+/*Auf der Welcome Seite passts noch nicht, wird geändert wenn alles gemerged ist*/
+ .navigation {
+     border-left: 20%;
+     padding-top:  50px;
+     padding-bottom: 5px;
+     font-size: 16px;
 }
 
 
 
-#piechart {
-  height: 300px;
-  width: 300px;
+
+ h1{
+     font-family: 'Lovers Quarrel', cursive;
+     font-size: 65px;
+     margin-bottom: 0px;
+     margin-top: 15px;
 }
+ h2{
+     font-family: 'Fredericka the Great', cursive;
+     font-size: 20px;
+     margin-top: 0px;
+     padding-bottom: 3px;
+     border-bottom: 1px solid #00102b;
+}
+ a:link{
+     color:#00102b;
+}
+ a:visited{
+     color:#5f0096;
+}
+ a:hover{
+     color:#0c000a;
+}
+
+#aktuell{
+   border: 3px dotted #00102b;
+  padding: 1.5px;
+  opacity: .7;
+}
+
+}
+ #circle circle {
+     fill: none;
+     pointer-events: all;
+}
+ #circle:hover path.fade {
+     display: none;
+}
+
+
+ 
+ //Newspaper Layout // 
+
+ .collumns {
+}
+ .collumn {
+     font-size: 14px;
+     line-height: 20px;
+     width: 28%;
+     display: inline-block;
+     padding: 0 1% 0 1%;
+     vertical-align: top;
+     margin-bottom: 50px;
+     transition: all 0.7s;
+}
+ .collumn + .collumn {
+     border-left: 1px solid #2f2f2f;
+}
+ .collumn .headline {
+     text-align: center;
+     line-height: normal;
+     font-family: "Playfair Display", serif;
+     display: block;
+     margin: 0 auto;
+}
+ .collumn .headline.h1 {
+     font-weight: 700;
+     font-size: 30px;
+     text-transform: uppercase;
+     padding: 10px 0 10px 0;
+}
+ .collumn .subheadline.h1 {
+     font-weight: 400;
+     font-style: italic;
+     font-size: 24px;
+     box-sizing: border-box;
+     padding: 10px 0 10px 0;
+}
+ .collumn .headline.h2:before {
+     border-top: 1px solid #2f2f2f;
+     content: "";
+     width: 100px;
+     height: 7px;
+     display: block;
+     margin: 0 auto;
+}
+ .collumn .subheadline.h2:after {
+     border-bottom: 1px solid #2f2f2f;
+     content: "";
+     width: 100px;
+     height: 13px;
+     display: block;
+     margin: 0 auto;
+}
+ .collumn .headline.h3 {
+     font-weight: 400;
+     font-style: italic;
+     font-size: 36px;
+     width: 100%;
+     padding: 10px 0 10px 0;
+}
+ .collumn .subheadline.h3 {
+     font-weight: 200;
+     font-size: 26px;
+     width: 100%;
+     padding: 10px 0 10px 0;
+     display: block;
+     margin: 0 auto;
+}
+ .collumn .citation {
+     font-family: "Playfair Display", serif;
+     font-size: 36px;
+     line-height: 44px;
+     text-align: center;
+     font-weight: 400;
+     display: block;
+     margin: 40px 0 40px 0;
+     font-feature-settings: "liga", "dlig";
+}
+ .collumn .citation:before {
+     border-top: 1px solid #2f2f2f;
+     content: "";
+     width: 100px;
+     height: 16px;
+     display: block;
+     margin: 0 auto;
+}
+ .collumn .citation:after {
+     border-bottom: 1px solid #2f2f2f;
+     content: "";
+     width: 100px;
+     height: 16px;
+     display: block;
+     margin: 0 auto;
+}
+ .collumn .figure {
+     margin: 0 0 20px;
+}
+ .collumn .figcaption {
+     font-style: italic;
+     font-size: 12px;
+}
+ .media {
+     -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+     filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+     mix-blend-mode: multiply;
+     width: 100%;
+}
+
+.legendBox {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border: 2px solid;
+}
+
+#legend {
+    text-align: justify;
+    margin-bottom: 10%;
+}
+ 
