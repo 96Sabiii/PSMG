@@ -1,5 +1,5 @@
 /* Auf Grundlage von https://www.kode.to/ */
- 
+
 .cards {
   bottom: 0;
   display: -webkit-box;
@@ -12,7 +12,7 @@
   justify-content: center;
 
 }
- 
+
 .card {
   height: 300px;
   /*wieviel abstand zwischen karten */
@@ -29,7 +29,7 @@
   top: 0px;
   z-index: 10;
 }
- 
+
 .card-face {
   bottom: 0;
   content: '';
@@ -54,15 +54,15 @@
   right: 0;
   top: 0;
 }
- 
+
 .card-label {
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
-  font-size: 24px;
+  font-family: 'Lovers Quarrel', cursive;
   font-weight: bold;
+  font-size: 50px;
   letter-spacing: -0.025em;
   padding: 15px 0 0 15px;
 }
- 
+
 .card:nth-child(1):hover .card-face,
 .card:nth-child(2):hover .card-face,
 .card:nth-child(3):hover .card-face,
@@ -99,7 +99,7 @@
   color: #db0000;
   text-shadow: -0.025em 0.025em 0 #ff8080;
 }
- 
+
 .card:nth-child(2) .card-face {
   background: -webkit-linear-gradient(225deg, #99c2ff, #0b5eda);
   background: linear-gradient(-135deg, #99c2ff, #0b5eda);
@@ -111,7 +111,7 @@
   color: #db0084;
   text-shadow: -0.025em 0.025em 0 #ff80cc;
 }
- 
+
 .card:nth-child(3) .card-face {
   background: -webkit-linear-gradient(225deg, #99ffc2, #0bda5e);
   background: linear-gradient(-135deg, #99ffc2, #0bda5e);
@@ -123,7 +123,7 @@
   color: #af00db;
   text-shadow: -0.025em 0.025em 0 #e680ff;
 }
- 
+
 .card:nth-child(4) .card-face {
   background: -webkit-linear-gradient(225deg, #ebff99, #b1da0b);
   background: linear-gradient(-135deg, #ebff99, #b1da0b);
@@ -135,7 +135,7 @@
   color: #2c00db;
   text-shadow: -0.025em 0.025em 0 #9980ff;
 }
- 
+
 /*.card:nth-child(5) .card-face {
   background: -webkit-linear-gradient(225deg, #99c2ff, #0b5eda);
   background: linear-gradient(-135deg, #99c2ff, #0b5eda);
@@ -162,7 +162,7 @@
 .card:nth-child(5):hover:after {
   top: -175px;
 }
- 
+
 .card:nth-child(6) .card-face {
   background: -webkit-linear-gradient(225deg, #99ffff, #0bdada);
   background: linear-gradient(-135deg, #99ffff, #0bdada);
@@ -189,7 +189,7 @@
 .card:nth-child(6):hover:after {
   top: -175px;
 }
- 
+
 .card:nth-child(7) .card-face {
   background: -webkit-linear-gradient(225deg, #99ffc2, #0bda5e);
   background: linear-gradient(-135deg, #99ffc2, #0bda5e);
@@ -216,7 +216,7 @@
 .card:nth-child(7):hover:after {
   top: -175px;
 }
- 
+
 .card:nth-child(8) .card-face {
   background: -webkit-linear-gradient(225deg, #adff99, #35da0b);
   background: linear-gradient(-135deg, #adff99, #35da0b);
@@ -243,7 +243,7 @@
 .card:nth-child(8):hover:after {
   top: -175px;
 }
- 
+
 .card:nth-child(9) .card-face {
   background: -webkit-linear-gradient(225deg, #ebff99, #b1da0b);
   background: linear-gradient(-135deg, #ebff99, #b1da0b);
@@ -270,7 +270,7 @@
 .card:nth-child(9):hover:after {
   top: -175px;
 }
- 
+
 .card:nth-child(10) .card-face {
   background: -webkit-linear-gradient(225deg, #ffd699, #da870b);
   background: linear-gradient(-135deg, #ffd699, #da870b);
@@ -297,7 +297,7 @@
 .card:nth-child(10):hover:after {
   top: -175px;
 }*/
- 
+
 @-webkit-keyframes fade {
   0% {
     opacity: 0.9;
@@ -310,7 +310,7 @@
             transform: scale(1.15);
   }
 }
- 
+
 @keyframes fade {
   0% {
     opacity: 0.9;

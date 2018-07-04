@@ -27,9 +27,6 @@ html {
      font-size: 16px;
 }
 
-
-
-
  h1{
      font-family: 'Lovers Quarrel', cursive;
      font-size: 65px;
@@ -68,6 +65,43 @@ html {
      display: none;
 }
 
+
+#piechart {
+  height: 300px;
+  width: 300px;
+}
+
+.button {
+  min-width: 130px;
+  padding: 4px 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+}
+
+.button.active {
+  background: #000;
+  color: #fff;
+}
+
+#vis {
+  width: 940px;
+  height: 600px;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+#toolbar {
+  margin-top: 10px;
+}
+
+.book {
+  font-size: 21px;
+  fill: #aaa;
+  cursor: default;
+}
 
  
  //Newspaper Layout // 
@@ -189,4 +223,3 @@ html {
     text-align: justify;
     margin-bottom: 10%;
 }
- 
