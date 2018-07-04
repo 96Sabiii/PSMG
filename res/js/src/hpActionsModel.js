@@ -31,13 +31,11 @@ hp.hpActionsModel = function() {
         }
 
         //Diagramm erstellen
-        var nodeFkt = d3.pack().size([700, 700]);
 
         var root = d3.hierarchy(object)
             .sum(function(d) { return d.value; })
             .sort(function(a, b) { return b.value - a.value; });
 
-        nodeFkt(root);
         that.notifyAll("actionsRootAvailable", root);
     }
 

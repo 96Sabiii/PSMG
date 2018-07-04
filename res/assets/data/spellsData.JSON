@@ -68,7 +68,7 @@
         {
         "name" : "Avada Kedavra",
         "classification" : "Curse",
-        "effect" : "Murders opponentUnforgivable",
+        "effect" : "Murders opponent. Unforgivable",
         "DHCount" : 7,
         "HBPCount" : 3,
         "OotPCount" : 3,
@@ -81,7 +81,7 @@
         {
         "name" : "Crucio",
         "classification" : "Curse",
-        "effect" : "Tortures opponentUnforgivable",
+        "effect" : "Tortures opponent. Unforgivable",
         "DHCount" : 4,
         "HBPCount" : 2,
         "OotPCount" : 4,
@@ -146,7 +146,7 @@
         {
         "name" : "Aguamenti",
         "classification" : "Charm",
-        "effect" : "Shoots water from wand.",
+        "effect" : "Shoots water from wand",
         "DHCount" : 2,
         "HBPCount" : 8,
         "OotPCount" : 0,
@@ -159,7 +159,7 @@
         {
         "name" : "Protego",
         "classification" : "Charm",
-        "effect" : "Cause spells to reflect back to the sender.",
+        "effect" : "Cause spells to reflect back to the sender",
         "DHCount" : 5,
         "HBPCount" : 1,
         "OotPCount" : 4,
@@ -211,7 +211,7 @@
         {
         "name" : "Imperio",
         "classification" : "Curse",
-        "effect" : "Controls a personUnforgivable",
+        "effect" : "Controls a person. Unforgivable",
         "DHCount" : 5,
         "HBPCount" : 0,
         "OotPCount" : 0,
@@ -653,7 +653,7 @@
         {
         "name" : "Anapneo",
         "classification" : "Spell",
-        "effect" : "Clears the target's airway.",
+        "effect" : "Clears the target's airway",
         "DHCount" : 0,
         "HBPCount" : 1,
         "OotPCount" : 0,
@@ -731,7 +731,7 @@
         {
         "name" : "Densaugeo",
         "classification" : "Spell",
-        "effect" : "Enlarges Teeth",
+        "effect" : "Enlarges teeth",
         "DHCount" : 0,
         "HBPCount" : 0,
         "OotPCount" : 0,
@@ -757,7 +757,7 @@
         {
         "name" : "Duro",
         "classification" : "Spell",
-        "effect" : "Makes Objects Hard",
+        "effect" : "Makes objects hard",
         "DHCount" : 1,
         "HBPCount" : 0,
         "OotPCount" : 0,
@@ -770,7 +770,7 @@
         {
         "name" : "Eat Slugs",
         "classification" : "Charm",
-        "effect" : "Target Vomits Slugs",
+        "effect" : "Target vomits slugs",
         "DHCount" : 0,
         "HBPCount" : 0,
         "OotPCount" : 0,
@@ -796,7 +796,7 @@
         {
         "name" : "Expulso",
         "classification" : "Spell",
-        "effect" : "Makes Objects Explode",
+        "effect" : "Makes objects explode",
         "DHCount" : 1,
         "HBPCount" : 0,
         "OotPCount" : 0,
@@ -835,7 +835,7 @@
         {
         "name" : "Geminio",
         "classification" : "Spell",
-        "effect" : "Duplicates an Object",
+        "effect" : "Duplicates an object",
         "DHCount" : 1,
         "HBPCount" : 0,
         "OotPCount" : 0,
@@ -1069,7 +1069,7 @@
         {
         "name" : "Serpensortia",
         "classification" : "Spell",
-        "effect" : "Produces Snake",
+        "effect" : "Produces snake",
         "DHCount" : 0,
         "HBPCount" : 0,
         "OotPCount" : 0,

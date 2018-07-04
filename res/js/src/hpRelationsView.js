@@ -1,3 +1,4 @@
+
   /* eslint-env browser */
   /* global EventPublisher */
 
@@ -13,8 +14,8 @@
     innerRadius, 
     outerRadius,
     div,
-    m = 110,
-    size = 900;
+    m = 150,
+    size = 1200;
 
 
   function createRelationsChart() {
@@ -26,7 +27,7 @@
   outerRadius = innerRadius + 15;
   
   arc = d3.svg.arc()
-  .innerRadius(innerRadius)
+  .innerRadius(innerRadius *1.01) //Abstand zwischen innerem und äußerem Kreis
   .outerRadius(outerRadius);
 
 
@@ -46,11 +47,6 @@
 
 
   svg = d3.select("#Chart3").append("svg")
-  /*.attr("width", width)
-  .attr("height", height)
-  .append("g")
-  .attr("id", "circle")
-  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");*/
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")

@@ -60,7 +60,9 @@ hp.hpSpellView = function() {
               .enter().append("g")
                 .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
                 .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
                 //hier Bubble anpassungen
+
               nodes.append("circle")
                 .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
                 //.attr("r", function(d) {return d.r })
@@ -129,10 +131,11 @@ hp.hpSpellView = function() {
 
                       //Text innerhalb den Kuchenteilen
                       g.append("text")
+                  .style("text-anchor", "middle")
    	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
                         .text(function(d) { if(d.data.count > 0) {return d.data.count} })
                         .style("fill", "#000")
-                        .style("font-size", "120%");
+                        .style("font-size", "100%");
 
                       //Text außerhalb der Kuchenteile
                       g.append("text")
@@ -1519,8 +1522,6 @@ function spellsByDHSort(){
     .attr("font-size", 15);
     }
 }// End of DH spells
-
-
 
     function deleteChart() {
         while (chart.firstChild) {
