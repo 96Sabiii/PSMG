@@ -22,7 +22,7 @@ html {
 /*Auf der Welcome Seite passts noch nicht, wird geändert wenn alles gemerged ist*/
  .navigation {
      border-left: 20%;
-     padding-top:  50px;
+     padding-top:  100px;
      padding-bottom: 5px;
      font-size: 16px;
 }
@@ -103,8 +103,8 @@ html {
   cursor: default;
 }
 
- 
- //Newspaper Layout // 
+
+ //Newspaper Layout //
 
  .collumns {
 }
