@@ -10,34 +10,33 @@ Allgemein:
 
 
 Welcome:
--	Cards auf Welcome Seite verkleinern, drehen- damit sie so aussehen als würden sie
-	aus dem Kessel kommen
-	
 -	Navigationsbereich weiter rauf, aktuelle Seite stärker hervorheben
 	
 	
 Actions:
 -	Halo Chart fertig machen, so irgendwie -> http://bl.ocks.org/nbremer/6599644129c034d0cb17fcdc452c310b
 
--	"Wingardium Leviosa" dazu bewegen innerhalb seiner Bubble zu bleiben (siehe Spell Chart, da gehts auch^^)
+-	"Wingardium Leviosa" dazu bewegen innerhalb seiner Bubble zu bleiben (beim Spell Chart gehts auch NICHT)
 
 Spells:
--	Wenn man beim Chart von einem Buch zurück auf Overall geht kommt kein Chart mehr!!!
+-	Button und PieChart- Schriftart evtl. zu  font-family: 'Kaushan Script', cursive; abändern, da nicht gut lesbar
+
+-	im Pie Chart vllt. noch Gesamtzahl der Spruchvorkomnisse eines Spruchs anzeigen? Bei den einzelnen Büchern auch, wenn möglich
 
 -	Spell Chart samt Buttons als Pop-up Fenster (-> CSS "Modals" als Lösung?),
 	sodass in der vergrößerten Ansicht direkt von Buch zu Buch gewechselt werden kann
 	ohne das die Grafik wieder verkleinert werden muss
 	
--	Pie Charts bei vergrößerter Spell-Ansicht rausnehmen
+<---->	Pie Charts bei vergrößerter Spell-Ansicht rausnehmen -->>> OK, ABER: Tooltipgröße muss noch angepasst werden
 
--	Bubble Farben an Chord Diagramm anpassen (obwohl schon ebenfalls .interpolateRainbow genutzt wird,
+<---->	Bubble Farben an Chord Diagramm anpassen (obwohl schon ebenfalls .interpolateRainbow genutzt wird,
 	passen Farben nicht wirlich), anscheinend immer eine Farbe für Spells mit gleicher Auftrittshäufigkeit?!
-	
-- 	Buttons anpassen allg., Farben an Legende, Titel der Bücher nicht über zwei Zeilen, vllt. als Box, ...
-	
+		-->> ich habs versucht -.- 
+
 -	Bei den Spells evtl. am Rand (wenn vergrößert) noch eine Übersichtsliste mit allen 
 	Spells anlegen? (wenn noch Zeit)
 	
+
 Characters:
 -	Harry Potter im Characters Chart zu schmal-> mehr als 50 Interaktionen, die meisten
 	davon gehen zu ihm hin (er ist öfter Target als Source), Fehler suchen-> Code, Matrix, Csv?
