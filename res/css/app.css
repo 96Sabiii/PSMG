@@ -81,16 +81,18 @@ html {
 #piechart {
   height: 300px;
   width: 300px;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .button {
   min-width: 100px;
-  padding: 4px 3px;
+  padding: 4px 4px;
   cursor: pointer;
   text-align: center;
   font-size: 13px;
   border: 1px solid #e0e0e0;
   text-decoration: none;
+  border-radius: 50%;
 }
 
 .button.active {

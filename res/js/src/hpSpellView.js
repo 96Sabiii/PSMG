@@ -58,7 +58,7 @@ hp.hpSpellView = function() {
               var selection = d3.select("#Chart2"),
                   g = selection.append("g").attr("transform", "translate(2,2)"),
                   colorCircles = d3.scaleSequential()
-                  .domain([55, 100])
+                  .domain([0, 15])
                   .interpolator(d3.interpolateRainbow);
 
               var nodes = g.selectAll(".node")
@@ -94,7 +94,7 @@ hp.hpSpellView = function() {
                           height="150",
                           radius = Math.min(width, height)/2;
                       var color = d3.scaleOrdinal()
-    	                          .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
+    	                          .range(["#FF0000","#FF7F00","#FFFF00","#00FF00","#0000FF","#4B0082","#9400D3"]);
 
                      //Datenzuweisung
                       var data = [{"name":"ps","count":d.data.ss},
@@ -195,7 +195,7 @@ hp.hpSpellView = function() {
             var selection = d3.select("#Chart2"),
                 g = selection.append("g").attr("transform", "translate(2,2)"),
                 colorCircles = d3.scaleSequential()
-                .domain([55, 100])
+                .domain([0, 15])
                 .interpolator(d3.interpolateRainbow);
 
             var nodes = g.selectAll(".node")
