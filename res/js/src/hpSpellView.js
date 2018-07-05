@@ -22,7 +22,7 @@ hp.hpSpellView = function() {
           .attr("class", "tooltip")
           .style("opacity", 0);
     }
-    
+
     function createSVG(data) {
         var root = data[0],
             bookNr = data [1],
@@ -122,7 +122,7 @@ hp.hpSpellView = function() {
                               .attr("width", "200px")
                               .attr("height", "200px")
                                     .append("g")
-                                    //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
+                                    //Ändere die Werte in "translate" um die Position des Piecharts zu ändern
                                     .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
 
                       var g = svg.selectAll("arc")
