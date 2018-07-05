@@ -75,7 +75,7 @@ hp.hpSpellView = function() {
                 .attr("r", 0)
                   .style("fill", function(d) {return colorCircles(d.value)} )
                       .on("mouseover", function(d) {
-                      d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                      d3.select(this).style("stroke-width", 4).style("stroke", " #aeb4bf");
                       div.transition()
                           .attr("id","pie")
                           .duration(200)
@@ -137,7 +137,7 @@ hp.hpSpellView = function() {
 
                       //Text innerhalb den Kuchenteilen
                       g.append("text")
-                  .style("text-anchor", "middle")
+                        .style("text-anchor", "middle")
    	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
                         .text(function(d) { if(d.data.count > 0) {return d.data.count} })
                         .style("fill", "#000")
@@ -177,12 +177,14 @@ hp.hpSpellView = function() {
 
               nodes.append("text")
                 .attr("class", function(d){return d.children ? "node" : "leaf node text";})
+                .attr("font-size", 0 + "px")
                 .style("text-anchor", "middle")
                 .text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
               d3.selectAll(".leaf.node.text")
                 .transition()
-                .duration(2100);
+                .duration(2100)
+                .attr("font-size", 20 + "px");
 
             } //End of CreateSpellSVG()
 
@@ -208,7 +210,7 @@ hp.hpSpellView = function() {
               .attr("r", 0)
                 .style("fill", function(d) {return colorCircles(d.value)} )
                 .on("mouseover", function(d) {
-                d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                d3.select(this).style("stroke-width", 4).style("stroke", " #aeb4bf");
                 div.transition()
                     .attr("id","pie")
                     .duration(200)
@@ -235,13 +237,15 @@ hp.hpSpellView = function() {
 
         nodes.append("text")
           .attr("class", function(d){return d.children ? "node" : "leaf node text";})
+          .attr("font-size", 0 +"px")
           .style("text-anchor", "middle")
           .text(function(d) {var input = d.data, count = Object.values(input)[bookNr]; if(count > 0) {return d.data.name} });
         //ss gibts nicht?
 
         d3.selectAll(".leaf.node.text")
           .transition()
-          .duration(2100);
+          .duration(2100)
+          .attr("font-size", 20 + "px");
 }
 
     function deleteChart() {

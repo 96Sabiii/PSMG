@@ -40,7 +40,7 @@ hp.hpSpellModel = function() {
             object.children.push(el);
         }
     }
-    
+
     function createBubbleDataNew(data, bookNr) {
         var object = {name: "root", children: []};
         //daten umwandeln
@@ -59,7 +59,7 @@ hp.hpSpellModel = function() {
                       dh, hbp, ootp, gof, poa, cos, ss};
             object.children.push(el);
         }
-        
+
         if (bookNr == "all") {
 
             //Bubblechart erstellen
@@ -70,10 +70,10 @@ hp.hpSpellModel = function() {
                 .sort(function(a, b) {return b.value - a.value; });
 
         } else {
-            
+
             //Bubblechart erstellen
             var nodeFkt = d3.pack().size([size, size]);
-            
+
             root = d3.hierarchy(object)
             .sum(function(d) {return Object.values(d)[bookNr]; })
             .sort(function(a, b) {return Object.values(b)[bookNr] - Object.values(a)[bookNr]; });
@@ -86,7 +86,7 @@ hp.hpSpellModel = function() {
         that.notifyAll("spellRootAvailable", data);
 
     }
-    
+
     function setupButtons(){
         //model auslagern
          document.getElementById("ps").onclick = function(){ loadBubbleData(10); };
@@ -97,6 +97,19 @@ hp.hpSpellModel = function() {
          document.getElementById("hbp").onclick = function(){ loadBubbleData(5); };
          document.getElementById("dh").onclick = function(){ loadBubbleData(4); };
          document.getElementById("all").onclick = function(){ loadBubbleData("all"); };
+
+         d3.select("#toolbar")
+           .selectAll(".button")
+           .on("click", function(){
+             // Remove active class from all buttons
+             d3.selectAll('.button').classed('active', false);
+             // Find the button just clicked
+             var button = d3.select(this);
+             // Set it as the active button
+             button.classed('active', true);
+           })
+
+
     }
 
     that.loadBubbleData = loadBubbleData;
