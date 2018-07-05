@@ -22,6 +22,8 @@ Actions:
 -	"Wingardium Leviosa" dazu bewegen innerhalb seiner Bubble zu bleiben (siehe Spell Chart, da gehts auch^^)
 
 Spells:
+-	Wenn man beim Chart von einem Buch zurück auf Overall geht kommt kein Chart mehr!!!
+
 -	Spell Chart samt Buttons als Pop-up Fenster (-> CSS "Modals" als Lösung?),
 	sodass in der vergrößerten Ansicht direkt von Buch zu Buch gewechselt werden kann
 	ohne das die Grafik wieder verkleinert werden muss
