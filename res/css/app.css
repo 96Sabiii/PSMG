@@ -20,12 +20,20 @@ html {
 }
 
 /*Auf der Welcome Seite passts noch nicht, wird geändert wenn alles gemerged ist*/
+
+/* #frontpage.navigation{}- irgendwie ansprechen, ich checks grad nicht->
+  padding-top:
+  colour: black;*/
+
+
  .navigation {
      border-left: 20%;
      padding-top:  50px;
      padding-bottom: 5px;
      font-size: 16px;
 }
+}
+
 
  h1{
      font-family: 'Lovers Quarrel', cursive;
@@ -51,9 +59,13 @@ html {
 }
 
 #aktuell{
-   border: 3px dotted #00102b;
-  padding: 1.5px;
-  opacity: .7;
+   border: 3px solid #a31313;
+    padding: 1.5px;
+    padding: 5px;
+    box-shadow: 2px 1.5px #a31313;
+}
+  
+
 }
 
 }
