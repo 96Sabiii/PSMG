@@ -83,7 +83,7 @@ hp.hpSpellView = function() {
                           .style("width","220px")
                         //  .style("height","250px")
                           .style("text-align","center");
-                      div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
+                      div.html("<b>" + d.data.name + "</b> <br/>Total: " + d.value +  " <br/>" + d.data.effect
                                 + "<br/> Classification: " + d.data.classification)
                                 .style("left", (d3.event.pageX) + "px")
                                 .style("top", (d3.event.pageY - 28) + "px");
@@ -218,7 +218,9 @@ hp.hpSpellView = function() {
                     .style("width","220px")
                     //.style("heigth","100px")
                     .style("text-align","center");
-                div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
+                div.html("<b>" + d.data.name + "</b> <br/> Total: "
+                          + Object.values(d.data)[bookNr]
+                          + " <br/>" + d.data.effect
                           + "<br/> Classification: " + d.data.classification)
                           .style("left", (d3.event.pageX) + "px")
                           .style("top", (d3.event.pageY - 28) + "px");
