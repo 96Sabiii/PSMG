@@ -19,9 +19,10 @@ Actions:
 -	"Wingardium Leviosa" dazu bewegen innerhalb seiner Bubble zu bleiben (beim Spell Chart gehts auch NICHT)
 
 Spells:
--	Button und PieChart- Schriftart evtl. zu  font-family: 'Kaushan Script', cursive; abändern, da nicht gut lesbar
+-(erledigt)Button und PieChart- Schriftart evtl. zu  font-family: 'Kaushan Script', cursive; abändern, da nicht gut lesbar
 
--	im Pie Chart vllt. noch Gesamtzahl der Spruchvorkomnisse eines Spruchs anzeigen? Bei den einzelnen Büchern auch, wenn möglich
+-(erledigt)im Pie Chart vllt. noch Gesamtzahl der Spruchvorkomnisse eines Spruchs anzeigen? Bei den einzelnen Büchern auch, 
+	wenn möglich
 
 -	Spell Chart samt Buttons als Pop-up Fenster (-> CSS "Modals" als Lösung?),
 	sodass in der vergrößerten Ansicht direkt von Buch zu Buch gewechselt werden kann
