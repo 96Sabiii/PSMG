@@ -120,7 +120,7 @@ hp.hpSpellView = function() {
                       var svg = d3.select("#pie")
                               .append("svg")
                               .attr("width", "200px")
-                              .attr("height", "200px")
+                              .attr("height", "100px")
                                     .append("g")
                                     //Ändere die Werte in "translate" um die Position des Piecharts zu ändern
                                     .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
