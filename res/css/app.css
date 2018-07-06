@@ -119,6 +119,18 @@ html {
 
 
  //Newspaper Layout //
+#column1{
+  z-index: 10;
+}
+
+#column2{
+  z-index:5;
+}
+
+#column3{
+  z-index:0;
+}
+
 
  .collumns {
 }

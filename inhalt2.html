@@ -29,10 +29,10 @@
          <h2>Hover over the Bubble Chart to see the distribution of the spells throughout the books</h2>
       </header>
       <main>
-         <!--  nach http://harrypotter.wikia.com/wiki/The_Quibbler_articles 
+         <!--  nach http://harrypotter.wikia.com/wiki/The_Quibbler_articles
             http://www.hogwartsishere.com/library/book/6198/chapter/2/-->
          <div class="collumns">
-            <div class="collumn">
+            <div class="collumn" id="column1">
                <div class="head">
                   <span class="headline h1">Spells of the Potter Universe</span>
                   <p><span class="subheadline h1">This is where the spell magic happens</span></p>
@@ -75,6 +75,8 @@
                      <font color="#4040a1">The Half-Blood Prince: hbp</font><br>
                      <font color="#e8e36a">The Deathly Hallows: dh</font></b> -->
                </div>
+
+            <div class="expand" id="expand">
               <div id="toolbar">
                   <a id="all" class="button active">Overall</a> <br><br>
                   <a id="ps" class="button" style="background-color:#FF0000">PS</a>
@@ -84,11 +86,15 @@
                   <a id="ootp" class="button" style="background-color:#0000FF">OTP</a>
                   <a id="hbp" class="button"style="background-color:#4B0082">HBP</a>
                   <a id="dh" class="button" style="background-color:#9400D3">DH</a>
-                  <p> &nbsp; </p>
-                </div>
-               <svg class="expand" id="Chart2"  viewBox="0 0 1250 1250"></svg>
+                  <p id="gap"> &nbsp; </p>
+              </div>
+               <svg  id="Chart2"  viewBox="0 0 1250 1250"></svg>
             </div>
-            <div class="collumn">
+          </label>
+
+
+          </div>
+            <div class="collumn" id="column2">
                <div class="head">
                   <span class="headline h2">"DEATH EATERS ON THE DANCEFLOOR!"</span>
                   <p><span class="subheadline h2">Harry Potter almost captured</span></p>
@@ -100,12 +106,12 @@
                   <figcaption class="figcaption">Death and Roll`</figcaption>
                </figure>
             </div>
-            <div class="collumn">
+            <div class="collumn" id="column3">
                <div class="head">
                   <span class="headline h3">"ISSUES AT PLATFORM NINE AND THREE QUARTERS"</span>
                   <p><span class="subheadline h3">Hogwarts Express rides delayed</span></p>
                </div>
-               <P>Well, folks, it turns out you can no longer ride the Hogwarts Express until platform Nine and Three Quarters gets fixed.A few escaped Azkaban prisoners have were found guilty of dirty dancing and drunken damaging the whole platform area.<span>Students and people have been making sure to stay home</span> 
+               <P>Well, folks, it turns out you can no longer ride the Hogwarts Express until platform Nine and Three Quarters gets fixed.A few escaped Azkaban prisoners have were found guilty of dirty dancing and drunken damaging the whole platform area.<span>Students and people have been making sure to stay home</span>
                <p>Therefore, no traveling to and from Hogsmeade on train, students at Hogwarts cannot go anywhere. First Year`s need to ride in flying cars on Hippogrifs or Thestrals </p>
                <figure class="figure">
                   <img class="media" src="https://media.giphy.com/media/oYifOYOVy74nm/giphy.gif" alt="Hogwarts Express Gif">
@@ -135,4 +141,3 @@
       hp.onCardTwoClicked();
    </script>
 </html>
-

@@ -1,0 +1,53 @@
+﻿ToDo, Ideen, Verbesserungen, Bugs, etc.:
+
+
+Allgemein:
+- 	Dokumentation schreiben
+
+-	Charts nach drüberhovern noch stärker vergrößern und mittig vom Bildschirm anzeigen
+
+-	GIFs sollen nicht durch die vergrößerten Charts durchscheinenn (Opacity rausnehmen beim Chart hilft nicht, Problemsuche)
+
+
+Welcome:
+-	Navigationsbereich weiter rauf, aktuelle Seite stärker hervorheben
+	
+	
+Actions:
+-	Halo Chart fertig machen, so irgendwie -> http://bl.ocks.org/nbremer/6599644129c034d0cb17fcdc452c310b
+
+-	"Wingardium Leviosa" dazu bewegen innerhalb seiner Bubble zu bleiben (beim Spell Chart gehts auch NICHT)
+
+Spells:
+-	Button und PieChart- Schriftart evtl. zu  font-family: 'Kaushan Script', cursive; abändern, da nicht gut lesbar
+
+-	im Pie Chart vllt. noch Gesamtzahl der Spruchvorkomnisse eines Spruchs anzeigen? Bei den einzelnen Büchern auch, wenn möglich
+
+-	Spell Chart samt Buttons als Pop-up Fenster (-> CSS "Modals" als Lösung?),
+	sodass in der vergrößerten Ansicht direkt von Buch zu Buch gewechselt werden kann
+	ohne das die Grafik wieder verkleinert werden muss
+	
+<---->	Pie Charts bei vergrößerter Spell-Ansicht rausnehmen -->>> OK, ABER: Tooltipgröße muss noch angepasst werden
+
+<---->	Bubble Farben an Chord Diagramm anpassen (obwohl schon ebenfalls .interpolateRainbow genutzt wird,
+	passen Farben nicht wirlich), anscheinend immer eine Farbe für Spells mit gleicher Auftrittshäufigkeit?!
+		-->> ich habs versucht -.- 
+
+-	Bei den Spells evtl. am Rand (wenn vergrößert) noch eine Übersichtsliste mit allen 
+	Spells anlegen? (wenn noch Zeit)
+	
+
+Characters:
+-	Harry Potter im Characters Chart zu schmal-> mehr als 50 Interaktionen, die meisten
+	davon gehen zu ihm hin (er ist öfter Target als Source), Fehler suchen-> Code, Matrix, Csv?
+
+
+FunFacts:
+-	Fun Facts Seite?
+
+
+Charts:
+-nicht nur bei hovern vergrößern (vlt click?)
+
+
+

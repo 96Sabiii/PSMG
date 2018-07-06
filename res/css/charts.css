@@ -39,11 +39,26 @@
  #Chart3 {
      font-family: 'Kaushan Script', cursive;
 }
- .expand:hover {
+
+#pie{
+  z-index:2;
+}
+#gap{
+  font-size: 0px;
+  line-height: 10px;
+}
+
+
+
+
+
+ .expand:hover{
      transform: scale(2.2);
      background-size: 50% auto;
-     background-color: white;
+     background-color: lightgrey;
      font-size: 140%;
+     overflow: visible;
+     z-index: 1;
 }
  .expand {
      transition: all 1s;
