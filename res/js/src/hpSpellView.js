@@ -81,7 +81,6 @@ hp.hpSpellView = function() {
                           .duration(200)
                           .style("opacity", .9)
                           .style("width","220px")
-                          .style("height","250px")
                           .style("text-align","center");
                       div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
                                 + "<br/> Classification: " + d.data.classification)
@@ -212,11 +211,9 @@ hp.hpSpellView = function() {
                 .on("mouseover", function(d) {
                 d3.select(this).style("stroke-width", 4).style("stroke", " #aeb4bf");
                 div.transition()
-                    .attr("id","pie")
                     .duration(200)
                     .style("opacity", .9)
                     .style("width","220px")
-                    .style("heigth","100px")
                     .style("text-align","center");
                 div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
                           + "<br/> Classification: " + d.data.classification)

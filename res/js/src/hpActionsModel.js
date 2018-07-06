@@ -150,6 +150,4 @@ hp.hpActionsModel = function() {
     return that;
 
 
-  return that;
-
 };
