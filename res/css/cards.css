@@ -5,8 +5,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 150px;
-  padding: 0 50px;
+  height: 250px;
+ 
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -14,13 +14,14 @@
 }
 
 .card {
-  height: 300px;
+  height: 220px;
   /*wieviel abstand zwischen karten */
   margin: 0 -30px;
   position: relative;
-  width: 200px;
+  width: 170px;
   background-color: transparent;
   border: none;
+  margin-top: -30px;
 }
 .card:after {
   left: -60px;
@@ -56,18 +57,18 @@
 }
 
 .card-label {
-  font-family: 'Lovers Quarrel', cursive;
-  font-weight: bold;
-  font-size: 50px;
-  letter-spacing: -0.025em;
-  padding: 15px 0 0 15px;
+   font-family: 'Kaushan Script', cursive;
+   font-size: 30px;
+  margin-top: 10px;
+  padding: 15px 15px 15px 15px;
+  position: center;
 }
 
 .card:nth-child(1):hover .card-face,
 .card:nth-child(2):hover .card-face,
 .card:nth-child(3):hover .card-face,
 .card:nth-child(4):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 153, 153, 0.75);
+  box-shadow: 0 10px 20px #00102b;
   -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
           transform: translateY(-100px) rotate(0deg) scale(2);
   -webkit-transition-duration: 0ms;
@@ -89,214 +90,53 @@
 }
 
 .card:nth-child(1) .card-face {
-  background: -webkit-linear-gradient(225deg, #ff9999, #da0b0b);
-  background: linear-gradient(-135deg, #ff9999, #da0b0b);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 153, 153, 0.75);
+  background: -webkit-linear-gradient(225deg, #424C65, #233156);
+  background: linear-gradient(-135deg, #AFB6C9, #233156);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
   -webkit-transform: translateY(45px) rotate(-28.125deg);
           transform: translateY(45px) rotate(-28.125deg);
 }
 .card:nth-child(1) .card-face .card-label {
-  color: #db0000;
-  text-shadow: -0.025em 0.025em 0 #ff8080;
+  color: #D3CAB3;
+  text-shadow: -0.025em 0.025em 0 #666259;
 }
 
 .card:nth-child(2) .card-face {
-  background: -webkit-linear-gradient(225deg, #99c2ff, #0b5eda);
-  background: linear-gradient(-135deg, #99c2ff, #0b5eda);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 194, 255, 0.75);
+  background: -webkit-linear-gradient(225deg, #404F63, #213754);
+  background: linear-gradient(-135deg, #ACB8C6, #213754);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
   -webkit-transform: translateY(5px) rotate(-3.125deg);
           transform: translateY(5px) rotate(-3.125deg);
 }
 .card:nth-child(2) .card-face .card-label {
-  color: #db0084;
-  text-shadow: -0.025em 0.025em 0 #ff80cc;
+  color: #D3CAB3;
+  text-shadow: -0.025em 0.025em 0 #666259;
 }
 
 .card:nth-child(3) .card-face {
-  background: -webkit-linear-gradient(225deg, #99ffc2, #0bda5e);
-  background: linear-gradient(-135deg, #99ffc2, #0bda5e);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 255, 194, 0.75);
+  background: -webkit-linear-gradient(225deg, #3D5261, #1F3D52);
+  background: linear-gradient(-135deg, #A9B9C4, #1F3D52);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
   -webkit-transform: translateY(15px) rotate(9.375deg);
           transform: translateY(15px) rotate(9.375deg);
 }
 .card:nth-child(3) .card-face .card-label {
-  color: #af00db;
-  text-shadow: -0.025em 0.025em 0 #e680ff;
+  color:#D3CAB3;
+  text-shadow: -0.025em 0.025em 0 #666259;
 }
 
 .card:nth-child(4) .card-face {
-  background: -webkit-linear-gradient(225deg, #ebff99, #b1da0b);
-  background: linear-gradient(-135deg, #ebff99, #b1da0b);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(235, 255, 153, 0.75);
+  background: -webkit-linear-gradient(225deg, #3B555E, #1D4350);
+  background: linear-gradient(-135deg, #A6BAC1, #1D4350);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
   -webkit-transform: translateY(35px) rotate(21.875deg);
           transform: translateY(35px) rotate(21.875deg);
 }
 .card:nth-child(4) .card-face .card-label {
-  color: #2c00db;
-  text-shadow: -0.025em 0.025em 0 #9980ff;
+  color: #D3CAB3;
+  text-shadow: -0.025em 0.025em 0 #666259;
 }
 
-/*.card:nth-child(5) .card-face {
-  background: -webkit-linear-gradient(225deg, #99c2ff, #0b5eda);
-  background: linear-gradient(-135deg, #99c2ff, #0b5eda);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 194, 255, 0.75);
-  -webkit-transform: translateY(5px) rotate(-3.125deg);
-          transform: translateY(5px) rotate(-3.125deg);
-}
-.card:nth-child(5) .card-face .card-label {
-  color: #0058db;
-  text-shadow: -0.025em 0.025em 0 #80b3ff;
-}
-.card:nth-child(5):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(153, 194, 255, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(5):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(5):hover:after {
-  top: -175px;
-}
-
-.card:nth-child(6) .card-face {
-  background: -webkit-linear-gradient(225deg, #99ffff, #0bdada);
-  background: linear-gradient(-135deg, #99ffff, #0bdada);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 255, 255, 0.75);
-  -webkit-transform: translateY(5px) rotate(3.125deg);
-          transform: translateY(5px) rotate(3.125deg);
-}
-.card:nth-child(6) .card-face .card-label {
-  color: #00dbdb;
-  text-shadow: -0.025em 0.025em 0 #80ffff;
-}
-.card:nth-child(6):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(153, 255, 255, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(6):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(6):hover:after {
-  top: -175px;
-}
-
-.card:nth-child(7) .card-face {
-  background: -webkit-linear-gradient(225deg, #99ffc2, #0bda5e);
-  background: linear-gradient(-135deg, #99ffc2, #0bda5e);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(153, 255, 194, 0.75);
-  -webkit-transform: translateY(15px) rotate(9.375deg);
-          transform: translateY(15px) rotate(9.375deg);
-}
-.card:nth-child(7) .card-face .card-label {
-  color: #00db58;
-  text-shadow: -0.025em 0.025em 0 #80ffb3;
-}
-.card:nth-child(7):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(153, 255, 194, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(7):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(7):hover:after {
-  top: -175px;
-}
-
-.card:nth-child(8) .card-face {
-  background: -webkit-linear-gradient(225deg, #adff99, #35da0b);
-  background: linear-gradient(-135deg, #adff99, #35da0b);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(173, 255, 153, 0.75);
-  -webkit-transform: translateY(25px) rotate(15.625deg);
-          transform: translateY(25px) rotate(15.625deg);
-}
-.card:nth-child(8) .card-face .card-label {
-  color: #2cdb00;
-  text-shadow: -0.025em 0.025em 0 #99ff80;
-}
-.card:nth-child(8):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(173, 255, 153, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(8):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(8):hover:after {
-  top: -175px;
-}
-
-.card:nth-child(9) .card-face {
-  background: -webkit-linear-gradient(225deg, #ebff99, #b1da0b);
-  background: linear-gradient(-135deg, #ebff99, #b1da0b);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(235, 255, 153, 0.75);
-  -webkit-transform: translateY(35px) rotate(21.875deg);
-          transform: translateY(35px) rotate(21.875deg);
-}
-.card:nth-child(9) .card-face .card-label {
-  color: #afdb00;
-  text-shadow: -0.025em 0.025em 0 #e6ff80;
-}
-.card:nth-child(9):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(235, 255, 153, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(9):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(9):hover:after {
-  top: -175px;
-}
-
-.card:nth-child(10) .card-face {
-  background: -webkit-linear-gradient(225deg, #ffd699, #da870b);
-  background: linear-gradient(-135deg, #ffd699, #da870b);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255, 214, 153, 0.75);
-  -webkit-transform: translateY(45px) rotate(28.125deg);
-          transform: translateY(45px) rotate(28.125deg);
-}
-.card:nth-child(10) .card-face .card-label {
-  color: #db8400;
-  text-shadow: -0.025em 0.025em 0 #ffcc80;
-}
-.card:nth-child(10):hover .card-face {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 214, 153, 0.75);
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(10):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(10):hover:after {
-  top: -175px;
-}*/
 
 @-webkit-keyframes fade {
   0% {
