@@ -184,7 +184,7 @@ hp.hpSpellView = function() {
               d3.selectAll(".leaf.node.text")
                 .transition()
                 .duration(2100)
-                .attr("font-size", 20 + "px");
+                .attr("font-size", 30 + "px");
 
             } //End of CreateSpellSVG()
 
@@ -247,7 +247,7 @@ hp.hpSpellView = function() {
         d3.selectAll(".leaf.node.text")
           .transition()
           .duration(2100)
-          .attr("font-size", 20 + "px");
+          .attr("font-size", 30 + "px");
 }
 
     function deleteChart() {

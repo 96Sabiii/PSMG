@@ -49,11 +49,12 @@
 }
 
 
-
-
+.tooltip{
+  z-index:200;
+}
 
  .expand:hover{
-     transform: scale(2.2);
+     transform: scale(2.5);
      background-size: 50% auto;
      background-color: lightgrey;
      font-size: 140%;

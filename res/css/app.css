@@ -16,7 +16,7 @@ html {
 
 #frontpage{
   background-image: url("images/quibblerfrontpage.png");
-     background-size: 100%;
+  background-size: 100%;
 }
 
 /*Auf der Welcome Seite passts noch nicht, wird geändert wenn alles gemerged ist*/
@@ -32,6 +32,12 @@ html {
      padding-bottom: 5px;
      font-size: 16px;
 }
+
+#frontpage .navigation{
+  border-left: 20%;
+  padding-top:  100px;
+  padding-bottom: 5px;
+  font-size: 16px;
 }
 
 
@@ -59,10 +65,11 @@ html {
 }
 
 #aktuell{
-   border: 3px solid #a31313;
+    /* border: 3px solid #a31313; */
+    border: 3px solid #000000;
     padding: 1.5px;
     padding: 5px;
-    box-shadow: 2px 1.5px #a31313;
+    box-shadow: 2px 1.5px #000000;
 }
 
 
