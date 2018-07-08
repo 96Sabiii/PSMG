@@ -2,7 +2,7 @@ html {
      background-color: #00102b;
      font-family: 'Fredericka the Great', cursive;
 }
- body {
+body {
      background-image: url("images/quibblerborder.png");
      background-size: 100%;
      width: 1000px;
@@ -12,6 +12,10 @@ html {
      font-size: 14px;
      font-family: 'Fredericka the Great', cursive;
      border-width: 40px;
+}
+
+svg {
+    z-index: 10;
 }
 
 #frontpage{
@@ -93,7 +97,7 @@ html {
 
 .button {
   min-width: 100px;
-  padding: 4px 4px;
+  padding: 4px 3px;
   cursor: pointer;
   text-align: center;
   font-size: 13px;

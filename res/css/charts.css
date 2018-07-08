@@ -40,9 +40,6 @@
      font-family: 'Kaushan Script', cursive;
 }
 
-#pie{
-  z-index:2;
-}
 #gap{
   font-size: 0px;
   line-height: 10px;
@@ -50,7 +47,8 @@
 
 
 .tooltip{
-  z-index:200;
+    z-index:200;
+    position: absolute;
 }
 
  .expand:hover{
@@ -59,7 +57,8 @@
      background-color: lightgrey;
      font-size: 140%;
      overflow: visible;
-     z-index: 1;
+     position: relative;
+     z-index: 5;
 }
  .expand {
      transition: all 1s;
