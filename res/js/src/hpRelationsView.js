@@ -10,8 +10,8 @@
     var that = new EventPublisher(),
     svg,
     arc,
-    path, 
-    innerRadius, 
+    path,
+    innerRadius,
     outerRadius,
     div,
     m = 150,
@@ -25,7 +25,7 @@
   height = Math.min(window.innerWidth, size) - margin.top - margin.bottom;
   innerRadius = Math.min(width, height) * .39;
   outerRadius = innerRadius + 15;
-  
+
   arc = d3.svg.arc()
   .innerRadius(innerRadius *1.01) //Abstand zwischen innerem und äußerem Kreis
   .outerRadius(outerRadius);
@@ -78,7 +78,7 @@
     .enter().append("g")
     .attr("class", "group")
     .on("mouseover", fade(.1))
-    .on("mouseout", fade(opacityDefault)); 
+    .on("mouseout", fade(opacityDefault));
 
 
   //  group arc
