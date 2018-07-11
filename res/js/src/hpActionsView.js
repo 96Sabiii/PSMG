@@ -38,10 +38,12 @@ hp.hpActionsView = function() {
           .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-        nodes.append("circle").attr("r", function(d) {return d.r })
+        nodes.append("circle")
+          .style("stroke-width", 2).style("stroke", " #aeb4bf")
+        .attr("r", function(d) {return d.r })
             .style("fill", function(d) {return colorCircles(d.value)} )
                 .on("mouseover", function(d) {
-                d3.select(this).style("stroke-width", 3).style("stroke", "#aeb4bf");
+                d3.select(this).style("stroke-width", 5).style("stroke", "#aeb4bf");
                 div.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -50,13 +52,17 @@ hp.hpActionsView = function() {
                     .style("top", (d3.event.pageY - 28) + "px");
                 })
                 .on("mouseout", function(d) {
-                    d3.select(this).style("stroke", "none");
+                    d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
                     div.transition()
                         .duration(500)
                         .style("opacity", 0);
         });
 
-        nodes.append("text").style("text-anchor", "middle").style("font-size", "23px").text(function(d) { if(d.data.value > 3) {return d.data.name} });
+        nodes.append("text")
+        
+         .style("text-anchor", "middle")
+        .style("font-size", "80%")
+        .text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
     }
 

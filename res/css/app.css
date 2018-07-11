@@ -25,12 +25,6 @@ svg {
   background-size: 100%;
 }
 
-/*Auf der Welcome Seite passts noch nicht, wird geändert wenn alles gemerged ist*/
-
-/* #frontpage.navigation{}- irgendwie ansprechen, ich checks grad nicht->
-  padding-top:
-  colour: black;*/
-
 
  .navigation {
      border-left: 20%;
@@ -71,17 +65,12 @@ svg {
 }
 
 #aktuell{
-    /* border: 3px solid #a31313; */
     border: 3px solid #000000;
     padding: 1.5px;
     padding: 5px;
     box-shadow: 2px 1.5px #000000;
 }
 
-
-}
-
-}
  #circle circle {
      fill: none;
      pointer-events: all;
@@ -103,7 +92,7 @@ svg {
   cursor: pointer;
   text-align: center;
   font-size: 13px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #aeb4bf;
   text-decoration: none;
   border-radius: 50%;
 }
