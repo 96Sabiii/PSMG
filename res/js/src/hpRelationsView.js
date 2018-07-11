@@ -77,8 +77,8 @@
     .data(layout.groups)
     .enter().append("g")
     .attr("class", "group")
-    .on("mouseover", fade(.1))
-    .on("mouseout", fade(opacityDefault));
+    .on("mouseover", fadeOut(.1))
+    .on("mouseout", fadeOut(opacityDefault));
 
 
   //  group arc

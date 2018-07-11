@@ -79,7 +79,7 @@ hp.hpSpellView = function() {
             .attr("r", 0)
               .style("fill", function(d) {return colorCircles(d.value)} )
                   .on("mouseover", function(d) {
-                  d3.select(this).style("stroke-width", 4).style("stroke", " #aeb4bf");
+                  d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
                   div.transition()
                       .attr("id","pie")
                       .duration(200)
@@ -217,7 +217,7 @@ hp.hpSpellView = function() {
           .attr("r", 0)
             .style("fill", function(d) {return colorCircles(d.value)} )
             .on("mouseover", function(d) {
-            d3.select(this).style("stroke-width", 4).style("stroke", " #aeb4bf");
+            d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
             div.transition()
                 .attr("id","pie")
                 .duration(200)
@@ -267,7 +267,7 @@ hp.hpSpellView = function() {
         if (d3.select("#Chart2").selectAll("g").size() > 1){
         d3.select("#Chart2")
             .transition()
-              .duration(1000)
+              .duration(850)
               .attr("opacity", 0);
          /*   d3.selectAll(".leaf.node.text")
               .transition()
