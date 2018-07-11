@@ -38,7 +38,8 @@ hp.hpActionsView = function() {
           .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-        nodes.append("circle").attr("r", function(d) {return d.r })
+        nodes.append("circle")
+            .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
             .style("fill", function(d) {return colorCircles(d.value)} )
                 .on("mouseover", function(d) {
                 d3.select(this).style("stroke-width", 3).style("stroke", "#aeb4bf");
@@ -55,8 +56,24 @@ hp.hpActionsView = function() {
                         .duration(500)
                         .style("opacity", 0);
         });
+        
+        d3.selectAll(".leaf.node.circle")
+                .transition()
+                .duration(2000)
+                .attr("r", function(d){return d.r;});
 
-        nodes.append("text").style("text-anchor", "middle").style("font-size", "23px").text(function(d) { if(d.data.value > 3) {return d.data.name} });
+        nodes.append("text")
+            .attr("class", function(d){return d.children ? "node" : "leaf node text";})
+            .style("text-anchor", "middle")
+            .style("font-size", "23px")
+            .text(function(d) { if(d.data.value > 3) {return d.data.name} });
+
+
+        d3.selectAll(".leaf.node.text")
+          .transition()
+          .duration(2100)
+          .attr("font-size", 30 + "px");
+        
 
     }
 

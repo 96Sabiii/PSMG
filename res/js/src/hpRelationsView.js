@@ -125,10 +125,10 @@
   .attr("class", "chord")
   .style("fill", function(d) { return colors(d.source.index); })
   .attr("d", path);
-
-
-  //Returns an event handler for fading a given chord group.
-  function fade(opacity) {
+      
+    //Returns an event handler for fading a given chord group.
+  function fadeOut(opacity) {
+      console.log("fade");
     return function(d,i) {
       svg.selectAll("path.chord")
       .filter(function(d) { return d.source.index !== i && d.target.index !== i; })
@@ -136,6 +136,7 @@
       .style("opacity", opacity);
     };
   }
+
 
   }
 

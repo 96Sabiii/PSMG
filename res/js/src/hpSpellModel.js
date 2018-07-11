@@ -12,7 +12,8 @@ hp.hpSpellModel = function() {
         object,
         size = 1250;
 
-    function loadBubbleData(bookNr) {
+    function loadBubbleData(bookNr) {      
+        console.log("load " + bookNr);
         d3.json("res/assets/data/spellsData.json", function(data) {
             //daten bei jedem klick geladen, evtl auhc if ob all
             createDataObject(data);
@@ -89,14 +90,14 @@ hp.hpSpellModel = function() {
 
     function setupButtons(){
         //model auslagern
-         document.getElementById("ps").onclick = function(){ loadBubbleData(10); };
-         document.getElementById("cos").onclick = function(){ loadBubbleData(9); };
-         document.getElementById("poa").onclick = function(){ loadBubbleData(8);};
-         document.getElementById("gof").onclick = function(){ loadBubbleData(7); };
-         document.getElementById("ootp").onclick = function(){ loadBubbleData(6); };
-         document.getElementById("hbp").onclick = function(){ loadBubbleData(5); };
-         document.getElementById("dh").onclick = function(){ loadBubbleData(4); };
-         document.getElementById("all").onclick = function(){ loadBubbleData("all"); };
+         document.getElementById("ps").onclick = function(){ that.notifyAll("newData", 10) };
+         document.getElementById("cos").onclick = function(){ that.notifyAll("newData", 9) };
+         document.getElementById("poa").onclick = function(){ that.notifyAll("newData", 8)};
+         document.getElementById("gof").onclick = function(){ that.notifyAll("newData", 7) };
+         document.getElementById("ootp").onclick = function(){ that.notifyAll("newData", 6) };
+         document.getElementById("hbp").onclick = function(){that.notifyAll("newData", 5) };
+         document.getElementById("dh").onclick = function(){ that.notifyAll("newData", 4) };
+         document.getElementById("all").onclick = function(){ that.notifyAll("newData", "all") };
 
          d3.select("#toolbar")
            .selectAll(".button")
