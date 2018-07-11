@@ -56,6 +56,7 @@ hp.hpSpellView = function() {
         
         //SVG erstellen
         deleteChart();
+<<<<<<< HEAD
         var selection = d3.select("#Chart2"),
           g = selection.append("g").attr("transform", "translate(2,2)"),
           colorCircles = d3.scaleSequential()
@@ -190,6 +191,143 @@ hp.hpSpellView = function() {
             .attr("font-size", 30 + "px");
     
     } //End of CreateSpellSVG()
+=======
+              var selection = d3.select("#Chart2"),
+                  g = selection.append("g").attr("transform", "translate(2,2)"),
+                  colorCircles = d3.scaleSequential()
+                  .domain([0, 15])
+                  .interpolator(d3.interpolateRainbow);
+
+              var nodes = g.selectAll(".node")
+              .data(root.descendants().slice(1))
+              .enter().append("g")
+                .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+                //hier Bubble anpassungen
+
+              nodes.append("circle")
+               .style("stroke-width", 2).style("stroke", " #aeb4bf")
+                .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
+                //.attr("r", function(d) {return d.r })
+                .attr("r", 0)
+               
+                  .style("fill", function(d) {return colorCircles(d.value)} )
+                      .on("mouseover", function(d) {
+                      d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
+                      div.transition()
+                          .attr("id","pie")
+                          .duration(200)
+                          .style("opacity", .9)
+                          .style("width","220px")
+                        //  .style("height","250px")
+                          .style("text-align","center");
+                      div.html("<b>" + d.data.name + "</b> <br/>Total: " + d.value +  " <br/>" + d.data.effect
+                                + "<br/> Classification: " + d.data.classification)
+                                .style("left", (d3.event.pageX) + "px")
+                                .style("top", (d3.event.pageY - 28) + "px");
+
+
+                      //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
+                      var width="150",
+                          height="150",
+                          radius = Math.min(width, height)/2;
+                      var color = d3.scaleOrdinal()
+    	                          .range(["#FF0000","#FF7F00","#00e8c1","#00FF00","#0000FF","#a3008a","#9400D3"]);
+
+                     //Datenzuweisung
+                      var data = [{"name":"ps","count":d.data.ss},
+                                  {"name":"cos","count":d.data.cos},
+                                  {"name":"poa","count":d.data.poa},
+                                  {"name":"gof","count":d.data.gof},
+                                  {"name":"ootp","count":d.data.ootp},
+                                  {"name":"hbp","count":d.data.hbp},
+                                  {"name":"dh","count":d.data.dh}];
+
+                      var pie = d3.pie().value(function(e){return e.count;})(
+                        data
+                      );
+
+                      var arc = d3.arc()
+	                         .outerRadius(radius - 10)
+	                         .innerRadius(0);
+
+                      var labelArc = d3.arc()
+                              .outerRadius(radius - 40)
+                              .innerRadius(radius - 40);
+
+                      var svg = d3.select("#pie")
+                              .append("svg")
+                              .attr("width", "200px")
+                              .attr("height", "200px")
+                                    .append("g")
+                                    //Ändere die Werte in "translate" um die Position des Piecharts zu ändern
+                                    .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
+
+                      var g = svg.selectAll("arc")
+              	            .data(pie)
+              	            .enter().append("g")
+              	            .attr("class", "arc");
+
+                      g.append("path")
+      	               .attr("d", arc)
+                       .style("fill", function(d){return color(d.data.name)});
+
+
+                      //Text innerhalb den Kuchenteilen
+                      g.append("text")
+                        .style("text-anchor", "middle")
+   	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+                        .text(function(d) { if(d.data.count > 0) {return d.data.count} })
+                        .style("fill", "white")
+                        .style("font-size", "100%");
+
+                      //Text außerhalb der Kuchenteile
+                      g.append("text")
+                      .style("fill", "white")
+                        .attr("transform", function(d) {
+                          var c = arc.centroid(d),
+                          x = c[0],
+                          y = c[1],
+                          // pythagorean theorem for hypotenuse
+                          h = Math.sqrt(x*x + y*y);
+                          return "translate(" + (x/h * radius) +  ',' +
+                          (y/h * radius) +  ")";
+                        })
+                        .attr("text-anchor", function(d) {
+                          // are we past the center?
+                          return (d.endAngle + d.startAngle)/2 > Math.PI ?
+                          "end" : "start";
+                        })
+                        .text(function(d) { if(d.data.count > 0) {return d.data.name} });
+                      })
+                      //-------End of piechart-------
+
+                      .on("mouseout", function(d) {
+                          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                          div.transition()
+                              .duration(500)
+                              .style("opacity", 0);
+              });
+
+              d3.selectAll(".leaf.node.circle")
+                .transition()
+                .duration(2000)
+                .attr("r", function(d){return d.r;});
+
+              nodes.append("text")
+                .attr("class", function(d){return d.children ? "node" : "leaf node text";})
+                .attr("font-size", 0 + "px")
+                .style("text-anchor", "middle")
+                .text(function(d) { if(d.data.value > 3) {return d.data.name} });
+
+              d3.selectAll(".leaf.node.text")
+                .transition()
+                .duration(2100)
+                .attr("font-size", 30 + "px");
+
+            } //End of CreateSpellSVG()
+>>>>>>> 8c7b1acb171fefc5ec5ff9665e59364234e34a6a
 
 // erstellt book sorted bubble chart
     function spellsByBook(root, sortString, bookNr) {
@@ -200,6 +338,7 @@ hp.hpSpellView = function() {
                 colorCircles = d3.scaleSequential()
                 .domain([0, 15])
                 .interpolator(d3.interpolateRainbow);
+<<<<<<< HEAD
         
         selection.attr("opacity", 1);
 
@@ -236,6 +375,44 @@ hp.hpSpellView = function() {
                           .duration(500)
                           .style("opacity", 0);
             });
+=======
+
+            var nodes = g.selectAll(".node")
+            .data(root.descendants().slice(1))
+            .enter().append("g")
+              .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+              .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+              //hier Bubble anpassungen
+            nodes.append("circle")
+              .style("stroke-width", 2).style("stroke", " #aeb4bf")
+              .attr("class", function(d){return d.children ? "node" : "leaf node " + sortString;})
+              //.attr("r", function(d) {return d.r })
+              .attr("r", 0)
+                .style("fill", function(d) {return colorCircles(d.value)} )
+                .on("mouseover", function(d) {
+                d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
+                div.transition()
+                    .attr("id","pie")
+                    .duration(200)
+                    .style("opacity", .9)
+                    .style("width","220px")
+                    //.style("heigth","100px")
+                    .style("text-align","center");
+                div.html("<b>" + d.data.name + "</b> <br/> Total: "
+                          + Object.values(d.data)[bookNr]
+                          + " <br/>" + d.data.effect
+                          + "<br/> Classification: " + d.data.classification)
+                          .style("left", (d3.event.pageX) + "px")
+                          .style("top", (d3.event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                          div.transition()
+                              .duration(500)
+                              .style("opacity", 0);
+                });
+>>>>>>> 8c7b1acb171fefc5ec5ff9665e59364234e34a6a
 
         d3.selectAll(".leaf.node." + sortString)
           .transition()
