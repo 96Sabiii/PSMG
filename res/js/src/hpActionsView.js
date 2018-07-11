@@ -39,12 +39,9 @@ hp.hpActionsView = function() {
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
         nodes.append("circle")
-<<<<<<< HEAD
             .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
-=======
-          .style("stroke-width", 2).style("stroke", " #aeb4bf")
-        .attr("r", function(d) {return d.r })
->>>>>>> 8c7b1acb171fefc5ec5ff9665e59364234e34a6a
+            .style("stroke-width", 2).style("stroke", " #aeb4bf")
+            .attr("r", function(d) {return d.r })
             .style("fill", function(d) {return colorCircles(d.value)} )
                 .on("mouseover", function(d) {
                 d3.select(this).style("stroke-width", 5).style("stroke", "#aeb4bf");
@@ -70,23 +67,15 @@ hp.hpActionsView = function() {
         nodes.append("text")
             .attr("class", function(d){return d.children ? "node" : "leaf node text";})
             .style("text-anchor", "middle")
-            .style("font-size", "23px")
+            .style("font-size", "80%")
             .text(function(d) { if(d.data.value > 3) {return d.data.name} });
 
-<<<<<<< HEAD
 
         d3.selectAll(".leaf.node.text")
           .transition()
           .duration(2100)
           .attr("font-size", 30 + "px");
         
-=======
-        nodes.append("text")
-        
-         .style("text-anchor", "middle")
-        .style("font-size", "80%")
-        .text(function(d) { if(d.data.value > 3) {return d.data.name} });
->>>>>>> 8c7b1acb171fefc5ec5ff9665e59364234e34a6a
 
     }
 
