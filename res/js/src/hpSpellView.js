@@ -11,7 +11,8 @@ hp.hpSpellView = function() {
       div,
       size = 1400,
       smalSize =1300,
-      chart;
+      chart,
+      colors = ["#FF0000","#FF7F00","#00e8c1","#00FF00","#0000FF","#a3008a","#9400D3"];
     //chart braucht man nicht? ändert nichts
 
     function createSpellChart(){
@@ -26,28 +27,36 @@ hp.hpSpellView = function() {
     function createSVG(data) {
         var root = data[0],
             bookNr = data [1],
-            bookString;
+            bookString,
+            color;
         if (bookNr == "all") {
             createSpellSVG(root);
         } else {
             if (bookNr == 4) {
                 bookString = "dh";
+                color = colors[6];
             } else if (bookNr == 5) {
                 bookString = "hbp";
+                color = colors[5];
             } else if (bookNr == 6) {
                 bookString = "ootp";
+                color = colors[4];
             } else if (bookNr == 7) {
                 bookString = "gof";
+                color = colors[3];
             } else if (bookNr == 8) {
                 bookString = "poa";
+                color = colors[2];
             } else if (bookNr == 9) {
                 bookString = "cos";
+                color = colors[1];
             } else if (bookNr == 10) {
                 bookString = "ps";
+                color = colors[0];
             } else {
                 bookString = "all";
             }
-            spellsByBook(root, bookString, bookNr);
+            spellsByBook(root, bookString, bookNr, color);
         }
     }
 
@@ -98,7 +107,7 @@ hp.hpSpellView = function() {
                       height="150",
                       radius = Math.min(width, height)/2;
                   var color = d3.scaleOrdinal()
-                              .range(["#FF0000","#FF7F00","#FFFF00","#00FF00","#0000FF","#4B0082","#9400D3"]);
+                              .range(colors);
 
                  //Datenzuweisung
                   var data = [{"name":"ps","count":d.data.ss},
@@ -194,14 +203,11 @@ hp.hpSpellView = function() {
 
 
 // erstellt book sorted bubble chart
-    function spellsByBook(root, sortString, bookNr) {
+    function spellsByBook(root, sortString, bookNr, color) {
         deleteChart();
         //hier neues Chart
             var selection = d3.select("#Chart2"),
-                g = selection.append("g").attr("transform", "translate(2,2)"),
-                colorCircles = d3.scaleSequential()
-                .domain([0, 15])
-                .interpolator(d3.interpolateRainbow);
+                g = selection.append("g").attr("transform", "translate(2,2)");
         
         selection.attr("opacity", 1);
 
@@ -215,7 +221,7 @@ hp.hpSpellView = function() {
           .attr("class", function(d){return d.children ? "node" : "leaf node " + sortString;})
           //.attr("r", function(d) {return d.r })
           .attr("r", 0)
-            .style("fill", function(d) {return colorCircles(d.value)} )
+            .style("fill", color )
             .on("mouseover", function(d) {
             d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
             div.transition()
@@ -263,22 +269,12 @@ hp.hpSpellView = function() {
     }
     
     function fadeOut(book) {
-        console.log("fade");
         if (d3.select("#Chart2").selectAll("g").size() > 1){
         d3.select("#Chart2")
             .transition()
               .duration(850)
               .attr("opacity", 0);
-         /*   d3.selectAll(".leaf.node.text")
-              .transition()
-              .duration(2100)
-              .attr("opacity", 0);
-
-           d3.selectAll(".leaf.node.")
-                .attr("opacity", 0)
-              .transition()
-              .duration(2000);
-            console.log(55);*/
+            
             setTimeout( function() {that.notifyAll("fadedOut", book)},1000);
         }
 

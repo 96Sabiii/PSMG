@@ -12,8 +12,7 @@ hp.hpSpellModel = function() {
         object,
         size = 1250;
 
-    function loadBubbleData(bookNr) {      
-        console.log("load " + bookNr);
+    function loadBubbleData(bookNr) {   
         d3.json("res/assets/data/spellsData.json", function(data) {
             //daten bei jedem klick geladen, evtl auhc if ob all
             createDataObject(data);
