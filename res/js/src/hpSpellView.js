@@ -186,10 +186,12 @@ hp.hpSpellView = function() {
                           .style("opacity", 0);
           });
 
+        let radius = [];
+        
           d3.selectAll(".leaf.node.circle")
             .transition()
             .duration(2000)
-            .attr("r", function(d){return d.r;});
+            .attr("r", function(d){radius.push(d.r); return d.r;});
 
           nodes.append("text")
             .attr("class", function(d){return d.children ? "node" : "leaf node text";})
@@ -201,6 +203,8 @@ hp.hpSpellView = function() {
             .transition()
             .duration(2100)
             .attr("font-size", 30 + "px");
+        
+        setTimeout( function() { minText(radius) },2100 );
     
     } //End of CreateSpellSVG()
 
@@ -249,23 +253,37 @@ hp.hpSpellView = function() {
                               .duration(500)
                               .style("opacity", 0);
             });
-
+        let radius = [];
+        
         d3.selectAll(".leaf.node." + sortString)
           .transition()
           .duration(2000)
-          .attr("r", function(d){return d.r;});
+          .attr("r", function(d){radius.push(d.r); return d.r;});
 
         nodes.append("text")
           .attr("class", function(d){return d.children ? "node" : "leaf node text";})
           .attr("font-size", 0 +"px")
           .style("text-anchor", "middle")
-          .text(function(d) {var input = d.data, count = Object.values(input)[bookNr]; if(count > 0) {return d.data.name} });
+          .text(function(d, i ) { var input = d.data, count = Object.values(input)[bookNr]; if(count > 0) {return d.data.name} });
 
         d3.selectAll(".leaf.node.text")
           .transition()
           .duration(2100)
-          .attr("font-size", 30 + "px");
+          .attr("font-size", 33 + "px");
+        
+        setTimeout( function() { minText(radius) },2100 );
 }
+    
+    function minText(radius){
+            var texts = d3.selectAll(".leaf.node.text").each(function(d,i){
+                    if (this.getComputedTextLength() > radius[i]*2-10) {
+                        this.style.fontSize = "95%";
+                        if (this.getComputedTextLength() > radius[i]*2) {
+                            this.innerHTML = "";
+                        }
+                    }
+                });
+            }
 
     function deleteChart() {
         while (chart.firstChild) {
