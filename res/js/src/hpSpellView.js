@@ -83,6 +83,7 @@ hp.hpSpellView = function() {
             //hier Bubble anpassungen
 
           nodes.append("circle")
+          .style("stroke-width", 2).style("stroke", " #aeb4bf")
             .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
             //.attr("r", function(d) {return d.r })
             .attr("r", 0)
@@ -108,6 +109,7 @@ hp.hpSpellView = function() {
                       radius = Math.min(width, height)/2;
                   var color = d3.scaleOrdinal()
                               .range(colors);
+
 
                  //Datenzuweisung
                   var data = [{"name":"ps","count":d.data.ss},
@@ -153,11 +155,12 @@ hp.hpSpellView = function() {
                     .style("text-anchor", "middle")
                     .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
                     .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-                    .style("fill", "#000")
+                    .style("fill", "white")
                     .style("font-size", "100%");
 
                   //Text außerhalb der Kuchenteile
                   g.append("text")
+                    .style("fill", "white")
                     .attr("transform", function(d) {
                       var c = arc.centroid(d),
                       x = c[0],
@@ -216,8 +219,10 @@ hp.hpSpellView = function() {
         .enter().append("g")
           .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+          
           //hier Bubble anpassungen
         nodes.append("circle")
+          .style("stroke-width", 2).style("stroke", " #aeb4bf")
           .attr("class", function(d){return d.children ? "node" : "leaf node " + sortString;})
           //.attr("r", function(d) {return d.r })
           .attr("r", 0)
