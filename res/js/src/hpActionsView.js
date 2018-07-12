@@ -1,6 +1,7 @@
 /* eslint-env browser */
 /* global EventPublisher */
-// based on: https://bost.ocks.org/mike/bar/
+/* global d3 */
+
 
 /**
   * Hier werden die Hintergrunddaten berechnet

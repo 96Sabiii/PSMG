@@ -1,5 +1,6 @@
 /* eslint-env browser */
 /* global EventPublisher */
+/* global d3 */
 
 /**
   * Hier werden die Hintergrunddaten berechnet
@@ -264,12 +265,11 @@ hp.hpSpellView = function() {
           .attr("class", function(d){return d.children ? "node" : "leaf node text";})
           .attr("font-size", 0 +"px")
           .style("text-anchor", "middle")
-          .text(function(d, i ) { var input = d.data, count = Object.values(input)[bookNr]; if(count > 0) {return d.data.name} });
-
-        d3.selectAll(".leaf.node.text")
+          .text(function(d, i ) { var input = d.data, count = Object.values(input)[bookNr]; if(count > 0) {return d.data.name} })
           .transition()
           .duration(2100)
-          .attr("font-size", 33 + "px");
+          .style("font-size", function(d) { return Math.min(d.r / 3, (2 * d.r - 8) / this.getComputedTextLength() * 18) + "px"; });
+            // so geht es ohne animation richtig: .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 18) + "px"; });
         
         setTimeout( function() { minText(radius) },2100 );
 }

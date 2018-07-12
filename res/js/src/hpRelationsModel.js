@@ -1,5 +1,6 @@
-	/* eslint-env browser */
-	/* global EventPublisher */
+/* eslint-env browser */
+/* global EventPublisher */
+/* global d3 */
 
 //nach https://bl.ocks.org/nbremer
 //http://projects.delimited.io/experiments/chord-transitions/demos/trade.html

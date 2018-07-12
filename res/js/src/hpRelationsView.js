@@ -1,6 +1,6 @@
-
-  /* eslint-env browser */
-  /* global EventPublisher */
+/* eslint-env browser */
+/* global EventPublisher */
+/* global d3 */
 
   // Hier werden die Hintergrunddaten berechnet
 

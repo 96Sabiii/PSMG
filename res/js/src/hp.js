@@ -6,7 +6,6 @@ var hp = (function () {
   	var that = {},
     actionsModel,
     actionsView,
-    mainView,
     relationsView,
     relationsModel,
     spellView,
@@ -15,7 +14,6 @@ var hp = (function () {
 	function init()  {
     initModel();
     initActionsView();
-    initMainView();
     initRelationsView();
     initRelationsModel();
     initSpellView();
@@ -35,10 +33,6 @@ var hp = (function () {
 
   function initActionsView() {
     actionsView = new hp.hpActionsView();
-  }
-
-  function initMainView() {
-    mainView = new hp.hpMainView();
   }
 
   function initRelationsView() {
