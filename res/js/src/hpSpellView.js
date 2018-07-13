@@ -148,6 +148,8 @@ hp.hpSpellView = function() {
 
                   g.append("path")
                    .attr("d", arc)
+                   .style("stroke-width", 1)
+                   .style("stroke", "white")
                    .style("fill", function(d){return color(d.data.name)});
 
 

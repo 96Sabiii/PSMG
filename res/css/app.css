@@ -100,7 +100,6 @@ a:hover {
 }
  
 .button:hover {
-  background-blend-mode: darken;
   border: 1px solid #aeb4bf;
   color: white;
 }

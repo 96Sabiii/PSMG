@@ -2,10 +2,10 @@ div.tooltip {
     position: absolute;
     color: white;
     opacity: .9;
-    width: 200px;
+    width: 300px;
     padding: 4px;
     font-family: 'Spirax', cursive;
-    font-size: 14px;
+    font-size: 16px;
     background: #333;
     border: 2px solid #aeb4bf;
     border-radius: 5px;
