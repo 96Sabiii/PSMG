@@ -97,6 +97,8 @@
     var r = "rotate(" + (d.angle * 180 / Math.PI - 90) + ")";
     var t = " translate(" + (innerRadius + 26) + ")";
     return r + t + (d.angle > Math.PI ? " rotate(180)" : " rotate(0)");})
+  .style("fill", function(d, i) { return colors(d.index); })
+  
   .attr("text-anchor", function (d) {
     return d.angle > Math.PI ? "end" : "begin"})
   .attr("xlink:href",function(d,i){return "#group"+i;})

@@ -60,10 +60,10 @@ path.chord {
 }
 
 .expand:hover {
-    transform: scale(2.5);
+    transform: scale(2.2);
     background-size: 50% auto;
-    background-color: #8e949e;
-    opacity: .95;
+    background-color: #3a373a;
+    opacity: .9;
     font-size: 140%;
     overflow: visible;
     position: relative;

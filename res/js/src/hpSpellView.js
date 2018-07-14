@@ -13,7 +13,7 @@ hp.hpSpellView = function() {
       size = 1400,
       smalSize =1300,
       chart,
-      colors = ["#FF0000","#FF7F00","#00e8c1","#00FF00","#0000FF","#a3008a","#9400D3"];
+      colors = ["#bf0542","#6cd8ca","#ea7c54","#66d67a","#70b2ff","#a637bf","#d134a2"];
     //chart braucht man nicht? ändert nichts
 
     function createSpellChart(){
