@@ -88,6 +88,8 @@
   .style("fill", function(d, i) { return colors(d.index); });
 
 
+
+
   // text label
   var groupText = group.append("text")
   .attr("class", "titles")
@@ -109,7 +111,7 @@
     div.transition()
     .duration(200)
     .style("opacity", .9);
-    div.html("<b>" + characters[i].name + "</b>: <br/> <br/>"  + characters[i].bio)
+    div.html("<b>" + characters[i].name + "</b>: <br/> <br/>"  + characters[i].bio + characters[i].link_image )
     .style("left", (d3.event.pageX) + "px")
     .style("top", (d3.event.pageY - 28) + "px");})
   .on("mouseout", function(d) {
@@ -127,6 +129,49 @@
   .attr("class", "chord")
   .style("fill", function(d) { return colors(d.source.index); })
   .attr("d", path);
+
+
+
+      
+    //Pop-up nach https://codepen.io/rachel_web/pen/YXMEqO
+    function popupOpenClose(popup) {
+
+
+      if ($(".wrapper").length == 0){
+        $(popup).wrapInner("<div class='wrapper'></div>");
+      }
+      
+      // Open popup 
+      $(popup).show();
+      
+
+      // Close popup if user clicks on background ->>>> Funktioniert nicht?
+      $(popup).click(function(e) {
+        if ( e.target == this ) {
+          if ($(popup).is(':visible')) {
+            $(popup).hide();
+          }
+        }
+      });
+
+      // Close popup and remove errors if user clicks on cancel or close buttons 
+      $(popup).find("button[id=close]").on("click", function() {
+        if ($(".formElementError").is(':visible')) {
+          $(".formElementError").remove();
+        }
+        $(popup).hide();
+      });
+    }
+
+    $(document).ready(function () {
+      $("[data-js=open]").on("click", function() {
+        popupOpenClose($(".popup"));
+      });
+    });
+
+      }//Pop-up Ende
+
+
       
     //Returns an event handler for fading a given chord group.
   function fadeOut(opacity) {
@@ -137,7 +182,9 @@
       .transition()
       .style("opacity", opacity);
     };
-  }
+  
+
+
 
 
   }

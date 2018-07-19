@@ -6,7 +6,7 @@ div.tooltip {
     padding: 4px;
     font-family: 'Spirax', cursive;
     font-size: 16px;
-    background: #333;
+    background: #6d6d6d;
     border: 2px solid #aeb4bf;
     border-radius: 5px;
     pointer-events: none;
@@ -47,6 +47,7 @@ path.chord {
 
 #Chart3 {
     font-family: 'Kaushan Script', cursive;
+
 }
 
 #gap {
@@ -59,24 +60,65 @@ path.chord {
     position: absolute;
 }
 
-.expand:hover {
-    transform: scale(2.2);
+
+
+//Pop-Up
+@import "compass";
+
+#close .button {
+    font-family: 'Kaushan Script', cursive;
+    background: #aeb4bf;
+    border: 2px solid pink;
+    border-radius: 4px;
+    padding: 7px 15px;
+    font-size: 13px;
+    color: black;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background: lighten(pink, 10%);
+    }
+}
+
+.popup {
+     transform: scale(2.2);
+     transition: all 1s;
+    transform-origin: center;
     background-size: 50% auto;
     background-color: #3a373a;
     opacity: .9;
-    font-size: 140%;
-    overflow: visible;
     position: relative;
-    z-index: 5;
-}
+    display: none;
+    z-index: 5000;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
 
-.expand {
-    transition: all 1s;
-    transform-origin: center;
-}
+    > div {
+        border-radius: 10px;
+        position: fixed;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 15px 0px rgba(#000000, 0.3);
+        padding: 30px 15px;
+        /* Width of popup can be changed */
+        width: 70%;
+        max-width: 600px;
+        z-index: 5001;
+        @include transform(translate(-50%, -50%));
+        left: 50%;
+       top: 50%;
+        text-align: center;
+        border: 5px solid #9AD3DE;
+    }// Pop-Up Ende
+
 
 
 /* .leaf.node.text {
     font-size: 20px;
-} */
+} 
 

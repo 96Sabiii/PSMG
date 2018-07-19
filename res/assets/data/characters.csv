@@ -1,7 +1,7 @@
-id,name,bio
+id,name,bio,link_image
 0,Regulus Arcturus Black,Brother of Sirius. Used to be a Death Eater but defected.
 1,Sirius Black,Best friend of James Potter and godfather of Harry.
-2,Lavender Brown,Killed by a werewolf. She was a gryffindor student who dated Ron. 
+2,Lavender Brown,Killed by a werewolf. She was a gryffindor student who dated Ron., [[hyperlink URL link = https://images.ctfassets.net/bxd3o8b291gf/1MpPYvsnmQG46ECiGwacka/6e9e92db7faca36528ab2f545a1b487f/LavenderBrown_WB_F6_LavenderWritingInBook_Still_080615_Port.jpg?w=1200].
 3,Cho Chang,Ravenclaw student who dated Cedric Diggory and Harry Potter.
 4,Vincent Crabbe Sr.,Father of Crabbe and Death Eater who escaped Azkaban.
 5,Vincent Crabbe,Slytherin student who was best friends with Goyle and followed Draco.
