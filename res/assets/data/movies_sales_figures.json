@@ -1,0 +1,94 @@
+{
+  "movies_sales_figures":[
+    {
+      "name": "PS",
+      "publication": 2001,
+      "box_office_USA": 317600000,
+      "box_office_overseas": 657200000,
+      "box_office_world": 974800000,
+      "percentage_USA": "32.6%",
+      "percentage_overseas": "67.4%"
+    },
+    {
+      "name": "CoS",
+      "publication": 2002,
+      "box_office_USA": 262000000,
+      "box_office_overseas": 617000000,
+      "box_office_world": 879000000,
+      "percentage_USA": "29.8%",
+      "percentage_overseas": "70.2%"
+    },
+    {
+      "name": "PoA",
+      "publication": 2004,
+      "box_office_USA": 249500000,
+      "box_office_overseas": 547100000,
+      "box_office_world": 796700000,
+      "percentage_USA": "31.3%",
+      "percentage_overseas": "68.7%"
+    },
+    {
+      "name": "GoF",
+      "publication": 2005,
+      "box_office_USA": 290000000,
+      "box_office_overseas": 606900000,
+      "box_office_world": 896900000,
+      "percentage_USA": "32.3%",
+      "percentage_overseas": "67.7%"
+    },
+    {
+      "name": "OotP",
+      "publication": 2007,
+      "box_office_USA": 292000000,
+      "box_office_overseas": 647900000,
+      "box_office_world": 939900000,
+      "percentage_USA": "31.1%",
+      "percentage_overseas": "68.9%"
+    },
+    {
+      "name": "HBP",
+      "publication": 2009,
+      "box_office_USA": 302000000,
+      "box_office_overseas": 632500000,
+      "box_office_world": 934400000,
+      "percentage_USA": "32.3%",
+      "percentage_overseas": "67.7%"
+    },
+    {
+      "name": "DH1",
+      "publication": 2010,
+      "box_office_USA": 296000000,
+      "box_office_overseas": 664300000,
+      "box_office_world": 960300000,
+      "percentage_USA": "30.8%",
+      "percentage_overseas": "69.2%"
+    },
+    {
+      "name": "DH2",
+      "publication": 2001,
+      "box_office_USA": 381000000,
+      "box_office_overseas": 960500000,
+      "box_office_world": 1341500000,
+      "percentage_USA": "28.4%",
+      "percentage_overseas": "71.6%"
+    },
+    {
+      "name": "total",
+      "publication": 2018,
+      "box_office_USA": 2390100000,
+      "box_office_overseas": 5333400000,
+      "box_office_world": 7723400000,
+      "percentage_USA": "30.9%",
+      "percentage_overseas": "69.1%"
+    },
+    {
+      "name": "average",
+      "publication": 2018,
+      "box_office_USA": 298800000,
+      "box_office_overseas": 666700000,
+      "box_office_world": 965400000,
+      "percentage_USA": "30.9%",
+      "percentage_overseas": "69.1%"
+    }
+  ]
+}

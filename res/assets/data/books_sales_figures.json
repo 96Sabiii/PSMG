@@ -1,0 +1,39 @@
+{
+  "books_sales_figures":[
+    {
+      "name": "PS",
+      "publication": 1997,
+      "copies_sold": 107000000
+    },
+    {
+      "name": "CoS",
+      "publication": 1998,
+      "copies_sold": 60000000
+    },
+    {
+      "name": "PoA",
+      "publication": 1999,
+      "copies_sold": 55000000
+    },
+    {
+      "name": "GoF",
+      "publication": 2000,
+      "copies_sold": 66000000
+    },
+    {
+      "name": "OotP",
+      "publication": 2003,
+      "copies_sold": 55000000
+    },
+    {
+      "name": "HBP",
+      "publication": 2005,
+      "copies_sold": 65000000
+    },
+    {
+      "name": "DH",
+      "publication": 2007,
+      "copies_sold": 50000000
+    }
+  ]
+}
