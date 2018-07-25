@@ -99,7 +99,7 @@ a:hover {
   text-decoration: none;
   border-radius: 12px;
 }
- 
+
 .button:hover {
   border: 1px solid #aeb4bf;
   color: white;
@@ -143,13 +143,13 @@ a:hover {
     transform: scale(2.5);
     background-size: 50% auto;
     background-color: #8e949e;
-    opacity: .95;
+    opacity: 1;
     font-size: 140%;
     overflow: visible;
     position: relative;
     z-index: 5;
 }
- 
+
 .expand {
     transition: all 1s;
     transform-origin: center;
@@ -367,7 +367,3 @@ a:hover {
   mix-blend-mode: multiply;
   width: 100%;
 } //End Newspaper Layout //
-
-
-
-

@@ -7,6 +7,7 @@ Allgemein:
 -	Charts nach drüberhovern noch stärker vergrößern und mittig vom Bildschirm anzeigen
 
 -	GIFs sollen nicht durch die vergrößerten Charts durchscheinenn (Opacity rausnehmen beim Chart hilft nicht, Problemsuche)
+	---> habe im css die opacity auf 100% gestellt wenns vergrößert wird
 
 
 Welcome:
