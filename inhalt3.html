@@ -10,6 +10,8 @@
       <link type="text/css" rel="stylesheet" href="res/css/cards.css">
       <link type="text/css" rel="stylesheet" href="res/css/app.css">
       <link type="text/css" rel="stylesheet" href="res/css/charts.css">
+      <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
    </head>
    <body>
       <header>
@@ -21,7 +23,7 @@
                <a id="aktuell" href="inhalt3.html">Characters</a>&nbsp;
                <a href="inhalt4.html">Facts</a>&nbsp;
             </nav>
-         </div>
+        </div>
          <h1>Characters of the Potter Universe</h1>
          <h2>Hover over the chart to see some character interaction action and get further information</h2>
       </header>
@@ -44,8 +46,8 @@
                <div class="head">
                   <span class="headline h2">MARAUDER'S MAP</span>
                   <p><span class="subheadline h2">FINALLY FOUND AFTER 16 YEARS</span></p>
-               </div>
-               Yesterday, some students at Hogwarts found the Marauder's Map in the Hogwarts corridors. The map had previously belonged to Harry Potter, Ron Weasley, and Hermione Granger, the most superb students in the school`s history.The map was in great condition and was quickly com into use again. The students are currently looking for the Sorcerer's Stone, which hasn't been seen since Harry Potter first discovered it in his first year at Hogwarts. </p>
+               
+               Yesterday, some students at Hogwarts found the Marauder's Map in the Hogwarts corridors. The map had previously belonged to Harry Potter, Ron Weasley, and Hermione Granger, the most superb students in the school`s history.The map was in great condition and was quickly com into use again. The students are currently looking for the Sorcerer's Stone, which hasn't been seen since Harry Potter first discovered it in his first year at Hogwarts. </p></div>
                <figure class="figure">
                   <img class="media" src="https://media.giphy.com/media/rlY5Dqpi7ivja/giphy.gif" alt="Marauders Map Gif">
                   <figcaption class="figcaption">Messrs Moony, Wormtail, Padfoot, and Prongs Purveyors of Aids to Magical Mischief-Makers are proud to present <br>THE MARAUDER'S MAP</figcaption>
@@ -56,26 +58,30 @@
                <div class="head">
                   <span class="headline h3">Characters of the Potter Universe</span>
                   <p><span class="subheadline h3">This is where the character magic happens</span></p>
-
-<!--  ab hier POP-UP Versuch-->
-
-              <div class="container">
-                <p>Click on the Chart below to see some MAGIC</p>
-                <svg  data-js="open"  id="Chart3"  viewBox="100 100 950 950"></svg>
-             </div>
-
-              <div class="popup">
-               <h2>TEST POP-UP TEST</h2>
-               <svg    id="Chart3"  viewBox="0 0 1250 1250"></svg>
-               <br> teeesssttt oben drüber ist wohl das chart, auch wenn man es nicht siiiieht </br>
-               <br> und der blöde Finite Button lässt sich von mir auch nicht verändern, la la la</br>
-               <button id ="close" class="button">Finite</button>
-             </div>
-               
-   
                </div>
-            </div>
-         </main>
+
+
+<!--POP-UP-->
+<br>
+<div class="button_box">
+   <a class="button" href="#popup1">Click here for some MAGIC</a>
+    
+</div>
+
+<div id="popup1" class="overlay">
+   <div class="popup">
+      <h2>Character Magic</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+       <svg id="Chart3"  viewBox="0 0  1550 1550"></svg>
+      </div>
+   </div>
+</div>
+</main>
+
+         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
    </body>
    <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
    <script src="res/js/lib/d3/d3.min.js"></script>

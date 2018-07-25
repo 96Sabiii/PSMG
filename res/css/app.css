@@ -19,6 +19,7 @@ svg {
   z-index: 10;
 }
 
+
 #frontpage {
   background-image: url("images/quibblerfrontpage.png");
   background-size: 100%;
@@ -125,6 +126,114 @@ a:hover {
   fill: #aaa;
   cursor: default;
 }
+
+.legendBox {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border: 1px solid;
+}
+
+#legend {
+  text-align: justify;
+  margin-bottom: 10%;
+}
+
+.expand:hover {
+    transform: scale(2.5);
+    background-size: 50% auto;
+    background-color: #8e949e;
+    opacity: .95;
+    font-size: 140%;
+    overflow: visible;
+    position: relative;
+    z-index: 5;
+}
+ 
+.expand {
+    transition: all 1s;
+    transform-origin: center;
+}
+
+//Pop-Up
+
+.button_box {
+  width: 40%;
+  margin: 0 auto;
+  padding: 25px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button #popup1 {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.popup h2 {
+  margin-top: 20px;
+  color:  #06D85F;
+  font-size: 30px;
+  font-family: 'Ruthie', cursive;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color:  #06D85F;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 100%;
+  position: fixed;
+  padding-left:20%;
+  overflow: auto;
+
+}
+
+@media screen and (max-width: 1250px){
+  .button_box{
+    width: 100%;
+  }
+  .popup{
+    width: 100%;
+  }
+}Pop-Up Ende
+
 
 //Newspaper Layout//
 #column1 {
@@ -259,15 +368,6 @@ a:hover {
   width: 100%;
 } //End Newspaper Layout //
 
-.legendBox {
-  display: inline-block;
-  height: 15px;
-  width: 15px;
-  border: 2px solid;
-}
 
-#legend {
-  text-align: justify;
-  margin-bottom: 10%;
-}
+
 
