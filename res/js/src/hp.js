@@ -2,25 +2,29 @@
 
 var hp = (function () {
   "use strict";
-
-  	var that = {},
-    actionsModel,
-    actionsView,
-    relationsView,
-    relationsModel,
-    spellView,
-    spellModel;
+    
+    var that = {},
+        actionsModel,
+        actionsView,
+        relationsView,
+        relationsModel,
+        spellView,
+        spellModel,
+        factsView,
+        factsModel;
 
 	function init()  {
-    initModel();
-    initActionsView();
-    initRelationsView();
-    initRelationsModel();
-    initSpellView();
-    initSpellModel();
+        initActionsModel();
+        initActionsView();
+        initRelationsView();
+        initRelationsModel();
+        initSpellView();
+        initSpellModel();
+        initFactsView();
+        initFactsModel();
 	}
 
-  function initModel() {
+  function initActionsModel() {
     actionsModel = new hp.hpActionsModel();
     actionsModel.addEventListener("actionsRootAvailable", onActionsRootAvailable);
   }
@@ -48,7 +52,15 @@ var hp = (function () {
     spellView = new hp.hpSpellView();
       spellView.addEventListener("fadedOut", onFadedOut);
   }
+    
+    function initFactsModel() {
+        factsModel = new hp.hpFactsModel();
+    }
 
+    function initFactsView() {
+        factsView = new hp.hpFactsView();
+    }
+    
     function onActionsRootAvailable(event){
         actionsView.createActionsSVG(event.data);
     }
@@ -84,11 +96,16 @@ var hp = (function () {
     function onCardThreeClicked() {
     relationsModel.loadRelationsData(relationsView.createRelationsChart());
   }
+    
+    function onCardFourClicked() {
+        factsView.test();
+    }
 
 	that.init = init;
-  that.onCardOneClicked = onCardOneClicked;
-  that.onCardTwoClicked = onCardTwoClicked;
-    that.onCardThreeClicked = onCardThreeClicked
+    that.onCardOneClicked = onCardOneClicked;
+    that.onCardTwoClicked = onCardTwoClicked;
+    that.onCardThreeClicked = onCardThreeClicked;
+    that.onCardFourClicked = onCardFourClicked;
 	return that;
 
 }());

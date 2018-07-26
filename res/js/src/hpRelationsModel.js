@@ -10,8 +10,8 @@
   
   var hp = hp || {};
   hp.hpRelationsModel = function() {
-  	"use strict";
-  	var that = new EventPublisher();
+      "use strict";
+      var that = new EventPublisher();
 
       function loadRelationsData(layout) {
           
@@ -32,13 +32,11 @@
                 characters.forEach(function (d){
                     d.id = +d.id;
                 });
-                console.log(characters);
 
                 relations.forEach(function (d){
                     d.source = +d.source;
                     d.target = +d.target;
                 });
-                console.log(relations);
               
                 
              // MATRIX             
