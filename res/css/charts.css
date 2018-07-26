@@ -22,6 +22,11 @@ div.tooltip {
     cursor: pointer;
 }
 
+.group:hover{
+  cursor:pointer;
+  font-weight:bold;
+}
+
 path.chord {
     stroke: #aeb4bf;
     stroke-width: .25px;
