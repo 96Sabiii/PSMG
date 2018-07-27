@@ -21,8 +21,8 @@
       function createRelationsChart() {
     //Grundgerüst erstellen
     var margin = {left:m, top:m, right:m, bottom:m},
-    width = Math.min(window.innerWidth, size) - margin.left - margin.right,
-    height = Math.min(window.innerWidth, size) - margin.top - margin.bottom;
+    width = Math.max(window.innerWidth-300, size) - margin.left - margin.right,
+    height = Math.max(window.innerWidth-300, size) - margin.top - margin.bottom;
     innerRadius = Math.min(width, height) * .39;
     outerRadius = innerRadius + 15;
 
@@ -64,8 +64,7 @@
 
   function showRelationsChart(element) {
     var layout = element[0],
-    characters = element[1],
-    matrix = element[2];
+    characters = element[1];
 
 
     var colors =  d3.scaleSequential()
@@ -136,7 +135,6 @@
 
     //Returns an event handler for fading a given chord group.
     function fadeOut(opacity) {
-      console.log("fade");
       return function(d,i) {
         svg.selectAll("path.chord")
         .filter(function(d) { return d.source.index !== i && d.target.index !== i; })

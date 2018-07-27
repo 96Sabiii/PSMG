@@ -55,10 +55,20 @@ var hp = (function () {
     
     function initFactsModel() {
         factsModel = new hp.hpFactsModel();
+        factsModel.addEventListener("marksChartDataLoaded", onMarksChartDataLoaded);
+        factsModel.addEventListener("wordsChartDataLoaded", onWordsChartDataLoaded);
     }
 
     function initFactsView() {
         factsView = new hp.hpFactsView();
+    }
+    
+    function onMarksChartDataLoaded(event) {
+        factsView.createMarksChart(event.data);
+    }
+    
+    function onWordsChartDataLoaded(event) {
+        factsView.createWordsChart(event.data);
     }
     
     function onActionsRootAvailable(event){
@@ -99,6 +109,7 @@ var hp = (function () {
     
     function onCardFourClicked() {
         factsView.test();
+        factsModel.loadData();
     }
 
 	that.init = init;
