@@ -128,13 +128,6 @@ path.chord {
 .popup .close:hover {
   color: #06D85F;
 }
-.popup .content {
-  max-height: 100%;
-  position: fixed;
-  padding-left:20%;
-  overflow: auto;
-
-}
 
 @media screen and (max-width: 1250px){
   .button_box{
@@ -160,6 +153,10 @@ polyline{
    fill: none;
 }
 
+#Chart3Pop {
+    padding-left: 28%;
+    font-size: 70%;
+}
 
 
 

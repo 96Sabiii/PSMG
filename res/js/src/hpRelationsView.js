@@ -19,45 +19,45 @@
 
 
       function createRelationsChart() {
-    //Grundgerüst erstellen
-    var margin = {left:m, top:m, right:m, bottom:m},
-    width = Math.max(window.innerWidth-300, size) - margin.left - margin.right,
-    height = Math.max(window.innerWidth-300, size) - margin.top - margin.bottom;
-    innerRadius = Math.min(width, height) * .39;
-    outerRadius = innerRadius + 15;
+        //Grundgerüst erstellen
+        var margin = {left:m, top:m, right:m, bottom:m},
+        width = Math.max(window.innerWidth-300, size) - margin.left - margin.right,
+        height = Math.max(window.innerWidth-300, size) - margin.top - margin.bottom;
+        innerRadius = Math.min(width, height) * .39;
+        outerRadius = innerRadius + 15;
 
-    arc = d3.svg.arc()
-    .innerRadius(innerRadius *1.01) //Abstand zwischen innerem und äußerem Kreis
-    .outerRadius(outerRadius);
-
-
-    path = d3.svg.chord()
-    .radius(innerRadius);
+        arc = d3.svg.arc()
+        .innerRadius(innerRadius *1.01) //Abstand zwischen innerem und äußerem Kreis
+        .outerRadius(outerRadius);
 
 
-    div = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
+        path = d3.svg.chord()
+        .radius(innerRadius);
 
 
-    var layout = d3.layout.chord()
-    .padding(.04)
-    .sortSubgroups(d3.descending)
-    .sortChords(d3.ascending);
+        div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 
 
-    svg = d3.select("#Chart3").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("id", "circle")
-    .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")");
-
-    svg.append("circle")
-    .attr("r", outerRadius);
+        var layout = d3.layout.chord()
+        .padding(.04)
+        .sortSubgroups(d3.descending)
+        .sortChords(d3.ascending);
 
 
-    return layout;
+        svg = d3.select("#Chart3").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("id", "circle")
+        .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")");
+
+        svg.append("circle")
+        .attr("r", outerRadius);
+
+
+        return layout;
 
   }
 
@@ -150,32 +150,77 @@
     https://codepen.io/anon/pen/BPpXEr*/
     function popupOpenClose(popup) {
 
-      if ($(".wrapper").length == 0){
+        if ($(".wrapper").length == 0){
         $(popup).wrapInner("<div class='wrapper'></div>");
-      }
+        }
 
-    // Open popup 
-    $(popup).show();
+        // Open popup 
+        $(popup).show();
 
-    // Close popup and remove errors if user clicks on cancel or close buttons 
-    $(popup).find("a[class=close]").on("click", function() {
-      if ($(".formElementError").is(':visible')) {
-        $(".formElementError").remove();
-      }
-      $(popup).hide();
-    });
-  }
+        // Close popup and remove errors if user clicks on cancel or close buttons 
+        $(popup).find("a[class=close]").on("click", function() {
+            if ($(".formElementError").is(':visible')) {
+                $(".formElementError").remove();
+            }
+            $(popup).hide();
+        });
+    }
+      d3.select(".button").on("click", function() {console.log("load"); that.notifyAll("loadPopup"); });
 
-  $(document).ready(function () {
-    $("[data-js=open]").on("click", function() {
-      popupOpenClose($(".popup"));
-    });
-  });
-}
+        $(document).ready(function () {
+            $("[data-js=open]").on("click", function() {
+                popupOpenClose($(".popup"));
+            });
+        });
+    }
+        
+    function createPopupRelationsChart() {
+        console.log("create");
+            //Grundgerüst erstellen
+        let popupM = 90;
+        var margin = {left:popupM, top:popupM, right:popupM, bottom:popupM},
+        width = Math.min(window.innerWidth-300, 550) - margin.left - margin.right,
+        height = Math.min(window.innerWidth-300, 550) - margin.top - margin.bottom;
+        innerRadius = Math.min(width, height) * .39;
+        outerRadius = innerRadius + 15;
+
+        arc = d3.svg.arc()
+        .innerRadius(innerRadius *1.01) //Abstand zwischen innerem und äußerem Kreis
+        .outerRadius(outerRadius);
 
 
-that.showRelationsChart = showRelationsChart;
-that.createRelationsChart = createRelationsChart;
-return that;
+        path = d3.svg.chord()
+        .radius(innerRadius);
+
+
+        div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+
+        var layout = d3.layout.chord()
+        .padding(.04)
+        .sortSubgroups(d3.descending)
+        .sortChords(d3.ascending);
+
+
+        svg = d3.select("#Chart3Pop").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("id", "circle")
+        .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")");
+
+        svg.append("circle")
+        .attr("r", outerRadius);
+
+
+        return layout;
+    }
+
+    that.createPopupRelationsChart = createPopupRelationsChart
+    that.showRelationsChart = showRelationsChart;
+    that.createRelationsChart = createRelationsChart;
+    return that;
 
 };

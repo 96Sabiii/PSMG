@@ -41,6 +41,7 @@ var hp = (function () {
 
   function initRelationsView() {
     relationsView = new hp.hpRelationsView();
+      relationsView.addEventListener("loadPopup", onLoadPopup);
   }
 
     function initRelationsModel() {
@@ -61,6 +62,10 @@ var hp = (function () {
 
     function initFactsView() {
         factsView = new hp.hpFactsView();
+    }
+    
+    function onLoadPopup() {
+        relationsModel.loadRelationsData(relationsView.createPopupRelationsChart());
     }
     
     function onMarksChartDataLoaded(event) {
