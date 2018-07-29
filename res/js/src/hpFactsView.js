@@ -7,12 +7,12 @@ hp.hpFactsView = function() {
     "use strict";
     var that = new EventPublisher(),
         size=1200;
-       
+
     function test() {
         donutChart();
     }
-    
-    
+
+
 
 //<!-- DONUT CHART MIT LABELS, HIER DIE MOVIES UND BOOKS SALES FIGURES EINBAUEN, SODASS BEIM KLICK AUF DEN "RANDOM-BUTTON"
 //   DIE JEWEILS ANDEREN DATEN ANGEZEIGT WERDEN-->
@@ -65,7 +65,7 @@ hp.hpFactsView = function() {
           .insert("path")
           .style("fill", function(d) { return color(d.data.label); })
           .attr("class", "slice");
-       slice    
+       slice
           .transition().duration(1000)
           .attrTween("d", function(d) {
              this._current = this._current || d;
@@ -129,7 +129,7 @@ hp.hpFactsView = function() {
                 var pos = outerArc.centroid(d2);
                 pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
                 return [arc.centroid(d2), outerArc.centroid(d2), pos];
-             };       
+             };
           });
 
        polyline.exit()
@@ -162,22 +162,22 @@ hp.hpFactsView = function() {
     function createWordsChartPopup(data) {
         var svg = d3.select('#Chart5Popup'),
             popupClass = "wordsPopupG";
-        
+
         designWordsChart(data, svg, popupClass);
         //anpassen welches svg close
         d3.select(".close").on("click", function() { d3.select("." + popupClass).remove(); });
     }
-    
+
     function createWordsChart(data) {
 
         var svg = d3.select('#Chart5');
-        
+
         designWordsChart(data, svg, "");
-        
+
         //dazugehöriges Popup implementieren
         d3.select(".openPopup1").on("click", function() { that.notifyAll("loadWordsPopup"); });
     }
-    
+
     function designWordsChart(data, svg, popupClass) {
         var margin = {top: 40, right: 20, bottom: 30, left: 40},
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
@@ -213,11 +213,20 @@ hp.hpFactsView = function() {
             .selectAll("rect")
             .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
             .enter().append("rect")
+              .attr("class", "rect1")
               .attr("x", function(d) { return x1(d.key); })
               .attr("y", function(d) { return y(d.value); })
               .attr("width", x1.bandwidth())
-              .attr("height", function(d) { return height - y(d.value); })
+              .attr("height", 0)
+              // .attr("height", function(d) { return height - y(d.value); })
               .attr("fill", function(d) { return z(d.key); });
+
+
+          //Animation barchart1
+          d3.selectAll(".rect1")
+            .transition()
+            .duration(1500)
+            .attr("height", function(d) { return height - y(d.value); });
 
           g.append("g")
               .attr("class", "axis")
@@ -254,10 +263,10 @@ hp.hpFactsView = function() {
               .attr("dy", "0.32em")
               .text(function(d) { return d; });
     }
-      
+
 
 //<!-- STACKED BAR CHART SATZZEICHEN, nach https://bl.ocks.org/mbostock/3886208-->
-    
+
 /* für tooltip, der fehlt noch
 Harry Potter and the Sorcerer’s Stone
 Harry Potter and the Chamber of Secret
@@ -269,24 +278,24 @@ Harry Potter and the Deathly Hallows */
 
 //<svg width="450" height="350"></svg>
 //<script src="https://d3js.org/d3.v4.min.js"></script>
-    
+
     function createMarksChartPopup(data) {
         var svg = d3.select('#Chart6Popup'),
             popupClass = "marksPopupG";
-        
+
         designMarksChart(data, svg, popupClass);
         //anpassen welches svg close
         d3.select(".close").on("click", function() { d3.select("." + popupClass).remove(); });
     }
-    
+
     function createMarksChart(data) {
         var svg = d3.select('#Chart6');
         designMarksChart(data, svg, "");
-        
+
         //dazugehöriges Popup implementieren
         d3.select(".openPopup2").on("click", function() { that.notifyAll("loadMarksPopup"); });
     }
-    
+
     function designMarksChart(data, svg, popupClass) {
         var margin = {top: 40, right: 20, bottom: 30, left: 40},
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
@@ -321,10 +330,18 @@ Harry Potter and the Deathly Hallows */
             .selectAll("rect")
             .data(function(d) { return d; })
             .enter().append("rect")
+              .attr("class", "rect2")
               .attr("x", function(d) { return x(d.data.title); })
               .attr("y", function(d) { return y(d[1]); })
-              .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+              .attr("height", 0)
+              // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
               .attr("width", x.bandwidth());
+
+        //Animation barchart2
+        d3.selectAll(".rect2")
+          .transition()
+          .duration(1500)
+          .attr("height", function(d) { return y(d[0]) - y(d[1]); });
 
           g.append("g")
               .attr("class", "axis")
