@@ -63,7 +63,7 @@ hp.hpSpellView = function() {
 
     //doppelter code, wenn if all dann pie chart
     function createSpellSVG(root) {
-        
+
         //SVG erstellen
         deleteChart();
 
@@ -72,7 +72,7 @@ hp.hpSpellView = function() {
           colorCircles = d3.scaleSequential()
           .domain([0, 15])
           .interpolator(d3.interpolateRainbow);
-        
+
         selection.attr("opacity", 1);
 
           var nodes = g.selectAll(".node")
@@ -100,8 +100,12 @@ hp.hpSpellView = function() {
                       .style("text-align","center");
                   div.html("<b>" + d.data.name + "</b> <br/>Total: " + d.value +  " <br/>" + d.data.effect
                             + "<br/> Classification: " + d.data.classification)
+                            // .style("left", (d3.event.pageX) + "px")
+                            // .style("top", (d3.event.pageY - 28) + "px");
                             .style("left", (d3.event.pageX) + "px")
-                            .style("top", (d3.event.pageY - 28) + "px");
+                            .style("top", (d3.event.pageY - 300) + "px");
+
+
 
 
                   //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
@@ -190,7 +194,7 @@ hp.hpSpellView = function() {
           });
 
         let radius = [];
-        
+
           d3.selectAll(".leaf.node.circle")
             .transition()
             .duration(2000)
@@ -206,9 +210,9 @@ hp.hpSpellView = function() {
             .transition()
             .duration(2100)
             .attr("font-size", 30 + "px");
-        
+
         setTimeout( function() { minText(radius) },2100 );
-    
+
     } //End of CreateSpellSVG()
 
 
@@ -218,7 +222,7 @@ hp.hpSpellView = function() {
         //hier neues Chart
             var selection = d3.select("#Chart2"),
                 g = selection.append("g").attr("transform", "translate(2,2)");
-        
+
         selection.attr("opacity", 1);
 
         var nodes = g.selectAll(".node")
@@ -226,7 +230,7 @@ hp.hpSpellView = function() {
         .enter().append("g")
           .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-          
+
           //hier Bubble anpassungen
         nodes.append("circle")
           .style("stroke-width", 2).style("stroke", " #aeb4bf")
@@ -247,8 +251,10 @@ hp.hpSpellView = function() {
                       + Object.values(d.data)[bookNr]
                       + " <br/>" + d.data.effect
                       + "<br/> Classification: " + d.data.classification)
+                      // .style("left", (d3.event.pageX) + "px")
+                      // .style("top", (d3.event.pageY - 28) + "px");
                       .style("left", (d3.event.pageX) + "px")
-                      .style("top", (d3.event.pageY - 28) + "px");
+                      .style("top", (d3.event.pageY - 80) + "px");
             })
                 .on("mouseout", function(d) {
                           d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
@@ -257,7 +263,7 @@ hp.hpSpellView = function() {
                               .style("opacity", 0);
             });
         let radius = [];
-        
+
         d3.selectAll(".leaf.node." + sortString)
           .transition()
           .duration(2000)
@@ -272,10 +278,10 @@ hp.hpSpellView = function() {
           .duration(2100)
           .style("font-size", function(d) { return Math.min(d.r / 3, (2 * d.r - 8) / this.getComputedTextLength() * 18) + "px"; });
             // so geht es ohne animation richtig: .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 18) + "px"; });
-        
+
         setTimeout( function() { minText(radius) },2100 );
-}
-    
+      }
+
     function minText(radius){
             var texts = d3.selectAll(".leaf.node.text").each(function(d,i){
                     if (this.getComputedTextLength() > radius[i]*2-10) {
@@ -292,14 +298,14 @@ hp.hpSpellView = function() {
             chart.removeChild(chart.firstChild);
         }
     }
-    
+
     function fadeOut(book) {
         if (d3.select("#Chart2").selectAll("g").size() > 1){
         d3.select("#Chart2")
             .transition()
               .duration(850)
               .attr("opacity", 0);
-            
+
             setTimeout( function() {that.notifyAll("fadedOut", book)},1000);
         }
 
