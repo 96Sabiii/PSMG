@@ -150,29 +150,29 @@
     https://codepen.io/anon/pen/BPpXEr*/
     function popupOpenClose(popup) {
 
-        if ($(".wrapper").length == 0){
+/*        if ($(".wrapper").length == 0){
         $(popup).wrapInner("<div class='wrapper'></div>");
-        }
+        }*/
 
         // Open popup 
-        $(popup).show();
+      //  $(popup).show();
 
-        // Close popup and remove errors if user clicks on cancel or close buttons 
+/*        // Close popup and remove errors if user clicks on cancel or close buttons 
         $(popup).find("a[class=close]").on("click", function() {
             if ($(".formElementError").is(':visible')) {
                 $(".formElementError").remove();
             }
             $(popup).hide();
-        });
+        });*/
     }
-      d3.select(".button").on("click", function() {console.log("load"); that.notifyAll("loadPopup"); });
+      d3.select(".openPopup").on("click", function() {console.log("load"); that.notifyAll("loadPopup"); });
       d3.select(".close").on("click", function() {console.log("close"); d3.select(".popupSVG").remove(); });
 
-        $(document).ready(function () {
+/*        $(document).ready(function () {
             $("[data-js=open]").on("click", function() {
                 popupOpenClose($(".popup"));
             });
-        });
+        });*/
     }
         
     function createPopupRelationsChart() {
