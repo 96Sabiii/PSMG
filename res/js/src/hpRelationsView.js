@@ -21,8 +21,8 @@
       function createRelationsChart() {
         //Grundgerüst erstellen
         var margin = {left:m, top:m, right:m, bottom:m},
-        width = Math.max(window.innerWidth-300, size) - margin.left - margin.right,
-        height = Math.max(window.innerWidth-300, size) - margin.top - margin.bottom;
+        width = Math.min(window.innerWidth-300, size) - margin.left - margin.right,
+        height = Math.min(window.innerWidth-300, size) - margin.top - margin.bottom;
         innerRadius = Math.min(width, height) * .39;
         outerRadius = innerRadius + 15;
 
@@ -166,6 +166,7 @@
         });
     }
       d3.select(".button").on("click", function() {console.log("load"); that.notifyAll("loadPopup"); });
+      d3.select(".close").on("click", function() {console.log("close"); d3.select(".popupSVG").remove(); });
 
         $(document).ready(function () {
             $("[data-js=open]").on("click", function() {
@@ -178,8 +179,8 @@
         console.log("create");
             //Grundgerüst erstellen
      var margin = {left:m, top:m, right:m, bottom:m},
-        width = Math.max(window.innerWidth-300, size) - margin.left - margin.right,
-        height = Math.max(window.innerWidth-300, size) - margin.top - margin.bottom;
+        width = Math.min(window.innerWidth-300, size) - margin.left - margin.right,
+        height = Math.min(window.innerWidth-300, size) - margin.top - margin.bottom;
         innerRadius = Math.min(width, height) * .39;
         outerRadius = innerRadius + 15;
 
@@ -205,6 +206,7 @@
 
 
         svg = d3.select("#Chart3Pop").append("svg")
+        .attr("class", "popupSVG")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
