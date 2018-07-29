@@ -215,9 +215,9 @@ hp.hpFactsView = function() {
             .enter().append("rect")
               .attr("class", "rect1")
               .attr("x", function(d) { return x1(d.key); })
-              .attr("y", function(d) { return y(d.value); })
+              .attr("y", function(d){return 0;})
               .attr("width", x1.bandwidth())
-              .attr("height", 0)
+              .attr("height", function(d){return 0;})
               // .attr("height", function(d) { return height - y(d.value); })
               .attr("fill", function(d) { return z(d.key); });
 
@@ -225,7 +225,9 @@ hp.hpFactsView = function() {
           //Animation barchart1
           d3.selectAll(".rect1")
             .transition()
+            .delay(function (d, i) { return i*100; })
             .duration(1500)
+            .attr("y", function (d, i) { return y(d.value); })
             .attr("height", function(d) { return height - y(d.value); });
 
           g.append("g")
@@ -332,16 +334,18 @@ Harry Potter and the Deathly Hallows */
             .enter().append("rect")
               .attr("class", "rect2")
               .attr("x", function(d) { return x(d.data.title); })
-              .attr("y", function(d) { return y(d[1]); })
+              .attr("y", function(d) { return 0 })
               .attr("height", 0)
               // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
               .attr("width", x.bandwidth());
 
         //Animation barchart2
         d3.selectAll(".rect2")
-          .transition()
-          .duration(1500)
-          .attr("height", function(d) { return y(d[0]) - y(d[1]); });
+            .transition()
+            .delay(function (d, i) { return i*100; })
+            .duration(1000)
+            .attr("y", function (d, i) { return y(d[1]); })
+            .attr("height", function(d) { return y(d[0]) - y(d[1]); });
 
           g.append("g")
               .attr("class", "axis")
