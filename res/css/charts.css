@@ -52,8 +52,14 @@ path.chord {
 
 #Chart3 {
     font-family: 'Kaushan Script', cursive;
-
 }
+
+#Chart3Pop {
+ font-family: 'Kaushan Script', cursive;
+ padding-left: 10%;
+ position: center;
+}
+
 
 #gap {
     font-size: 0px;
@@ -110,6 +116,7 @@ path.chord {
 
 .popup h2 {
   margin-top: 20px;
+  margin-bottom: 0px;
   color:  #06D85F;
   font-size: 30px;
   font-family: 'Ruthie', cursive;
@@ -124,6 +131,7 @@ path.chord {
   font-weight: bold;
   text-decoration: none;
   color:  #06D85F;
+  overflow: auto;
 }
 .popup .close:hover {
   color: #06D85F;
@@ -151,11 +159,6 @@ polyline{
    stroke: black;
    stroke-width: 2px;
    fill: none;
-}
-
-#Chart3Pop {
-    padding-left: 28%;
-    font-size: 70%;
 }
 
 

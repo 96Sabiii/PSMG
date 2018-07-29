@@ -177,12 +177,12 @@
     function createPopupRelationsChart() {
         console.log("create");
             //Grundgerüst erstellen
-        let popupM = 90;
-        var margin = {left:popupM, top:popupM, right:popupM, bottom:popupM},
-        width = Math.min(window.innerWidth-300, 550) - margin.left - margin.right,
-        height = Math.min(window.innerWidth-300, 550) - margin.top - margin.bottom;
+     var margin = {left:m, top:m, right:m, bottom:m},
+        width = Math.max(window.innerWidth-300, size) - margin.left - margin.right,
+        height = Math.max(window.innerWidth-300, size) - margin.top - margin.bottom;
         innerRadius = Math.min(width, height) * .39;
         outerRadius = innerRadius + 15;
+
 
         arc = d3.svg.arc()
         .innerRadius(innerRadius *1.01) //Abstand zwischen innerem und äußerem Kreis
