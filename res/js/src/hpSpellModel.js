@@ -13,11 +13,11 @@ hp.hpSpellModel = function() {
         object,
         size = 1250;
 
-    function loadBubbleData(bookNr) {   
+    function loadBubbleData(bookNr, area) {   
         d3.json("res/assets/data/spellsData.json", function(data) {
             //daten bei jedem klick geladen, evtl auhc if ob all
             createDataObject(data);
-            createBubbleDataNew(data, bookNr);
+            createBubbleDataNew(data, bookNr, area);
         });
     }
 
@@ -42,7 +42,7 @@ hp.hpSpellModel = function() {
         }
     }
 
-    function createBubbleDataNew(data, bookNr) {
+    function createBubbleDataNew(data, bookNr, area) {
         var object = {name: "root", children: []};
         //daten umwandeln
         for(var i = 0; i < data.spellsData.length; i++) {
@@ -84,7 +84,8 @@ hp.hpSpellModel = function() {
         }
         nodeFkt(root);
         data = [root, bookNr];
-        that.notifyAll("spellRootAvailable", data);
+        if (area == "preview") that.notifyAll("spellRootAvailable", data);
+        else that.notifyAll("spellPopupRootAvailable", data);
 
     }
 
@@ -112,7 +113,19 @@ hp.hpSpellModel = function() {
 
 
     }
+    
+    function setupPopupButtons() {
+        document.getElementById("popPs").onclick = function(){ that.notifyAll("newPopupData", 10) };
+        document.getElementById("popCos").onclick = function(){ that.notifyAll("newPopupData", 9) };
+        document.getElementById("popPoa").onclick = function(){ that.notifyAll("newPopupData", 8)};
+        document.getElementById("popGof").onclick = function(){ that.notifyAll("newPopupData", 7) };
+        document.getElementById("popOotp").onclick = function(){ that.notifyAll("newPopupData", 6) };
+        document.getElementById("popHbp").onclick = function(){that.notifyAll("newPopupData", 5) };
+        document.getElementById("popDh").onclick = function(){ that.notifyAll("newPopupData", 4) };
+        document.getElementById("popAll").onclick = function(){ that.notifyAll("newPopupData", "all") };
+    }
 
+    that.setupPopupButtons = setupPopupButtons;
     that.loadBubbleData = loadBubbleData;
     that.setupButtons = setupButtons;
     //that.createChord = createChord;

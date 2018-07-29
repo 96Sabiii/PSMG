@@ -17,21 +17,23 @@ hp.hpSpellView = function() {
     //chart braucht man nicht? ändert nichts
 
     function createSpellChart(){
-      chart = document.getElementById("Chart2");
+        chart = document.getElementById("Chart2");
 
       // Define the div for the tooltip
       div = d3.select("body").append("div")
           .attr("class", "tooltip")
           .style("opacity", 0);
+        
+        d3.select(".openPopup").on("click", function() { that.notifyAll("loadBubblePopup"); });
     }
 
-    function createSVG(data) {
+    function createSVG(data, area) {
         var root = data[0],
             bookNr = data [1],
             bookString,
             color;
         if (bookNr == "all") {
-            createSpellSVG(root);
+            createSpellSVG(root, area);
         } else {
             if (bookNr == 4) {
                 bookString = "dh";
@@ -57,18 +59,22 @@ hp.hpSpellView = function() {
             } else {
                 bookString = "all";
             }
-            spellsByBook(root, bookString, bookNr, color);
+            spellsByBook(root, bookString, bookNr, color, area);
         }
     }
 
     //doppelter code, wenn if all dann pie chart
-    function createSpellSVG(root) {
+    function createSpellSVG(root, area) {
 
         //SVG erstellen
-        deleteChart();
-
-        var selection = d3.select("#Chart2"),
-          g = selection.append("g").attr("transform", "translate(2,2)"),
+        deleteChart(area);
+        var selection; 
+        
+        if (area == "preview") selection = d3.select("#Chart2");
+        else selection = d3.select("#Chart2Popup");
+    
+        
+        var g = selection.append("g").attr("transform", "translate(2,2)"),
           colorCircles = d3.scaleSequential()
           .domain([0, 15])
           .interpolator(d3.interpolateRainbow);
@@ -217,11 +223,16 @@ hp.hpSpellView = function() {
 
 
 // erstellt book sorted bubble chart
-    function spellsByBook(root, sortString, bookNr, color) {
-        deleteChart();
+    function spellsByBook(root, sortString, bookNr, color, area) {
+        deleteChart(area);
+        
         //hier neues Chart
-            var selection = d3.select("#Chart2"),
-                g = selection.append("g").attr("transform", "translate(2,2)");
+        var selection;
+        
+        if (area == "preview") selection = d3.select("#Chart2");
+        else selection = d3.select("#Chart2Popup");
+        
+        var g = selection.append("g").attr("transform", "translate(2,2)");
 
         selection.attr("opacity", 1);
 
@@ -293,15 +304,19 @@ hp.hpSpellView = function() {
                 });
             }
 
-    function deleteChart() {
-        while (chart.firstChild) {
-            chart.removeChild(chart.firstChild);
+    function deleteChart(area) {
+        var oldChart;
+        if (area == "preview") oldChart = document.getElementById("Chart2");
+        else oldChart = document.getElementById("Chart2Popup");
+        
+        while (oldChart.firstChild) {
+            oldChart.removeChild(oldChart.firstChild);
         }
     }
 
     function fadeOut(book) {
         if (d3.select("#Chart2").selectAll("g").size() > 1){
-        d3.select("#Chart2")
+            d3.select("#Chart2")
             .transition()
               .duration(850)
               .attr("opacity", 0);
@@ -310,7 +325,19 @@ hp.hpSpellView = function() {
         }
 
     }
+    
+    function popupFadeOut(book) {
+        if (d3.select("#Chart2Popup").selectAll("g").size() > 1){
+            d3.select("#Chart2Popup")
+            .transition()
+              .duration(850)
+              .attr("opacity", 0);
 
+            setTimeout( function() {that.notifyAll("popupFadedOut", book)},1000);
+        }
+    }
+
+    that.popupFadeOut = popupFadeOut;
   that.createSpellChart = createSpellChart;
   that.createSVG = createSVG;
     that.fadeOut = fadeOut;

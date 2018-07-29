@@ -66,7 +66,7 @@
                    </div>
                </div>
 
-            <div class="expand" style="padding-top: 10px">
+            <div style="padding-top: 10px">
               <div id="toolbar">
                   <a id="all" class="button active" style="background-color:#c4b8bd">Total</a><br><br>
                   <a id="ps" class="button" style="background-color:#bf0542">PS</a>
@@ -78,7 +78,27 @@
                   <a id="dh" class="button" style="background-color:#d134a2">DH</a>
                   <p id="gap"> &nbsp; </p>
               </div>
-               <svg  id="Chart2"  viewBox="0 0 1250 1250"></svg>
+                <a class="openPopup" href="#popupSpells">
+                    <svg id="Chart2" viewBox="0 0  1250 1250"></svg>
+                </a>
+            </div>
+            <div id="popupSpells" class="overlay" style=" overflow: auto;">
+               <div class="popup">
+                  <h2>Character Magic</h2>
+                  <a class="close" href="#">&times;</a>
+                    <div id="toolbar">
+                      <a id="popAll" class="button active" style="background-color:#c4b8bd">Total</a><br><br>
+                      <a id="popPs" class="button" style="background-color:#bf0542">PS</a>
+                      <a id="popCos" class="button" style="background-color:#6cd8ca">COS</a>
+                      <a id="popPoa" class="button" style="background-color:#ea7c54">POA</a>
+                      <a id="popGof" class="button" style="background-color:#66d67a">GOF</a>
+                      <a id="popOotp" class="button" style="background-color:#70b2ff">OTP</a>
+                      <a id="popHbp" class="button"style="background-color:#a637bf">HBP</a>
+                      <a id="popDh" class="button" style="background-color:#d134a2">DH</a>
+                      <p id="gap"> &nbsp; </p>
+                  </div>
+                   <svg  id="Chart2Popup" style=" overflow-x:scroll; overflow-y:scroll;" viewBox="0 0 1350 1350"></svg>
+               </div>
             </div>
 
 

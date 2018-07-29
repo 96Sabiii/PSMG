@@ -54,6 +54,11 @@ path.chord {
     font-family: 'Kaushan Script', cursive;
 }
 
+#Chart2Popup {
+    width: 800px;
+    z-index: 100;
+}
+
 #Chart3Pop {
  font-family: 'Kaushan Script', cursive;
  padding-left: 10%;

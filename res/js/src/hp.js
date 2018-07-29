@@ -30,9 +30,17 @@ var hp = (function () {
   }
 
   function initSpellModel() {
-    spellModel = new hp.hpSpellModel();
-    spellModel.addEventListener("spellRootAvailable", onSpellRootAvailable);
-    spellModel.addEventListener("newData", fadeOut);
+      spellModel = new hp.hpSpellModel();
+      spellModel.addEventListener("spellRootAvailable", onSpellRootAvailable);
+      spellModel.addEventListener("newData", fadeOut);
+      spellModel.addEventListener("spellPopupRootAvailable", onSpellPopupRootAvailable)
+      spellModel.addEventListener("newPopupData", onNewPopupData);
+  }
+    function initSpellView() {
+        spellView = new hp.hpSpellView();
+        spellView.addEventListener("fadedOut", onFadedOut);
+        spellView.addEventListener("popupFadedOut", onPopupFadedOut);
+        spellView.addEventListener("loadBubblePopup", onLoadBubblePopup);
   }
 
   function initActionsView() {
@@ -45,13 +53,8 @@ var hp = (function () {
   }
 
     function initRelationsModel() {
-    relationsModel = new hp.hpRelationsModel();
-    relationsModel.addEventListener("relationsDataFinish", onRelationsDataFinish);
-  }
-
-  function initSpellView() {
-    spellView = new hp.hpSpellView();
-      spellView.addEventListener("fadedOut", onFadedOut);
+        relationsModel = new hp.hpRelationsModel();
+        relationsModel.addEventListener("relationsDataFinish", onRelationsDataFinish);
   }
     
     function initFactsModel() {
@@ -66,6 +69,15 @@ var hp = (function () {
         factsView = new hp.hpFactsView();
         factsView.addEventListener("loadWordsPopup", onLoadWordsPopup);
         factsView.addEventListener("loadMarksPopup", onLoadMarksPopup);
+    }
+    
+    function onLoadBubblePopup() {
+        spellModel.loadBubbleData("all", "popup");
+        spellModel.setupPopupButtons();
+    }
+    
+    function onSpellPopupRootAvailable(event) {
+        spellView.createSVG(event.data, "popup");
     }
     
     function onLoadWordsPopup() {
@@ -101,11 +113,19 @@ var hp = (function () {
     }
 
     function onSpellRootAvailable(event){
-        spellView.createSVG(event.data);
+        spellView.createSVG(event.data, "preview");
     }
 
     function onRelationsDataFinish(event) {
         relationsView.showRelationsChart(event.data);
+    }
+    
+    function onNewPopupData(event) {
+        spellView.popupFadeOut(event.data);
+    }
+    
+    function onPopupFadedOut(event) {
+        spellModel.loadBubbleData(event.data, "popup");
     }
     
     function fadeOut(event) {
@@ -113,7 +133,7 @@ var hp = (function () {
     }
     
     function onFadedOut(event) {
-        spellModel.loadBubbleData(event.data);
+        spellModel.loadBubbleData(event.data, "preview");
     }
 
   function onCardOneClicked() {
@@ -124,7 +144,7 @@ var hp = (function () {
 
   function onCardTwoClicked() {
     spellView.createSpellChart();
-    spellModel.loadBubbleData("all");
+    spellModel.loadBubbleData("all", "preview");
     spellModel.setupButtons();
   }
 
