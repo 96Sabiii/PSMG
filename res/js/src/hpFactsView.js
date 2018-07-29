@@ -231,10 +231,7 @@ hp.hpFactsView = function() {
               .attr("x", "40")
               .attr("y", y(y.ticks().pop()) + 0.5)
               .attr("dy", "0.32em")
-              .attr("fill", "#000")
-              .attr("font-weight", "bold")
               .attr("text-anchor", "start")
-              .attr("font-size", "30")
               .text("Count");
 
           var legend = g.append("g")
@@ -340,12 +337,9 @@ Harry Potter and the Deathly Hallows */
               .call(d3.axisLeft(y).ticks(null, "s"))
             .append("text")
               .attr("x", 2)
-              .attr("y", y(y.ticks().pop()) + 0.5)
-              .attr("dy", "0.32em")
-              .attr("fill", "#000")
-              .attr("font-weight", "bold")
+              .attr("dy", "0.2em")
               .attr("text-anchor", "start")
-              .text("Counts");
+              .text("Count");
 
           var legend = g.append("g")
               .attr("font-family", "sans-serif")
