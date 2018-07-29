@@ -56,10 +56,32 @@
             <div class="collumn">
                <div class="svgContainer">
                   <span class="headline h3">"DUMBLEDORE — THE TRUE AND THE WISE!" </span>
-                   <button class="randomize">randomize</button>
-                   <svg class="expand" id="Chart4" viewBox="0 0 1250 1250"></svg>
-                   <svg class="expand" id="Chart5" height="200" viewBox="0 0 1250 1250"></svg>
-                   <svg class="expand" id="Chart6" height="200" viewBox="0 0 1250 1250"></svg>
+<!--                    <button class="randomize">randomize</button>
+                   <a>
+                       <svg class="expand" id="Chart4" viewBox="0 0 1250 1250"></svg>
+                   </a>-->
+                   <a class="openPopup1" href="#popupFacts1">
+                       <svg id="Chart5" height="200" viewBox="0 0 1250 1250"></svg>
+                   </a>
+                   <a class="openPopup2" href="#popupFacts2">
+                       <svg id="Chart6" height="200" viewBox="0 0 1250 1250"></svg>
+                   </a>
+                   
+                    <div id="popupFacts1" class="overlay" style=" overflow: auto;">
+                       <div class="popup">
+                          <h2>Marks Magic</h2>
+                          <a class="close" href="#">&times;</a>
+                           <svg  id="Chart5Popup" style=" overflow-x:scroll; overflow-y:scroll;" viewBox="0 0 1350 1350"></svg>
+                       </div>
+                    </div>
+                   
+                   <div id="popupFacts2" class="overlay" style=" overflow: auto;">
+                       <div class="popup">
+                          <h2>Words Magic</h2>
+                          <a class="close" href="#">&times;</a>
+                           <svg  id="Chart6Popup" style=" overflow-x:scroll; overflow-y:scroll;" viewBox="0 0 1350 1350"></svg>
+                       </div>
+                    </div>
                    
                </div>
             </div>

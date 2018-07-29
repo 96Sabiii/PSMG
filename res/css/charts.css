@@ -60,6 +60,11 @@ path.chord {
  position: center;
 }
 
+#Chart5Popup, #Chart6Popup {
+    width: 800px;
+    color: white;
+}
+
 
 #gap {
     font-size: 0px;

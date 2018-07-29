@@ -6,13 +6,9 @@ var hp = hp || {};
 hp.hpFactsModel = function() {
     "use strict";
     var that = new EventPublisher();
+
     
-    function loadData() {
-        loadMarksChartData();
-        loadWordsChartData();
-    }
-    
-    function loadMarksChartData () {
+    function loadMarksChartData (area) {
         d3.csv("res/assets/data/satzzeichen.csv", function(d, i, columns) {
               // console.log(d,i,columns);
               var  t = 0;
@@ -21,22 +17,25 @@ hp.hpFactsModel = function() {
               return d;
         }, function(error, data) {
             if (error) throw error;
-            that.notifyAll("marksChartDataLoaded", data);
+            if (area == "preview") that.notifyAll("marksChartDataLoaded", data);
+            else that.notifyAll("marksPopupDataLoaded", data);
         });
     }
     
-    function loadWordsChartData() {
+    function loadWordsChartData(area) {
         d3.csv("res/assets/data/words.csv", function(d, i, columns) {
            //console.log(d,i,columns);
           for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
           return d;
         }, function(error, data) {
-          if (error) throw error;
-            that.notifyAll("wordsChartDataLoaded", data);
+            if (error) throw error;
+            if (area == "preview") that.notifyAll("wordsChartDataLoaded", data); 
+            else that.notifyAll("wordsPopupDataLoaded", data);
         });
     }
                
-    that.loadData = loadData;
+    that.loadMarksChartData = loadMarksChartData;
+    that.loadWordsChartData = loadWordsChartData;
     return that;
 
 };

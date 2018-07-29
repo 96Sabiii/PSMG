@@ -135,8 +135,6 @@ hp.hpFactsView = function() {
        polyline.exit()
           .remove();
     }
-    
-    
     function randomData (color){
        var labels = color.domain();
        return labels.map(function(label){
@@ -161,14 +159,32 @@ hp.hpFactsView = function() {
         //<svg width="450" height="350"></svg>
         //<script src="https://d3js.org/d3.v4.min.js"></script>
 
-
+    function createWordsChartPopup(data) {
+        var svg = d3.select('#Chart5Popup'),
+            popupClass = "wordsPopupG";
+        
+        designWordsChart(data, svg, popupClass);
+        //anpassen welches svg close
+        d3.select(".close").on("click", function() { d3.select("." + popupClass).remove(); });
+    }
+    
     function createWordsChart(data) {
 
-        var svg = d3.select('#Chart5'),
-            margin = {top: 40, right: 20, bottom: 30, left: 40},
+        var svg = d3.select('#Chart5');
+        
+        designWordsChart(data, svg, "");
+        
+        //dazugehöriges Popup implementieren
+        d3.select(".openPopup1").on("click", function() { that.notifyAll("loadWordsPopup"); });
+    }
+    
+    function designWordsChart(data, svg, popupClass) {
+        var margin = {top: 40, right: 20, bottom: 30, left: 40},
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size)  - margin.top - margin.bottom,
-            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            g = svg.append("g")
+                .attr("class", popupClass)
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var x0 = d3.scaleBand()
             .rangeRound([0, width])
@@ -240,7 +256,7 @@ hp.hpFactsView = function() {
               .attr("y", 9.5)
               .attr("dy", "0.32em")
               .text(function(d) { return d; });
-    }   
+    }
       
 
 //<!-- STACKED BAR CHART SATZZEICHEN, nach https://bl.ocks.org/mbostock/3886208-->
@@ -257,9 +273,25 @@ Harry Potter and the Deathly Hallows */
 //<svg width="450" height="350"></svg>
 //<script src="https://d3js.org/d3.v4.min.js"></script>
     
+    function createMarksChartPopup(data) {
+        var svg = d3.select('#Chart6Popup'),
+            popupClass = "marksPopupG";
+        
+        designMarksChart(data, svg, popupClass);
+        //anpassen welches svg close
+        d3.select(".close").on("click", function() { d3.select("." + popupClass).remove(); });
+    }
+    
     function createMarksChart(data) {
-        var svg = d3.select('#Chart6'),
-            margin = {top: 40, right: 20, bottom: 30, left: 40},
+        var svg = d3.select('#Chart6');
+        designMarksChart(data, svg, "");
+        
+        //dazugehöriges Popup implementieren
+        d3.select(".openPopup2").on("click", function() { that.notifyAll("loadMarksPopup"); });
+    }
+    
+    function designMarksChart(data, svg, popupClass) {
+        var margin = {top: 40, right: 20, bottom: 30, left: 40},
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size)  - margin.top - margin.bottom,
             g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -335,9 +367,10 @@ Harry Potter and the Deathly Hallows */
               .attr("y", 9.5)
               .attr("dy", "0.32em")
               .text(function(d) { return d; });
-        
     }
 
+    that.createWordsChartPopup = createWordsChartPopup;
+    that.createMarksChartPopup = createMarksChartPopup;
     that.createWordsChart = createWordsChart;
     that.createMarksChart = createMarksChart;
     that.test = test;
