@@ -62,9 +62,13 @@ path.chord {
 
 #Chart5Popup, #Chart6Popup {
     width: 800px;
-    color: white;
 }
 
+#Chart6Popup, #Chart6Popup .axis line, #Chart6Popup .axis path, #Chart6Popup .axis text, #Chart6Popup .axis,
+#Chart5Popup, #Chart5Popup .axis line, #Chart5Popup .axis path, #Chart5Popup .axis text, #Chart5Popup .axis{
+    font-size: 130%;
+    fill: darkgrey;
+}
 
 #gap {
     font-size: 0px;
