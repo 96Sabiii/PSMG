@@ -52,17 +52,15 @@ path.chord {
 
 #Chart3 {
     font-family: 'Kaushan Script', cursive;
-}
+ }
 
 #Chart2Popup {
+    font-family: 'Kaushan Script', cursive;
     width: 800px;
-    z-index: 100;
-}
+ }
 
 #Chart3Pop {
  font-family: 'Kaushan Script', cursive;
- padding-left: 10%;
- position: center;
 }
 
 #Chart5Popup, #Chart6Popup {
@@ -86,31 +84,6 @@ path.chord {
 }
 
 
-//Pop-Up
-
-.button_box {
-  width: 40%;
-  margin: 0 auto;
-  padding: 25px;
-  background-clip: padding-box;
-  text-align: center;
- }
-
- .button_box .button{
-  font-size: 1em;
-  padding: 10px;
-  color: #fff;
-  border: 2px solid #06D85F;
-  border-radius: 20px/50px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-  }
-
-.button:hover {
-  background: #06D85F;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -121,6 +94,7 @@ path.chord {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 100;
 }
 .overlay:target {
   visibility: visible;
@@ -151,14 +125,8 @@ path.chord {
   color: #06D85F;
 }
 
-@media screen and (max-width: 1250px){
-  .button_box{
-    width: 100%;
-  }
-  .popup{
-    width: 100%;
-  }
-}Pop-Up Ende
+
+Pop-Up Ende
 
 .axis .domain {
   display: none;
