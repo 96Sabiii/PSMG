@@ -7,7 +7,8 @@ hp.hpFactsView = function() {
     "use strict";
     var that = new EventPublisher(),
         size=1200,
-        width = 280;
+        width = 280,
+        div;
 
 
         ////////////////
@@ -67,6 +68,11 @@ hp.hpFactsView = function() {
             .range(["#1D8089","#CA295A","#E1822E"]);
 
           var keys = data.columns.slice(1);
+        
+            // Define the div for the tooltip
+          div = d3.select("body").append("div")
+              .attr("class", "tooltip")
+              .style("opacity", 0);
 
           x0.domain(data.map(function(d) { return d.title; }));
           x1.domain(keys).rangeRound([0, x0.bandwidth()]);
@@ -78,7 +84,7 @@ hp.hpFactsView = function() {
             .enter().append("g")
               .attr("transform", function(d) { return "translate(" + x0(d.title) + ",0)"; })
             .selectAll("rect")
-            .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+            .data(function(d) { return keys.map(function(key) {return {title: d.title, key: key, value: d[key]}; }); })
             .enter().append("rect")
               .attr("class", "rect1")
               .attr("x", function(d) { return x1(d.key); })
@@ -86,7 +92,28 @@ hp.hpFactsView = function() {
               .attr("width", x1.bandwidth())
               .attr("height", function(d){return 0;})
               // .attr("height", function(d) { return height - y(d.value); })
-              .attr("fill", function(d) { return z(d.key); });
+              .attr("fill", function(d) { return z(d.key); })
+              .on("mouseover", function(d) {
+                  d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
+                  div.transition()
+                      .attr("id","pie")
+                      .duration(200)
+                      .style("opacity", .9)
+                      .style("width","220px")
+                    //  .style("height","250px")
+                      .style("text-align","center");
+                  div.html("<b>" + d.title + "</b> <br/>" + d.key +  ": " + d.value)
+                            // .style("left", (d3.event.pageX) + "px")
+                            // .style("top", (d3.event.pageY - 28) + "px");
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 50) + "px");
+                })
+                .on("mouseout", function(d) {
+                  d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                  div.transition()
+                      .duration(500)
+                      .style("opacity", 0);
+          });
 
 
           //Animation barchart1
@@ -441,19 +468,17 @@ Harry Potter and the Deathly Hallows */
         }
 
         // calculate total frequency by segment for all state.
-        // ersetzen durch var content = ["USA", "Overseas", "World"];
-        var tF = ['box_office_USA','box_office_overseas','box_office_world'].map(function(d, i){ 
-            return {type:d, freq: d3.sum(fData.map(function(t){return t.freq[d];}))}; 
+        var tF = ['box_office_USA','box_office_overseas','box_office_world'].map(function(d){ 
+            return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
         });    
 
         // calculate total frequency by state for all segment.
-        // untere wird noc
-        var sF = fData.map(function(d){ return [d.name,d.total];});
+        var sF = fData.map(function(d){return [d.name,d.total];});
 
         var hG = histoGram(sF), // create the histogram.
             pC = pieChart(tF), // create the pie-chart.
             leg= legend(tF);  // create the legend.
-    }
+}
 
 
     that.createWordsChartPopup = createWordsChartPopup;
