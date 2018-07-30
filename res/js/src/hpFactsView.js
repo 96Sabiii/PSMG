@@ -15,15 +15,6 @@ hp.hpFactsView = function() {
 
    //       <!-- GROUPED BAR CHART WÖRTER, nach https://bl.ocks.org/mbostock/3887051-->
 
-        /* für tooltip, der fehlt noch
-        Harry Potter and the Sorcerer’s Stone
-        Harry Potter and the Chamber of Secret
-        Harry Potter and the Prisoner of Azkaban
-        Harry Potter and the Goblet of Fire
-        Harry Potter and the Order of the Phoenix
-        Harry Potter and the Half-Blood Prince,
-        Harry Potter and the Deathly Hallows */
-
 
     function createWordsChartPopup(data) {
         var svg = d3.select('#Chart5Popup'),
@@ -45,7 +36,7 @@ hp.hpFactsView = function() {
     }
 
     function designWordsChart(data, svg, popupClass) {
-        var margin = {top: 40, right: 20, bottom: 30, left: 40},
+        var margin = {top: 80, right: 20, bottom: 30, left: 80},
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size)  - margin.top - margin.bottom,
             g = svg.append("g")
@@ -160,16 +151,6 @@ hp.hpFactsView = function() {
 
 //<!-- STACKED BAR CHART SATZZEICHEN, nach https://bl.ocks.org/mbostock/3886208-->
 
-/* für tooltip, der fehlt noch
-Harry Potter and the Sorcerer’s Stone
-Harry Potter and the Chamber of Secret
-Harry Potter and the Prisoner of Azkaban
-Harry Potter and the Goblet of Fire
-Harry Potter and the Order of the Phoenix
-Harry Potter and the Half-Blood Prince,
-Harry Potter and the Deathly Hallows */
-
-
     function createMarksChartPopup(data) {
         var svg = d3.select('#Chart6Popup'),
             popupClass = "marksPopupG";
@@ -188,7 +169,7 @@ Harry Potter and the Deathly Hallows */
     }
 
     function designMarksChart(data, svg, popupClass) {
-        var margin = {top: 40, right: 20, bottom: 30, left: 40},
+        var margin = {top: 80, right: 20, bottom: 30, left: 80},
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size)  - margin.top - margin.bottom,
             g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");

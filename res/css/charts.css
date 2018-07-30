@@ -76,11 +76,15 @@ path.chord {
     width: 800px;
 }
 
-
 #Chart6Popup, #Chart6Popup .axis line, #Chart6Popup .axis path, #Chart6Popup .axis text, #Chart6Popup .axis,
 #Chart5Popup, #Chart5Popup .axis line, #Chart5Popup .axis path, #Chart5Popup .axis text, #Chart5Popup .axis{
   fill:  #8a89a6;
-  font-size: 100%;
+  font-size: 130%;
+}
+
+#Chart6, #Chart6 .axis line, #Chart6 .axis path, #Chart6 .axis text, #Chart6 .axis,
+#Chart5, #Chart5 .axis line, #Chart5 .axis path, #Chart5 .axis text, #Chart5 .axis{
+  font-size: 170%;
 }
 
 #salesPopup svg {
@@ -149,9 +153,6 @@ path.chord {
 .popup .close:hover {
   color: #06D85F;
 }
-
-
-Pop-Up Ende
 
 .axis .domain {
   display: none;

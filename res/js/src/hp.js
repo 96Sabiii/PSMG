@@ -155,7 +155,7 @@ var hp = (function () {
         var actionsFlower = new CodeFlower("#Chart1", 300, 200);
         actionsFlower.update(   
         //actionsModel.loadCodeflowerData()
-        d3.json("res/assets/data/codeflowerData.json", function(data) {
+        d3.json("res/assets/data/CF.json", function(data) {
             return data;
         }));
   }
