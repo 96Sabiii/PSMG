@@ -4,7 +4,7 @@ div.tooltip {
     opacity: .9;
     width: 300px;
     padding: 4px;
-    font-family: 'Spirax', cursive;
+    font-family:  'Special Elite', cursive;
     font-size: 16px;
     background: #6d6d6d;
     border: 2px solid #aeb4bf;
@@ -16,11 +16,6 @@ rect, path {
     cursor: pointer;
 }
 
-
-.bar text{
-   font-family: 'Spirax', cursive;
-   font-size: 80%;
-}
 
 #circle circle {
     fill: none;
@@ -78,27 +73,29 @@ path.chord {
 
 #Chart6Popup, #Chart6Popup .axis line, #Chart6Popup .axis path, #Chart6Popup .axis text, #Chart6Popup .axis,
 #Chart5Popup, #Chart5Popup .axis line, #Chart5Popup .axis path, #Chart5Popup .axis text, #Chart5Popup .axis{
-  fill:  #8a89a6;
+  fill:  #aeb4bf;
+ font-family:  'Special Elite', cursive;
   font-size: 130%;
 }
 
 #Chart6, #Chart6 .axis line, #Chart6 .axis path, #Chart6 .axis text, #Chart6 .axis,
 #Chart5, #Chart5 .axis line, #Chart5 .axis path, #Chart5 .axis text, #Chart5 .axis{
+   font-family:  'Special Elite', cursive;
   font-size: 170%;
 }
 
 #salesPopup svg {
     display: block;
     margin: 3% auto;
-    color: white;
+    color: #aeb4bf;
 }
 
 #salesPopup td {
-    color: white;
+    color: #aeb4bf;
 }
 
 #salesPopup .button {
-    color: white;
+    color: #aeb4bf;
     margin: 0 40%;
 }
 
@@ -171,10 +168,10 @@ polyline{
 
 /*## Dashborad*/
 
-.salesPie path {  stroke: #fff; }
+.salesPie path {  stroke: #aeb4bf; }
 path:hover {  opacity:0.9; }
 rect:hover {  fill:#8a89a6;; }
-.axis {  font: 10px sans-serif; }
+.axis {  font: ppx sans-serif; }
 .legend tr{    border-bottom:1px solid grey; }
 .legend tr:first-child{    border-top:1px solid grey; }
 
@@ -187,18 +184,19 @@ rect:hover {  fill:#8a89a6;; }
 
 .x.axis path {  display: none; }
 .legend{
-   font-family: 'Spirax', cursive;
+   font-family:  'Special Elite', cursive;
     margin-bottom: 3%;
     display:inline-block;
     border-collapse: collapse;
     border-spacing: 0px;
 }
 .legend td{
-   font-family: 'Spirax', cursive;
-    padding:4px 5px;
+font-family:  'Special Elite', cursive;
+    padding:2px 2px;
     vertical-align:bottom;
 }
 .legendFreq, .legendPerc{
+  
     align:right;
     width:50px;
 }

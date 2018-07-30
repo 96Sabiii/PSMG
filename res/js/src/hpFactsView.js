@@ -279,11 +279,14 @@ hp.hpFactsView = function() {
    //  <!--DASHBOARD VERKAUFSZAHLEN nach http: //bl.ocks.org/NPashaP/96447623ef4d342ee09b-->
     
     function dashboard(id, fData){
-        var barColor = "#0d4e54";
-        function segColor(c){ return {box_office_USA:"#1D8089", box_office_overseas:"#CA295A",box_office_world:"#E1822E"}[c]; }
+       
+      
+        var barColor = "#75B540";
+        function segColor(c){ return {USA:"#1D8089", Overseas:"#CA295A", Worldwide:"#E1822E"}[c]; }
 
         // compute total for each state.
-        fData.forEach(function(d){d.total=d.freq.box_office_USA+d.freq.box_office_overseas+d.freq.box_office_world;});
+        
+        fData.forEach(function(d){d.total=d.freq.USA+d.freq.Overseas+d.freq.Worldwide;});
         
         d3.select("#openSalesPopup").on("click", function() {that.notifyAll("loadSalesPopup"); });
         d3.select("#salesClose").on("click", function() { deleteChart() });
@@ -489,7 +492,7 @@ hp.hpFactsView = function() {
         }
 
         // calculate total frequency by segment for all state.
-        var tF = ['box_office_USA','box_office_overseas','box_office_world'].map(function(d){ 
+           var tF = ['USA','Overseas','Worldwide'].map(function(d){
             return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
         });    
 
