@@ -44,13 +44,7 @@ var hp = (function () {
   }
 
   function initActionsView() {
-    actionsView = new hp.hpActionsView();
-    var actionsFlower = new CodeFlower("#Chart1", 300, 200);
-    actionsFlower.update(   
-        //actionsModel.loadCodeflowerData()
-        d3.json("res/assets/data/codeflowerData.json", function(data) {
-            return data;
-        }));
+    //ssactionsView = new hp.hpActionsView();
   }
 
   function initRelationsView() {
@@ -158,9 +152,12 @@ var hp = (function () {
     }
 
   function onCardOneClicked() {
-    actionsView.createActionsChart();
-    actionsModel.loadBubbleData("all");
-    //model.createChord();
+        var actionsFlower = new CodeFlower("#Chart1", 300, 200);
+        actionsFlower.update(   
+        //actionsModel.loadCodeflowerData()
+        d3.json("res/assets/data/codeflowerData.json", function(data) {
+            return data;
+        }));
   }
 
   function onCardTwoClicked() {
