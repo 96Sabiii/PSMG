@@ -12,6 +12,12 @@ div.tooltip {
     pointer-events: none;
 }
 
+
+.bar text{
+   font-family: 'Spirax', cursive;
+   font-size: 80%;
+}
+
 #circle circle {
     fill: none;
     pointer-events: all;

@@ -197,7 +197,7 @@ hp.hpFactsView = function() {
             .rangeRound([height, 0]);
 
         var z = d3.scaleOrdinal()
-            .range(["#1D8089","#CA295A","#E1822E","#71C929", "#A71944"]);
+            .range(["#1D8089","#CA295A","#E1822E"]);
 
           var keys = data.columns.slice(1);
 
