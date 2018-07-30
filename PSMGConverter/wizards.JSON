@@ -1,0 +1,2740 @@
+{
+"wizards" : [
+    {
+    "name" : "Harry",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "but Harry, by instinct, reached up and grabbed Quirrell's face -- "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry jumped to his feet, caught Quirrell by the arm, and hung on as tight as he could"
+        },
+        {
+        "name" : "Rictusempra",
+        "occurrence" : "Harry pointed his wand straight at Malfoy and shouted, Rictusempra! "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "Harry reached his wand just in time. Lockhart had barely raised his, when Harry bellowed, Expelliarmus! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The basilisk lunged again, and this time its aim was true -- Harry threw his whole weight behind the sword and drove it to the hilt into the roof of the serpent's mouth "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "But Aunt Marge suddenly stopped speaking. For a moment, it looked as though words had failed her. She seemed to be swelling with inexpressible anger - "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Harry yelled. Expecto patronum! Expecto -- "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Harry yelled. Expecto patronum! Expecto -- "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Harry yelled. Expecto patronum! Expecto Pat -- "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Harry yelled. Expecto patronum! Expecto Pat -- "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "'EXPECTO PATRONUM! Harry bellowed. EXPECTO PATRONUM! EXPECTO PATRONUM! "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "'EXPECTO PATRONUM! Harry bellowed. EXPECTO PATRONUM! EXPECTO PATRONUM! "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "'EXPECTO PATRONUM! Harry bellowed. EXPECTO PATRONUM! EXPECTO PATRONUM! "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Plunging a hand down the neck of his robes, he whipped out his wand and roared, Expecto patronum! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry dodged around him, picked up a stick, and lobbed it at Crabbe's back. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "but Harry stuck out his leg. Crabbe stumbled -- and his huge, flat foot caught the hem of Harry's cloak "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "the knuckles of Harry's other hand collided with the side of Black's head and they fell, backward, into the wall "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "Expelliarmus! he yelled -- except that his wasn't the only voice that shouted. "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "Expelliarmus. Harry yelled, pointing his own wand at Pettigrew; Lupin's wand flew high into the air and out of sight. "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Expecto patronum! "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Expecto patronum! "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Hermione, help me! Expecto patronum!"
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! Hermione, help me! Expecto patronum!"
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "EXPECTO PATRONUM! Harry yelled, trying to blot the screaming from his ears. EXPECTO PATRONUM! "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "EXPECTO PATRONUM! Harry yelled, trying to blot the screaming from his ears. EXPECTO PATRONUM! "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto -- expecto patronum --"
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "Expecto patronum! he gasped. "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "No -- no -- Harry gasped. He's innocent... expecto expecto patronum -- "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "EXPECTO PATRONUM! he yelled."
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Funnunculus! Harry yelled. "
+        },
+        {
+        "name" : "Diffindo",
+        "occurrence" : "Diffindo! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron and Harry used their wands to shoot jets of fiery sparks at the skrewt, "
+        },
+        {
+        "name" : "Relashio",
+        "occurrence" : "Relashio! Harry shouted, except that no sound came out. "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "raised his wand, and cried, Expecto Patronum! "
+        },
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "You're a boggart! Riddikulus! "
+        },
+        {
+        "name" : "Reducio",
+        "occurrence" : "Reducio! he said. "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "Impedimenta! Harry yelled. "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "Harry staggered back a few paces and fell over. IMPEDIMENTA! "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! Harry yelled. "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! Harry yelled; the spell hit the spider's gigantic, hairy black body, "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! Impedimenta! Stupefy! "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! Impedimenta! Stupefy! "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! Impedimenta! Stupefy! "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "Harry raised his wand as the spider opened its pincers once more and shouted Expelliarmus! "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "and shouted Stupefy!''just as Cedric yelled the same thing. "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "As Harry shouted, Expelliarmus! Voldemort cried, Avada Kedavra! "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "Impedimenta! he bellowed, pointing his wand wildly over his shoulder at the Death Eaters running at him. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He, Ron, and Hermione were on their feet, all three of them having used a different hex. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry was too quick for Neville, whose wand went spinning out of his hand, hit the ceiling in a shower of sparks and landed with a clatter on top of a bookshelf, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "he wished he had not mixed up the incantations for Colour Change and Growth Charms, so that the rat he was supposed to be turning orange swelled shockingly and was the size of a badger before Harry could rectify his mistake. "
+        },
+        {
+        "name" : "Protego",
+        "occurrence" : "he shouted 'Protego' before she had finished her spell, and though the glass sphere slipped to the tips of his fingers he managed to cling on to it. "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Harry saw the knees of the Death Eaters bend; poking his wand out from under the desk, he shouted, 'STUPEFY!' "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "'Petrificus Totalus!' shouted Harry, as the second Death Eater raised his wand. "
+        },
+        {
+        "name" : "Colloportus",
+        "occurrence" : "'Colloportus!' shouted Harry, and he heard three bodies slam into the door on the other side. "
+        },
+        {
+        "name" : "Diffindo",
+        "occurrence" : "'Diffindo!' yelled Harry, trying to sever the feelers wrapping themselves tightly around Ron before his eyes, "
+        },
+        {
+        "name" : "Protego",
+        "occurrence" : "He made the same slashing movement with his wand that he had used on Hermione just as Harry yelled, 'Protego!' "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "Harry yelled, 'Petrificus Totalus!' Once again, Dolohov's arms and legs snapped together and he keeled over backward "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "Harry jabbed his own wand back over his shoulder and yelled, 'Impedimenta!' "
+        },
+        {
+        "name" : "Wingardium Leviosa",
+        "occurrence" : "but he shouted, Wingardium Leviosa!' and they flew off him up into the air. "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "Harry such as he had never known before; he flung himself out from behind the fountain and bellowed, 'Crucio!'"
+        },
+        {
+        "name" : "Protego",
+        "occurrence" : "Harry reacted instinctively; all thought of nonverbal spells forgotten, he yelled, Protego! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There had been a hex that caused toenails to grow alarmingly fast (he had tried this on Crabbe in the corridor, with very entertaining results); "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "a jinx that glued the tongue to the roof of the mouth (which he had twice used, to general applause, on an unsuspecting Argus Filch "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "a jinx that glued the tongue to the roof of the mouth (which he had twice used, to general applause, on an unsuspecting Argus Filch "
+        },
+        {
+        "name" : "Levicorpus",
+        "occurrence" : "Pointing his wand at nothing in particular, he gave it an upward flick and said Levicorpus! inside his head. "
+        },
+        {
+        "name" : "Liberacorpus",
+        "occurrence" : "Praying that this was the counter-jinx, Harry thought Liberacorpus! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry had pinned Mundungus against the wall of the pub by the throat. Holding him fast with one hand, he pulled out his wand. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He sent Ron crashing back to the floor (his ear did hurt quite a lot), but Ron simply bounded to his feet again, grinning. "
+        },
+        {
+        "name" : "Langlock",
+        "occurrence" : "Harry aimed his wand at Peeves and said, Langlock! "
+        },
+        {
+        "name" : "Levicorpus",
+        "occurrence" : "Harry threw himself sideways, thought Levicorpus! and flicked his wand, but Malfoy blocked the jinx and raised his wand for another — "
+        },
+        {
+        "name" : "Sectumsempra",
+        "occurrence" : "SECTUMSEMPRA! bellowed Harry from the floor, waving his wand wildly. "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "Petrificus Totalus! "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "Petrificus Totalus! "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : ". Impedimenta! "
+        },
+        {
+        "name" : "Incarcerous",
+        "occurrence" : "Incarcerous! "
+        },
+        {
+        "name" : "Sectumsempra",
+        "occurrence" : "Sectumsempra! SECTUMSEMPRA! "
+        },
+        {
+        "name" : "Sectumsempra",
+        "occurrence" : "Sectumsempra! SECTUMSEMPRA! "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "Petrificus Totalus! "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "Petrificus Totalus! "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "Impedimenta! yelled Harry. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "said Harry, aiming a hex from the floor at the enormous blond Death Eater who was causing most of the chaos. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He saw the brother and sister running down the marble staircase ahead and aimed jinxes at them, but merely hit several bewigged witches in a portrait on the landing "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "Impedimenta! "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Cruc -  "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Cruc - yelled Harry for the second time, aiming for the figure ahead illuminated in the dancing fireligh "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Incarc-Harry roared, but Snape deflected the spell with an almost lazy flick of his arm. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Stupe- "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Impedi - "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Sectum -  "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Wriggling around he cried, “Stupefy!” and a red bolt of light shot from his own wand, cleaving a gap between the four pursuing Death Eaters as they scattered to avoid it. "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "he pointed at the middle of the oncoming figures and yelled, “Impedimenta!” "
+        },
+        {
+        "name" : "Confringo",
+        "occurrence" : "Harry spat blood out of his mouth, pointed his wand at the falling  sidecar, and yelled, “Confringo!”"
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Harry, still invisible, yelled, “Stupefy!” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry bellowed, directing his wand at her, and with a bang and a burst of red sparks, the curtains swung shut again, silencing her."
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "he launched himself upon the elf, flattening him. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry dropped his wand: It hit Mundungus on the nose and shot red sparks into his eyebrows, which ignited."
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "He raised his wand, not even troubling to keep it concealed beneath the Invisibility Cloak, and said, “Stupefy! "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "He tried to draw his own wand, but too late: “Stupefy! "
+        },
+        {
+        "name" : "Diffindo",
+        "occurrence" : "“Well, I’ve had a change of heart. Diffindo! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry raised an enormous fist and punched him, sending him flying through the air. "
+        },
+        {
+        "name" : "Diffindo",
+        "occurrence" : "and the old Snitch on top of his clothes, then he pointed Hermione’s wand at the ice. “Diffindo.” "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Harry yelled, “Stupefy!” "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "pointed all of them at Grey- back, and yelled, “Stupefy!” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry pointed Draco’s wand at each of the guards in turn and murmured, “Confundo” twice "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry pointed Draco’s wand at each of the guards in turn and murmured, “Confundo” twice "
+        },
+        {
+        "name" : "Imperio",
+        "occurrence" : "and whispered, for the first time in his life, “Imperio!” "
+        },
+        {
+        "name" : "Imperio",
+        "occurrence" : "Harry acted without thinking. Pointing his wand at Travers, he muttered, “Imperio!” once more. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Griphook urged Harry, who turned his wand again upon Bogrod "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Liberatocorpus!” yelled Harry, and with a crash he and Griphook landed on the surface of the swelling treasure, and the sword flew out of Harry’s hand "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "“Stupefy!” he bellowed, and Ron and Hermione joined in: Jets of red light flew into the crowd of goblins "
+        },
+        {
+        "name" : "Relashio",
+        "occurrence" : "Pointing his wand at the thick cuffs chaining the beast to the floor, he yelled, “Relashio! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry yelled, and still shooting Stunning Spells at the advancing goblins, he sprinted toward the blind dragon "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry and Ron copied her, blasting the ceiling apart with more gouging spells "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "As Amycus spun around, Harry shouted, “Crucio!” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He shot a Stunning Spell at Crabbe, who lurched out of the way "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron and Harry shouted together; their spells collided and the monster was blown backward, its legs jerking horribly, and vanished into the darkness "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry fired Stunning Spells down upon them, knocking the lead monster into its fellows "
+        },
+        {
+        "name" : "Protego",
+        "occurrence" : "“Protego!” roared Harry, and the Shield Charm expanded in the middle of the Hall, and Voldemort stared around for the source as Harry pulled off the Invisibility Cloak at last "
+        }        ]
+    }
+,
+    {
+    "name" : "Hermione",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "she crouched down, pulled out her wand, and whispered a few, well- chosen words. Bright blue flames shot from her wand onto the hem of Snape's robes. "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "Petrificus Totalus! she cried, pointing it at Neville. "
+        },
+        {
+        "name" : "Impervius",
+        "occurrence" : "Hermione tapped them with her wand and said, Impervius! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry and Ron both made furious moves toward Malfoy, but Hermione got there first -- SMACK! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He, Ron, and Hermione were on their feet, all three of them having used a different hex. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione, on the other hand, successfully vanished her snail on the third attempt, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "No, they can't have done, because I put a jinx on that piece of parchment we all signed,' said Hermione grimly. "
+        },
+        {
+        "name" : "Silencio",
+        "occurrence" : "'Silencio!' said Hermione hastily, pointing her wand at Harry's frog, "
+        },
+        {
+        "name" : "Reducto",
+        "occurrence" : "Five different voices behind him bellowed, 'REDUCTO!' "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "heard Hermione shout, 'Stupefy!' The hand released him at once — ' "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "'STUPEFY!' screamed Hermione, who had just caught up with them. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione managed to repel Neville's muttered Jelly-Legs Jinx without uttering a single word, "
+        },
+        {
+        "name" : "Specialis Revelio",
+        "occurrence" : "as she pulled his copy of Advanced Potion-Making out of his bag and raised her wand. Specialis Revelio! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Oh, all right then, I did it, she whispered. But you should have heard the way he was talking about Ron and Ginny "
+        },
+        {
+        "name" : "Oppugno",
+        "occurrence" : "Oppugno! came a shriek from the doorway. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I’ve also modified my parents’ memories so that they’re convinced they’re really called Wendell and Monica Wilkins, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“Muffiato,” she whispered, waving her wand in the direction of the stairs. "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "“Petrificus Totalus!” screamed Hermione from out of sight, "
+        },
+        {
+        "name" : "Diffindo",
+        "occurrence" : "“D-diffindo,” she said, pointing her wand at Ron, who roared in pain as she slashed open the knee of his jeans, "
+        },
+        {
+        "name" : "Obliviate",
+        "occurrence" : "Dolohov’s forehead and said, “Obliviate.”"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“Aquamenti!” screamed Hermione, and a jet of water streamed from her wand, engulfing a spluttering and choking Mundungus."
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "She pointed her wand at the padlocked and heavily graffitied fire door beside them, which burst open with a crash. "
+        },
+        {
+        "name" : "Expecto Patronum",
+        "occurrence" : "“Expec - Expecto patronum,” said Hermione. Nothing happened "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "her deflected curse hit the curtained window, which shattered "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry thought the worst, but then there was a loud bang and a flash of red light, "
+        },
+        {
+        "name" : "Confringo",
+        "occurrence" : "Hermione screamed, “Confringo!” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ", I had to use a Seve- ring Charm to get it away. "
+        },
+        {
+        "name" : "Obliviate",
+        "occurrence" : "“Obliviate!” cried Hermione, pointing her want first into his face then at the floor beneath them. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He saw Hermione point her wand, not toward the outside, but into his face; there was a bang, a burst of white light, and he buckled in agony, unable to see "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione shriek something, and felt himself glide back toward the ground as though weightless, landing pain- lessly on the rocky passage floor. "
+        },
+        {
+        "name" : "Levicorpus",
+        "occurrence" : "She raised her wand, pointed it at Harry, and whispered, “Levicorpus.” "
+        },
+        {
+        "name" : "Impervius",
+        "occurrence" : "Impervius!” screeched Hermione in an attempt to protect herself, Ron, and the goblins from the burning metal "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "“Stupefy!” he bellowed, and Ron and Hermione joined in: Jets of red light flew into the crowd of goblins "
+        },
+        {
+        "name" : "Defodio",
+        "occurrence" : "then he heard Hermione yelling, “Defodio!”"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione charged toward them, hitting Goyle with a Stunning Spell as she came. "
+        },
+        {
+        "name" : "Duro",
+        "occurrence" : "Duro!” cried Hermione, pointing her wand at the tapestry, and there were two loud, sickening crunches as the tapestry turned to stone and the Death Eaters pursuing them crumpled against i "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "shrieked Hermione, and with a deafening blast from her wand, Fenrir Greyback was thrown backward from the feebly struggling body of Lavender Brown "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione’s otter twist in midair and fade, and his own wand trembled in his hand, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Bellatrix was still fighing too, fifty yards away from Voldemort, and like her master she dueled three at once: Hermione, Ginny and Luna, all battling their hardest, but Bellatrix was equal to them, and Harry’s attention was diverted as a Killing Curse shot so close to Ginny that she missed death by an inch "
+        }        ]
+    }
+,
+    {
+    "name" : "Voldemort",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a flash of green light, a rushing sound, and Frank Bryce crumpled. "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "Voldemort began to laugh. He raised his wand.Crucio!"
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "Voldemort moved slowly forward and turned to face Harry. He raised his wand. Crucio! "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "The tip of a wand emerged from around the back of the chair. It was pointing at Wormtail. Crucio! said the cold voice. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort said, raising his wand - and Harry felt his spine curve as though a huge, invisible hand were bending him ruthlessly forward, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort raised his wand, and before Harry could do anything to defend himself, before he could even move, he had been hit again by the Cruciatus Curse. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Answer me! Imperial "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "As Harry shouted, Expelliarmus! Voldemort cried, Avada Kedavra! "
+        },
+        {
+        "name" : "Avada Kedavra",
+        "occurrence" : "I have nothing more to say to you, Potter,' he said quietly. 'You have irked me too often, for too long. AVADA KEDAVRA!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort raised his wand and another jet of green light streaked at Dumbledore, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I can make filings move without touching them. I can make animals do what I want them to do, without training them. I can make bad things happen to people who annoy me. I can make them hurt if I want to. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I can make filings move without touching them. I can make animals do what I want them to do, without training them. I can make bad things happen to people who annoy me. I can make them hurt if I want to. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I can make filings move without touching them. I can make animals do what I want them to do, without training them. I can make bad things happen to people who annoy me. I can make them hurt if I want to. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort Stupefied his uncle, took his wand, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and, for good measure, his Muggle grandparents "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and, for good measure, his Muggle grandparents "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Then he returned to the Gaunt hovel, performed the complex bit of magic that would implant a false memory in his uncle's mind, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hepzibah Smith died two days after that little scene, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort modified her memory, just like he did with Morfin! Yes, that is my conclusion too "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "You see, we have never been able to keep a Defense Against the Dark Arts teacher for longer than a year since I refused the post to Lord Voldemort. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He hid it, protected by many powerful enchantments, in the shack where his ancestors had once lived "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "If he had not forced your mother to die for you, would he have given you a magical protection he could not penetrate? "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "By attempting to kill you, Voldemort himself singled out the remark-able person who sits here in front of me, and gave him the tools for the job! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ", two Killing Curses missed Harry by millimeters, cast from behind - "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ", two Killing Curses missed Harry by millimeters, cast from behind - "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Death Eater swooping out of the way and heard, “Avada-” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort’s curse hit Mad-Eye full in the face, he fell backward off his broom and "
+        },
+        {
+        "name" : "Avada Kedavra",
+        "occurrence" : "Hold him off, without a wand in his hand!... He laughed before casting the curse... “Avada Kedavra!” "
+        },
+        {
+        "name" : "Avada Kedavra",
+        "occurrence" : "He did not like it crying, he had never been able to stomach the small ones whining in the orphanage - “Avada Kedavra! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "A burst of green light filled the prison room and the frail old body was lifted from its hard bed and then fell back, lifeless "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The Cruciatus Curse, I - I had no choice but to tell him what I knew, what I guessed! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and again and again his wand fell, and those who were left were slain, all of them "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and again and again his wand fell, and those who were left were slain, all of them "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "And Voldemort swiped the air with the Elder Wand. It did nothing to Snape, who for a split second seemed to think he had been reprieved: but then Voldemort’s intention became clear "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He saw the mouth move and a flash of green light, and everything was gone "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "Harry Potter is dead by my hand, and no man alive can threaten me now! Watch! Crucio! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry thought that Hagrid must have been forced to obey Voldemort’s command, because he lurched a little "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“SILENCE!” cried Voldemort, and there was a bang and a flash of bright light, and silence was forced upon them all. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "a second, more powerful bang extinguished their voices once more. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry heard a scuffle and a shout, then another bang, a flash of light, and grunt of pain; he opened his eyes an infinitesimal amount "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry saw Voldemort wave his wand. Seconds later, out of one of the castle’s shattered windows "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He pointed his wand at Neville, who grew rigid and still, then forced the hat onto Neville’s head, so that it slipped down "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "said Voldemort, and with a flick of his wand, he caused the Sorting Hat to burst into flames. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He was searching for Voldemort and saw him across the room, firing spells from his wand as he backed into the Great Hall "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort was in the center of the battle, and he was striking and smiting all within reach. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort was now dueling McGonagall, Slughorn, Kingsley all at once, and there was a cold hatred in his face as they wove and ducked around him, unable to finish him "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "he saw McGonagall, Kingsley and Slughorn blasted backward "
+        }        ]
+    }
+,
+    {
+    "name" : "Ron",
+    "spells" : [
+        {
+        "name" : "Wingardium Leviosa",
+        "occurrence" : "Ron pulled out his own wand -- not knowing what he was going to do he heard himself cry the first spell that came into his head: Wingardium Leviosa! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron snapped. Before Malfoy knew what was happening, Ron was on top of him, wrestling him to the ground. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "You'll pay for that one, Malfoy! and pointed it furiously under Flint's arm at Malfoys face. A loud bang echoed around the stadium and a jet of green light shot out of the wrong end of Ron's wand, hitting him in the stomach and sending him reeling backward onto the grass. "
+        },
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "Riddikulus! bellowed Ron, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron and Harry used their wands to shoot jets of fiery sparks at the skrewt, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron excitedly, attempting the Impediment Curse on a wasp that had buzzed into the room and making it stop dead in midair. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He, Ron, and Hermione were on their feet, all three of them having used a different hex. "
+        },
+        {
+        "name" : "Silencio",
+        "occurrence" : "'He's not stupid, he knows she nearly got him. Silencio.' "
+        },
+        {
+        "name" : "Silencio",
+        "occurrence" : "'Wha—? Oh — oh, right,' said Ron, very flustered. 'Er — silencio!' "
+        },
+        {
+        "name" : "Impervius",
+        "occurrence" : "all together, come on — Imperviusl OK. Let's go.' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He could tell Ron, though; Ron had caused a dinner plate to mutate into a large mushroom and had no idea how it had happened."
+        },
+        {
+        "name" : "Reducto",
+        "occurrence" : "Five different voices behind him bellowed, 'REDUCTO!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron throw the sprout knife at Fred, who had turned it into a paper airplane with one lazy flick of his wand, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "blow hit him on the right ear. Staggering, he looked round. Ron's fist was drawn right back, his face was contorted with rage; he was about to strike again. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Wonderful. Stunned one of the Death Eaters, straight to the head "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The sword flashed, plunged: "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I managed to hit the one holding me in the stomach, grabbed his wand "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Disarmed the bloke holding mine, "
+        },
+        {
+        "name" : "Relashio",
+        "occurrence" : "Relashio!” said Ron, pointing the wand at the silver hand, "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "“Expelliarmus!” he roared, pointing Wormtail’s wand at Bellatrix "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Then, with a bang and a burst of red light he was thrown backward onto the ground, unconscious"
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "“Stupefy!” he bellowed, and Ron and Hermione joined in: Jets of red light flew into the crowd of goblins "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry and Ron copied her, blasting the ceiling apart with more gouging spells "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and Ron, appearing suddenly at the end of the aisle, shot a full Body-Bind Curse at Crabbe, which narrowly missed "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron and Harry shouted together; their spells collided and the monster was blown backward, its legs jerking horribly, and vanished into the darkness "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He saw Ron’s silver terrier burst into the air, flicker feebly, and expire; "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I did Confound him,” Ron whispered to Harry, as together they lifted Albus’s trunk and owl onto the train. “I only forgot to look in the wing mirror, and let’s face it, I can use a Supersensory Charm for that "
+        }        ]
+    }
+,
+    {
+    "name" : "Bellatrix",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Bellatrix Lestrange got sent to Azkaban for, using the Cruciatus Curse on Neville's parents until they lost their minds.' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Bellatrix Lestrange got sent to Azkaban for, using the Cruciatus Curse on Neville's parents until they lost their minds.' "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "Harry was edging around the fountain on the other side when she screamed, 'Crucio!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The statue of the witch ran at Bellatrix, who screamed and sent spells streaming uselessly off its chest, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a flash of green light, a yelp, and the fox fell back to the ground, dead. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Bellatrix's astounded face glowed red in the blaze of a third unique flame, which shot from the wand, twisted with the others, and bound itself thickly around their clasped hands, like a fiery snak "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "“Stupefy!” she screamed, “Stupefy!” "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "“Stupefy!” she screamed, “Stupefy!” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "before there was a terrible, drawn out scream from directly above them "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione screamed again from overhead, "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "What else did you take, what else? ANSWER ME! CRUCIO! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "she screeched, pressing the blade into Hermione’s throat "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "blue of flying silver, as Bellatrix’s knife flew across the room at the place where he was vanishing "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Bellatrix was still fighing too, fifty yards away from Voldemort, and like her master she dueled three at once: Hermione, Ginny and Luna, all battling their hardest, but Bellatrix was equal to them, and Harry’s attention was diverted as a Killing Curse shot so close to Ginny that she missed death by an inch "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Molly Weasley’s wand slashed and twisted, and Bellatrix Lestrange’s smile faltered and became a snarl. Jets of light flew from both wands, the floor around the withces’ feet became hot and cracked; both woman were fighting to kill "
+        }        ]
+    }
+,
+    {
+    "name" : "Snape",
+    "spells" : [
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "Snape cried: Expelliarmus! There was a dazzling flash of scarlet light and Lockhart was blasted off his feet: "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Finite Incantatem! he shouted; Harry's feet stopped dancing, Malfoy stopped laughing, and they were able to look up. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "BANG! Thin, snakelike cords burst from the end of Snape's wand and twisted themselves around Lupin's mouth, wrists, and ankles; "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I know you did, Potter, which means that this mess is utterly worthless. Evanesce.'"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "said Snape maliciously, emptying Harry's cauldron with a wave of his wand. "
+        },
+        {
+        "name" : "Legilimens",
+        "occurrence" : "You will find that similar powers are needed for this . . . brace yourself, now. Legilimens!' "
+        },
+        {
+        "name" : "Legilimens",
+        "occurrence" : "We shall try again! Get ready, now! Legilimens!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry did not have time to gather himself together and attempt to clear his mind before Snape cried, 'Legllimens!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Snape had directed his wand straight at James; there was a flash of light and a gash appeared on the side of James's face, spattering his robes with blood. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He pointed his wand at the wall of books behind him and with a bang, a hidden door flew open "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a loud bang and a squeal, followed by the sound of Wormtail scurrying back up the stairs. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "don't look at me like that! I know what you're do-ing, I'm not stupid, but it won't work — I can stop you! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "But Snape parried the curse, knocking Harry backward off his feet before he could complete it "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Incarc-Harry roared, but Snape deflected the spell with an almost lazy flick of his arm. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "No, Potter! screamed Snape. There was a loud BANG and Harry was soaring backward, hitting the ground hard again, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "And he slashed at the air: Harry felt a white-hot, whiplike something hit him across the face and was slammed backward into the ground. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Snape must have Stupefied Flitwick, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“He lost an ear,” said Lupin."
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry thought that Snape must crumple, unconscious, but the swiftness of his Shield Charm was such that McGonagall was thrown off balance "
+        }        ]
+    }
+,
+    {
+    "name" : "Unnamed DE",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "He-Who-Must-Not-Be-Named's followers. And... and we suspect giant involvement. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Screams, a blaze of green light on every side: "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "A second’s relief, and then another burst of green light. The owl screeched and fell to the floor of the cage. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Arthur heard a rumor that they tried to torture your whereabouts out of Scrimgeour before they killed him; if it’s true, he didn’t give you away.” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“but they were rough. They burned down Dedalus Diggle’s house, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "they used the Cruciarus Curse on Tonks’s family. Again, trying to find out where you went after you visited them. "
+        }        ]
+    }
+,
+    {
+    "name" : "Dumbledore",
+    "spells" : [
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and Umbridge leapt back from Marietta, waving her hands in the air as though they had been burned. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I had to hex Kingsley too, or it would have looked very suspicious, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Dumbledore had most of the remaining Death haters grouped in the middle of the room, seemingly immobilised by invisible ropes; "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Dumbledore flicked his own wand: the force of the spell that emanated from it was such that Harry, though shielded by his golden guard, felt his hair stand on end as it passed "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "A long thin flame flew from the tip; it wrapped itself around Voldemort, shield and all. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "long, fluid movement — the snake, which had been an instant from sinking its fangs into him, flew high into the air and vanished in a wisp of dark smoke; and the water in the pool rose up and covered Voldemort like a cocoon of molten glass. "
+        },
+        {
+        "name" : "Legilimens",
+        "occurrence" : "He did not wish to tell me,' said Dumbledore. 'But I am a sufficiently accomplished Legilimens myself to know when I am being lied to and "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He drew his wand so rapidly that Harry barely saw it; with a casual flick, the sofa zoomed forward and knocked the knees out from under all three of the Dursleys so that they collapsed upon it in a heap. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "A third twitch of the wand, and a dusty bottle and five glasses appeared in midair. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ", Dumbledore swooped, plunging the tip of his wand into the seat of the overstuffed armchair, which yelled, Ouch! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I have already been forced to jinx Dawlish once; I did it again with the greatest regret. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Yes, but it took a great deal of skilled Legilimency to coax it out of him, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a flash of silver, and a spurt of scarlet; the rock face was peppered with dark, glistening drops. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Dumbledore was on his feet again, pale as any of the surround-ing Inferi, but taller than any too, the fire dancing in his eyes; his wand was raised like a torch and from its tip emanated the flames, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and Albus was trying to stop him, and then all three of us were dueling, and the flashing lights and the bangs set her off, she couldn’t stand it "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Then a blinding, jagged jet of white light flew through the air. Harry thought of lightning, but Snape had dropped to his knees and his wand had flown out of his hand "
+        }        ]
+    }
+,
+    {
+    "name" : "Boggarts",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hook-nosed and menacing, Professor Snape stepped out, his eyes flashing at Neville. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was another crack, and where he had stood was a bloodstained, bandaged mummy; "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Where the mummy had been was a woman with floorlength black hair and a skeletal, green-tinged face -- a banshee. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The banshee turned into a rat, which chased its tail in a circle, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "became a rattlesnake, which slithered and writhed before "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "becoming a single, bloody eyeball. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The eyeball became a severed hand, which flipped over and began to creep along the floor like a crab. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "A giant spider, six feet tall and covered in hair, was advancing on Ron, clicking its pincers menacingly "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ". The lamps around the classroom flickered and went out. The dementor stepped from the box and started to sweep silently toward Harry, drawing a deep, rattling breath. A wave of piercing cold broke over him "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The dementor glided forward, drawing its breath; one rotting hand was extending toward Harry -"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "hen, as he turned a corner, he saw ... a dementor gliding toward him. Twelve feet tall, its face hidden by its hood, its rotting, scabbed hands outstretched, it advanced "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron dead, no, it couldn't be — ' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ron's body turned into Bill's, spread-eagled on his back, his eyes wide open and empty. Mrs Weasley sobbed harder than ever "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Mr Weasley's body replaced Bill's, his glasses askew, a trickle of blood running down his face"
+        }        ]
+    }
+,
+    {
+    "name" : "Draco",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "How he (neville) had managed to climb through the portrait hole was anyone's guess, because his legs had been stuck together with what they recognized at once as theLeg-Locker Curse. He must have had to bunny hop all the way up to Gryffindor tower. "
+        },
+        {
+        "name" : "Tarantallegra",
+        "occurrence" : "Malfoy pointed his wand at Harry's knees, choked, Tarantallegra! and the next second Harry's legs began to jerk around out of his control in a kind of quickstep. "
+        },
+        {
+        "name" : "Serpensortia",
+        "occurrence" : "Malfoy raised his wand quickly and bellowed, Serpensortia! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Several people screamed - Harry felt something white-hot graze the side of his face - he plunged his hand into his robes for his wand, "
+        },
+        {
+        "name" : "Densaugeo",
+        "occurrence" : "Densaugeo! screamed Malfoy. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "'Trip Jinx, Potter!' he said. 'Hey, Professor — PROFESSOR! I've got one!' "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "Petrificus Totalus! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "And he stamped, hard, on Harry's face. Harry felt his nose break; blood spurted everywhere. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "At once, Katie rose into the air, not as Ron had done, suspended comically by the ankle, but gracefully, her arms outstretched, as though she was about to fly. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "But Ron, who did not appear to be listening to the toast, had already thrown the mead into his mouth and swallowed it. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Malfoy's hex missed Harry by inches, shattering the lamp on the wall beside him; "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry slipped as Malfoy, his face contorted, cried, Cruci — "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Everything went pitch black and the next thing I knew, I was being hurled headfirst out of the Room!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Draco, give Rowle another taste of our displeasure... Do it, or feel my wrath yourself!” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and the giant blond Death Eater on the floor, screaming and writhing "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Jets of light flew from Draco’s, Narcissa’s, and Greyback’s wands; "
+        }        ]
+    }
+,
+    {
+    "name" : "Neville",
+    "spells" : [
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "R -- r -- riddikulus! squeaked Neville. "
+        },
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "Riddikulus! he shouted, and they had a split second's view of Snape "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry leapt forward and seized the back of Neville's robes; Neville struggled frantically, his fists flailing "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "'Expelliarmus! said Neville, and Harry, caught unawares, tell his wand fly out of his hand. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Neville had successfully disarmed Hermione, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "After a while, when Harry had unfrozen three times in a row, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "After a while, when Harry had unfrozen three times in a row, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "After a while, when Harry had unfrozen three times in a row, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Neville did Stun Padma Patil rather than Dean, at whom he had been aiming, but it was a much closer miss than usual, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "'Couple of Stunners, a Disarming Charm, Neville brought off a really nice little Impediment Jinx,' "
+        },
+        {
+        "name" : "Reducto",
+        "occurrence" : "Five different voices behind him bellowed, 'REDUCTO!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "wheeling around and waving Hermione's wand at the oncoming Death Eaters, 'STUBEFY, STUBEFY!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "wheeling around and waving Hermione's wand at the oncoming Death Eaters, 'STUBEFY, STUBEFY!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "'STUBEFY!' Neville shouted again, pointing his wand at each Death Eater in turn. 'STUBEFY! 'STUBE — ' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "'STUBEFY!' Neville shouted again, pointing his wand at each Death Eater in turn. 'STUBEFY! 'STUBE — ' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione managed to repel Neville's muttered Jelly-Legs Jinx without uttering a single word, "
+        }        ]
+    }
+,
+    {
+    "name" : "Umbridge",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "wrote I must not tell lies, and felt the searing pain on the back of his hand for a second time "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Again and again Harry wrote the words on the parchment in what he soon came to realise was not ink, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Again and again Harry wrote the words on the parchment in what he soon came to realise was not ink, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry's third detention passed in the same way as the previous two, except that after two hours the words "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I must not tell lies, Harry wrote. The cut in the back of his right hand opened and began to bleed afresh. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I must not tell lies. The cut dug deeper, stinging and smartin"
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "'Hurry, Filch, hurry!' shrieked Umbridge, 'they'll be all over the school unless we do something — Stupefy!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Umbridge sent one last Stunning Spell after him but it missed; and Hagrid, running full-pelt towards the distant gates, disappeared into the darkness. "
+        },
+        {
+        "name" : "Incarcerous",
+        "occurrence" : "Umbridge pointed her wand at Magorian and screamed, 'Incarcerous!' "
+        }        ]
+    }
+,
+    {
+    "name" : "Dementors",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "And then the thing beneath the hood, whatever it was, drew a long, slow, rattling breath, as though it were trying to suck something more than air from its surroundings. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "At least a hundred dementors, their hidden faces pointing up at him, were standing beneath him. It was as though freezing water were rising in his chest, cutting at his insides "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "And then Harry saw them. Dementors, at least a hundred of them, gliding in a black mass around the lake toward them. He spun around, the familiar, icy cold penetrating his insides, fog starting to obscure his vision; more were appearing out of the darkness on every side; they were encircling them.. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ". The dementors were closing in, barely ten feet from them. They formed a solid wall around Harry and Hermione, and were getting closer.... "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "But a pair of strong, clammy hands suddenly attached themselves around Harry's neck. They were forcing his face upward.... "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The dementors - tall, hooded creatures whose faces were concealed - were gliding slowly toward the chair in the center of the room, each grasping one of the man's arms with their dead and rotten-looking hands "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The dementors were gliding up and down in front of them, and the cold, and the hopelessness, and the despair of the place laid themselves upon Harry like a curse... "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Two dementors appeared in the doorway of the courtroom, their rotting, scabbed hands clutching the upper arms of a wizard who appeared to be fainting "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There were more dementors in here, casting their freezing aura over the place; they stood like faceless sentinels in the corners farthest from the high, raised platform "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Mrs. Cattermole let out a terrible scream of fear as a slimy, scabbed hand grasped her chin and forced her face back. "
+        }        ]
+    }
+,
+    {
+    "name" : "Basilisk",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "the caretaker's cat, was hanging by her tail from the torch bracket. She was stiff as a board, her eyes wide and staring. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "It was Colin Creevey. His eyes were wide and his hands were stuck up in front of him, holding his camera. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Justin Finch-Fletchley was lying on the floor, rigid and cold, a look of shock frozen on his face, his eyes staring blankly at the ceiling "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "It was Nearly Headless Nick, no longer pearly-white and transparent, but black and smoky, floating immobile and horizontal, six inches off the floo "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "My dear boy, you must see how foolish it would be of me to allow you to remain at the castle when term ends. Particularly in light of the recent tragedy ... the death of that poor little girl .... You will be safer by far at your orphanage "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hermione lay utterly still, her eyes open and glassy"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a loud, explosive spitting sound right above him, and then something heavy hit Harry so hard that he was smashed into the wal "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The snake's tail thrashed, narrowly missing Harry, and before Harry could shut his eyes, it turned "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "It lunged again, and its forked tongue lashed Harry's side "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The basilisk lunged again, and this time its aim was true -- Harry threw his whole weight behind the sword and drove it to the hilt into the roof of the serpent's mouth "
+        }        ]
+    }
+,
+    {
+    "name" : "Crouch Jr.",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "but before he'd even touched it, he heard a second loud BANG "
+        },
+        {
+        "name" : "Imperio",
+        "occurrence" : "He then pointed his wand at it and muttered, Imperio! "
+        },
+        {
+        "name" : "Engorgio",
+        "occurrence" : "he said, pointing his wand at the spider. Engorgio! "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "Moody raised his wand again, pointed it at the spider, and muttered, Crucio! "
+        },
+        {
+        "name" : "Reducio",
+        "occurrence" : "Reducio, Moody muttered, and the spider shrank back to its proper size. He put it back into the jar. "
+        },
+        {
+        "name" : "Avada Kedavra",
+        "occurrence" : "Avada Kedavra! Moody roared."
+        },
+        {
+        "name" : "Imperio",
+        "occurrence" : "Moody raised his wand, pointed it at Harry, and said, 'Imperio!"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I kept him alive, under the Imperius Curse. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I killed my father. "
+        }        ]
+    }
+,
+    {
+    "name" : "Molly",
+    "spells" : [
+        {
+        "name" : "Accio",
+        "occurrence" : "Accio! Accio! Accio! she shouted, and toffees zoomed from all sorts of unlikely places, including the lining of George's jacket and the turn-ups of Fred's jeans. "
+        },
+        {
+        "name" : "Accio",
+        "occurrence" : "Accio! Accio! Accio! she shouted, and toffees zoomed from all sorts of unlikely places, including the lining of George's jacket and the turn-ups of Fred's jeans. "
+        },
+        {
+        "name" : "Accio",
+        "occurrence" : "Accio! Accio! Accio! she shouted, and toffees zoomed from all sorts of unlikely places, including the lining of George's jacket and the turn-ups of Fred's jeans. "
+        },
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "R — r — riddikulus!' Mrs Weasley sobbed, pointing her shaking wand at Ron's body. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Mrs. Weasley to the three girls, and with a simple swipe of her wand she began to duel "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Molly Weasley’s wand slashed and twisted, and Bellatrix Lestrange’s smile faltered and became a snarl. Jets of light flew from both wands, the floor around the withces’ feet became hot and cracked; both woman were fighting to kill "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Molly’s curse soared beneath Bellatrix’s outstreched arm and hit her squarely in the chest, directly over her heart "
+        }        ]
+    }
+,
+    {
+    "name" : "Lupin",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Go.' But the dementor didn't move, so Lupin muttered something, and a silvery thing shot out of his wand at it, and it turned around and sort of glided away.... "
+        },
+        {
+        "name" : "Waddiwasi",
+        "occurrence" : "said, Waddiwasi! and pointed it at Peeves. "
+        },
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "Lupin, who said, Riddikulus! almost lazily. "
+        },
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "Riddikulus! roared Lupin, springing forward. "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "Expelliarmus! Lupin shouted. "
+        },
+        {
+        "name" : "Mobilicorpus",
+        "occurrence" : "He muttered, Mobilicorpus. As though invisible strings were tied to Snape's wrists, neck, and knees, he was pulled into a standing position, "
+        },
+        {
+        "name" : "Protego",
+        "occurrence" : "Lupin and Tonks, their wands raised, and heard both of them shout, “Protego!” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "there was a loud bang and he felt himself flying backward as if punched; as he slammed into the kitchen wall and slid to the floor, "
+        }        ]
+    }
+,
+    {
+    "name" : "McGonagall",
+    "spells" : [
+        {
+        "name" : "Imperio",
+        "occurrence" : "Professor McGonagall rose to her feet, pointed her wand at the groggy Death Eater, and said, “Imperio "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Professor McGonagall waved her wand again, and a length of shimmering silver rope appeared out of thin air and snaked around the Carrows, binding them tightly together"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and a silver net fell upon their bound bodies, tied itself around them, and hoisted them into the air "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "but a great black serpent that McGonagall blasted to smoke, which re-formed and solidified in seconds to become a swarm of pursuing daggers "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“Piertotum - oh, for heaven’s sake, Filch, not now -” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort was now dueling McGonagall, Slughorn, Kingsley all at once, and there was a cold hatred in his face as they wove and ducked around him, unable to finish him "
+        }        ]
+    }
+,
+    {
+    "name" : "Sirius",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Here! Just now! Slashed the curtains! Woke me up!"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Peeves flipped over and grinned at Dumbledore from between his own legs. Nasty temper he's got, that Sirius Black. "
+        },
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "Expelliarmus!he croaked, pointing Ron's wand at them. "
+        },
+        {
+        "name" : "Petrificus Totalus",
+        "occurrence" : "but Sirius said, 'Petrificus Totalus!' and Snape keeled over again, rigid as a board. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Sirius had hurtled out of nowhere, rammed Dolohov with his shoulder and sent him flying out of the way. "
+        }        ]
+    }
+,
+    {
+    "name" : "Nagini",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Nagini, dinner."
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He rolled sideways, narrowly avoiding the snake’s tail, which thrashed down upon the table where he had been a second earlier "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "hen a heavy smooth mass smashed him to the floor and he felt it slide over him, powerful, muscular - "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "ce the snake from him as it coiled itself around his torso, sque- ezing the air from him "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "It struck,"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The snake hit you too, but I’ve cleaned the wound and put some dittany on it... "
+        }        ]
+    }
+,
+    {
+    "name" : "Wormtail",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "he blew apart the street with the wand behind his back, killed everyone within twenty feet of himself "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a bang, a burst of light -- and Ron lay motionless on the ground. "
+        },
+        {
+        "name" : "Avada Kedavra",
+        "occurrence" : "Avada Kedavra! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The cloaked man was now conjuring tight cords around Harry, tying him from neck to ankles to the headstone. "
+        }        ]
+    }
+,
+    {
+    "name" : "Dolohov",
+    "spells" : [
+        {
+        "name" : "Tarantallegra",
+        "occurrence" : "'Tarantallegra!' he shouted, his wand pointing at Neville, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He made the same slashing movement with his wand that he had used on Hermione just as Harry yelled, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "His companion, unable to see who had cast the spell, fired another at Ron: "
+        }        ]
+    }
+,
+    {
+    "name" : "Ginny",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ginny was teamed with Michael Corner; she was doing very well, whereas Michael was either very bad or unwilling to jinx her "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "But Ginny was best, she got Malfoy — Bat Bogey Hex — it was superb, his whole face was covered in the great flapping thing "
+        },
+        {
+        "name" : "Reducto",
+        "occurrence" : "Five different voices behind him bellowed, 'REDUCTO!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I saw this young lady perform the most marvelous Bat-Bogey Hex as I was passing her carriage! I wouldn't cross her! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ginny sped right on past them until, with an almighty crash, she collided with the commentators podium. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "like her master she dueled three at once: Hermione, Ginny and Luna, all battling their hardest, but Bellatrix was equal to them, and Harry’s attention was diverted as a Killing Curse shot so close to Ginny that she missed death by an inch "
+        }        ]
+    }
+,
+    {
+    "name" : "Rowle",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "nd that massive Death Eater was still firing off jinxes all over the place, they were bouncing off the walls and barely missing us. . . . "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "But before he could finish this jinx, excruciating pain hit Harry; he keeled over in the grass. "
+        },
+        {
+        "name" : "Incendio",
+        "occurrence" : "huge Death Eater behind him yelled, Incendio! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ", but that huge Death Eaters jinx just missed me right afterward and I ducked and lost track of things "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Well, the big Death Eater had just fired off a hex that caused half the ceiling to fall in, and also broke the curse blocking the stairs, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "QUIET!” shouted Rowle, and with a flick of his wand, Hagrid was silenced."
+        }        ]
+    }
+,
+    {
+    "name" : "Whomping Willow",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "thick as a battering ram was pounding furiously on the roof, which seemed to be caving in "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Well, you know the Whomping Willow, said Ron. It -- it doesn't like being hit. "
+        }        ]
+    }
+,
+    {
+    "name" : "Crabbe",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "So- me people are into it, though; Crabbe and Goyle love it. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Crabbe pointed his wand at the fifty foot mountain of old furniture, of broken trunks, of old books and robes and unidentifiable junk, and shouted, “Descendo! "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "mimicked Crabbe. “What’s going on - no, Potter! Crucio!” "
+        },
+        {
+        "name" : "Avada Kedavra",
+        "occurrence" : "Crabbe wheeled around and screamed, “Avada Kedavra!” again "
+        }        ]
+    }
+,
+    {
+    "name" : "Dobby",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Aunt Petunia's masterpiece of a pudding, the mountain of cream and sugared violets, was floating up near the ceiling. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a loud bang, and Mr. Malfoy was thrown backward. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "then, with a creak and an ominous jingling, it began to fall. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "shrieked Bellatrix, but there was another loud crack, and Narcissa’s wand too flew into the air "
+        }        ]
+    }
+,
+    {
+    "name" : "Fred",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "He was kneeling beside the coffee table, and he was gagging and sputtering on a foot-long, purple, slimy thing that was protruding from his mouth. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He had his wand out, and so did George, who was careful to tread on Malfoy as he followed Fred inside. "
+        }        ]
+    }
+,
+    {
+    "name" : "George",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "He had his wand out, and so did George, who was careful to tread on Malfoy as he followed Fred inside. "
+        }        ]
+    }
+,
+    {
+    "name" : "Luna",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Luna Lovegood was similarly patchy, occasionally sending Justin Finch-Fletchleys wand spinning out of his hand, at other times merely causing his hair to stand on end. "
+        },
+        {
+        "name" : "Reducto",
+        "occurrence" : "Five different voices behind him bellowed, 'REDUCTO!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "I used the Reductcr Curse and blew up Pluto in his face, but . . .'"
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“That’s right,” said Luna encouragingly, as if they were back in the Room of Requirement and this was simply spell practice for the D.A "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Bellatrix was still fighing too, fifty yards away from Voldemort, and like her master she dueled three at once: Hermione, Ginny and Luna, all battling their hardest, but Bellatrix was equal to them, and Harry’s attention was diverted as a Killing Curse shot so close to Ginny that she missed death by an inch "
+        }        ]
+    }
+,
+    {
+    "name" : "James",
+    "spells" : [
+        {
+        "name" : "Expelliarmus",
+        "occurrence" : "he plunged his hand inside his robes and his wand was halfway into the air when James shouted, 'Expelliarmus!' "
+        },
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "'Impedimenta!' he said, pointing his wand at Snape, who was knocked off his feet halfway through a dive towards his own fallen wand. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "'Wash out your mouth,' said James coldly. 'Scourgify!' "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "James whirled about: a second flash of light later, Snape was hanging upside-down in the air, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was another flash of light, and Snape was once again hanging upside- down in the air."
+        }        ]
+    }
+,
+    {
+    "name" : "Quirrell",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Quirrell lunged, knocking Harry clean off his feet' landing on top of him, both hands around Harry's neck -- Harry's scar was almost blinding him with pain,yet he could see Quirrell howling in agony. "
+        }        ]
+    }
+,
+    {
+    "name" : "Aberforth",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "All the same, breaking Albus’s nose at the funeral was not decent "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and Albus was trying to stop him, and then all three of us were dueling, and the flashing lights and the bangs set her off, she couldn’t stand it "
+        }        ]
+    }
+,
+    {
+    "name" : "Arthur",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a thud of metal as Ginny's cauldron went flying; Mr. Weasley had thrown himself at Mr. Malfoy, knocking him backward into a bookshelf. "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "STUPEFY! roared twenty voices "
+        }        ]
+    }
+,
+    {
+    "name" : "Aymcus",
+    "spells" : [
+        {
+        "name" : "Crucio",
+        "occurrence" : "Crucio - Crucio - you can't dance forever, pretty- "
+        },
+        {
+        "name" : "Crucio",
+        "occurrence" : "Crucio - Crucio - you can't dance forever, pretty- "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "That’s how I got this one,” he pointed at a particularly deep gash in his cheek "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Michael Corner went and got caught releasing a first-year they’d chained up, and they tortured him pretty badly "
+        }        ]
+    }
+,
+    {
+    "name" : "Crouch Sr.",
+    "spells" : [
+        {
+        "name" : "Stupefy",
+        "occurrence" : "STUPEFY! roared twenty voices "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "The Imperius Curse, Moody said. "
+        }        ]
+    }
+,
+    {
+    "name" : "Flitwick",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : ", he pointed his wand through the smashed window and started muttering incantations of great com- plexity "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Yaxley, close to the front doors, in combat with Flitwick "
+        }        ]
+    }
+,
+    {
+    "name" : "Greyback",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Well, their brother was attacked by a werewolf. The rumor is that their mother refused to help the Death Eaters. Anyway, the boy was only five and he died in St. Mungos, they couldn't save him. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Jets of light flew from Draco’s, Narcissa’s, and Greyback’s wands; "
+        }        ]
+    }
+,
+    {
+    "name" : "Kingsley",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "'He was remarkably quick on the uptake, modifying Miss Edgecombe's memory like that while everyone was looking the other way — thank him, for me, won't you, Minerva? "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort was now dueling McGonagall, Slughorn, Kingsley all at once, and there was a cold hatred in his face as they wove and ducked around him, unable to finish him "
+        }        ]
+    }
+,
+    {
+    "name" : "Tonks",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Tonks, still halfway up the tired seats, was firing spells down at Bellatrix "
+        },
+        {
+        "name" : "Protego",
+        "occurrence" : "Lupin and Tonks, their wands raised, and heard both of them shout, “Protego!” "
+        }        ]
+    }
+,
+    {
+    "name" : "Amos Diggory",
+    "spells" : [
+        {
+        "name" : "Stupefy",
+        "occurrence" : "STUPEFY! roared twenty voices "
+        },
+        {
+        "name" : "Prior Incantato",
+        "occurrence" : "Prior Incantato! roared Mr. Diggory. "
+        },
+        {
+        "name" : "Deletrius",
+        "occurrence" : "Deletrius! Mr. Diggory shouted, and the smoky skull vanished in a wisp of smoke. "
+        }        ]
+    }
+,
+    {
+    "name" : "Lockhart",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "No one wants to read about some ugly old Armenian warlock, even if he did save a village from werewolves. He'd look dreadful on the front cover. No dress sense at all. And the witch who banished the Bandon Banshee had a harelip. I mean, come on - "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "No one wants to read about some ugly old Armenian warlock, even if he did save a village from werewolves. He'd look dreadful on the front cover. No dress sense at all. And the witch who banished the Bandon Banshee had a harelip. I mean, come on - "
+        },
+        {
+        "name" : "Obliviate",
+        "occurrence" : "He raised Ron's Spellotaped wand high over his head and yelled, Obliviate! "
+        }        ]
+    }
+,
+    {
+    "name" : "Cedric",
+    "spells" : [
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! t "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "and shouted Stupefy!''just as Cedric yelled the same thing. "
+        }        ]
+    }
+,
+    {
+    "name" : "Ernie",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "By the time Ernie Macmillan, Hannah Abbott, Susan Bones, Justin Finch-Fletchley, Anthony Goldstein and Terry Boot, had finished using a wide variety of the hexes and jinxes Harry had taught them, Malfoy, Crabbe and Goyle resembled nothing so much as three gigantic slugs squeezed into Hogwarts uniform as Harry, Ernie and Justin hoisted them into the luggage rack and left them there to ooze "
+        },
+        {
+        "name" : "Specialis Revelio",
+        "occurrence" : "Ernie Macmillan, however, was muttering, 'Specialis revelio!' over his cauldron, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“That’s right,” said Luna encouragingly, as if they were back in the Room of Requirement and this was simply spell practice for the D.A "
+        }        ]
+    }
+,
+    {
+    "name" : "Fawkes",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry looked straight into its face and saw that its eyes, both its great, bulbous yellow eyes, had been punctured by the phoenix; blood was streaming to the floor, and the snake was spitting in agony "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Fawkes was circling its head, piping his eerie song, jabbing here and there at its scaly nose as the blood poured from its ruined eyes. "
+        }        ]
+    }
+,
+    {
+    "name" : "Giants",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "He-Who-Must-Not-Be-Named's followers. And... and we suspect giant involvement. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "With one brutal, fluid movement, it smashed a massive fist through an upper window, and glass rained down upon Harry, forcing him back under the shelter of the doorway "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Grawp’s lopsided mouth fell open, showing yellow, half brick-sized teeth; and then they launched themselves at each other with the savagery of lions. "
+        }        ]
+    }
+,
+    {
+    "name" : "Grindelvald",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Grindelvald killed many people, my grandfather, for instance. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "and Albus was trying to stop him, and then all three of us were dueling, and the flashing lights and the bangs set her off, she couldn’t stand it "
+        }        ]
+    }
+,
+    {
+    "name" : "Hagrid",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "He brought the umbrella swishing down through the air to point at Dudley -- there was a flash of violet light, a sound like a firecracker, a sharp squeal, and the next second, Dudley was dancing on the spot with his hands clasped over his fat bottom, howling in pain. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Riddle scrambled to his feet, looking after it; he raised his wand, but the huge boy leapt on him, seized his wand, and threw him back down, yelling, NOOOOOOO! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Walden Macnair thrown across the room by Hagrid, hit the stone wall opposite "
+        }        ]
+    }
+,
+    {
+    "name" : "Kreacher",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "So many powerful spells upon the casing, Kreacher was sure the way to destroy it was to get inside it, but it would not open "
+        }        ]
+    }
+,
+    {
+    "name" : "Morfin",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "There was a bang, and Ogden was on the ground, clutching his nose, while a nasty yellowish goo squirted from between his fingers. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Morfin leapt out of his chair and ran at Ogden, brandishing his bloody knife and firing hexes indiscriminately from his wand. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "And he hurtled drunkenly at Riddle, wand and knife held aloft. "
+        }        ]
+    }
+,
+    {
+    "name" : "Parvati",
+    "spells" : [
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "Riddikulus! cried Parvati. "
+        }        ]
+    }
+,
+    {
+    "name" : "Selwyn",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Slughorn",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "It's quite easy once you know how, one simple Freezing Charm on these absurd burglar alarms they use instead of Sneako-scopes and make sure the neighbors don't spot you bringing in the piano. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Professor Slughorn has meddled with his own recollections. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort was now dueling McGonagall, Slughorn, Kingsley all at once, and there was a cold hatred in his face as they wove and ducked around him, unable to finish him "
+        }        ]
+    }
+,
+    {
+    "name" : "Alecto",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "he indicated another slash to his face, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Michael Corner went and got caught releasing a first-year they’d chained up, and they tortured him pretty badly "
+        }        ]
+    }
+,
+    {
+    "name" : "Bloody Baron",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Furious at my refusal, jealous of my freedom, he stabbed me.” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He took the weapon that had claimed my life, and used it to kill himself. "
+        }        ]
+    }
+,
+    {
+    "name" : "Buckbeak",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "It happened in a flash of steely talons; Malfoy let out a highpitched scream and next moment, Hagrid was wrestling Buckbeak back into his collar as he strained to get at Malfoy "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Voldemort’s giants, thestrals and Buckbeak the hippogriff scratching at their eyes while Grawp punched and pummeled them and now the wizards "
+        }        ]
+    }
+,
+    {
+    "name" : "Centaurs",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Then came hooves and the twangs of bows, and arrows were suddenly falling amongst the Death Eaters "
+        }        ]
+    }
+,
+    {
+    "name" : "Cho",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "'Oh no,' said Cho rather wildly as he approached. 'Expelliarmious! I mean, Expellimellius! I — oh, sorry, Marietta! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "'Oh no,' said Cho rather wildly as he approached. 'Expelliarmious! I mean, Expellimellius! I — oh, sorry, Marietta! "
+        }        ]
+    }
+,
+    {
+    "name" : "Dean",
+    "spells" : [
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "Riddikulus! yelled Dean. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Dean made the most of the Death Eater’s momentary distraction, knocking him out with a stunning Spell "
+        }        ]
+    }
+,
+    {
+    "name" : "Hannah",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Hannah Abbott lost her head completely at the next table and somehow managed to multiply her ferret into a flock of flamingos, "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "By the time Ernie Macmillan, Hannah Abbott, Susan Bones, Justin Finch-Fletchley, Anthony Goldstein and Terry Boot, had finished using a wide variety of the hexes and jinxes Harry had taught them, Malfoy, Crabbe and Goyle resembled nothing so much as three gigantic slugs squeezed into Hogwarts uniform as Harry, Ernie and Justin hoisted them into the luggage rack and left them there to ooze "
+        }        ]
+    }
+,
+    {
+    "name" : "Gnomes",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "but the gnome, sensing weakness, sank its razor-sharp teeth into Harry's finger and he had a hard job shaking it off - until "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : ", “Daddy, look - one of the gnomes actually bit me.” "
+        }        ]
+    }
+,
+    {
+    "name" : "Krum",
+    "spells" : [
+        {
+        "name" : "Crucio",
+        "occurrence" : "Crucio!"
+        }        ]
+    }
+,
+    {
+    "name" : "Madame Maxime",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Moody",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Mulciber",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Mulciber - he specialized in the Imperius Curse, forced countless people to do horrific "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Sev, he’s creepy! D’you know what he tried to do to Mary Macdonald the other day?” "
+        }        ]
+    }
+,
+    {
+    "name" : "Narcissa",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "and as she brought down the wand like a knife, there was another flash of light. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Jets of light flew from Draco’s, Narcissa’s, and Greyback’s wands; "
+        }        ]
+    }
+,
+    {
+    "name" : "Peeves",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "cried Peeves happily, now pelting bits of' chalk at the elves to enrage them further. Tweaky, pokey! "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Peeves zooming over them, dropping Snargaluff pods down onto the Death Eaters, whose heads were suddenly engulfed in wriggling green tubers like fat worms. "
+        }        ]
+    }
+,
+    {
+    "name" : "Percy",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "bellowed Percy, sending a neat jinx straight at Thicknesse "
+        }        ]
+    }
+,
+    {
+    "name" : "Seamus",
+    "spells" : [
+        {
+        "name" : "Riddikulus",
+        "occurrence" : "'Riddikulus! shouted Seamus. "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "“That’s right,” said Luna encouragingly, as if they were back in the Room of Requirement and this was simply spell practice for the D.A "
+        }        ]
+    }
+,
+    {
+    "name" : "Trelawney",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Then, with a bright white flash and a crack, a crystal ball fell on top of his head, and he crumpled to the ground and did not move "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "And with a movement like a tennis serve, she heaved another enormous crystal sphere from her bag, waved her wand through the air, and caused the ball to speed across the hall and smash through a window "
+        }        ]
+    }
+,
+    {
+    "name" : "Unnamed Ministry",
+    "spells" : [
+        {
+        "name" : "Obliviate",
+        "occurrence" : "Obliviate! he said sharply, pointing his wand at Mr. Roberts. "
+        },
+        {
+        "name" : "Stupefy",
+        "occurrence" : "STUPEFY! roared twenty voices "
+        }        ]
+    }
+,
+    {
+    "name" : "Unnamed Order",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Yaxley",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "that score. I have - with difficulty, and after great effort - succeeded in placing an Imperius Curse upon Pius Thicknesse.” "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "Yaxley, close to the front doors, in combat with Flitwick "
+        }        ]
+    }
+,
+    {
+    "name" : "Anthony G",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "By the time Ernie Macmillan, Hannah Abbott, Susan Bones, Justin Finch-Fletchley, Anthony Goldstein and Terry Boot, had finished using a wide variety of the hexes and jinxes Harry had taught them, Malfoy, Crabbe and Goyle resembled nothing so much as three gigantic slugs squeezed into Hogwarts uniform as Harry, Ernie and Justin hoisted them into the luggage rack and left them there to ooze "
+        }        ]
+    }
+,
+    {
+    "name" : "Antioch",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Augusta",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Cadmus",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Finally the second brother, driven mad with hopeless longing, killed himself so as to truly join her "
+        }        ]
+    }
+,
+    {
+    "name" : "Colin",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Colin Creevey had mastered the Impediment Jinx after three meetings' hard effort, "
+        }        ]
+    }
+,
+    {
+    "name" : "Dawlish",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Cries and yells echoed across the grounds; a man yelled, 'Be reasonable, Hagrid!' "
+        }        ]
+    }
+,
+    {
+    "name" : "Dirk",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "I was halfway to Azkaban when I made a break for it. Stunned Dawlish, and nicked his broom "
+        }        ]
+    }
+,
+    {
+    "name" : "Dragon Keeper",
+    "spells" : [
+        {
+        "name" : "Stupefy",
+        "occurrence" : "Stupefy! they shouted in unison, and the Stunning Spells shot into the darkness like fiery rockets, bursting in showers of stars on the dragons' scaly hides - "
+        },
+        {
+        "name" : "Unknown",
+        "occurrence" : "He was caught shortly after you were too. He preferred to fight rather than come quietly and was killed in the struggle."
+        }        ]
+    }
+,
+    {
+    "name" : "Egbert",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "“Surely you have heard of the way the wand came to Egbert the Egregious, after his slaughter of Emeric the Evil? "
+        }        ]
+    }
+,
+    {
+    "name" : "Evan Rosier",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "He was caught shortly after you were too. He preferred to fight rather than come quietly and was killed in the struggle."
+        }        ]
+    }
+,
+    {
+    "name" : "Fleur",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "at Fleur girl tried this sort of charm, I think she was trying to put it into a trance - well, that kind of worked too, "
+        }        ]
+    }
+,
+    {
+    "name" : "Fluffy",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Goyle",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "So- me people are into it, though; Crabbe and Goyle love it. "
+        }        ]
+    }
+,
+    {
+    "name" : "Grawp",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Grawp’s lopsided mouth fell open, showing yellow, half brick-sized teeth; and then they launched themselves at each other with the savagery of lions. "
+        }        ]
+    }
+,
+    {
+    "name" : "Hereward",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Of how Godelot died in his own cellar after his son, Hereward, took the wand from him? "
+        }        ]
+    }
+,
+    {
+    "name" : "Justin",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "By the time Ernie Macmillan, Hannah Abbott, Susan Bones, Justin Finch-Fletchley, Anthony Goldstein and Terry Boot, had finished using a wide variety of the hexes and jinxes Harry had taught them, Malfoy, Crabbe and Goyle resembled nothing so much as three gigantic slugs squeezed into Hogwarts uniform as Harry, Ernie and Justin hoisted them into the luggage rack and left them there to ooze "
+        }        ]
+    }
+,
+    {
+    "name" : "Lee Jordan",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Loxias",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Of the dreadful Loxias, who took the wand from Baraabas Deverill "
+        }        ]
+    }
+,
+    {
+    "name" : "Madam Hooch",
+    "spells" : [
+        {
+        "name" : "Impedimenta",
+        "occurrence" : "Not until somebody in the vicinity yelled 'Impedimenta!' and he was knocked over backwards by the force of the spell, "
+        }        ]
+    }
+,
+    {
+    "name" : "Madam Pince",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "And whipping out her wand, she caused Harry's books, bag and ink bottle to chase him and Ginny from the library, whacking them repeatedly over the head as they ran. "
+        }        ]
+    }
+,
+    {
+    "name" : "Marvolo",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "roared Gaunt, losing control, and his hands closed around his daughter's throat. "
+        }        ]
+    }
+,
+    {
+    "name" : "Miles",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "When Alicia Spinnet turned up in the hospital wing with her eyebrows growing so thick and fast they obscured her vision and obstructed her mouth, Snape insisted that she must have attempted a Hair-thickening Charm on herself and refused to listen to the fourteen eye-witnesses who insisted they had seen the Slytherin Keeper, Miles Bletchley, hit her from behind with a jinx while she worked in the library "
+        }        ]
+    }
+,
+    {
+    "name" : "Mundungus",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Ogden",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Ogden raised his wand and cried, Relaskio! "
+        }        ]
+    }
+,
+    {
+    "name" : "Scrimgeour",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Susan B",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "By the time Ernie Macmillan, Hannah Abbott, Susan Bones, Justin Finch-Fletchley, Anthony Goldstein and Terry Boot, had finished using a wide variety of the hexes and jinxes Harry had taught them, Malfoy, Crabbe and Goyle resembled nothing so much as three gigantic slugs squeezed into Hogwarts uniform as Harry, Ernie and Justin hoisted them into the luggage rack and left them there to ooze "
+        }        ]
+    }
+,
+    {
+    "name" : "Terry Boot",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "By the time Ernie Macmillan, Hannah Abbott, Susan Bones, Justin Finch-Fletchley, Anthony Goldstein and Terry Boot, had finished using a wide variety of the hexes and jinxes Harry had taught them, Malfoy, Crabbe and Goyle resembled nothing so much as three gigantic slugs squeezed into Hogwarts uniform as Harry, Ernie and Justin hoisted them into the luggage rack and left them there to ooze "
+        }        ]
+    }
+,
+    {
+    "name" : "Theft of EW",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "The thief took the wand and for good measure, slit the oldest brother’s throat "
+        }        ]
+    }
+,
+    {
+    "name" : "Travers",
+    "spells" : [
+        ]
+    }
+,
+    {
+    "name" : "Urquhart",
+    "spells" : [
+        {
+        "name" : "Unknown",
+        "occurrence" : "Harry had his hand crushed by the new Slytherin Captain, Urquhart. "
+        }        ]
+    }
+,
+    {
+    "name" : "Xenophilias",
+    "spells" : [
+        ]
+    }
+
+]
+}
