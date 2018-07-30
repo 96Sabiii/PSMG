@@ -21,6 +21,13 @@ div.tooltip {
     fill-opacity: .6;
     cursor: pointer;
 }
+.rect1:hover {
+  fill:  #8a89a6;
+}
+
+.rect2:hover {
+  fill:  #8a89a6;
+}
 
 .group:hover{
   cursor:pointer;
@@ -37,41 +44,34 @@ path.chord {
     display: none;
 }
 
-#Chart1 {
-    font-family: 'Kaushan Script', cursive;
-}
-
-#Chart2 {
-    font-family: 'Kaushan Script', cursive;
-}
 
 #piechart {
     height: 300px;
     width: 300px;
 }
 
-#Chart3 {
+
+#Chart1, #Chart2, #Chart3, #Chart5, #Chart6, #Chart3Pop {
     font-family: 'Kaushan Script', cursive;
  }
+
 
 #Chart2Popup {
     font-family: 'Kaushan Script', cursive;
     width: 800px;
  }
 
-#Chart3Pop {
- font-family: 'Kaushan Script', cursive;
-}
 
 #Chart5Popup, #Chart6Popup {
     width: 800px;
 }
 
+
 #Chart6Popup, #Chart6Popup .axis line, #Chart6Popup .axis path, #Chart6Popup .axis text, #Chart6Popup .axis,
 #Chart5Popup, #Chart5Popup .axis line, #Chart5Popup .axis path, #Chart5Popup .axis text, #Chart5Popup .axis{
-    font-size: 130%;
-    fill: darkgrey;
-}
+  fill:  #8a89a6;
+  font-size: 100%;
+    }
 
 #gap {
     font-size: 0px;
