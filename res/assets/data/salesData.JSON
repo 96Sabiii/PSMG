@@ -1,0 +1,84 @@
+{  
+   "freqData":[  
+      {  
+         "name":"PS 2001",
+         "freq":{  
+            "box_office_USA":317600000,
+            "box_office_overseas":657200000,
+            "box_office_world":974800000
+         }
+      },
+      {  
+         "name":"CoS 2002",
+         "freq":{  
+            "box_office_USA":262000000,
+            "box_office_overseas":617000000,
+            "box_office_world":879000000
+         }
+      },
+      {  
+         "name":"PoA 2004",
+         "freq":{  
+            "box_office_USA":249500000,
+            "box_office_overseas":547100000,
+            "box_office_world":796700000
+         }
+      },
+      {  
+         "name":"GoF 2005",
+         "freq":{  
+            "box_office_USA":290000000,
+            "box_office_overseas":606900000,
+            "box_office_world":896900000
+         }
+      },
+      {  
+         "name":"OotP 2007",
+         "freq":{  
+            "box_office_USA":292000000,
+            "box_office_overseas":647900000,
+            "box_office_world":939900000
+         }
+      },
+      {  
+         "name":"HBP 2009",
+         "freq":{  
+            "box_office_USA":302000000,
+            "box_office_overseas":632500000,
+            "box_office_world":934400000
+         }
+      },
+      {  
+         "name":"DH1 2010",
+         "freq":{  
+            "box_office_USA":296000000,
+            "box_office_overseas":664300000,
+            "box_office_world":960300000
+         }
+      },
+      {  
+         "name":"DH2 2011",
+         "freq":{  
+            "box_office_USA":381000000,
+            "box_office_overseas":960500000,
+            "box_office_world":1341500000
+         }
+      },
+      {  
+         "name":"Total 2018",
+         "freq":{  
+            "box_office_USA":2390100000,
+            "box_office_overseas":5333400000,
+            "box_office_world":7723400000
+         }
+      },
+      {  
+         "name":"Average 2018",
+         "freq":{  
+            "box_office_USA":298800000,
+            "box_office_overseas":666700000,
+            "box_office_world":965400000
+         }
+      }
+   ]
+}

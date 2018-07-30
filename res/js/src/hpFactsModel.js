@@ -33,9 +33,31 @@ hp.hpFactsModel = function() {
             else that.notifyAll("wordsPopupDataLoaded", data);
         });
     }
+    
+    function loadSalesData(){
+//        let object = [];
+//        d3.json("res/assets/data/movies_sales_figures.json", function(data) {
+//            let freq = {};
+//            //daten umwandeln
+//            for(var i = 0; i < data.movies_sales_figures.length; i++) {
+//                var json = data.movies_sales_figures;
+//                let bookName = json[i].name, publication = json[i].publication, USA = json[i].box_office_USA, overseas = json[i].box_office_overseas , world = json[i].box_office_world;
+//                let name = bookName + publication,
+//                    total = USA + overseas + world;
+//                    freq = {USA, overseas, world, total}
+//                let el = {name, freq};
+//                object.push(el);
+//            }
+//            that.notifyAll("salesDataLoaded", object);
+//        });
+        d3.json("res/assets/data/salesData.json", function(data) {
+            that.notifyAll("salesDataLoaded", data.freqData);
+        });
+    }
                
     that.loadMarksChartData = loadMarksChartData;
     that.loadWordsChartData = loadWordsChartData;
+    that.loadSalesData = loadSalesData;
     return that;
 
 };

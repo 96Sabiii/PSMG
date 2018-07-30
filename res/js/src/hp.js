@@ -63,12 +63,17 @@ var hp = (function () {
         factsModel.addEventListener("wordsChartDataLoaded", onWordsChartDataLoaded);
         factsModel.addEventListener("marksPopupDataLoaded", onMarksPopupDataLoaded);
         factsModel.addEventListener("wordsPopupDataLoaded", onWordsPopupDataLoaded);
+        factsModel.addEventListener("salesDataLoaded", onSalesDataLoaded);
     }
 
     function initFactsView() {
         factsView = new hp.hpFactsView();
         factsView.addEventListener("loadWordsPopup", onLoadWordsPopup);
         factsView.addEventListener("loadMarksPopup", onLoadMarksPopup);
+    }
+    
+    function onSalesDataLoaded(event) {
+        factsView.dashboard("#dashboard", event.data);
     }
     
     function onLoadBubblePopup() {
@@ -153,9 +158,9 @@ var hp = (function () {
   }
     
     function onCardFourClicked() {
-        //factsView.test();
         factsModel.loadWordsChartData("preview");
         factsModel.loadMarksChartData("preview");
+        factsModel.loadSalesData();
     }
 
 	that.init = init;
