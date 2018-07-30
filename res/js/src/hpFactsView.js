@@ -303,6 +303,9 @@ Harry Potter and the Deathly Hallows */
 
         // compute total for each state.
         fData.forEach(function(d){d.total=d.freq.box_office_USA+d.freq.box_office_overseas+d.freq.box_office_world;});
+        
+        d3.select("#openSalesPopup").on("click", function() {that.notifyAll("loadSalesPopup"); });
+        d3.select("#salesClose").on("click", function() { deleteChart() });
 
         // function to handle histogram.
         function histoGram(fD){
@@ -313,6 +316,7 @@ Harry Potter and the Deathly Hallows */
             //create svg for histogram.
             var hGsvg = d3.select(id).append("svg")
                // .attr("class", "histogrammPopup")
+                .attr("class", "histo")
                 .attr("width", hGDim.w)
                 .attr("height", hGDim.h + hGDim.t + hGDim.b)
                 .append("g")
@@ -415,6 +419,7 @@ Harry Potter and the Deathly Hallows */
             // create svg for pie chart.
             var piesvg = d3.select(id).append("svg")
                 .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
+                .attr("class", "salesPie")
                 .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
 
             // create function to draw the arcs of the pie slices.
@@ -513,7 +518,22 @@ Harry Potter and the Deathly Hallows */
         var hG = histoGram(sF), // create the histogram.
             pC = pieChart(tF), // create the pie-chart.
             leg= legend(tF);  // create the legend.
-}
+        
+        d3.select(id).append("a")
+           // .attr("class", "histogrammPopup")
+            .attr("class", "button")
+            .append("text")
+            .text("Total");
+            
+    }
+    
+    function deleteChart() {
+        var chart = document.getElementById("salesPopup");
+        
+        while (chart.firstChild) {
+            chart.removeChild(chart.firstChild);
+        }
+    }
 
 
     that.createWordsChartPopup = createWordsChartPopup;

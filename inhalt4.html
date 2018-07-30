@@ -35,12 +35,13 @@
                   <span class="headline h1">DUMBLEDORE — THE TRUTH AND LIES"</span>
                   <p><span class="subheadline h1">Sales Magic</span></p>
                </div>
+                <a class="button" id="openSalesPopup" href="#popupSales">Show Full Screen</a>
                 <div id='dashboard'>
 <!--
                     <svg id="histogrammChartSales"></svg>
                     <svg id="PieChartSales"></svg>
 -->
-                </div>          
+                </div>  
                <figure class="figure">
                   <img class="media" src="https://media.giphy.com/media/10EDQ56v0Fl5Go/giphy.gif" alt="Snape clapping Gif">
                   <figcaption class="figcaption">This is a happy Potions Master</figcaption>
@@ -69,6 +70,8 @@
                        <svg id="Chart6" height="200" viewBox="0 0 1250 1250"></svg>
                    </a>
 
+<!--                   POPUPS           -->
+                   
                     <div id="popupFacts1" class="overlay" style=" overflow: auto;">
                        <div class="popup">
                           <h2>Words Magic</h2>
@@ -82,6 +85,14 @@
                           <h2>Marks Magic</h2>
                           <a class="close" href="#">&times;</a>
                            <svg  id="Chart6Popup" style=" overflow-x:scroll; overflow-y:scroll;" viewBox="0 0 1350 1350"></svg>
+                       </div>
+                    </div>
+                    <div id="popupSales" class="overlay" style=" overflow: auto;">
+                       <div class="popup">
+                          <h2>Sales Magic</h2>
+                          <a class="close" id="salesClose" href="#">&times;</a>
+                         <div  id="salesPopup" style=" overflow-y:scroll;" viewBox="0 0 1250 1250"></div>
+
                        </div>
                     </div>
 

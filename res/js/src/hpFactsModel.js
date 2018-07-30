@@ -34,7 +34,7 @@ hp.hpFactsModel = function() {
         });
     }
     
-    function loadSalesData(){
+    function loadSalesData(area){
 //        let object = [];
 //        d3.json("res/assets/data/movies_sales_figures.json", function(data) {
 //            let freq = {};
@@ -51,7 +51,8 @@ hp.hpFactsModel = function() {
 //            that.notifyAll("salesDataLoaded", object);
 //        });
         d3.json("res/assets/data/salesData.json", function(data) {
-            that.notifyAll("salesDataLoaded", data.freqData);
+            if (area == "preview") that.notifyAll("salesDataLoaded", data.freqData); 
+            else that.notifyAll("salesPopupDataLoaded", data.freqData);
         });
     }
                
