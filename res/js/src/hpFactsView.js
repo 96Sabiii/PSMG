@@ -24,8 +24,6 @@ hp.hpFactsView = function() {
         Harry Potter and the Half-Blood Prince,
         Harry Potter and the Deathly Hallows */
 
-        //<svg width="450" height="350"></svg>
-        //<script src="https://d3js.org/d3.v4.min.js"></script>
 
     function createWordsChartPopup(data) {
         var svg = d3.select('#Chart5Popup'),
@@ -172,8 +170,6 @@ Harry Potter and the Order of the Phoenix
 Harry Potter and the Half-Blood Prince,
 Harry Potter and the Deathly Hallows */
 
-//<svg width="450" height="350"></svg>
-//<script src="https://d3js.org/d3.v4.min.js"></script>
 
     function createMarksChartPopup(data) {
         var svg = d3.select('#Chart6Popup'),
@@ -231,7 +227,29 @@ Harry Potter and the Deathly Hallows */
               .attr("y", function(d) { return 0 })
               .attr("height", 0)
               // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-              .attr("width", x.bandwidth());
+              .attr("width", x.bandwidth())
+                .on("mouseover", function(d, i) {
+                  d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
+                  div.transition()
+                      .attr("id","pie")
+                      .duration(200)
+                      .style("opacity", .9)
+                      .style("width","220px")
+                    //  .style("height","250px")
+                      .style("text-align","center");
+                    let count = d[1]-d[0];
+                  div.html("<b>" + d.data.title + "</b> <br/> Anzahl: " + count)
+                            // .style("left", (d3.event.pageX) + "px")
+                            // .style("top", (d3.event.pageY - 28) + "px");
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 50) + "px");
+                })
+                .on("mouseout", function(d) {
+                  d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                  div.transition()
+                      .duration(500)
+                      .style("opacity", 0);
+            });
 
         //Animation barchart2
         d3.selectAll(".rect2")
