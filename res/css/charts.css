@@ -12,6 +12,10 @@ div.tooltip {
     pointer-events: none;
 }
 
+rect, path { 
+    cursor: pointer;
+}
+
 
 .bar text{
    font-family: 'Spirax', cursive;

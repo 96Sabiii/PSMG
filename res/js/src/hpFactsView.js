@@ -94,7 +94,6 @@ hp.hpFactsView = function() {
               .on("mouseover", function(d) {
                   d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
                   div.transition()
-                      .attr("id","pie")
                       .duration(200)
                       .style("opacity", .9)
                       .style("width","220px")
@@ -231,7 +230,6 @@ Harry Potter and the Deathly Hallows */
                 .on("mouseover", function(d, i) {
                   d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
                   div.transition()
-                      .attr("id","pie")
                       .duration(200)
                       .style("opacity", .9)
                       .style("width","220px")
@@ -348,10 +346,11 @@ Harry Potter and the Deathly Hallows */
                 .on("mouseout",mouseout);// mouseout is defined below.
 
             //Create the frequency labels above the rectangles.
-            bars.append("text").text(function(d){ return d3.format(",")(d[1])})
+/*            bars.append("text").text(function(d){ return d3.format(",")(d[1])})
                 .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
                 .attr("y", function(d) { return y(d[1])-5; })
-                .attr("text-anchor", "middle");
+                .attr("text-anchor", "middle");*/
+            
 
             function mouseover(d){  // utility function to be called on mouseover.
                 // filter for selected state.
@@ -361,12 +360,29 @@ Harry Potter and the Deathly Hallows */
                 // call update functions of pie-chart and legend.    
                 pC.update(nD);
                 leg.update(nD);
+                
+                  div.transition()
+                      .duration(200)
+                      .style("opacity", .9)
+                      .style("width","220px")
+                    //  .style("height","250px")
+                      .style("text-align","center");
+                  div.html("<b>" + d[0] + "</b> <br/> " + d3.format(",")(d[1]))
+                            // .style("left", (d3.event.pageX) + "px")
+                            // .style("top", (d3.event.pageY - 28) + "px");
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 50) + "px");
+            
             }
+            
 
             function mouseout(d){    // utility function to be called on mouseout.
                 // reset the pie-chart and legend.    
                 pC.update(tF);
                 leg.update(tF);
+                div.transition()
+                  .duration(500)
+                  .style("opacity", 0);
             }
 
             // create function to update the bars. This will be used by pie-chart.
@@ -411,7 +427,8 @@ Harry Potter and the Deathly Hallows */
             piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
                 .each(function(d) { this._current = d; })
                 .style("fill", function(d) { return segColor(d.data.type); })
-                .on("mouseover",mouseover).on("mouseout",mouseout);
+                .on("click",mouseover);
+                //.on("mouseout",mouseout);
 
             // create function to update pie-chart. This will be used by histogram.
             pC.update = function(nD){
