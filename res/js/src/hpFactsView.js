@@ -10,11 +10,7 @@ hp.hpFactsView = function() {
         width = 280,
         div;
 
-
-        ////////////////
-
-   //       <!-- GROUPED BAR CHART WÖRTER, nach https://bl.ocks.org/mbostock/3887051-->
-
+//    GROUPED BAR CHART WÖRTER, nach https://bl.ocks.org/mbostock/3887051-->
 
     function createWordsChartPopup(data) {
         var svg = d3.select('#Chart5Popup'),
@@ -30,9 +26,6 @@ hp.hpFactsView = function() {
         var svg = d3.select('#Chart5');
 
         designWordsChart(data, svg, "");
-
-        //dazugehöriges Popup implementieren
-        d3.select(".openPopup1").on("click", function() { that.notifyAll("loadWordsPopup"); });
     }
 
     function designWordsChart(data, svg, popupClass) {
@@ -149,7 +142,7 @@ hp.hpFactsView = function() {
     }
 
 
-//<!-- STACKED BAR CHART SATZZEICHEN, nach https://bl.ocks.org/mbostock/3886208-->
+//  STACKED BAR CHART SATZZEICHEN, nach https://bl.ocks.org/mbostock/3886208-->
 
     function createMarksChartPopup(data) {
         var svg = d3.select('#Chart6Popup'),
@@ -163,9 +156,6 @@ hp.hpFactsView = function() {
     function createMarksChart(data) {
         var svg = d3.select('#Chart6');
         designMarksChart(data, svg, "");
-
-        //dazugehöriges Popup implementieren
-        d3.select(".openPopup2").on("click", function() { that.notifyAll("loadMarksPopup"); });
     }
 
     function designMarksChart(data, svg, popupClass) {
@@ -288,12 +278,11 @@ hp.hpFactsView = function() {
 
         fData.forEach(function(d){d.total=d.freq.USA+d.freq.Overseas+d.freq.Worldwide;});
 
-        d3.select("#openSalesPopup").on("click", function() {that.notifyAll("loadSalesPopup"); });
         d3.select("#salesClose").on("click", function() { deleteChart() });
 
         // function to handle histogram.
         function histoGram(fD){
-            var hG={},    hGDim = {t: 30, r: 0, b: 30, l: 0};
+            var hG={},    hGDim = {t: 30, r: 0, b: 50, l: 0};
             hGDim.w = width - hGDim.l - hGDim.r,
             hGDim.h = 200 - hGDim.t - hGDim.b;
 
@@ -332,12 +321,6 @@ hp.hpFactsView = function() {
                 .attr('fill',barColor)
                 .on("mouseover",mouseover)// mouseover is defined below.
                 .on("mouseout",mouseout);// mouseout is defined below.
-
-            //Create the frequency labels above the rectangles.
-/*            bars.append("text").text(function(d){ return d3.format(",")(d[1])})
-                .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
-                .attr("y", function(d) { return y(d[1])-5; })
-                .attr("text-anchor", "middle");*/
 
 
             function mouseover(d){  // utility function to be called on mouseover.
@@ -416,8 +399,8 @@ hp.hpFactsView = function() {
             piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
                 .each(function(d) { this._current = d; })
                 .style("fill", function(d) { return segColor(d.data.type); })
-                .on("click",mouseover);
-                //.on("mouseout",mouseout);
+                .on("click",onclick);
+            
 
             // create function to update pie-chart. This will be used by histogram.
             pC.update = function(nD){
@@ -425,16 +408,10 @@ hp.hpFactsView = function() {
                     .attrTween("d", arcTween);
             }
             // Utility function to be called on mouseover a pie slice.
-            function mouseover(d){
+            function onclick(d){
                 // call the update function of histogram with new data.
                 hG.update(fData.map(function(v){
                     return [v.name,v.freq[d.data.type]];}),segColor(d.data.type));
-            }
-            //Utility function to be called on mouseout a pie slice.
-            function mouseout(d){
-                // call the update function of histogram with all data.
-                hG.update(fData.map(function(v){
-                    return [v.name,v.total];}), barColor);
             }
             // Animating the pie-slice requiring a custom function which specifies
             // how the intermediate paths should be drawn.
@@ -507,7 +484,15 @@ hp.hpFactsView = function() {
            // .attr("class", "histogrammPopup")
             .attr("class", "button")
             .append("text")
-            .text("Total");
+            .text("Total")
+            .on("click",total);
+        
+        //Utility function to be called on mouseout a pie slice.
+        function total(d){
+            // call the update function of histogram with all data.
+            hG.update(fData.map(function(v){
+                return [v.name,v.total];}), barColor);
+        }
 
     }
 
