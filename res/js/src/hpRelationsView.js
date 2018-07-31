@@ -148,10 +148,11 @@
     }
 
 
-        
+
     function createPopupRelationsChart() {
             //Grundgerüst erstellen
-     var margin = {left:m, top:m, right:m, bottom:m},
+        // var margin = {left:m, top:m, right:m, bottom:m},
+        var margin = {left:m, top:0, right:400, bottom:300},
         width = Math.min(window.innerWidth-300, size) - margin.left - margin.right,
         height = Math.min(window.innerWidth-300, size) - margin.top - margin.bottom;
         innerRadius = Math.min(width, height) * .39;

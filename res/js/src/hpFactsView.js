@@ -57,7 +57,7 @@ hp.hpFactsView = function() {
             .range(["#1D8089","#CA295A","#E1822E"]);
 
           var keys = data.columns.slice(1);
-        
+
             // Define the div for the tooltip
           div = d3.select("body").append("div")
               .attr("class", "tooltip")
@@ -274,27 +274,27 @@ hp.hpFactsView = function() {
               .attr("dy", "0.32em")
               .text(function(d) { return d; });
     }
-    
-    
+
+
    //  <!--DASHBOARD VERKAUFSZAHLEN nach http: //bl.ocks.org/NPashaP/96447623ef4d342ee09b-->
-    
+
     function dashboard(id, fData){
-       
-      
+
+
         var barColor = "#75B540";
         function segColor(c){ return {USA:"#1D8089", Overseas:"#CA295A", Worldwide:"#E1822E"}[c]; }
 
         // compute total for each state.
-        
+
         fData.forEach(function(d){d.total=d.freq.USA+d.freq.Overseas+d.freq.Worldwide;});
-        
+
         d3.select("#openSalesPopup").on("click", function() {that.notifyAll("loadSalesPopup"); });
         d3.select("#salesClose").on("click", function() { deleteChart() });
 
         // function to handle histogram.
         function histoGram(fD){
             var hG={},    hGDim = {t: 30, r: 0, b: 30, l: 0};
-            hGDim.w = width - hGDim.l - hGDim.r, 
+            hGDim.w = width - hGDim.l - hGDim.r,
             hGDim.h = 200 - hGDim.t - hGDim.b;
 
             //create svg for histogram.
@@ -338,17 +338,17 @@ hp.hpFactsView = function() {
                 .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
                 .attr("y", function(d) { return y(d[1])-5; })
                 .attr("text-anchor", "middle");*/
-            
+
 
             function mouseover(d){  // utility function to be called on mouseover.
                 // filter for selected state.
                 var st = fData.filter(function(s){ return s.name == d[0];})[0],
                     nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
 
-                // call update functions of pie-chart and legend.    
+                // call update functions of pie-chart and legend.
                 pC.update(nD);
                 leg.update(nD);
-                
+
                   div.transition()
                       .duration(200)
                       .style("opacity", .9)
@@ -360,12 +360,12 @@ hp.hpFactsView = function() {
                             // .style("top", (d3.event.pageY - 28) + "px");
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 50) + "px");
-            
+
             }
-            
+
 
             function mouseout(d){    // utility function to be called on mouseout.
-                // reset the pie-chart and legend.    
+                // reset the pie-chart and legend.
                 pC.update(tF);
                 leg.update(tF);
                 div.transition()
@@ -390,8 +390,8 @@ hp.hpFactsView = function() {
                 // transition the frequency labels location and change value.
                 bars.select("text").transition().duration(500)
                     .text(function(d){ return d3.format(",")(d[1])})
-                    .attr("y", function(d) {return y(d[1])-5; });            
-            }        
+                    .attr("y", function(d) {return y(d[1])-5; });
+            }
             return hG;
         }
 
@@ -423,11 +423,11 @@ hp.hpFactsView = function() {
             pC.update = function(nD){
                 piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
                     .attrTween("d", arcTween);
-            }        
+            }
             // Utility function to be called on mouseover a pie slice.
             function mouseover(d){
                 // call the update function of histogram with new data.
-                hG.update(fData.map(function(v){ 
+                hG.update(fData.map(function(v){
                     return [v.name,v.freq[d.data.type]];}),segColor(d.data.type));
             }
             //Utility function to be called on mouseout a pie slice.
@@ -442,7 +442,7 @@ hp.hpFactsView = function() {
                 var i = d3.interpolate(this._current, a);
                 this._current = i(0);
                 return function(t) { return arc(i(t));    };
-            }    
+            }
             return pC;
         }
 
@@ -481,7 +481,7 @@ hp.hpFactsView = function() {
                 l.select(".legendFreq").text(function(d){ return d3.format(",")(d.freq);});
 
                 // update the percentage column.
-                l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});        
+                l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});
             }
 
             function getLegend(d,aD){ // Utility function to compute percentage.
@@ -493,8 +493,8 @@ hp.hpFactsView = function() {
 
         // calculate total frequency by segment for all state.
            var tF = ['USA','Overseas','Worldwide'].map(function(d){
-            return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
-        });    
+            return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))};
+        });
 
         // calculate total frequency by state for all segment.
         var sF = fData.map(function(d){return [d.name,d.total];});
@@ -502,18 +502,18 @@ hp.hpFactsView = function() {
         var hG = histoGram(sF), // create the histogram.
             pC = pieChart(tF), // create the pie-chart.
             leg= legend(tF);  // create the legend.
-        
+
         d3.select(id).append("a")
            // .attr("class", "histogrammPopup")
             .attr("class", "button")
             .append("text")
             .text("Total");
-            
+
     }
-    
+
     function deleteChart() {
         var chart = document.getElementById("salesPopup");
-        
+
         while (chart.firstChild) {
             chart.removeChild(chart.firstChild);
         }
