@@ -132,6 +132,19 @@ a:hover {
   margin-top: 10px;
 }
 
+#popupToolbar {
+    margin-top: 3%;
+    width: auto;
+}
+
+#popupToolbar .button {
+    padding: 1% 1%;
+}
+
+.bookButtons {
+    margin: 3%;
+}
+
 .book {
   font-size: 21px;
   fill: #aaa;

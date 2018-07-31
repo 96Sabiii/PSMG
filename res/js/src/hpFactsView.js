@@ -208,7 +208,7 @@ hp.hpFactsView = function() {
                     //  .style("height","250px")
                       .style("text-align","center");
                     let count = d[1]-d[0];
-                  div.html("<b>" + d.data.title + "</b> <br/> Anzahl: " + count)
+                  div.html("<b>" + d.data.title + "</b> <br/> Count: " + count)
                             // .style("left", (d3.event.pageX) + "px")
                             // .style("top", (d3.event.pageY - 28) + "px");
                             .style("left", (d3.event.pageX) + "px")
