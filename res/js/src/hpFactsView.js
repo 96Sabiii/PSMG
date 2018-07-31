@@ -12,13 +12,12 @@ hp.hpFactsView = function() {
     //    GROUPED BAR CHART WÖRTER, nach https://bl.ocks.org/mbostock/3887051-->
 
     function createWordsChartPopup(data) {
-        var svg = d3.select('#Chart5Popup'),
-            popupClass = "wordsPopupG";
+        var svg = d3.select('#Chart5Popup');
 
-        designWordsChart(data, svg, popupClass);
+        designWordsChart(data, svg);
         //anpassen welches svg close
-        d3.select(".close").on("click", function() {
-            d3.select("." + popupClass).remove();
+        d3.select("#wordsPopupClose").on("click", function() {
+            deleteChart("Chart5Popup");
         });
     }
 
@@ -29,7 +28,7 @@ hp.hpFactsView = function() {
         designWordsChart(data, svg, "");
     }
 
-    function designWordsChart(data, svg, popupClass) {
+    function designWordsChart(data, svg) {
         var margin = {
                 top: 80,
                 right: 20,
@@ -39,7 +38,6 @@ hp.hpFactsView = function() {
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size) - margin.top - margin.bottom,
             g = svg.append("g")
-            .attr("class", popupClass)
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var x0 = d3.scaleBand()
@@ -182,13 +180,12 @@ hp.hpFactsView = function() {
     //  STACKED BAR CHART SATZZEICHEN, nach https://bl.ocks.org/mbostock/3886208-->
 
     function createMarksChartPopup(data) {
-        var svg = d3.select('#Chart6Popup'),
-            popupClass = "marksPopupG";
+        var svg = d3.select('#Chart6Popup');
 
-        designMarksChart(data, svg, popupClass);
+        designMarksChart(data, svg);
         //anpassen welches svg close
-        d3.select(".close").on("click", function() {
-            d3.select("." + popupClass).remove();
+        d3.select("#marksPopupClose").on("click", function() {
+            deleteChart("Chart6Popup");
         });
     }
 
@@ -197,7 +194,7 @@ hp.hpFactsView = function() {
         designMarksChart(data, svg, "");
     }
 
-    function designMarksChart(data, svg, popupClass) {
+    function designMarksChart(data, svg) {
         var margin = {
                 top: 80,
                 right: 20,
@@ -206,7 +203,7 @@ hp.hpFactsView = function() {
             },
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size) - margin.top - margin.bottom,
-            g = svg.append("g").attr("class", popupClass).attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
         var x = d3.scaleBand()
@@ -252,7 +249,6 @@ hp.hpFactsView = function() {
             })
             .attr("y", 0)
             .attr("height", 0)
-            // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
             .attr("width", x.bandwidth())
             .on("mouseover", function(d) {
                 d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
@@ -260,11 +256,8 @@ hp.hpFactsView = function() {
                     .duration(200)
                     .style("opacity", .9)
                     .style("width", "220px")
-                    //  .style("height","250px")
                     .style("text-align", "center");
                 div.html("<b>" + d.data.title + "</b> <br/> Count: " + (d[1] - d[0]))
-                    // .style("left", (d3.event.pageX) + "px")
-                    // .style("top", (d3.event.pageY - 28) + "px");
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 50) + "px");
             })
@@ -354,7 +347,7 @@ hp.hpFactsView = function() {
         });
 
         d3.select("#salesClose").on("click", function() {
-            deleteChart()
+            deleteChart("salesPopup")
         });
 
         // function to handle histogram.
@@ -451,11 +444,8 @@ hp.hpFactsView = function() {
                     .duration(200)
                     .style("opacity", .9)
                     .style("width", "220px")
-                    //  .style("height","250px")
                     .style("text-align", "center");
                 div.html("<b>" + d[0] + "</b> <br/> " + d3.format(",")(d[1]))
-                    // .style("left", (d3.event.pageX) + "px")
-                    // .style("top", (d3.event.pageY - 28) + "px");
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 50) + "px");
 
@@ -668,8 +658,8 @@ hp.hpFactsView = function() {
 
     }
 
-    function deleteChart() {
-        var chart = document.getElementById("salesPopup");
+    function deleteChart(id) {
+        var chart = document.getElementById(id);
 
         while (chart.firstChild) {
             chart.removeChild(chart.firstChild);

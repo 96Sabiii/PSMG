@@ -16,7 +16,6 @@ hp.hpRelationsModel = function() {
         d3.queue()
             .defer(d3.csv, "res/assets/data/characters.csv")
             .defer(d3.csv, "res/assets/data/relations.csv")
-            //.defer(d3.json, "res/assets/data/matrix2.json")
             .await(combine);
 
         function combine(error, characters, relations) {

@@ -59,7 +59,6 @@ hp.hpSpellView = function() {
         }
     }
 
-    //doppelter code, wenn if all dann pie chart
     function createSpellSVG(root, area) {
 
         //SVG erstellen
@@ -87,14 +86,11 @@ hp.hpSpellView = function() {
                 return "translate(" + d.x + "," + d.y + ")";
             });
 
-        //hier Bubble anpassungen
-
         nodes.append("circle")
             .style("stroke-width", 2).style("stroke", " #aeb4bf")
             .attr("class", function(d) {
                 return d.children ? "node" : "leaf node circle";
             })
-            //.attr("r", function(d) {return d.r })
             .attr("r", 0)
             .style("fill", function(d) {
                 return colorCircles(d.value)
@@ -106,12 +102,9 @@ hp.hpSpellView = function() {
                     .duration(200)
                     .style("opacity", .9)
                     .style("width", "220px")
-                    //  .style("height","250px")
                     .style("text-align", "center");
                 div.html("<b>" + d.data.name + "</b> <br/>Total: " + d.value + " <br/>" + d.data.effect +
                         "<br/> Classification: " + d.data.classification)
-                    // .style("left", (d3.event.pageX) + "px")
-                    // .style("top", (d3.event.pageY - 28) + "px");
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 150) + "px");
 
@@ -176,7 +169,6 @@ hp.hpSpellView = function() {
                     .attr("width", "200px")
                     .attr("height", "200px")
                     .append("g")
-                    //Ändere die Werte in "translate" um die Position des Piecharts zu ändern
                     .attr("transform", "translate(" + (width / 2 + 30) + "," + (height / 2 + 20) + ")");
 
                 var g = svg.selectAll("arc")
@@ -303,7 +295,6 @@ hp.hpSpellView = function() {
             .attr("class", function(d) {
                 return d.children ? "node" : "leaf node " + sortString;
             })
-            //.attr("r", function(d) {return d.r })
             .attr("r", 0)
             .style("fill", color)
             .on("mouseover", function(d) {
@@ -313,14 +304,11 @@ hp.hpSpellView = function() {
                     .duration(200)
                     .style("opacity", .9)
                     .style("width", "220px")
-                    //.style("heigth","100px")
                     .style("text-align", "center");
                 div.html("<b>" + d.data.name + "</b> <br/> Total: " +
                         Object.values(d.data)[bookNr] +
                         " <br/>" + d.data.effect +
                         "<br/> Classification: " + d.data.classification)
-                    // .style("left", (d3.event.pageX) + "px")
-                    // .style("top", (d3.event.pageY - 28) + "px");
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 80) + "px");
             })
@@ -358,7 +346,6 @@ hp.hpSpellView = function() {
             .style("font-size", function(d) {
                 return Math.min(d.r / 3, (2 * d.r - 8) / this.getComputedTextLength() * 18) + "px";
             });
-        // so geht es ohne animation richtig: .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 18) + "px"; });
 
         setTimeout(function() {
             minText(radius)

@@ -77,9 +77,6 @@ hp.hpSpellModel = function() {
                 poa = json[i].PoACount,
                 cos = json[i].CoSCount,
                 ss = json[i].SSCount;
-            // for (var j = 1; j < data.length; j++) {
-            //     value = value + +data[j][name];
-            // }
             let el = {
                 name,
                 value,
@@ -121,10 +118,8 @@ hp.hpSpellModel = function() {
                 .sort(function(a, b) {
                     return Object.values(b)[bookNr] - Object.values(a)[bookNr];
                 });
-
-            //            root = d3.hierarchy(object)
-            //                .sum(function(d){ console.log(d.sortString); return d.sortString})
         }
+        
         nodeFkt(root);
         data = [root, bookNr];
         if (area == "preview") that.notifyAll("spellRootAvailable", data);
@@ -203,7 +198,6 @@ hp.hpSpellModel = function() {
     that.setupPopupButtons = setupPopupButtons;
     that.loadBubbleData = loadBubbleData;
     that.setupButtons = setupButtons;
-    //that.createChord = createChord;
     return that;
 
 };

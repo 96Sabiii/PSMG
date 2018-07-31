@@ -176,7 +176,6 @@
 
         function createPopupRelationsChart() {
             //Grundgerüst erstellen
-            // var margin = {left:m, top:m, right:m, bottom:m},
             var margin = {
                     left: m,
                     top: 0,
