@@ -1,3 +1,5 @@
+/* global d3 */
+
 var CodeFlower = function(selector, w, h) {
   this.w = w;
   this.h = h;
@@ -9,8 +11,7 @@ var CodeFlower = function(selector, w, h) {
     .attr('height', h);
 
   this.svg.append("svg:rect")
-    .style("stroke", "#999")
-    .style("fill", "#fff")
+    .style("fill", "transparent")
     .attr('width', w)
     .attr('height', h);
 

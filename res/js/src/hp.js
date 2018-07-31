@@ -1,21 +1,21 @@
 /* eslint-env browser  */
+/* global CodeFlower */ 
 
 var hp = (function () {
   "use strict";
     
     var that = {},
         actionsModel,
-        actionsView,
         relationsView,
         relationsModel,
         spellView,
         spellModel,
         factsView,
-        factsModel;
+        factsModel,
+        actionsFlower;
 
 	function init()  {
         initActionsModel();
-        initActionsView();
         initRelationsView();
         initRelationsModel();
         initSpellView();
@@ -26,7 +26,7 @@ var hp = (function () {
 
   function initActionsModel() {
     actionsModel = new hp.hpActionsModel();
-    actionsModel.addEventListener("actionsRootAvailable", onActionsRootAvailable);
+    actionsModel.addEventListener("jsonDataAvailable", onJsonDataAvailable);
   }
 
   function initSpellModel() {
@@ -41,10 +41,6 @@ var hp = (function () {
         spellView.addEventListener("fadedOut", onFadedOut);
         spellView.addEventListener("popupFadedOut", onPopupFadedOut);
         spellView.addEventListener("loadBubblePopup", onLoadBubblePopup);
-  }
-
-  function initActionsView() {
-    //ssactionsView = new hp.hpActionsView();
   }
 
   function initRelationsView() {
@@ -123,8 +119,8 @@ var hp = (function () {
         factsView.createWordsChart(event.data);
     }
     
-    function onActionsRootAvailable(event){
-        actionsView.createActionsSVG(event.data);
+    function onJsonDataAvailable(event){
+        actionsFlower.update(event.data);  
     }
 
     function onSpellRootAvailable(event){
@@ -152,12 +148,8 @@ var hp = (function () {
     }
 
   function onCardOneClicked() {
-        var actionsFlower = new CodeFlower("#Chart1", 300, 200);
-        actionsFlower.update(   
-        //actionsModel.loadCodeflowerData()
-        d3.json("res/assets/data/CF.json", function(data) {
-            return data;
-        }));
+      actionsFlower = new CodeFlower("#Chart1", 280, 280);
+      actionsModel.loadCodeflowerData();
   }
 
   function onCardTwoClicked() {

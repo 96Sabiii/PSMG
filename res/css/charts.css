@@ -60,6 +60,11 @@ path.chord {
     font-family: 'Kaushan Script', cursive;
  }
 
+#Chart1 {
+    width: auto;
+    height: 300px;
+}
+
 
 #Chart2Popup {
     font-family: 'Kaushan Script', cursive;
@@ -196,11 +201,37 @@ font-family:  'Special Elite', cursive;
     vertical-align:bottom;
 }
 .legendFreq, .legendPerc{
-  
-    align:right;
     width:50px;
 }
 
 .button {
     margin: 10% 0;
+}
+
+/* Codefloweer */
+#Chart1 circle.node {
+  cursor: pointer;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+#Chart1 circle.node.directory {
+  stroke: #9ecae1;
+  stroke-width: 2px;
+}
+
+#Chart1 circle.node.collapsed {
+  stroke: #555;
+}
+
+#Chart1 .nodetext {
+  fill: #252929;
+  font-weight: bold;
+  text-shadow: 0 0 0.2em white;
+}
+
+#Chart1  line.link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
 }

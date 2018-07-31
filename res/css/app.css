@@ -139,22 +139,6 @@ a:hover {
   margin-bottom: 10%;
 }
 
-.expand:hover {
-    transform: scale(2.5);
-    background-size: 50% auto;
-    background-color: #8e949e;
-    opacity: 1;
-    font-size: 140%;
-    overflow: visible;
-    position: relative;
-    z-index: 5;
-}
-
-.expand {
-    transition: all 1s;
-    transform-origin: center;
-}
-
 //Pop-Up
 
 .button_box {

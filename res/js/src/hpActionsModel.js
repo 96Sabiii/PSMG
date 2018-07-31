@@ -12,8 +12,8 @@ hp.hpActionsModel = function() {
   var that = new EventPublisher();
 
     function loadCodeflowerData() {
-        return d3.json("res/assets/data/CF.json", function(data) {
-            return data;
+        d3.json("res/assets/data/CF.json", function(data) {
+            that.notifyAll("jsonDataAvailable", data);
         })
     }
 
