@@ -78,7 +78,7 @@ var hp = (function () {
     }
     
     function onLoadFlowerPopup() {
-        actionsPopupFlower = new CodeFlower("#flowerPopup", 500, 500);
+        actionsPopupFlower = new CodeFlower("#flowerPopup", 800, 800);
         actionsModel.loadCodeflowerData("popup");
     }
         

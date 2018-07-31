@@ -411,8 +411,17 @@ hp.hpFactsView = function() {
             // Draw the pie slices.
             piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
                 .each(function(d) { this._current = d; })
-                .style("fill", function(d) { return segColor(d.data.type); })
-                .on("click",onclick);
+                .style("fill", "transparent")
+                .on("click",onclick)
+                .transition().delay(function(d,i) { return i * 500; })
+                .duration(500)
+            .style("fill", function(d) { return segColor(d.data.type); })
+                .attrTween('d', function(d) { 
+                    var i = d3.interpolate(d.startAngle+0.1, d.endAngle);
+                    return function(t) {
+                    d.endAngle = i(t); 
+                    return arc(d)
+                }});
             
 
             // create function to update pie-chart. This will be used by histogram.
