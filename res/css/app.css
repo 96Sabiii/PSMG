@@ -25,6 +25,11 @@ svg {
   background-size: 100%;
 }
 
+.info {
+    font-family: sans-serif;
+    color: seagreen;
+}
+
 .navigation {
   font-family:  'Special Elite', cursive;
   border-left: 20%;
