@@ -149,7 +149,6 @@ path.chord {
   font-weight: bold;
   text-decoration: none;
   color:  #06D85F;
-  overflow: auto;
 }
 .popup .close:hover {
   color: #06D85F;
