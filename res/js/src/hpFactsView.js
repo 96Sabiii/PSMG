@@ -282,13 +282,12 @@ hp.hpFactsView = function() {
 
         // function to handle histogram.
         function histoGram(fD){
-            var hG={},    hGDim = {t: 30, r: 0, b: 50, l: 0};
+            var hG={},    hGDim = {t: 30, r: 0, b: 80, l: 0};
             hGDim.w = width - hGDim.l - hGDim.r,
             hGDim.h = 200 - hGDim.t - hGDim.b;
 
             //create svg for histogram.
             var hGsvg = d3.select(id).append("svg")
-               // .attr("class", "histogrammPopup")
                 .attr("class", "histo")
                 .attr("width", hGDim.w)
                 .attr("height", hGDim.h + hGDim.t + hGDim.b)
@@ -298,11 +297,16 @@ hp.hpFactsView = function() {
             // create function for x-axis mapping.
             var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
                     .domain(fD.map(function(d) { return d[0]; }));
-
+            
             // Add x-axis to the histogram svg.
-            hGsvg.append("g").attr("class", "x axis")
-                .attr("transform", "translate(0," + hGDim.h + ")")
-                .call(d3.svg.axis().scale(x).orient("bottom"));
+            hGsvg.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(10," + hGDim.h + ")").call(d3.axisBottom(x))
+                .selectAll("text")  
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-65)");
 
             // Create function for y-axis map.
             var y = d3.scale.linear().range([hGDim.h, 0])
