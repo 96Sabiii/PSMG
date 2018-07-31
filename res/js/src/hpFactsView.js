@@ -68,7 +68,7 @@ hp.hpFactsView = function() {
             .selectAll("rect")
             .data(function(d) { return keys.map(function(key) {return {title: d.title, key: key, value: d[key]}; }); })
             .enter().append("rect")
-              .attr("class", "rect1")
+              .attr("class", "wordRect")
               .attr("x", function(d) { return x1(d.key); })
               .attr("y", function(d){return 0;})
               .attr("width", x1.bandwidth())
@@ -98,7 +98,7 @@ hp.hpFactsView = function() {
 
 
           //Animation barchart1
-          d3.selectAll(".rect1")
+          d3.selectAll(".wordRect")
             .transition()
             .delay(function (d, i) { return i*100; })
             .duration(1500)
@@ -192,7 +192,7 @@ hp.hpFactsView = function() {
             .selectAll("rect")
             .data(function(d) { return d; })
             .enter().append("rect")
-              .attr("class", "rect2")
+              .attr("class", "marksRect")
               .attr("x", function(d) { return x(d.data.title); })
               .attr("y", function(d) { return 0 })
               .attr("height", 0)
@@ -221,7 +221,7 @@ hp.hpFactsView = function() {
             });
 
         //Animation barchart2
-        d3.selectAll(".rect2")
+        d3.selectAll(".marksRect")
             .transition()
             .delay(function (d, i) { return i*100; })
             .duration(1000)
@@ -318,13 +318,22 @@ hp.hpFactsView = function() {
 
             //create the rectangles.
             bars.append("rect")
+                .attr("class", "histoRect")
                 .attr("x", function(d) { return x(d[0]); })
-                .attr("y", function(d) { return y(d[1]); })
+                .attr("y", function(d) { 0; })
                 .attr("width", x.rangeBand())
-                .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                .attr("height", function(d) { 0})
                 .attr('fill',barColor)
                 .on("mouseover",mouseover)// mouseover is defined below.
                 .on("mouseout",mouseout);// mouseout is defined below.
+            
+              //Animation sales Barchart
+                d3.selectAll(".histoRect")
+                    .transition()
+                    .delay(function (d, i) { return i*100; })
+                    .duration(1000)
+                    .attr("y", function (d, i) { return y(d[1]); })
+                    .attr("height", function(d) { return hGDim.h - y(d[1]); });
 
 
             function mouseover(d){  // utility function to be called on mouseover.
