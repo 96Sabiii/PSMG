@@ -508,7 +508,7 @@ hp.hpFactsView = function() {
            // .attr("class", "histogrammPopup")
             .attr("class", "button")
             .append("text")
-            .text("Total")
+            .text("Finite")
             .on("click",total);
         
         //Utility function to be called on mouseout a pie slice.
