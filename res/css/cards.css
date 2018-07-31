@@ -1,165 +1,143 @@
 /* Auf Grundlage von https://www.kode.to/ */
-
-.cards {
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 250px;
+ .cards {
+     bottom: 0;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     height: 250px;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+}
+ .card {
+     height: 220px;
+    /*wieviel abstand zwischen karten */
+     margin: 0 -30px;
+     position: relative;
+     width: 170px;
+     background-color: transparent;
+     border: none;
+     margin-top: -30px;
+}
+ .card:after {
+     left: -60px;
+     position: absolute;
+     right: -60px;
+     top: 0px;
+     z-index: 10;
+}
+ .card-face {
+     bottom: 0;
+     content: '';
+     left: 0;
+     pointer-events: none;
+     position: absolute;
+     right: 0;
+     top: 0;
+     -webkit-transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) -webkit-transform;
+     transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) -webkit-transform;
+     transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) transform;
+     transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) transform, 800ms cubic-bezier(0.19, 1, 0.22, 1) -webkit-transform;
+}
+ .card-face:after {
+     -webkit-animation: none;
+     animation: none;
+     bottom: 0;
+     content: '';
+     left: 0;
+     opacity: 0;
+     position: absolute;
+     right: 0;
+     top: 0;
+}
+ .card-label {
+     font-family: 'Gloria Hallelujah', cursive;
+     font-size: 25px;
+     margin-top: 15px;
+     padding: 10px 10px 10px 10px;
+     position: center;
+}
+ .card:nth-child(1):hover .card-face, .card:nth-child(2):hover .card-face, .card:nth-child(3):hover .card-face, .card:nth-child(4):hover .card-face {
+     box-shadow: 0 10px 20px #00102b;
+     -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
+     transform: translateY(-100px) rotate(0deg) scale(2);
+     -webkit-transition-duration: 0ms;
+     transition-duration: 0ms;
+     z-index: 5;
+}
+ .card:nth-child(1):hover .card-face:after, .card:nth-child(2):hover .card-face:after .card:nth-child(3):hover .card-face:after .card:nth-child(4):hover .card-face:after {
+     -webkit-animation: fade 250ms ease-out forwards;
+     animation: fade 250ms ease-out forwards;
+}
+ .card:nth-child(1):hover:after, .card:nth-child(2):hover:after, .card:nth-child(3):hover:after, .card:nth-child(4):hover:after {
+     top: -175px;
+}
+ .card:nth-child(1) .card-face {
+     background: -webkit-linear-gradient(225deg, #424C65, #233156);
+     background: linear-gradient(-135deg, #AFB6C9, #233156);
+     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
+     -webkit-transform: translateY(45px) rotate(-28.125deg);
+     transform: translateY(45px) rotate(-28.125deg);
+}
+ .card:nth-child(1) .card-face .card-label {
+     color: #D3CAB3;
+     text-shadow: -0.025em 0.025em 0 #666259;
+}
+ .card:nth-child(2) .card-face {
+     background: -webkit-linear-gradient(225deg, #404F63, #213754);
+     background: linear-gradient(-135deg, #ACB8C6, #213754);
+     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
+     -webkit-transform: translateY(5px) rotate(-3.125deg);
+     transform: translateY(5px) rotate(-3.125deg);
+}
+ .card:nth-child(2) .card-face .card-label {
+     color: #D3CAB3;
+     text-shadow: -0.025em 0.025em 0 #666259;
+}
+ .card:nth-child(3) .card-face {
+     background: -webkit-linear-gradient(225deg, #3D5261, #1F3D52);
+     background: linear-gradient(-135deg, #A9B9C4, #1F3D52);
+     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
+     -webkit-transform: translateY(15px) rotate(9.375deg);
+     transform: translateY(15px) rotate(9.375deg);
+}
+ .card:nth-child(3) .card-face .card-label {
+     color:#D3CAB3;
+     text-shadow: -0.025em 0.025em 0 #666259;
+}
+ .card:nth-child(4) .card-face {
+     background: -webkit-linear-gradient(225deg, #3B555E, #1D4350);
+     background: linear-gradient(-135deg, #A6BAC1, #1D4350);
+     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
+     -webkit-transform: translateY(35px) rotate(21.875deg);
+     transform: translateY(35px) rotate(21.875deg);
+}
+ .card:nth-child(4) .card-face .card-label {
+     color: #D3CAB3;
+     text-shadow: -0.025em 0.025em 0 #666259;
+}
+ @-webkit-keyframes fade {
+     0% {
+         opacity: 0.9;
+         -webkit-transform: scale(1);
+         transform: scale(1);
+    }
+     100% {
+         opacity: 0;
+         -webkit-transform: scale(1.15);
+         transform: scale(1.15);
+    }
+}
+ @keyframes fade {
+     0% {
+         opacity: 0.9;
+         -webkit-transform: scale(1);
+         transform: scale(1);
+    }
+     100% {
+         opacity: 0;
+         -webkit-transform: scale(1.15);
+         transform: scale(1.15);
+    }
+}
  
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-
-}
-
-.card {
-  height: 220px;
-  /*wieviel abstand zwischen karten */
-  margin: 0 -30px;
-  position: relative;
-  width: 170px;
-  background-color: transparent;
-  border: none;
-  margin-top: -30px;
-}
-.card:after {
-  left: -60px;
-  position: absolute;
-  right: -60px;
-  top: 0px;
-  z-index: 10;
-}
-
-.card-face {
-  bottom: 0;
-  content: '';
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  -webkit-transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) -webkit-transform;
-  transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) -webkit-transform;
-  transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) transform;
-  transition: 800ms cubic-bezier(0.19, 1, 0.22, 1) transform, 800ms cubic-bezier(0.19, 1, 0.22, 1) -webkit-transform;
-}
-.card-face:after {
-  -webkit-animation: none;
-          animation: none;
-  bottom: 0;
-  content: '';
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.card-label {
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 25px;
-  margin-top: 15px;
-  padding: 10px 10px 10px 10px;
-  position: center;
-}
-
-.card:nth-child(1):hover .card-face,
-.card:nth-child(2):hover .card-face,
-.card:nth-child(3):hover .card-face,
-.card:nth-child(4):hover .card-face {
-  box-shadow: 0 10px 20px #00102b;
-  -webkit-transform: translateY(-100px) rotate(0deg) scale(2);
-          transform: translateY(-100px) rotate(0deg) scale(2);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
-  z-index: 5;
-}
-.card:nth-child(1):hover .card-face:after,
-.card:nth-child(2):hover .card-face:after
-.card:nth-child(3):hover .card-face:after
-.card:nth-child(4):hover .card-face:after {
-  -webkit-animation: fade 250ms ease-out forwards;
-          animation: fade 250ms ease-out forwards;
-}
-.card:nth-child(1):hover:after,
-.card:nth-child(2):hover:after,
-.card:nth-child(3):hover:after,
-.card:nth-child(4):hover:after {
-  top: -175px;
-}
-
-.card:nth-child(1) .card-face {
-  background: -webkit-linear-gradient(225deg, #424C65, #233156);
-  background: linear-gradient(-135deg, #AFB6C9, #233156);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
-  -webkit-transform: translateY(45px) rotate(-28.125deg);
-          transform: translateY(45px) rotate(-28.125deg);
-}
-.card:nth-child(1) .card-face .card-label {
-  color: #D3CAB3;
-  text-shadow: -0.025em 0.025em 0 #666259;
-}
-
-.card:nth-child(2) .card-face {
-  background: -webkit-linear-gradient(225deg, #404F63, #213754);
-  background: linear-gradient(-135deg, #ACB8C6, #213754);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
-  -webkit-transform: translateY(5px) rotate(-3.125deg);
-          transform: translateY(5px) rotate(-3.125deg);
-}
-.card:nth-child(2) .card-face .card-label {
-  color: #D3CAB3;
-  text-shadow: -0.025em 0.025em 0 #666259;
-}
-
-.card:nth-child(3) .card-face {
-  background: -webkit-linear-gradient(225deg, #3D5261, #1F3D52);
-  background: linear-gradient(-135deg, #A9B9C4, #1F3D52);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
-  -webkit-transform: translateY(15px) rotate(9.375deg);
-          transform: translateY(15px) rotate(9.375deg);
-}
-.card:nth-child(3) .card-face .card-label {
-  color:#D3CAB3;
-  text-shadow: -0.025em 0.025em 0 #666259;
-}
-
-.card:nth-child(4) .card-face {
-  background: -webkit-linear-gradient(225deg, #3B555E, #1D4350);
-  background: linear-gradient(-135deg, #A6BAC1, #1D4350);
-  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #666259;
-  -webkit-transform: translateY(35px) rotate(21.875deg);
-          transform: translateY(35px) rotate(21.875deg);
-}
-.card:nth-child(4) .card-face .card-label {
-  color: #D3CAB3;
-  text-shadow: -0.025em 0.025em 0 #666259;
-}
-
-
-@-webkit-keyframes fade {
-  0% {
-    opacity: 0.9;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
-  }
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0.9;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
-  }
-}

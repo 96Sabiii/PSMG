@@ -1,236 +1,215 @@
 div.tooltip {
-    position: absolute;
-    color: white;
-    opacity: .9;
-    width: 300px;
-    padding: 4px;
-    font-family:  'Special Elite', cursive;
-    font-size: 16px;
-    background: #6d6d6d;
-    border: 2px solid #aeb4bf;
-    border-radius: 5px;
-    pointer-events: none;
+     position: absolute;
+     color: white;
+     opacity: .9;
+     width: 300px;
+     padding: 4px;
+     font-family: 'Special Elite', cursive;
+     font-size: 16px;
+     background: #6d6d6d;
+     border: 2px solid #aeb4bf;
+     border-radius: 5px;
+     pointer-events: none;
 }
-
-rect, path { 
-    cursor: pointer;
+ rect, path {
+     cursor: pointer;
 }
-
-
-#circle circle {
-    fill: none;
-    pointer-events: all;
+ #circle circle {
+     fill: none;
+     pointer-events: all;
 }
-
-.group path {
-    fill-opacity: .6;
-    cursor: pointer;
+ .group path {
+     fill-opacity: .6;
+     cursor: pointer;
 }
-.rect1:hover {
-  fill:  #8a89a6;
+ .rect1:hover {
+     fill: #8a89a6;
 }
-
-.rect2:hover {
-  fill:  #8a89a6;
+ .rect2:hover {
+     fill: #8a89a6;
 }
-
-.group:hover{
-  cursor:pointer;
-  font-weight:bold;
+ .group:hover{
+     cursor:pointer;
+     font-weight:bold;
 }
-
-path.chord {
-    stroke: #aeb4bf;
-    stroke-width: .25px;
-    fill-opacity: .8;
+ path.chord {
+     stroke: #aeb4bf;
+     stroke-width: .25px;
+     fill-opacity: .8;
 }
-
-#circle:hover path.fade {
-    display: none;
+ #circle:hover path.fade {
+     display: none;
 }
-
-
-#piechart {
-    height: 300px;
-    width: 300px;
+ #piechart {
+     height: 300px;
+     width: 300px;
 }
-
-
-#flowerChart, #Chart2, #relationsChart, #Chart5, #Chart6, #relationsChartPopup {
-    font-family: 'Kaushan Script', cursive;
- }
-
-#flowerChart {
-    width: auto;
-    height: 280px;
+ #flowerChart, #Chart2, #relationsChart, #Chart5, #Chart6, #relationsChartPopup {
+     font-family: 'Kaushan Script', cursive;
 }
-
-#Chart2Popup {
-    font-family: 'Kaushan Script', cursive;
-    width: 800px;
- }
-
-
-#Chart5Popup, #Chart6Popup {
-    width: 800px;
+ #flowerChart {
+     width: auto;
+     height: 280px;
 }
-
-#Chart6Popup, #Chart6Popup .axis line, #Chart6Popup .axis path, #Chart6Popup .axis text, #Chart6Popup .axis,
-#Chart5Popup, #Chart5Popup .axis line, #Chart5Popup .axis path, #Chart5Popup .axis text, #Chart5Popup .axis{
-  fill:  #aeb4bf;
- font-family:  'Special Elite', cursive;
-  font-size: 120%;
+ #Chart2Popup {
+     font-family: 'Kaushan Script', cursive;
+     width: 800px;
 }
-
-#Chart6, #Chart6 .axis line, #Chart6 .axis path, #Chart6 .axis text, #Chart6 .axis,
-#Chart5, #Chart5 .axis line, #Chart5 .axis path, #Chart5 .axis text, #Chart5 .axis{
-   font-family:  'Special Elite', cursive;
-  font-size: 160%;
+ #relationsChart{
+     padding-left: 30px;
 }
-
-#salesPopup svg {
-    display: block;
-    margin: 3% auto;
-    color: #aeb4bf;
+ #relationsChartPopup{
+     padding-top: 20px;
+     padding-left: 35px;
 }
-
-#salesPopup td {
-    color: #aeb4bf;
+ #Chart5Popup, #Chart6Popup {
+     width: 800px;
 }
-
-#salesPopup .button {
-    color: #aeb4bf;
-    margin: 0 40%;
+ #Chart6Popup, #Chart6Popup .axis line, #Chart6Popup .axis path, #Chart6Popup .axis text, #Chart6Popup .axis, #Chart5Popup, #Chart5Popup .axis line, #Chart5Popup .axis path, #Chart5Popup .axis text, #Chart5Popup .axis{
+     fill: #aeb4bf;
+     font-family: 'Special Elite', cursive;
+     font-size: 120%;
 }
-
-#gap {
-    font-size: 0px;
-    line-height: 10px;
+ #Chart6, #Chart6 .axis line, #Chart6 .axis path, #Chart6 .axis text, #Chart6 .axis, #Chart5, #Chart5 .axis line, #Chart5 .axis path, #Chart5 .axis text, #Chart5 .axis{
+     font-family: 'Special Elite', cursive;
+     font-size: 160%;
 }
-
-.tooltip {
-    z-index: 200;
-    position: absolute;
+ #salesPopup svg {
+     display: block;
+     margin: 3% auto;
+     color: #aeb4bf;
 }
-
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 100;
+ #salesPopup td {
+     color: #aeb4bf;
 }
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
+ #salesPopup .button {
+     color: #aeb4bf;
+     margin: 0 40%;
 }
-
-
-.popup h2 {
-  margin-top: 3%;
-  margin-bottom: 0px;
-  color:  #06D85F;
-  font-size: 50px;
-  font-family: 'Ruthie', cursive;
+ #gap {
+     font-size: 0px;
+     line-height: 10px;
 }
-
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color:  #06D85F;
+ .tooltip {
+     z-index: 200;
+     position: absolute;
 }
-.popup .close:hover {
-  color: #06D85F;
+ .overlay {
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background: rgba(0, 0, 0, 0.7);
+     transition: opacity 500ms;
+     visibility: hidden;
+     opacity: 0;
+     z-index: 100;
 }
-
-.axis .domain {
-  display: none;
+ .overlay:target {
+     visibility: visible;
+     opacity: 1;
 }
-
-path.slice{
-   stroke-width:2px;
+ .popup h2 {
+     margin-top: 3%;
+     margin-bottom: 0px;
+     color: #06D85F;
+     font-size: 50px;
+     font-family: 'Ruthie', cursive;
 }
-
-polyline{
-   opacity: .3;
-   stroke: black;
-   stroke-width: 2px;
-   fill: none;
+ .popup .close {
+     position: absolute;
+     top: 20px;
+     right: 30px;
+     transition: all 200ms;
+     font-size: 30px;
+     font-weight: bold;
+     text-decoration: none;
+     color: #06D85F;
 }
-
+ .popup .close:hover {
+     color: #06D85F;
+}
+ .axis .domain {
+     display: none;
+}
+ path.slice{
+     stroke-width:2px;
+}
+ polyline{
+     opacity: .3;
+     stroke: black;
+     stroke-width: 2px;
+     fill: none;
+}
 /*## Dashborad*/
-
-.salesPie path {  stroke: #aeb4bf; }
-path:hover {  opacity:0.9; }
-rect:hover {  fill:#8a89a6;; }
-.axis {  font: ppx sans-serif; }
-.legend tr{    border-bottom:1px solid grey; }
-.legend tr:first-child{    border-top:1px solid grey; }
-
-.histo .axis path,
-.histo .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+ .salesPie path {
+     stroke: #aeb4bf;
 }
-
-.x.axis path {  display: none; }
-.legend{
-   font-family:  'Special Elite', cursive;
-    margin-bottom: 3%;
-    display:inline-block;
-    border-collapse: collapse;
-    border-spacing: 0px;
+ path:hover {
+     opacity:0.9;
 }
-.legend td{
-font-family:  'Special Elite', cursive;
-    padding:2px 2px;
-    vertical-align:bottom;
+ rect:hover {
+     fill:#8a89a6;
+    ;
 }
-.legendFreq, .legendPerc{
-    width:50px;
+ .axis {
+     font: ppx sans-serif;
 }
-
+ .legend tr{
+     border-bottom:1px solid grey;
+}
+ .legend tr:first-child{
+     border-top:1px solid grey;
+}
+ .histo .axis path, .histo .axis line {
+     fill: none;
+     stroke: #000;
+     shape-rendering: crispEdges;
+}
+ .x.axis path {
+     display: none;
+}
+ .legend{
+     font-family: 'Special Elite', cursive;
+     margin-bottom: 3%;
+     display:inline-block;
+     border-collapse: collapse;
+     border-spacing: 0px;
+}
+ .legend td{
+     font-family: 'Special Elite', cursive;
+     padding:2px 2px;
+     vertical-align:bottom;
+}
+ .legendFreq, .legendPerc{
+     width:50px;
+}
 /* Codefloweer */
  circle.node {
-  cursor: pointer;
-  stroke: #000;
-  stroke-width: .5px;
+     cursor: pointer;
+     stroke: #000;
+     stroke-width: .5px;
 }
-
  circle.node.directory {
-  stroke: #9ecae1;
-  stroke-width: 2px;
+     stroke: #9ecae1;
+     stroke-width: 2px;
 }
  circle.node.collapsed {
-  stroke: #555;
+     stroke: #555;
 }
-
-.nodetext {
-  fill: #252929;
-  font-weight: bold;
-  text-shadow: 0 0 0.2em white;
+ .nodetext {
+     fill: #252929;
+     font-weight: bold;
+     text-shadow: 0 0 0.2em white;
 }
-
-line.link {
-  fill: none;
-  stroke: #9ecae1;
-  stroke-width: 1.5px;
+ line.link {
+     fill: none;
+     stroke: #9ecae1;
+     stroke-width: 1.5px;
 }
-
 /* flower end */
-
-.histo text  {
-    font-family: 'Special Elite', cursive;
+ .histo text {
+     font-family: 'Special Elite', cursive;
 }
+ 

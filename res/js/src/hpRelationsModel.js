@@ -1,62 +1,58 @@
 /* eslint-env browser */
 /* global EventPublisher */
 /* global d3 */
-
 //nach https://bl.ocks.org/nbremer
 //http://projects.delimited.io/experiments/chord-transitions/demos/trade.html
-
-
 // Hier werden die Hintergrunddaten berechnet
-  
-  var hp = hp || {};
-  hp.hpRelationsModel = function() {
-      "use strict";
-      var that = new EventPublisher();
+var hp = hp || {};
+hp.hpRelationsModel = function() {
+    "use strict";
+    var that = new EventPublisher();
 
-      function loadRelationsData(layout) {
-          
-             //Datensätze einlesen
+    function loadRelationsData(layout) {
 
-             d3.queue()
-             .defer(d3.csv, "res/assets/data/characters.csv") 
-             .defer(d3.csv, "res/assets/data/relations.csv") 
-             //.defer(d3.json, "res/assets/data/matrix2.json")
-             .await(combine);
+        //Datensätze einlesen
 
-             function combine (error, characters, relations){
-                if (error){
-                    console.log(error);
-                }
+        d3.queue()
+            .defer(d3.csv, "res/assets/data/characters.csv")
+            .defer(d3.csv, "res/assets/data/relations.csv")
+            //.defer(d3.json, "res/assets/data/matrix2.json")
+            .await(combine);
 
-                //Strings in Zahlenwerte umwandeln
-                characters.forEach(function (d){
-                    d.id = +d.id;
-                });
+        function combine(error, characters, relations) {
+            if (error) {
+                console.log(error);
+            }
 
-                relations.forEach(function (d){
-                    d.source = +d.source;
-                    d.target = +d.target;
-                });
-              
-                
-             // MATRIX             
+            //Strings in Zahlenwerte umwandeln
+            characters.forEach(function(d) {
+                d.id = +d.id;
+            });
+
+            relations.forEach(function(d) {
+                d.source = +d.source;
+                d.target = +d.target;
+            });
+
+
+            // MATRIX             
             d3.json("res/assets/data/matrix2.json", function(matrix) {
 
-            // Compute the chord layout.
-            layout.matrix(matrix.matrix);
-            var returnElement = [layout, characters];
+                // Compute the chord layout.
+                layout.matrix(matrix.matrix);
+                var returnElement = [layout, characters];
 
-            that.notifyAll("relationsDataFinish", returnElement);
- 
+                that.notifyAll("relationsDataFinish", returnElement);
+
             });
-        
-            
-                        
-          }
-      }
-          
-          that.loadRelationsData = loadRelationsData;
-          return that;
 
-      
-  };
+
+
+        }
+    }
+
+    that.loadRelationsData = loadRelationsData;
+    return that;
+
+
+};

@@ -1,19 +1,17 @@
 /* eslint-env browser */
 /* global EventPublisher */
 /* global d3 */
-
-
 /**
-  * Hier werden die Hintergrunddaten berechnet
-  */
+ * Hier werden die Hintergrunddaten berechnet
+ */
 var hp = hp || {};
 hp.hpActionsView = function() {
     "use strict";
     var that = new EventPublisher(),
         div,
-        size=1250;
+        size = 1250;
 
-    function createActionsChart(){
+    function createActionsChart() {
         var chart = d3.select('#Chart1');
 
         // Define the div for the tooltip
@@ -26,57 +24,75 @@ hp.hpActionsView = function() {
         var pack = d3.pack()
             .size([size, size])
             .padding(1.5);
-        
+
         //SVG erstellen
         var selection = d3.select("#Chart1"),
-            colorCircles =d3.scaleSequential()
-                .domain([75, 100])
-                .interpolator(d3.interpolateRainbow);
+            colorCircles = d3.scaleSequential()
+            .domain([75, 100])
+            .interpolator(d3.interpolateRainbow);
 
         var nodes = selection.selectAll(".node")
-        .data(pack(root).leaves())
-        .enter().append("g")
-          .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-          .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+            .data(pack(root).leaves())
+            .enter().append("g")
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node";
+            })
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
 
         nodes.append("circle")
-            .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node circle";
+            })
             .style("stroke-width", 2).style("stroke", " #aeb4bf")
-            .attr("r", function(d) {return d.r })
-            .style("fill", function(d) {return colorCircles(d.value)} )
-                .on("mouseover", function(d) {
+            .attr("r", function(d) {
+                return d.r
+            })
+            .style("fill", function(d) {
+                return colorCircles(d.value)
+            })
+            .on("mouseover", function(d) {
                 d3.select(this).style("stroke-width", 5).style("stroke", "#aeb4bf");
                 div.transition()
                     .duration(200)
                     .style("opacity", .9);
-                div	.html("<b>" + d.data.name + "</b>: <br/> <br/>"  + d.data.effect)
+                div.html("<b>" + d.data.name + "</b>: <br/> <br/>" + d.data.effect)
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
-                })
-                .on("mouseout", function(d) {
-                    d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-                    div.transition()
-                        .duration(500)
-                        .style("opacity", 0);
-        });
-        
+            })
+            .on("mouseout", function(d) {
+                d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+
         d3.selectAll(".leaf.node.circle")
-                .transition()
-                .duration(2000)
-                .attr("r", function(d){return d.r;});
+            .transition()
+            .duration(2000)
+            .attr("r", function(d) {
+                return d.r;
+            });
 
         nodes.append("text")
-            .attr("class", function(d){return d.children ? "node" : "leaf node text";})
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node text";
+            })
             .style("text-anchor", "middle")
             .style("font-size", "80%")
-            .text(function(d) { if(d.data.value > 3) {return d.data.name} });
+            .text(function(d) {
+                if (d.data.value > 3) {
+                    return d.data.name
+                }
+            });
 
 
         d3.selectAll(".leaf.node.text")
-          .transition()
-          .duration(2100)
-          .attr("font-size", 30 + "px");
-        
+            .transition()
+            .duration(2100)
+            .attr("font-size", 30 + "px");
+
 
     }
 
