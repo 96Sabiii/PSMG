@@ -1,6 +1,6 @@
 {"name":"spells","children":[
     {"name":"Harry","children":[
-        {"name":"Unknown","size":1900},
+        {"name":"Other Action","size":1900},
         {"name":"Rictusempra","size":50},
         {"name":"Expelliarmus","size":250},
         {"name":"Expecto Patronum","size":950},
@@ -24,7 +24,7 @@
         {"name":"Imperio","size":100}
     ],"size":6000},
     {"name":"Hermione","children":[
-        {"name":"Unknown","size":1000},
+        {"name":"Other Action","size":1000},
         {"name":"Petrificus Totalus","size":100},
         {"name":"Impervius","size":100},
         {"name":"Silencio","size":50},
@@ -41,14 +41,14 @@
         {"name":"Duro","size":50}
     ],"size":1950},
     {"name":"Voldemort","children":[
-        {"name":"Unknown","size":1950},
+        {"name":"Other Action","size":1950},
         {"name":"Crucio","size":200},
         {"name":"Expelliarmus","size":50},
         {"name":"Avada Kedavra","size":150}
     ],"size":2350},
     {"name":"Ron","children":[
         {"name":"Wingardium Leviosa","size":50},
-        {"name":"Unknown","size":900},
+        {"name":"Other Action","size":900},
         {"name":"Riddikulus","size":50},
         {"name":"Silencio","size":100},
         {"name":"Impervius","size":50},
@@ -58,28 +58,28 @@
         {"name":"Stupefy","size":50}
     ],"size":1350},
     {"name":"Bellatrix","children":[
-        {"name":"Unknown","size":550},
+        {"name":"Other Action","size":550},
         {"name":"Crucio","size":100},
         {"name":"Stupefy","size":100}
     ],"size":750},
     {"name":"Snape","children":[
         {"name":"Expelliarmus","size":50},
-        {"name":"Unknown","size":800},
+        {"name":"Other Action","size":800},
         {"name":"Legilimens","size":100}
     ],"size":950},
     {"name":"Unnamed DE","children":[
-        {"name":"Unknown","size":300}
+        {"name":"Other Action","size":300}
     ],"size":300},
     {"name":"Dumbledore","children":[
         {"name":"Stupefy","size":50},
-        {"name":"Unknown","size":750},
+        {"name":"Other Action","size":750},
         {"name":"Legilimens","size":50}
     ],"size":850},
     {"name":"Boggarts","children":[
-        {"name":"Unknown","size":700}
+        {"name":"Other Action","size":700}
     ],"size":700},
     {"name":"Draco","children":[
-        {"name":"Unknown","size":600},
+        {"name":"Other Action","size":600},
         {"name":"Tarantallegra","size":50},
         {"name":"Serpensortia","size":50},
         {"name":"Densaugeo","size":50},
@@ -87,23 +87,23 @@
     ],"size":800},
     {"name":"Neville","children":[
         {"name":"Riddikulus","size":100},
-        {"name":"Unknown","size":600},
+        {"name":"Other Action","size":600},
         {"name":"Expelliarmus","size":50},
         {"name":"Reducto","size":50}
     ],"size":800},
     {"name":"Umbridge","children":[
-        {"name":"Unknown","size":350},
+        {"name":"Other Action","size":350},
         {"name":"Stupefy","size":50},
         {"name":"Incarcerous","size":50}
     ],"size":450},
     {"name":"Dementors","children":[
-        {"name":"Unknown","size":500}
+        {"name":"Other Action","size":500}
     ],"size":500},
     {"name":"Basilisk","children":[
-        {"name":"Unknown","size":500}
+        {"name":"Other Action","size":500}
     ],"size":500},
     {"name":"Crouch Jr.","children":[
-        {"name":"Unknown","size":150},
+        {"name":"Other Action","size":150},
         {"name":"Imperio","size":100},
         {"name":"Engorgio","size":50},
         {"name":"Crucio","size":50},
@@ -113,10 +113,10 @@
     {"name":"Molly","children":[
         {"name":"Accio","size":150},
         {"name":"Riddikulus","size":50},
-        {"name":"Unknown","size":150}
+        {"name":"Other Action","size":150}
     ],"size":350},
     {"name":"Lupin","children":[
-        {"name":"Unknown","size":100},
+        {"name":"Other Action","size":100},
         {"name":"Waddiwasi","size":50},
         {"name":"Riddikulus","size":100},
         {"name":"Expelliarmus","size":50},
@@ -125,87 +125,87 @@
     ],"size":400},
     {"name":"McGonagall","children":[
         {"name":"Imperio","size":50},
-        {"name":"Unknown","size":250}
+        {"name":"Other Action","size":250}
     ],"size":300},
     {"name":"Sirius","children":[
-        {"name":"Unknown","size":150},
+        {"name":"Other Action","size":150},
         {"name":"Expelliarmus","size":50},
         {"name":"Petrificus Totalus","size":50}
     ],"size":250},
     {"name":"Nagini","children":[
-        {"name":"Unknown","size":300}
+        {"name":"Other Action","size":300}
     ],"size":300},
     {"name":"Wormtail","children":[
-        {"name":"Unknown","size":150},
+        {"name":"Other Action","size":150},
         {"name":"Avada Kedavra","size":50}
     ],"size":200},
     {"name":"Dolohov","children":[
         {"name":"Tarantallegra","size":50},
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":150},
     {"name":"Ginny","children":[
-        {"name":"Unknown","size":250},
+        {"name":"Other Action","size":250},
         {"name":"Reducto","size":50}
     ],"size":300},
     {"name":"Rowle","children":[
-        {"name":"Unknown","size":250},
+        {"name":"Other Action","size":250},
         {"name":"Incendio","size":50}
     ],"size":300},
     {"name":"Whomping Willow","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Crabbe","children":[
-        {"name":"Unknown","size":100},
+        {"name":"Other Action","size":100},
         {"name":"Crucio","size":50},
         {"name":"Avada Kedavra","size":50}
     ],"size":200},
     {"name":"Dobby","children":[
-        {"name":"Unknown","size":200}
+        {"name":"Other Action","size":200}
     ],"size":200},
     {"name":"Fred","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"George","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Luna","children":[
-        {"name":"Unknown","size":200},
+        {"name":"Other Action","size":200},
         {"name":"Reducto","size":50}
     ],"size":250},
     {"name":"James","children":[
         {"name":"Expelliarmus","size":50},
         {"name":"Impedimenta","size":50},
-        {"name":"Unknown","size":150}
+        {"name":"Other Action","size":150}
     ],"size":250},
     {"name":"Quirrell","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Aberforth","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Arthur","children":[
-        {"name":"Unknown","size":50},
+        {"name":"Other Action","size":50},
         {"name":"Stupefy","size":50}
     ],"size":100},
     {"name":"Aymcus","children":[
         {"name":"Crucio","size":100},
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":200},
     {"name":"Crouch Sr.","children":[
         {"name":"Stupefy","size":50},
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":100},
     {"name":"Flitwick","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Greyback","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Kingsley","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Tonks","children":[
-        {"name":"Unknown","size":50},
+        {"name":"Other Action","size":50},
         {"name":"Protego","size":50}
     ],"size":100},
     {"name":"Amos Diggory","children":[
@@ -214,33 +214,33 @@
         {"name":"Deletrius","size":50}
     ],"size":150},
     {"name":"Lockhart","children":[
-        {"name":"Unknown","size":100},
+        {"name":"Other Action","size":100},
         {"name":"Obliviate","size":50}
     ],"size":150},
     {"name":"Cedric","children":[
         {"name":"Stupefy","size":100}
     ],"size":100},
     {"name":"Ernie","children":[
-        {"name":"Unknown","size":100},
+        {"name":"Other Action","size":100},
         {"name":"Specialis Revelio","size":50}
     ],"size":150},
     {"name":"Fawkes","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Giants","children":[
-        {"name":"Unknown","size":150}
+        {"name":"Other Action","size":150}
     ],"size":150},
     {"name":"Grindelvald","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Hagrid","children":[
-        {"name":"Unknown","size":150}
+        {"name":"Other Action","size":150}
     ],"size":150},
     {"name":"Kreacher","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Morfin","children":[
-        {"name":"Unknown","size":150}
+        {"name":"Other Action","size":150}
     ],"size":150},
     {"name":"Parvati","children":[
         {"name":"Riddikulus","size":50}
@@ -248,32 +248,32 @@
     {"name":"Selwyn","children":[
     ],"size":0},
     {"name":"Slughorn","children":[
-        {"name":"Unknown","size":150}
+        {"name":"Other Action","size":150}
     ],"size":150},
     {"name":"Alecto","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Bloody Baron","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Buckbeak","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Centaurs","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Cho","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Dean","children":[
         {"name":"Riddikulus","size":50},
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":100},
     {"name":"Hannah","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Gnomes","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Krum","children":[
         {"name":"Crucio","size":50}
@@ -283,23 +283,23 @@
     {"name":"Moody","children":[
     ],"size":0},
     {"name":"Mulciber","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Narcissa","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Peeves","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Percy","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Seamus","children":[
         {"name":"Riddikulus","size":50},
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":100},
     {"name":"Trelawney","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Unnamed Ministry","children":[
         {"name":"Obliviate","size":50},
@@ -308,91 +308,91 @@
     {"name":"Unnamed Order","children":[
     ],"size":0},
     {"name":"Yaxley","children":[
-        {"name":"Unknown","size":100}
+        {"name":"Other Action","size":100}
     ],"size":100},
     {"name":"Anthony G","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Antioch","children":[
     ],"size":0},
     {"name":"Augusta","children":[
     ],"size":0},
     {"name":"Cadmus","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Colin","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Dawlish","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Dirk","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Dragon Keeper","children":[
         {"name":"Stupefy","size":50},
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":100},
     {"name":"Egbert","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Evan Rosier","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Fleur","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Fluffy","children":[
     ],"size":0},
     {"name":"Goyle","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Grawp","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Hereward","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Justin","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Lee Jordan","children":[
     ],"size":0},
     {"name":"Loxias","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Madam Hooch","children":[
         {"name":"Impedimenta","size":50}
     ],"size":50},
     {"name":"Madam Pince","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Marvolo","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Miles","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Mundungus","children":[
     ],"size":0},
     {"name":"Ogden","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Scrimgeour","children":[
     ],"size":0},
     {"name":"Susan B","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Terry Boot","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Theft of EW","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Travers","children":[
     ],"size":0},
     {"name":"Urquhart","children":[
-        {"name":"Unknown","size":50}
+        {"name":"Other Action","size":50}
     ],"size":50},
     {"name":"Xenophilias","children":[
     ],"size":0}

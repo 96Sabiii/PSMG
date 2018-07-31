@@ -79,13 +79,13 @@ path.chord {
 #Chart5Popup, #Chart5Popup .axis line, #Chart5Popup .axis path, #Chart5Popup .axis text, #Chart5Popup .axis{
   fill:  #aeb4bf;
  font-family:  'Special Elite', cursive;
-  font-size: 130%;
+  font-size: 120%;
 }
 
 #Chart6, #Chart6 .axis line, #Chart6 .axis path, #Chart6 .axis text, #Chart6 .axis,
 #Chart5, #Chart5 .axis line, #Chart5 .axis path, #Chart5 .axis text, #Chart5 .axis{
    font-family:  'Special Elite', cursive;
-  font-size: 170%;
+  font-size: 160%;
 }
 
 #salesPopup svg {

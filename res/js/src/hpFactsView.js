@@ -121,17 +121,18 @@ hp.hpFactsView = function() {
               .text("Count");
 
           var legend = g.append("g")
-              .attr("font-family", "sans-serif")
+              .attr("font-family", "Special Elite")
+              .style("font-size", "53px")
               .attr("text-anchor", "end")
             .selectAll("g")
             .data(keys.slice().reverse())
             .enter().append("g")
-              .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+              .attr("transform", function(d, i) { return "translate(0," + i * 50 + ")"; });
 
           legend.append("rect")
               .attr("x", width - 19)
-              .attr("width", 19)
-              .attr("height", 19)
+              .attr("width", 30)
+              .attr("height", 30)
               .attr("fill", z);
 
           legend.append("text")
@@ -244,18 +245,19 @@ hp.hpFactsView = function() {
               .text("Count");
 
           var legend = g.append("g")
-              .attr("font-family", "sans-serif")
+              .attr("font-family", "Special Elite")
+              .style("font-size", "53px")
               .attr("text-anchor", "end")
             .selectAll("g")
             .data(keys.slice().reverse())
             .enter().append("g")
-              .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+              .attr("transform", function(d, i) { return "translate(0," + i * 50 + ")"; });
 
 
           legend.append("rect")
               .attr("x", width - 19)
-              .attr("width", 19)
-              .attr("height", 19)
+              .attr("width", 30)
+              .attr("height", 30)
               .attr("fill", z);
 
           legend.append("text")
@@ -271,7 +273,7 @@ hp.hpFactsView = function() {
     function dashboard(id, fData){
 
 
-        var barColor = "#75B540";
+        var barColor = "#06D85F";
         function segColor(c){ return {USA:"#1D8089", Overseas:"#CA295A", Worldwide:"#E1822E"}[c]; }
 
         // compute total for each state.
