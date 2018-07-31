@@ -86,6 +86,9 @@ div.tooltip {
      color: #aeb4bf;
      margin: 0 40%;
 }
+ #salesPopup .histo text {
+     fill: #aeb4bf;
+}
  #gap {
      font-size: 0px;
      line-height: 10px;
