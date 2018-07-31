@@ -29,7 +29,7 @@ hp.hpSpellModel = function() {
         //daten umwandeln
         for (var i = 0; i < data.spellsData.length; i++) {
             var json = data.spellsData;
-            let name = json[i].name,
+            var name = json[i].name,
                 value = json[i].totalCount,
                 effect = json[i].effect,
                 classification = json[i].classification,
@@ -40,10 +40,8 @@ hp.hpSpellModel = function() {
                 poa = json[i].PoACount,
                 cos = json[i].CoSCount,
                 ss = json[i].SSCount;
-            // for (var j = 1; j < data.length; j++) {
-            //     value = value + +data[j][name];
-            // }
-            let el = {
+
+            var el = {
                 name,
                 value,
                 effect,

@@ -35,7 +35,7 @@ hp.hpFactsModel = function() {
     function loadWordsChartData(area) {
         d3.csv("res/assets/data/words.csv", function(d, i, columns) {
             //console.log(d,i,columns);
-            for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
+            for (var j = 1, n = columns.length; j < n; ++j) d[columns[j]] = +d[columns[j]];
             return d;
         }, function(error, data) {
             if (error) throw error;

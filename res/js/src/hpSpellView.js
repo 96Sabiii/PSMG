@@ -9,14 +9,9 @@ hp.hpSpellView = function() {
     "use strict";
     var that = new EventPublisher(),
         div,
-        size = 1400,
-        smalSize = 1300,
-        chart,
         colors = ["#bf0542", "#6cd8ca", "#ea7c54", "#66d67a", "#70b2ff", "#a637bf", "#d134a2"];
-    //chart braucht man nicht? ändert nichts
 
     function createSpellChart() {
-        chart = document.getElementById("Chart2");
 
         // Define the div for the tooltip
         div = d3.select("body").append("div")
@@ -237,14 +232,14 @@ hp.hpSpellView = function() {
             })
             //-------End of piechart-------
 
-            .on("mouseout", function(d) {
+            .on("mouseout", function() {
                 d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
                 div.transition()
                     .duration(500)
                     .style("opacity", 0);
             });
 
-        let radius = [];
+        var radius = [];
 
         d3.selectAll(".leaf.node.circle")
             .transition()
@@ -329,13 +324,13 @@ hp.hpSpellView = function() {
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 80) + "px");
             })
-            .on("mouseout", function(d) {
+            .on("mouseout", function() {
                 d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
                 div.transition()
                     .duration(500)
                     .style("opacity", 0);
             });
-        let radius = [];
+        var radius = [];
 
         d3.selectAll(".leaf.node." + sortString)
             .transition()
@@ -351,7 +346,7 @@ hp.hpSpellView = function() {
             })
             .attr("font-size", 0 + "px")
             .style("text-anchor", "middle")
-            .text(function(d, i) {
+            .text(function(d) {
                 var input = d.data,
                     count = Object.values(input)[bookNr];
                 if (count > 0) {
@@ -371,7 +366,7 @@ hp.hpSpellView = function() {
     }
 
     function minText(radius) {
-        var texts = d3.selectAll(".leaf.node.text").each(function(d, i) {
+        d3.selectAll(".leaf.node.text").each(function(d, i) {
             if (this.getComputedTextLength() > radius[i] * 2 - 10) {
                 this.style.fontSize = "97%";
                 if (this.getComputedTextLength() > radius[i] * 2) {

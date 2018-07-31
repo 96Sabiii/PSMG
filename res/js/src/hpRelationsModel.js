@@ -1,17 +1,17 @@
 /* eslint-env browser */
 /* global EventPublisher */
 /* global d3 */
+
 //nach https://bl.ocks.org/nbremer
 //http://projects.delimited.io/experiments/chord-transitions/demos/trade.html
 // Hier werden die Hintergrunddaten berechnet
+
 var hp = hp || {};
 hp.hpRelationsModel = function() {
     "use strict";
     var that = new EventPublisher();
 
     function loadRelationsData(layout) {
-
-        //Datensätze einlesen
 
         d3.queue()
             .defer(d3.csv, "res/assets/data/characters.csv")
@@ -21,7 +21,7 @@ hp.hpRelationsModel = function() {
 
         function combine(error, characters, relations) {
             if (error) {
-                console.log(error);
+                //console.log(error);
             }
 
             //Strings in Zahlenwerte umwandeln

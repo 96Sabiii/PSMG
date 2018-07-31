@@ -94,13 +94,9 @@ hp.hpFactsView = function() {
             .attr("x", function(d) {
                 return x1(d.key);
             })
-            .attr("y", function(d) {
-                return 0;
-            })
+            .attr("y", 0)
             .attr("width", x1.bandwidth())
-            .attr("height", function(d) {
-                return 0;
-            })
+            .attr("height", 0)
             // .attr("height", function(d) { return height - y(d.value); })
             .attr("fill", function(d) {
                 return z(d.key);
@@ -119,7 +115,7 @@ hp.hpFactsView = function() {
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 50) + "px");
             })
-            .on("mouseout", function(d) {
+            .on("mouseout", function() {
                 d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
                 div.transition()
                     .duration(500)
@@ -134,7 +130,7 @@ hp.hpFactsView = function() {
                 return i * 100;
             })
             .duration(1500)
-            .attr("y", function(d, i) {
+            .attr("y", function(d) {
                 return y(d.value);
             })
             .attr("height", function(d) {
@@ -210,7 +206,7 @@ hp.hpFactsView = function() {
             },
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size) - margin.top - margin.bottom,
-            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            g = svg.append("g").attr("class", popupClass).attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
         var x = d3.scaleBand()
@@ -254,13 +250,11 @@ hp.hpFactsView = function() {
             .attr("x", function(d) {
                 return x(d.data.title);
             })
-            .attr("y", function(d) {
-                return 0
-            })
+            .attr("y", 0)
             .attr("height", 0)
             // .attr("height", function(d) { return y(d[0]) - y(d[1]); })
             .attr("width", x.bandwidth())
-            .on("mouseover", function(d, i) {
+            .on("mouseover", function(d) {
                 d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
                 div.transition()
                     .duration(200)
@@ -268,14 +262,13 @@ hp.hpFactsView = function() {
                     .style("width", "220px")
                     //  .style("height","250px")
                     .style("text-align", "center");
-                let count = d[1] - d[0];
-                div.html("<b>" + d.data.title + "</b> <br/> Count: " + count)
+                div.html("<b>" + d.data.title + "</b> <br/> Count: " + (d[1] - d[0]))
                     // .style("left", (d3.event.pageX) + "px")
                     // .style("top", (d3.event.pageY - 28) + "px");
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 50) + "px");
             })
-            .on("mouseout", function(d) {
+            .on("mouseout", function() {
                 d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
                 div.transition()
                     .duration(500)
@@ -289,7 +282,7 @@ hp.hpFactsView = function() {
                 return i * 100;
             })
             .duration(1000)
-            .attr("y", function(d, i) {
+            .attr("y", function(d) {
                 return y(d[1]);
             })
             .attr("height", function(d) {
@@ -416,13 +409,9 @@ hp.hpFactsView = function() {
                 .attr("x", function(d) {
                     return x(d[0]);
                 })
-                .attr("y", function(d) {
-                    0;
-                })
+                .attr("y", 0)
                 .attr("width", x.rangeBand())
-                .attr("height", function(d) {
-                    0
-                })
+                .attr("height", 0)
                 .attr('fill', barColor)
                 .on("mouseover", mouseover) // mouseover is defined below.
                 .on("mouseout", mouseout); // mouseout is defined below.
@@ -434,7 +423,7 @@ hp.hpFactsView = function() {
                     return i * 100;
                 })
                 .duration(1000)
-                .attr("y", function(d, i) {
+                .attr("y", function(d) {
                     return y(d[1]);
                 })
                 .attr("height", function(d) {
@@ -473,7 +462,7 @@ hp.hpFactsView = function() {
             }
 
 
-            function mouseout(d) { // utility function to be called on mouseout.
+            function mouseout() { // utility function to be called on mouseout.
                 // reset the pie-chart and legend.
                 pC.update(tF);
                 leg.update(tF);
@@ -670,7 +659,7 @@ hp.hpFactsView = function() {
             .on("click", total);
 
         //Utility function to be called on mouseout a pie slice.
-        function total(d) {
+        function total() {
             // call the update function of histogram with all data.
             hG.update(fData.map(function(v) {
                 return [v.name, v.total];

@@ -92,12 +92,12 @@
 
 
             //  group arc
-            var groupPath = group.append("path")
+            group.append("path")
                 .attr("id", function(d, i) {
                     return "group" + i;
                 })
                 .attr("d", arc)
-                .style("fill", function(d, i) {
+                .style("fill", function(d) {
                     return colors(d.index);
                 });
 
@@ -105,7 +105,7 @@
 
 
             // text label
-            var groupText = group.append("text")
+            group.append("text")
                 .attr("class", "titles")
                 .attr("dy", ".35em")
                 .attr("transform", function(d) {
@@ -114,7 +114,7 @@
                     var t = " translate(" + (innerRadius + 26) + ")";
                     return r + t + (d.angle > Math.PI ? " rotate(180)" : " rotate(0)");
                 })
-                .style("fill", function(d, i) {
+                .style("fill", function(d) {
                     return colors(d.index);
                 })
 
@@ -134,7 +134,7 @@
                         .style("left", (d3.event.pageX) + "px")
                         .style("top", (d3.event.pageY - 28) + "px");
                 })
-                .on("mouseout", function(d) {
+                .on("mouseout", function() {
                     div.transition()
                         .duration(500)
                         .style("opacity", 0)
@@ -146,7 +146,7 @@
 
 
             // Add chords
-            var chord = svg.selectAll(".chord")
+            svg.selectAll(".chord")
                 .data(layout.chords)
                 .enter().append("path")
                 .attr("class", "chord")
