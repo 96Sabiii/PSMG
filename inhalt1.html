@@ -51,7 +51,9 @@
                <div class="head">
                   <span class="headline h2">CHARACTER ACTIONS</span>
                   <p><span class="subheadline h2">HOVER OVER THE BUBBLES TO SEE SOME CHARACTER ACTION</span></p>
-                  <svg id="Chart1"></svg>
+                   <a class="openFlowerPopup" href="#flowerPopup">
+                    <svg id="flowerChart"></svg>
+                   </a>
                </div>
                <p>QUIBBLER BUYERS ARE LUCKY-10,000,000 GALLEON AWARD</p>
                 <p>For those of you who have bought or added the Quibbler to your bookshelf, you're lucky! If so, you have received a 10,000,000 Galleon award along with the same amount of Sickles and Knuts. Please be aware that this is NOT a scam, and wouldn't happen as such! </p>
@@ -69,7 +71,14 @@
               <span> - Albus Dumbeldore</span>
             </div>
          </div>
-           </main>
+         <div id="flowerPopup" class="overlay" style=" overflow: auto;">
+             <div class="popup">
+                <h2>Flower Magic</h2>
+                <a class="close" href="#">&times;</a>
+                <svg  id="flowerPopup" style=" overflow-x:scroll; overflow-y:scroll;" viewBox="0 0 1350 1350"></svg>
+             </div>
+          </div>
+       </main>
 </body>
 <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>

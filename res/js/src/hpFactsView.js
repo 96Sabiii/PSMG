@@ -169,7 +169,7 @@ hp.hpFactsView = function() {
     }
 
     function designMarksChart(data, svg, popupClass) {
-        var margin = {top: 80, right: 20, bottom: 30, left: 100},
+        var margin = {top: 80, right: 20, bottom: 30, left: 120},
             width = Math.min(window.innerWidth, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth, size)  - margin.top - margin.bottom,
             g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");

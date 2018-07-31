@@ -12,6 +12,7 @@ var hp = (function () {
         spellModel,
         factsView,
         factsModel,
+        actionsPopupFlower,
         actionsFlower;
 
 	function init()  {
@@ -27,6 +28,8 @@ var hp = (function () {
   function initActionsModel() {
     actionsModel = new hp.hpActionsModel();
     actionsModel.addEventListener("jsonDataAvailable", onJsonDataAvailable);
+      actionsModel.addEventListener("loadFlowerPopup", onLoadFlowerPopup);
+      actionsModel.addEventListener("jsonPopupDataAvailable", onJsonPopupDataAvailable);
   }
 
   function initSpellModel() {
@@ -68,6 +71,15 @@ var hp = (function () {
         factsView.addEventListener("loadWordsPopup", onLoadWordsPopup);
         factsView.addEventListener("loadMarksPopup", onLoadMarksPopup);
         factsView.addEventListener("loadSalesPopup", onLoadSalesPopup);
+    }
+    
+    function onJsonPopupDataAvailable(event) {
+        actionsPopupFlower.update(event.data); 
+    }
+    
+    function onLoadFlowerPopup() {
+        actionsPopupFlower = new CodeFlower("#flowerPopup", 500, 500);
+        actionsModel.loadCodeflowerData("popup");
     }
         
     function onLoadSalesPopup() {
@@ -148,8 +160,8 @@ var hp = (function () {
     }
 
   function onCardOneClicked() {
-      actionsFlower = new CodeFlower("#Chart1", 280, 280);
-      actionsModel.loadCodeflowerData();
+      actionsFlower = new CodeFlower("#flowerChart", 280, 280);
+      actionsModel.loadCodeflowerData("preview");
   }
 
   function onCardTwoClicked() {
