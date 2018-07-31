@@ -20,7 +20,7 @@
 
       function createRelationsChart() {
           //Grundgerüst erstellen
-            var margin = {left:m, top:m, right:m, bottom:m},
+            var margin = {left:0, top:0, right:250, bottom:m},
             width = Math.min(window.innerWidth-300, size) - margin.left - margin.right,
             height = Math.min(window.innerWidth-300, size) - margin.top - margin.bottom;
             innerRadius = Math.min(width, height) * .39;
@@ -46,7 +46,7 @@
             .sortChords(d3.ascending);
 
 
-            svg = d3.select("#Chart3").append("svg")
+            svg = d3.select("#relationsChart").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -179,7 +179,7 @@
         .sortChords(d3.ascending);
 
 
-        svg = d3.select("#Chart3Pop").append("svg")
+        svg = d3.select("#relationsChartPopup").append("svg")
         .attr("class", "popupSVG")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)

@@ -95,8 +95,9 @@ a:hover {
 }
 
 .button {
+    margin: 10% 0;
   min-width: 80px;
-  padding: 3px 2px;
+  padding: 2% 2%;
   cursor: pointer;
   text-align: center;
   font-size: 13px;

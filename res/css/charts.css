@@ -56,7 +56,7 @@ path.chord {
 }
 
 
-#flowerChart, #Chart2, #Chart3, #Chart5, #Chart6, #Chart3Pop {
+#flowerChart, #Chart2, #relationsChart, #Chart5, #Chart6, #relationsChartPopup {
     font-family: 'Kaushan Script', cursive;
  }
 
@@ -64,7 +64,6 @@ path.chord {
     width: auto;
     height: 280px;
 }
-
 
 #Chart2Popup {
     font-family: 'Kaushan Script', cursive;
@@ -204,10 +203,6 @@ font-family:  'Special Elite', cursive;
     width:50px;
 }
 
-.button {
-    margin: 10% 0;
-}
-
 /* Codefloweer */
  circle.node {
   cursor: pointer;
@@ -233,4 +228,8 @@ line.link {
   fill: none;
   stroke: #9ecae1;
   stroke-width: 1.5px;
+}
+
+.histo text  {
+    font-family: 'Special Elite', cursive;
 }
