@@ -23,7 +23,7 @@ hp.hpSpellView = function() {
       div = d3.select("body").append("div")
           .attr("class", "tooltip")
           .style("opacity", 0);
-        
+
         d3.select(".openPopup").on("click", function() { that.notifyAll("loadBubblePopup"); });
     }
 
@@ -68,12 +68,12 @@ hp.hpSpellView = function() {
 
         //SVG erstellen
         deleteChart(area);
-        var selection; 
-        
+        var selection;
+
         if (area == "preview") selection = d3.select("#Chart2");
         else selection = d3.select("#Chart2Popup");
-    
-        
+
+
         var g = selection.append("g").attr("transform", "translate(2,2)"),
           colorCircles = d3.scaleSequential()
           .domain([0, 15])
@@ -109,7 +109,7 @@ hp.hpSpellView = function() {
                             // .style("left", (d3.event.pageX) + "px")
                             // .style("top", (d3.event.pageY - 28) + "px");
                             .style("left", (d3.event.pageX) + "px")
-                            .style("top", (d3.event.pageY - 300) + "px");
+                            .style("top", (d3.event.pageY - 150) + "px");
 
 
 
@@ -225,13 +225,13 @@ hp.hpSpellView = function() {
 // erstellt book sorted bubble chart
     function spellsByBook(root, sortString, bookNr, color, area) {
         deleteChart(area);
-        
+
         //hier neues Chart
         var selection;
-        
+
         if (area == "preview") selection = d3.select("#Chart2");
         else selection = d3.select("#Chart2Popup");
-        
+
         var g = selection.append("g").attr("transform", "translate(2,2)");
 
         selection.attr("opacity", 1);
@@ -296,7 +296,7 @@ hp.hpSpellView = function() {
     function minText(radius){
             var texts = d3.selectAll(".leaf.node.text").each(function(d,i){
                     if (this.getComputedTextLength() > radius[i]*2-10) {
-                        this.style.fontSize = "95%";
+                        this.style.fontSize = "97%";
                         if (this.getComputedTextLength() > radius[i]*2) {
                             this.innerHTML = "";
                         }
@@ -308,7 +308,7 @@ hp.hpSpellView = function() {
         var oldChart;
         if (area == "preview") oldChart = document.getElementById("Chart2");
         else oldChart = document.getElementById("Chart2Popup");
-        
+
         while (oldChart.firstChild) {
             oldChart.removeChild(oldChart.firstChild);
         }
@@ -325,7 +325,7 @@ hp.hpSpellView = function() {
         }
 
     }
-    
+
     function popupFadeOut(book) {
         if (d3.select("#Chart2Popup").selectAll("g").size() > 1){
             d3.select("#Chart2Popup")
