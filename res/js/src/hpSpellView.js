@@ -1,1534 +1,409 @@
 /* eslint-env browser */
 /* global EventPublisher */
-
+/* global d3 */
 /**
-  * Hier werden die Hintergrunddaten berechnet
-  */
+ * Hier werden die Hintergrunddaten berechnet
+ */
 var hp = hp || {};
 hp.hpSpellView = function() {
-  "use strict";
-  var that = new EventPublisher(),
-      div,
-      size = 1400,
-      smalSize =1300,
-      chart,
-      center = { x: size/2, y: size/2 };
-    //chart braucht man nicht? ändert nichts
+    "use strict";
+    var that = new EventPublisher(),
+        div,
+        colors = ["#bf0542", "#6cd8ca", "#ea7c54", "#66d67a", "#70b2ff", "#a637bf", "#d134a2"];
 
-    function setupButtons(){
-         document.getElementById("ps").onclick = function(){ spellsByPSSort();};
-         document.getElementById("cos").onclick = function(){ spellsByCOSSort();};
-         document.getElementById("poa").onclick = function(){ spellsByPOASort();};
-         document.getElementById("gof").onclick = function(){ spellsByGOFSort();};
-         document.getElementById("ootp").onclick = function(){ spellsByOOTPSort();};
-         document.getElementById("hbp").onclick = function(){ spellsByHBPSort();};
-         document.getElementById("dh").onclick = function(){ spellsByDHSort();};
-         document.getElementById("all").onclick = function(){ spellsByAllSort();};
+    function createSpellChart() {
 
-        d3.select("#toolbar")
-          .selectAll(".button")
-          .on("click", function(){
-        //remove active class from all buttons
-        d3.selectAll(".button").classed("active", false);
-        //find the button just clicked
-        var button = d3.select(this);
-        //Set it as the active button
-        button.classed("active", true);
-     });
-      }
+        // Define the div for the tooltip
+        div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
 
-    function createSpellChart(){
-      chart = document.getElementById("Chart2");
-
-      // Define the div for the tooltip
-      div = d3.select("body").append("div")
-          .attr("class", "tooltip")
-          .style("opacity", 0);
-    }
-
-    function createSpellSVG(root) {
-              //SVG erstellen
-              var selection = d3.select("#Chart2"),
-                  g = selection.append("g").attr("transform", "translate(2,2)"),
-                  colorCircles = d3.scaleSequential()
-                  .domain([55, 100])
-                  .interpolator(d3.interpolateRainbow);
-
-              var nodes = g.selectAll(".node")
-              .data(root.descendants().slice(1))
-              .enter().append("g")
-                .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-                //hier Bubble anpassungen
-
-              nodes.append("circle")
-                .attr("class", function(d){return d.children ? "node" : "leaf node circle";})
-                //.attr("r", function(d) {return d.r })
-                .attr("r", 0)
-                  .style("fill", function(d) {return colorCircles(d.value)} )
-                      .on("mouseover", function(d) {
-                      d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-                      div.transition()
-                          .attr("id","pie")
-                          .duration(200)
-                          .style("opacity", .9)
-                          .style("width","220px")
-                          .style("height","250px")
-                          .style("text-align","center");
-                      div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                                + "<br/> Classification: " + d.data.classification)
-                                .style("left", (d3.event.pageX) + "px")
-                                .style("top", (d3.event.pageY - 28) + "px");
-
-
-                      //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-                      var width="150",
-                          height="150",
-                          radius = Math.min(width, height)/2;
-                      var color = d3.scaleOrdinal()
-    	                          .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
-
-                     //Datenzuweisung
-                      var data = [{"name":"ps","count":d.data.ss},
-                                  {"name":"cos","count":d.data.cos},
-                                  {"name":"poa","count":d.data.poa},
-                                  {"name":"gof","count":d.data.gof},
-                                  {"name":"ootp","count":d.data.ootp},
-                                  {"name":"hbp","count":d.data.hbp},
-                                  {"name":"dh","count":d.data.dh}];
-
-                      var pie = d3.pie().value(function(e){return e.count;})(
-                        data
-                      );
-
-                      var arc = d3.arc()
-	                         .outerRadius(radius - 10)
-	                         .innerRadius(0);
-
-                      var labelArc = d3.arc()
-                              .outerRadius(radius - 40)
-                              .innerRadius(radius - 40);
-
-                      var svg = d3.select("#pie")
-                              .append("svg")
-                              .attr("width", "200px")
-                              .attr("height", "200px")
-                                    .append("g")
-                                    //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                                    .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-                      var g = svg.selectAll("arc")
-              	            .data(pie)
-              	            .enter().append("g")
-              	            .attr("class", "arc");
-
-                      g.append("path")
-      	               .attr("d", arc)
-                       .style("fill", function(d){return color(d.data.name)});
-
-
-                      //Text innerhalb den Kuchenteilen
-                      g.append("text")
-                  .style("text-anchor", "middle")
-   	                    .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-                        .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-                        .style("fill", "#000")
-                        .style("font-size", "100%");
-
-                      //Text außerhalb der Kuchenteile
-                      g.append("text")
-                        .attr("transform", function(d) {
-                          var c = arc.centroid(d),
-                          x = c[0],
-                          y = c[1],
-                          // pythagorean theorem for hypotenuse
-                          h = Math.sqrt(x*x + y*y);
-                          return "translate(" + (x/h * radius) +  ',' +
-                          (y/h * radius) +  ")";
-                        })
-                        .attr("text-anchor", function(d) {
-                          // are we past the center?
-                          return (d.endAngle + d.startAngle)/2 > Math.PI ?
-                          "end" : "start";
-                        })
-                        .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-                      })
-                      //-------End of piechart-------
-
-                      .on("mouseout", function(d) {
-                          d3.select(this).style("stroke", "none");
-                          div.transition()
-                              .duration(500)
-                              .style("opacity", 0);
-              });
-
-              d3.selectAll(".leaf.node.circle")
-                .transition()
-                .duration(2000)
-                .attr("r", function(d){return d.r;});
-
-              nodes.append("text")
-                .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-                .style("text-anchor", "middle")
-                .attr("font-size", 0)
-                .text(function(d) { if(d.data.value > 3) {return d.data.name} });
-
-              d3.selectAll(".leaf.node.text")
-                .transition()
-                .duration(2100)
-                .attr("font-size", 15);
-
-            } //End of CreateSpellSVG()
-
-
-// erstellt bubblechart für alle spells
-function spellsByAllSort(){
-  deleteChart();
-  //hier neues Chart
-  var root;
-
-  d3.json("res/assets/data/spellsData.json", function(data) {
-      createBubbleData(data);
-  });
-
-  function createBubbleData(data) {
-      var object = {name: "root", children: []};
-      //daten umwandeln
-      for(var i = 0; i < data.spellsData.length; i++) {
-        var json = data.spellsData;
-        let name = json[i].name, value = json[i].totalCount,
-            effect = json[i].effect, classification = json[i].classification,
-            dh = json[i].DHCount, hbp = json[i].HBPCount,
-            ootp = json[i].OotPCount, gof = json[i].GoFCount,
-            poa = json[i].PoACount, cos = json[i].CoSCount,
-            ss = json[i].SSCount;
-          let el = {name, value, effect, classification,
-                    dh, hbp, ootp, gof, poa, cos, ss};
-          object.children.push(el);
-      }
-
-      root = d3.hierarchy(object)
-          .sum(function(d) { return d.value; })
-          .sort(function(a, b) { return b.value - a.value; });
-
-      nodeFkt(root);
-
-
-      //svg erstellen
-      var selection = d3.select("#Chart2"),
-          g = selection.append("g").attr("transform", "translate(2,2)"),
-          colorCircles = d3.scaleSequential()
-          .domain([55, 100])
-          .interpolator(d3.interpolateRainbow);
-
-      var nodes = g.selectAll(".node")
-      .data(root.descendants().slice(1))
-      .enter().append("g")
-        .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-        //hier Bubble anpassungen
-      nodes.append("circle")
-        .attr("class", function(d){return d.children ? "node" : "leaf node all";})
-        //.attr("r", function(d) {return d.r })
-        .attr("r", 0)
-          .style("fill", function(d) {return colorCircles(d.value)} )
-          .on("mouseover", function(d) {
-          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-          div.transition()
-              .attr("id","pie")
-              .duration(200)
-              .style("opacity", .9)
-              .style("width","220px")
-              .style("height","250px")
-              .style("text-align","center");
-          div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                    + "<br/> Classification: " + d.data.classification)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-
-
-          //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-          var width="150",
-              height="150",
-              radius = Math.min(width, height)/2;
-          var color = d3.scaleOrdinal()
-                    .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
-
-         //Datenzuweisung
-          var data = [{"name":"ps","count":d.data.ss},
-                      {"name":"cos","count":d.data.cos},
-                      {"name":"poa","count":d.data.poa},
-                      {"name":"gof","count":d.data.gof},
-                      {"name":"ootp","count":d.data.ootp},
-                      {"name":"hbp","count":d.data.hbp},
-                      {"name":"dh","count":d.data.dh}];
-
-          var pie = d3.pie().value(function(e){return e.count;})(
-            data
-          );
-
-          var arc = d3.arc()
-               .outerRadius(radius - 10)
-               .innerRadius(0);
-
-          var labelArc = d3.arc()
-                  .outerRadius(radius - 40)
-                  .innerRadius(radius - 40);
-
-          var svg = d3.select("#pie")
-                  .append("svg")
-                  .attr("width", "200px")
-                  .attr("height", "200px")
-                        .append("g")
-                        //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                        .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-          var g = svg.selectAll("arc")
-                .data(pie)
-                .enter().append("g")
-                .attr("class", "arc");
-
-          g.append("path")
-           .attr("d", arc)
-           .style("fill", function(d){return color(d.data.name)});
-
-
-          //Text innerhalb den Kuchenteilen
-          g.append("text")
-            .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-            .style("fill", "#000")
-            .style("font-size", "120%");
-
-          //Text außerhalb der Kuchenteile
-          g.append("text")
-            .attr("transform", function(d) {
-              var c = arc.centroid(d),
-              x = c[0],
-              y = c[1],
-              // pythagorean theorem for hypotenuse
-              h = Math.sqrt(x*x + y*y);
-              return "translate(" + (x/h * radius) +  ',' +
-              (y/h * radius) +  ")";
-            })
-            .attr("text-anchor", function(d) {
-              // are we past the center?
-              return (d.endAngle + d.startAngle)/2 > Math.PI ?
-              "end" : "start";
-            })
-            .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-          })
-          //-------End of piechart-------
-
-          .on("mouseout", function(d) {
-              d3.select(this).style("stroke", "none");
-              div.transition()
-                  .duration(500)
-                  .style("opacity", 0);
-  });
-
-  d3.selectAll(".leaf.node.all")
-    .transition()
-    .duration(2000)
-    .attr("r", function(d){return d.r;});
-
-  nodes.append("text")
-    .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-    .style("text-anchor", "middle")
-    .attr("font-size", 0)
-    .text(function(d) { if(d.data.value > 2) {return d.data.name} });
-
-  d3.selectAll(".leaf.node.text")
-    .transition()
-    .duration(2100)
-    .attr("font-size", 15);
-    }
-}// End of All spells
-
-// erstellt bubblechart für PS
-function spellsByPSSort() {
-        deleteChart();
-        //hier neues Chart
-
-        var root;
-
-        d3.json("res/assets/data/spellsData.json", function(data) {
-            createBubbleData(data);
+        d3.select(".openPopup").on("click", function() {
+            that.notifyAll("loadBubblePopup");
         });
+    }
 
-        function createBubbleData(data) {
-            var object = {name: "root", children: []};
-            //daten umwandeln
-            for(var i = 0; i < data.spellsData.length; i++) {
-              var json = data.spellsData;
-              let name = json[i].name, value = json[i].totalCount,
-                  effect = json[i].effect, classification = json[i].classification,
-                  dh = json[i].DHCount, hbp = json[i].HBPCount,
-                  ootp = json[i].OotPCount, gof = json[i].GoFCount,
-                  poa = json[i].PoACount, cos = json[i].CoSCount,
-                  ss = json[i].SSCount;
-                let el = {name, value, effect, classification,
-                          dh, hbp, ootp, gof, poa, cos, ss};
-                object.children.push(el);
+    function createSVG(data, area) {
+        var root = data[0],
+            bookNr = data[1],
+            bookString,
+            color;
+        if (bookNr == "all") {
+            createSpellSVG(root, area);
+        } else {
+            if (bookNr == 4) {
+                bookString = "dh";
+                color = colors[6];
+            } else if (bookNr == 5) {
+                bookString = "hbp";
+                color = colors[5];
+            } else if (bookNr == 6) {
+                bookString = "ootp";
+                color = colors[4];
+            } else if (bookNr == 7) {
+                bookString = "gof";
+                color = colors[3];
+            } else if (bookNr == 8) {
+                bookString = "poa";
+                color = colors[2];
+            } else if (bookNr == 9) {
+                bookString = "cos";
+                color = colors[1];
+            } else if (bookNr == 10) {
+                bookString = "ps";
+                color = colors[0];
+            } else {
+                bookString = "all";
             }
+            spellsByBook(root, bookString, bookNr, color, area);
+        }
+    }
 
-            //Bubblechart erstellen
-            var nodeFkt = d3.pack().size([smalSize, smalSize]);
+    function createSpellSVG(root, area) {
 
-            root = d3.hierarchy(object)
-                .sum(function(d) { return d.ss; })
-                .sort(function(a, b) { return b.ss - a.ss; });
+        //SVG erstellen
+        deleteChart(area);
+        var selection;
 
-            nodeFkt(root);
+        if (area == "preview") selection = d3.select("#Chart2");
+        else selection = d3.select("#Chart2Popup");
 
 
-            //svg erstellen
-            var selection = d3.select("#Chart2"),
-                g = selection.append("g").attr("transform", "translate(2,2)"),
-                colorCircles = d3.scaleSequential()
-                .domain([55, 100])
-                .interpolator(d3.interpolateRainbow);
+        var g = selection.append("g").attr("transform", "translate(2,2)"),
+            colorCircles = d3.scaleSequential()
+            .domain([0, 15])
+            .interpolator(d3.interpolateRainbow);
 
-            var nodes = g.selectAll(".node")
+        selection.attr("opacity", 1);
+
+        var nodes = g.selectAll(".node")
             .data(root.descendants().slice(1))
             .enter().append("g")
-              .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-              .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-              //hier Bubble anpassungen
-            nodes.append("circle")
-              .attr("class", function(d){return d.children ? "node" : "leaf node ps";})
-              //.attr("r", function(d) {return d.r })
-              .attr("r", 0)
-                .style("fill", function(d) {return colorCircles(d.value)} )
-                .on("mouseover", function(d) {
-                d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node";
+            })
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+
+        nodes.append("circle")
+            .style("stroke-width", 2).style("stroke", " #aeb4bf")
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node circle";
+            })
+            .attr("r", 0)
+            .style("fill", function(d) {
+                return colorCircles(d.value)
+            })
+            .on("mouseover", function(d) {
+                d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
                 div.transition()
-                    .attr("id","pie")
+                    .attr("id", "pie")
                     .duration(200)
                     .style("opacity", .9)
-                    .style("width","220px")
-                    .style("height","250px")
-                    .style("text-align","center");
-                div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                          + "<br/> Classification: " + d.data.classification)
-                          .style("left", (d3.event.pageX) + "px")
-                          .style("top", (d3.event.pageY - 28) + "px");
+                    .style("width", "220px")
+                    .style("text-align", "center");
+                div.html("<b>" + d.data.name + "</b> <br/>Total: " + d.value + " <br/>" + d.data.effect +
+                        "<br/> Classification: " + d.data.classification)
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 150) + "px");
+
+
 
 
                 //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-                var width="150",
-                    height="150",
-                    radius = Math.min(width, height)/2;
+                var width = "150",
+                    height = "150",
+                    radius = Math.min(width, height) / 2;
                 var color = d3.scaleOrdinal()
-                          .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
+                    .range(colors);
 
-               //Datenzuweisung
-                var data = [{"name":"ps","count":d.data.ss},
-                            {"name":"cos","count":d.data.cos},
-                            {"name":"poa","count":d.data.poa},
-                            {"name":"gof","count":d.data.gof},
-                            {"name":"ootp","count":d.data.ootp},
-                            {"name":"hbp","count":d.data.hbp},
-                            {"name":"dh","count":d.data.dh}];
 
-                var pie = d3.pie().value(function(e){return e.count;})(
-                  data
+                //Datenzuweisung
+                var data = [{
+                        "name": "ps",
+                        "count": d.data.ss
+                    },
+                    {
+                        "name": "cos",
+                        "count": d.data.cos
+                    },
+                    {
+                        "name": "poa",
+                        "count": d.data.poa
+                    },
+                    {
+                        "name": "gof",
+                        "count": d.data.gof
+                    },
+                    {
+                        "name": "ootp",
+                        "count": d.data.ootp
+                    },
+                    {
+                        "name": "hbp",
+                        "count": d.data.hbp
+                    },
+                    {
+                        "name": "dh",
+                        "count": d.data.dh
+                    }
+                ];
+
+                var pie = d3.pie().value(function(e) {
+                    return e.count;
+                })(
+                    data
                 );
 
                 var arc = d3.arc()
-                     .outerRadius(radius - 10)
-                     .innerRadius(0);
+                    .outerRadius(radius - 10)
+                    .innerRadius(0);
 
                 var labelArc = d3.arc()
-                        .outerRadius(radius - 40)
-                        .innerRadius(radius - 40);
+                    .outerRadius(radius - 40)
+                    .innerRadius(radius - 40);
 
                 var svg = d3.select("#pie")
-                        .append("svg")
-                        .attr("width", "200px")
-                        .attr("height", "200px")
-                              .append("g")
-                              //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                              .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
+                    .append("svg")
+                    .attr("width", "200px")
+                    .attr("height", "200px")
+                    .append("g")
+                    .attr("transform", "translate(" + (width / 2 + 30) + "," + (height / 2 + 20) + ")");
 
                 var g = svg.selectAll("arc")
-                      .data(pie)
-                      .enter().append("g")
-                      .attr("class", "arc");
+                    .data(pie)
+                    .enter().append("g")
+                    .attr("class", "arc");
 
                 g.append("path")
-                 .attr("d", arc)
-                 .style("fill", function(d){return color(d.data.name)});
+                    .attr("d", arc)
+                    .style("stroke-width", 1)
+                    .style("stroke", "white")
+                    .style("fill", function(d) {
+                        return color(d.data.name)
+                    });
 
 
                 //Text innerhalb den Kuchenteilen
                 g.append("text")
-                  .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-                  .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-                  .style("fill", "#000")
-                  .style("font-size", "120%");
+                    .style("text-anchor", "middle")
+                    .attr("transform", function(d) {
+                        return "translate(" + labelArc.centroid(d) + ")";
+                    })
+                    .text(function(d) {
+                        if (d.data.count > 0) {
+                            return d.data.count
+                        }
+                    })
+                    .style("fill", "white")
+                    .style("font-size", "100%");
 
                 //Text außerhalb der Kuchenteile
                 g.append("text")
-                  .attr("transform", function(d) {
-                    var c = arc.centroid(d),
-                    x = c[0],
-                    y = c[1],
-                    // pythagorean theorem for hypotenuse
-                    h = Math.sqrt(x*x + y*y);
-                    return "translate(" + (x/h * radius) +  ',' +
-                    (y/h * radius) +  ")";
-                  })
-                  .attr("text-anchor", function(d) {
-                    // are we past the center?
-                    return (d.endAngle + d.startAngle)/2 > Math.PI ?
-                    "end" : "start";
-                  })
-                  .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-                })
-                //-------End of piechart-------
-
-                .on("mouseout", function(d) {
-                    d3.select(this).style("stroke", "none");
-                    div.transition()
-                        .duration(500)
-                        .style("opacity", 0);
-        });
-
-        d3.selectAll(".leaf.node.ps")
-          .transition()
-          .duration(2000)
-          .attr("r", function(d){return d.r;});
-
-        nodes.append("text")
-          .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-          .style("text-anchor", "middle")
-          .attr("font-size", 0)
-          .text(function(d) { if(d.data.ss > 0) {return d.data.name} });
-
-        d3.selectAll(".leaf.node.text")
-          .transition()
-          .duration(2100)
-          .attr("font-size", 15);
-
-
-          }
-
-    }// End of spellsByPSSort
-
-// erstellt bubblechart für CoS
-function spellsByCOSSort() {
-    deleteChart();
-    //hier neues Chart
-    var root;
-
-    d3.json("res/assets/data/spellsData.json", function(data) {
-        createBubbleData(data);
-    });
-
-    function createBubbleData(data) {
-        var object = {name: "root", children: []};
-        //daten umwandeln
-        for(var i = 0; i < data.spellsData.length; i++) {
-          var json = data.spellsData;
-          let name = json[i].name, value = json[i].totalCount,
-              effect = json[i].effect, classification = json[i].classification,
-              dh = json[i].DHCount, hbp = json[i].HBPCount,
-              ootp = json[i].OotPCount, gof = json[i].GoFCount,
-              poa = json[i].PoACount, cos = json[i].CoSCount,
-              ss = json[i].SSCount;
-            let el = {name, value, effect, classification,
-                      dh, hbp, ootp, gof, poa, cos, ss};
-            object.children.push(el);
-        }
-
-        //Bubblechart erstellen
-        var nodeFkt = d3.pack().size([1200, 1200]);
-
-        root = d3.hierarchy(object)
-            .sum(function(d) { return d.cos; })
-            .sort(function(a, b) { return b.cos - a.cos; });
-
-        nodeFkt(root);
-
-
-        //svg erstellen
-        var selection = d3.select("#Chart2"),
-            g = selection.append("g").attr("transform", "translate(2,2)"),
-            colorCircles = d3.scaleSequential()
-            .domain([55, 100])
-            .interpolator(d3.interpolateRainbow);
-
-        var nodes = g.selectAll(".node")
-        .data(root.descendants().slice(1))
-        .enter().append("g")
-          .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-          .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-          //hier Bubble anpassungen
-        nodes.append("circle")
-          .attr("class", function(d){return d.children ? "node" : "leaf node cos";})
-          //.attr("r", function(d) {return d.r })
-          .attr("r", 0)
-            .style("fill", function(d) {return colorCircles(d.value)} )
-            .on("mouseover", function(d) {
-            d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-            div.transition()
-                .attr("id","pie")
-                .duration(200)
-                .style("opacity", .9)
-                .style("width","220px")
-                .style("height","250px")
-                .style("text-align","center");
-            div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                      + "<br/> Classification: " + d.data.classification)
-                      .style("left", (d3.event.pageX) + "px")
-                      .style("top", (d3.event.pageY - 28) + "px");
-
-
-            //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-            var width="150",
-                height="150",
-                radius = Math.min(width, height)/2;
-            var color = d3.scaleOrdinal()
-                      .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
-
-           //Datenzuweisung
-            var data = [{"name":"ps","count":d.data.ss},
-                        {"name":"cos","count":d.data.cos},
-                        {"name":"poa","count":d.data.poa},
-                        {"name":"gof","count":d.data.gof},
-                        {"name":"ootp","count":d.data.ootp},
-                        {"name":"hbp","count":d.data.hbp},
-                        {"name":"dh","count":d.data.dh}];
-
-            var pie = d3.pie().value(function(e){return e.count;})(
-              data
-            );
-
-            var arc = d3.arc()
-                 .outerRadius(radius - 10)
-                 .innerRadius(0);
-
-            var labelArc = d3.arc()
-                    .outerRadius(radius - 40)
-                    .innerRadius(radius - 40);
-
-            var svg = d3.select("#pie")
-                    .append("svg")
-                    .attr("width", "200px")
-                    .attr("height", "200px")
-                          .append("g")
-                          //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                          .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-            var g = svg.selectAll("arc")
-                  .data(pie)
-                  .enter().append("g")
-                  .attr("class", "arc");
-
-            g.append("path")
-             .attr("d", arc)
-             .style("fill", function(d){return color(d.data.name)});
-
-
-            //Text innerhalb den Kuchenteilen
-            g.append("text")
-              .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-              .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-              .style("fill", "#000")
-              .style("font-size", "120%");
-
-            //Text außerhalb der Kuchenteile
-            g.append("text")
-              .attr("transform", function(d) {
-                var c = arc.centroid(d),
-                x = c[0],
-                y = c[1],
-                // pythagorean theorem for hypotenuse
-                h = Math.sqrt(x*x + y*y);
-                return "translate(" + (x/h * radius) +  ',' +
-                (y/h * radius) +  ")";
-              })
-              .attr("text-anchor", function(d) {
-                // are we past the center?
-                return (d.endAngle + d.startAngle)/2 > Math.PI ?
-                "end" : "start";
-              })
-              .text(function(d) { if(d.data.count > 0) {return d.data.name} });
+                    .style("fill", "white")
+                    .attr("transform", function(d) {
+                        var c = arc.centroid(d),
+                            x = c[0],
+                            y = c[1],
+                            // pythagorean theorem for hypotenuse
+                            h = Math.sqrt(x * x + y * y);
+                        return "translate(" + (x / h * radius) + ',' +
+                            (y / h * radius) + ")";
+                    })
+                    .attr("text-anchor", function(d) {
+                        // are we past the center?
+                        return (d.endAngle + d.startAngle) / 2 > Math.PI ?
+                            "end" : "start";
+                    })
+                    .text(function(d) {
+                        if (d.data.count > 0) {
+                            return d.data.name
+                        }
+                    });
             })
             //-------End of piechart-------
 
-            .on("mouseout", function(d) {
-                d3.select(this).style("stroke", "none");
+            .on("mouseout", function() {
+                d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
                 div.transition()
                     .duration(500)
                     .style("opacity", 0);
-    });
+            });
 
-    d3.selectAll(".leaf.node.cos")
-      .transition()
-      .duration(2000)
-      .attr("r", function(d){return d.r;});
+        var radius = [];
 
-    nodes.append("text")
-      .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-      .style("text-anchor", "middle")
-      .attr("font-size", 0)
-      .text(function(d) { if(d.data.cos > 0) {return d.data.name} });
+        d3.selectAll(".leaf.node.circle")
+            .transition()
+            .duration(2000)
+            .attr("r", function(d) {
+                radius.push(d.r);
+                return d.r;
+            });
 
-    d3.selectAll(".leaf.node.text")
-      .transition()
-      .duration(2100)
-      .attr("font-size", 15);
-      }
-  }// End of spellsByCOSSort
+        nodes.append("text")
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node text";
+            })
+            .attr("font-size", 0 + "px")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                if (d.data.value > 3) {
+                    return d.data.name
+                }
+            });
 
-// erstellt bubblechart für PoA
-function spellsByPOASort(){
-  deleteChart();
-  //hier neues Chart
-  var root;
+        d3.selectAll(".leaf.node.text")
+            .transition()
+            .duration(2100)
+            .attr("font-size", 30 + "px");
 
-  d3.json("res/assets/data/spellsData.json", function(data) {
-      createBubbleData(data);
-  });
+        setTimeout(function() {
+            minText(radius)
+        }, 2100);
 
-  function createBubbleData(data) {
-      var object = {name: "root", children: []};
-      //daten umwandeln
-      for(var i = 0; i < data.spellsData.length; i++) {
-        var json = data.spellsData;
-        let name = json[i].name, value = json[i].totalCount,
-            effect = json[i].effect, classification = json[i].classification,
-            dh = json[i].DHCount, hbp = json[i].HBPCount,
-            ootp = json[i].OotPCount, gof = json[i].GoFCount,
-            poa = json[i].PoACount, cos = json[i].CoSCount,
-            ss = json[i].SSCount;
-          let el = {name, value, effect, classification,
-                    dh, hbp, ootp, gof, poa, cos, ss};
-          object.children.push(el);
-      }
-
-      //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([smalSize, smalSize]);
-
-      root = d3.hierarchy(object)
-          .sum(function(d) { return d.poa; })
-          .sort(function(a, b) { return b.poa - a.poa; });
-
-      nodeFkt(root);
+    } //End of CreateSpellSVG()
 
 
-      //svg erstellen
-      var selection = d3.select("#Chart2"),
-          g = selection.append("g").attr("transform", "translate(2,2)"),
-          colorCircles = d3.scaleSequential()
-          .domain([55, 100])
-          .interpolator(d3.interpolateRainbow);
+    // erstellt book sorted bubble chart
+    function spellsByBook(root, sortString, bookNr, color, area) {
+        deleteChart(area);
 
-      var nodes = g.selectAll(".node")
-      .data(root.descendants().slice(1))
-      .enter().append("g")
-        .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-        //hier Bubble anpassungen
-      nodes.append("circle")
-        .attr("class", function(d){return d.children ? "node" : "leaf node poa";})
-        //.attr("r", function(d) {return d.r })
-        .attr("r", 0)
-          .style("fill", function(d) {return colorCircles(d.value)} )
-          .on("mouseover", function(d) {
-          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-          div.transition()
-              .attr("id","pie")
-              .duration(200)
-              .style("opacity", .9)
-              .style("width","220px")
-              .style("height","250px")
-              .style("text-align","center");
-          div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                    + "<br/> Classification: " + d.data.classification)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
+        //hier neues Chart
+        var selection;
 
+        if (area == "preview") selection = d3.select("#Chart2");
+        else selection = d3.select("#Chart2Popup");
 
-          //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-          var width="150",
-              height="150",
-              radius = Math.min(width, height)/2;
-          var color = d3.scaleOrdinal()
-                    .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
+        var g = selection.append("g").attr("transform", "translate(2,2)");
 
-         //Datenzuweisung
-          var data = [{"name":"ps","count":d.data.ss},
-                      {"name":"cos","count":d.data.cos},
-                      {"name":"poa","count":d.data.poa},
-                      {"name":"gof","count":d.data.gof},
-                      {"name":"ootp","count":d.data.ootp},
-                      {"name":"hbp","count":d.data.hbp},
-                      {"name":"dh","count":d.data.dh}];
+        selection.attr("opacity", 1);
 
-          var pie = d3.pie().value(function(e){return e.count;})(
-            data
-          );
-
-          var arc = d3.arc()
-               .outerRadius(radius - 10)
-               .innerRadius(0);
-
-          var labelArc = d3.arc()
-                  .outerRadius(radius - 40)
-                  .innerRadius(radius - 40);
-
-          var svg = d3.select("#pie")
-                  .append("svg")
-                  .attr("width", "200px")
-                  .attr("height", "200px")
-                        .append("g")
-                        //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                        .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-          var g = svg.selectAll("arc")
-                .data(pie)
-                .enter().append("g")
-                .attr("class", "arc");
-
-          g.append("path")
-           .attr("d", arc)
-           .style("fill", function(d){return color(d.data.name)});
-
-
-          //Text innerhalb den Kuchenteilen
-          g.append("text")
-            .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-            .style("fill", "#000")
-            .style("font-size", "120%");
-
-          //Text außerhalb der Kuchenteile
-          g.append("text")
+        var nodes = g.selectAll(".node")
+            .data(root.descendants().slice(1))
+            .enter().append("g")
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node";
+            })
             .attr("transform", function(d) {
-              var c = arc.centroid(d),
-              x = c[0],
-              y = c[1],
-              // pythagorean theorem for hypotenuse
-              h = Math.sqrt(x*x + y*y);
-              return "translate(" + (x/h * radius) +  ',' +
-              (y/h * radius) +  ")";
-            })
-            .attr("text-anchor", function(d) {
-              // are we past the center?
-              return (d.endAngle + d.startAngle)/2 > Math.PI ?
-              "end" : "start";
-            })
-            .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-          })
-          //-------End of piechart-------
+                return "translate(" + d.x + "," + d.y + ")";
+            });
 
-          .on("mouseout", function(d) {
-              d3.select(this).style("stroke", "none");
-              div.transition()
-                  .duration(500)
-                  .style("opacity", 0);
-  });
-
-  d3.selectAll(".leaf.node.poa")
-    .transition()
-    .duration(2000)
-    .attr("r", function(d){return d.r;});
-
-  nodes.append("text")
-    .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-    .style("text-anchor", "middle")
-    .attr("font-size", 0)
-    .text(function(d) { if(d.data.poa >0) {return d.data.name} });
-
-  d3.selectAll(".leaf.node.text")
-    .transition()
-    .duration(2100)
-    .attr("font-size", 15);
-    }
-}// End of POA spells
-
-// erstellt bubblechart für GoF
-function spellsByGOFSort(){
-  deleteChart();
-  //hier neues Chart
-  var root;
-
-  d3.json("res/assets/data/spellsData.json", function(data) {
-      createBubbleData(data);
-  });
-
-  function createBubbleData(data) {
-      var object = {name: "root", children: []};
-      //daten umwandeln
-      for(var i = 0; i < data.spellsData.length; i++) {
-        var json = data.spellsData;
-        let name = json[i].name, value = json[i].totalCount,
-            effect = json[i].effect, classification = json[i].classification,
-            dh = json[i].DHCount, hbp = json[i].HBPCount,
-            ootp = json[i].OotPCount, gof = json[i].GoFCount,
-            poa = json[i].PoACount, cos = json[i].CoSCount,
-            ss = json[i].SSCount;
-          let el = {name, value, effect, classification,
-                    dh, hbp, ootp, gof, poa, cos, ss};
-          object.children.push(el);
-      }
-
-      //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([smalSize, smalSize]);
-
-      root = d3.hierarchy(object)
-          .sum(function(d) { return d.gof; })
-          .sort(function(a, b) { return b.gof - a.gof; });
-
-      nodeFkt(root);
-
-
-      //svg erstellen
-      var selection = d3.select("#Chart2"),
-          g = selection.append("g").attr("transform", "translate(2,2)"),
-          colorCircles = d3.scaleSequential()
-          .domain([55, 100])
-          .interpolator(d3.interpolateRainbow);
-
-      var nodes = g.selectAll(".node")
-      .data(root.descendants().slice(1))
-      .enter().append("g")
-        .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
         //hier Bubble anpassungen
-      nodes.append("circle")
-        .attr("class", function(d){return d.children ? "node" : "leaf node gof";})
-        //.attr("r", function(d) {return d.r })
-        .attr("r", 0)
-          .style("fill", function(d) {return colorCircles(d.value)} )
-          .on("mouseover", function(d) {
-          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-          div.transition()
-              .attr("id","pie")
-              .duration(200)
-              .style("opacity", .9)
-              .style("width","220px")
-              .style("height","250px")
-              .style("text-align","center");
-          div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                    + "<br/> Classification: " + d.data.classification)
+        nodes.append("circle")
+            .style("stroke-width", 2).style("stroke", " #aeb4bf")
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node " + sortString;
+            })
+            .attr("r", 0)
+            .style("fill", color)
+            .on("mouseover", function(d) {
+                d3.select(this).style("stroke-width", 5).style("stroke", " #aeb4bf");
+                div.transition()
+                    .attr("id", "pie")
+                    .duration(200)
+                    .style("opacity", .9)
+                    .style("width", "220px")
+                    .style("text-align", "center");
+                div.html("<b>" + d.data.name + "</b> <br/> Total: " +
+                        Object.values(d.data)[bookNr] +
+                        " <br/>" + d.data.effect +
+                        "<br/> Classification: " + d.data.classification)
                     .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-
-
-          //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-          var width="150",
-              height="150",
-              radius = Math.min(width, height)/2;
-          var color = d3.scaleOrdinal()
-                    .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
-
-         //Datenzuweisung
-          var data = [{"name":"ps","count":d.data.ss},
-                      {"name":"cos","count":d.data.cos},
-                      {"name":"poa","count":d.data.poa},
-                      {"name":"gof","count":d.data.gof},
-                      {"name":"ootp","count":d.data.ootp},
-                      {"name":"hbp","count":d.data.hbp},
-                      {"name":"dh","count":d.data.dh}];
-
-          var pie = d3.pie().value(function(e){return e.count;})(
-            data
-          );
-
-          var arc = d3.arc()
-               .outerRadius(radius - 10)
-               .innerRadius(0);
-
-          var labelArc = d3.arc()
-                  .outerRadius(radius - 40)
-                  .innerRadius(radius - 40);
-
-          var svg = d3.select("#pie")
-                  .append("svg")
-                  .attr("width", "200px")
-                  .attr("height", "200px")
-                        .append("g")
-                        //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                        .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-          var g = svg.selectAll("arc")
-                .data(pie)
-                .enter().append("g")
-                .attr("class", "arc");
-
-          g.append("path")
-           .attr("d", arc)
-           .style("fill", function(d){return color(d.data.name)});
-
-
-          //Text innerhalb den Kuchenteilen
-          g.append("text")
-            .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-            .style("fill", "#000")
-            .style("font-size", "120%");
-
-          //Text außerhalb der Kuchenteile
-          g.append("text")
-            .attr("transform", function(d) {
-              var c = arc.centroid(d),
-              x = c[0],
-              y = c[1],
-              // pythagorean theorem for hypotenuse
-              h = Math.sqrt(x*x + y*y);
-              return "translate(" + (x/h * radius) +  ',' +
-              (y/h * radius) +  ")";
+                    .style("top", (d3.event.pageY - 80) + "px");
             })
-            .attr("text-anchor", function(d) {
-              // are we past the center?
-              return (d.endAngle + d.startAngle)/2 > Math.PI ?
-              "end" : "start";
+            .on("mouseout", function() {
+                d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+        var radius = [];
+
+        d3.selectAll(".leaf.node." + sortString)
+            .transition()
+            .duration(2000)
+            .attr("r", function(d) {
+                radius.push(d.r);
+                return d.r;
+            });
+
+        nodes.append("text")
+            .attr("class", function(d) {
+                return d.children ? "node" : "leaf node text";
             })
-            .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-          })
-          //-------End of piechart-------
+            .attr("font-size", 0 + "px")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                var input = d.data,
+                    count = Object.values(input)[bookNr];
+                if (count > 0) {
+                    return d.data.name
+                }
+            })
+            .transition()
+            .duration(2100)
+            .style("font-size", function(d) {
+                return Math.min(d.r / 3, (2 * d.r - 8) / this.getComputedTextLength() * 18) + "px";
+            });
 
-          .on("mouseout", function(d) {
-              d3.select(this).style("stroke", "none");
-              div.transition()
-                  .duration(500)
-                  .style("opacity", 0);
-  });
-
-  d3.selectAll(".leaf.node.gof")
-    .transition()
-    .duration(2000)
-    .attr("r", function(d){return d.r;});
-
-  nodes.append("text")
-    .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-    .style("text-anchor", "middle")
-    .attr("font-size", 0)
-    .text(function(d) { if(d.data.gof > 1) {return d.data.name} });
-
-  d3.selectAll(".leaf.node.text")
-    .transition()
-    .duration(2100)
-    .attr("font-size", 15);
+        setTimeout(function() {
+            minText(radius)
+        }, 2100);
     }
-}// End of GOF spells
 
-// erstellt bubblechart für OotP
-function spellsByOOTPSort(){
-  deleteChart();
-  //hier neues Chart
-  var root;
-
-  d3.json("res/assets/data/spellsData.json", function(data) {
-      createBubbleData(data);
-  });
-
-  function createBubbleData(data) {
-      var object = {name: "root", children: []};
-      //daten umwandeln
-      for(var i = 0; i < data.spellsData.length; i++) {
-        var json = data.spellsData;
-        let name = json[i].name, value = json[i].totalCount,
-            effect = json[i].effect, classification = json[i].classification,
-            dh = json[i].DHCount, hbp = json[i].HBPCount,
-            ootp = json[i].OotPCount, gof = json[i].GoFCount,
-            poa = json[i].PoACount, cos = json[i].CoSCount,
-            ss = json[i].SSCount;
-          let el = {name, value, effect, classification,
-                    dh, hbp, ootp, gof, poa, cos, ss};
-          object.children.push(el);
-      }
-
-      //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([smalSize, smalSize]);
-
-      root = d3.hierarchy(object)
-          .sum(function(d) { return d.ootp; })
-          .sort(function(a, b) { return b.ootp - a.ootp; });
-
-      nodeFkt(root);
-
-
-      //svg erstellen
-      var selection = d3.select("#Chart2"),
-          g = selection.append("g").attr("transform", "translate(2,2)"),
-          colorCircles = d3.scaleSequential()
-          .domain([55, 100])
-          .interpolator(d3.interpolateRainbow);
-
-      var nodes = g.selectAll(".node")
-      .data(root.descendants().slice(1))
-      .enter().append("g")
-        .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-        //hier Bubble anpassungen
-      nodes.append("circle")
-        .attr("class", function(d){return d.children ? "node" : "leaf node ootp";})
-        //.attr("r", function(d) {return d.r })
-        .attr("r", 0)
-          .style("fill", function(d) {return colorCircles(d.value)} )
-          .on("mouseover", function(d) {
-          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-          div.transition()
-              .attr("id","pie")
-              .duration(200)
-              .style("opacity", .9)
-              .style("width","220px")
-              .style("height","250px")
-              .style("text-align","center");
-          div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                    + "<br/> Classification: " + d.data.classification)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-
-
-          //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-          var width="150",
-              height="150",
-              radius = Math.min(width, height)/2;
-          var color = d3.scaleOrdinal()
-                    .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
-
-         //Datenzuweisung
-          var data = [{"name":"ps","count":d.data.ss},
-                      {"name":"cos","count":d.data.cos},
-                      {"name":"poa","count":d.data.poa},
-                      {"name":"gof","count":d.data.gof},
-                      {"name":"ootp","count":d.data.ootp},
-                      {"name":"hbp","count":d.data.hbp},
-                      {"name":"dh","count":d.data.dh}];
-
-          var pie = d3.pie().value(function(e){return e.count;})(
-            data
-          );
-
-          var arc = d3.arc()
-               .outerRadius(radius - 10)
-               .innerRadius(0);
-
-          var labelArc = d3.arc()
-                  .outerRadius(radius - 40)
-                  .innerRadius(radius - 40);
-
-          var svg = d3.select("#pie")
-                  .append("svg")
-                  .attr("width", "200px")
-                  .attr("height", "200px")
-                        .append("g")
-                        //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                        .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-          var g = svg.selectAll("arc")
-                .data(pie)
-                .enter().append("g")
-                .attr("class", "arc");
-
-          g.append("path")
-           .attr("d", arc)
-           .style("fill", function(d){return color(d.data.name)});
-
-
-          //Text innerhalb den Kuchenteilen
-          g.append("text")
-            .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-            .style("fill", "#000")
-            .style("font-size", "120%");
-
-          //Text außerhalb der Kuchenteile
-          g.append("text")
-            .attr("transform", function(d) {
-              var c = arc.centroid(d),
-              x = c[0],
-              y = c[1],
-              // pythagorean theorem for hypotenuse
-              h = Math.sqrt(x*x + y*y);
-              return "translate(" + (x/h * radius) +  ',' +
-              (y/h * radius) +  ")";
-            })
-            .attr("text-anchor", function(d) {
-              // are we past the center?
-              return (d.endAngle + d.startAngle)/2 > Math.PI ?
-              "end" : "start";
-            })
-            .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-          })
-          //-------End of piechart-------
-
-          .on("mouseout", function(d) {
-              d3.select(this).style("stroke", "none");
-              div.transition()
-                  .duration(500)
-                  .style("opacity", 0);
-  });
-
-  d3.selectAll(".leaf.node.ootp")
-    .transition()
-    .duration(2000)
-    .attr("r", function(d){return d.r;});
-
-  nodes.append("text")
-    .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-    .style("text-anchor", "middle")
-    .attr("font-size", 0)
-    .text(function(d) { if(d.data.ootp > 1) {return d.data.name} });
-
-  d3.selectAll(".leaf.node.text")
-    .transition()
-    .duration(2100)
-    .attr("font-size", 15);
+    function minText(radius) {
+        d3.selectAll(".leaf.node.text").each(function(d, i) {
+            if (this.getComputedTextLength() > radius[i] * 2 - 10) {
+                this.style.fontSize = "97%";
+                if (this.getComputedTextLength() > radius[i] * 2) {
+                    this.innerHTML = "";
+                }
+            }
+        });
     }
-}// End of OOTP spells
 
-// erstellt bubblechart für HBP
-function spellsByHBPSort(){
-  deleteChart();
-  //hier neues Chart
-  var root;
+    function deleteChart(area) {
+        var oldChart;
+        if (area == "preview") oldChart = document.getElementById("Chart2");
+        else oldChart = document.getElementById("Chart2Popup");
 
-  d3.json("res/assets/data/spellsData.json", function(data) {
-      createBubbleData(data);
-  });
-
-  function createBubbleData(data) {
-      var object = {name: "root", children: []};
-      //daten umwandeln
-      for(var i = 0; i < data.spellsData.length; i++) {
-        var json = data.spellsData;
-        let name = json[i].name, value = json[i].totalCount,
-            effect = json[i].effect, classification = json[i].classification,
-            dh = json[i].DHCount, hbp = json[i].HBPCount,
-            ootp = json[i].OotPCount, gof = json[i].GoFCount,
-            poa = json[i].PoACount, cos = json[i].CoSCount,
-            ss = json[i].SSCount;
-          let el = {name, value, effect, classification,
-                    dh, hbp, ootp, gof, poa, cos, ss};
-          object.children.push(el);
-      }
-
-      //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([smalSize, smalSize]);
-
-      root = d3.hierarchy(object)
-          .sum(function(d) { return d.hbp; })
-          .sort(function(a, b) { return b.hbp - a.hbp; });
-
-      nodeFkt(root);
-
-
-      //svg erstellen
-      var selection = d3.select("#Chart2"),
-          g = selection.append("g").attr("transform", "translate(2,2)"),
-          colorCircles = d3.scaleSequential()
-          .domain([55, 100])
-          .interpolator(d3.interpolateRainbow);
-
-      var nodes = g.selectAll(".node")
-      .data(root.descendants().slice(1))
-      .enter().append("g")
-        .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-        //hier Bubble anpassungen
-      nodes.append("circle")
-        .attr("class", function(d){return d.children ? "node" : "leaf node hbp";})
-        //.attr("r", function(d) {return d.r })
-        .attr("r", 0)
-          .style("fill", function(d) {return colorCircles(d.value)} )
-          .on("mouseover", function(d) {
-          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-          div.transition()
-              .attr("id","pie")
-              .duration(200)
-              .style("opacity", .9)
-              .style("width","220px")
-              .style("height","250px")
-              .style("text-align","center");
-          div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                    + "<br/> Classification: " + d.data.classification)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-
-
-          //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-          var width="150",
-              height="150",
-              radius = Math.min(width, height)/2;
-          var color = d3.scaleOrdinal()
-                    .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
-
-         //Datenzuweisung
-          var data = [{"name":"ps","count":d.data.ss},
-                      {"name":"cos","count":d.data.cos},
-                      {"name":"poa","count":d.data.poa},
-                      {"name":"gof","count":d.data.gof},
-                      {"name":"ootp","count":d.data.ootp},
-                      {"name":"hbp","count":d.data.hbp},
-                      {"name":"dh","count":d.data.dh}];
-
-          var pie = d3.pie().value(function(e){return e.count;})(
-            data
-          );
-
-          var arc = d3.arc()
-               .outerRadius(radius - 10)
-               .innerRadius(0);
-
-          var labelArc = d3.arc()
-                  .outerRadius(radius - 40)
-                  .innerRadius(radius - 40);
-
-          var svg = d3.select("#pie")
-                  .append("svg")
-                  .attr("width", "200px")
-                  .attr("height", "200px")
-                        .append("g")
-                        //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                        .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-          var g = svg.selectAll("arc")
-                .data(pie)
-                .enter().append("g")
-                .attr("class", "arc");
-
-          g.append("path")
-           .attr("d", arc)
-           .style("fill", function(d){return color(d.data.name)});
-
-
-          //Text innerhalb den Kuchenteilen
-          g.append("text")
-            .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-            .style("fill", "#000")
-            .style("font-size", "120%");
-
-          //Text außerhalb der Kuchenteile
-          g.append("text")
-            .attr("transform", function(d) {
-              var c = arc.centroid(d),
-              x = c[0],
-              y = c[1],
-              // pythagorean theorem for hypotenuse
-              h = Math.sqrt(x*x + y*y);
-              return "translate(" + (x/h * radius) +  ',' +
-              (y/h * radius) +  ")";
-            })
-            .attr("text-anchor", function(d) {
-              // are we past the center?
-              return (d.endAngle + d.startAngle)/2 > Math.PI ?
-              "end" : "start";
-            })
-            .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-          })
-          //-------End of piechart-------
-
-          .on("mouseout", function(d) {
-              d3.select(this).style("stroke", "none");
-              div.transition()
-                  .duration(500)
-                  .style("opacity", 0);
-  });
-
-  d3.selectAll(".leaf.node.hbp")
-    .transition()
-    .duration(2000)
-    .attr("r", function(d){return d.r;});
-
-  nodes.append("text")
-    .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-    .style("text-anchor", "middle")
-    .attr("font-size", 0)
-    .text(function(d) { if(d.data.hbp > 1) {return d.data.name} });
-
-  d3.selectAll(".leaf.node.text")
-    .transition()
-    .duration(2100)
-    .attr("font-size", 15);
-    }
-}// End of HBP spells
-
-// erstellt bubblechart für DH
-function spellsByDHSort(){
-  deleteChart();
-  //hier neues Chart
-  var root;
-
-  d3.json("res/assets/data/spellsData.json", function(data) {
-      createBubbleData(data);
-  });
-
-  function createBubbleData(data) {
-      var object = {name: "root", children: []};
-      //daten umwandeln
-      for(var i = 0; i < data.spellsData.length; i++) {
-        var json = data.spellsData;
-        let name = json[i].name, value = json[i].totalCount,
-            effect = json[i].effect, classification = json[i].classification,
-            dh = json[i].DHCount, hbp = json[i].HBPCount,
-            ootp = json[i].OotPCount, gof = json[i].GoFCount,
-            poa = json[i].PoACount, cos = json[i].CoSCount,
-            ss = json[i].SSCount;
-          let el = {name, value, effect, classification,
-                    dh, hbp, ootp, gof, poa, cos, ss};
-          object.children.push(el);
-      }
-
-      //Bubblechart erstellen
-      var nodeFkt = d3.pack().size([smalSize, smalSize]);
-
-      root = d3.hierarchy(object)
-          .sum(function(d) { return d.dh; })
-          .sort(function(a, b) { return b.dh - a.dh; });
-
-      nodeFkt(root);
-
-
-      //svg erstellen
-      var selection = d3.select("#Chart2"),
-          g = selection.append("g").attr("transform", "translate(2,2)"),
-          colorCircles = d3.scaleSequential()
-          .domain([55, 100])
-          .interpolator(d3.interpolateRainbow);
-
-      var nodes = g.selectAll(".node")
-      .data(root.descendants().slice(1))
-      .enter().append("g")
-        .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-        //hier Bubble anpassungen
-      nodes.append("circle")
-        .attr("class", function(d){return d.children ? "node" : "leaf node dh";})
-        //.attr("r", function(d) {return d.r })
-        .attr("r", 0)
-          .style("fill", function(d) {return colorCircles(d.value)} )
-          .on("mouseover", function(d) {
-          d3.select(this).style("stroke-width", 2).style("stroke", " #aeb4bf");
-          div.transition()
-              .attr("id","pie")
-              .duration(200)
-              .style("opacity", .9)
-              .style("width","220px")
-              .style("height","250px")
-              .style("text-align","center");
-          div.html("<b>" + d.data.name + "</b> <br/> <br/>" + d.data.effect
-                    + "<br/> Classification: " + d.data.classification)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-
-
-          //-------Start of piechart------- (http://www.cagrimmett.com/til/2016/08/19/d3-pie-chart.html)
-          var width="150",
-              height="150",
-              radius = Math.min(width, height)/2;
-          var color = d3.scaleOrdinal()
-                    .range(["#930447","#82b74b"," #80ced6","#d96459","#de8be0","#4040a1","#e8e36a"]);
-
-         //Datenzuweisung
-          var data = [{"name":"ps","count":d.data.ss},
-                      {"name":"cos","count":d.data.cos},
-                      {"name":"poa","count":d.data.poa},
-                      {"name":"gof","count":d.data.gof},
-                      {"name":"ootp","count":d.data.ootp},
-                      {"name":"hbp","count":d.data.hbp},
-                      {"name":"dh","count":d.data.dh}];
-
-          var pie = d3.pie().value(function(e){return e.count;})(
-            data
-          );
-
-          var arc = d3.arc()
-               .outerRadius(radius - 10)
-               .innerRadius(0);
-
-          var labelArc = d3.arc()
-                  .outerRadius(radius - 40)
-                  .innerRadius(radius - 40);
-
-          var svg = d3.select("#pie")
-                  .append("svg")
-                  .attr("width", "200px")
-                  .attr("height", "200px")
-                        .append("g")
-                        //Ändere die Zahlen in "translate" um die Position des Piecharts zu ändern
-                        .attr("transform", "translate(" + (width/2 + 30) + "," + (height/2 + 20) +")");
-
-          var g = svg.selectAll("arc")
-                .data(pie)
-                .enter().append("g")
-                .attr("class", "arc");
-
-          g.append("path")
-           .attr("d", arc)
-           .style("fill", function(d){return color(d.data.name)});
-
-
-          //Text innerhalb den Kuchenteilen
-          g.append("text")
-            .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .text(function(d) { if(d.data.count > 0) {return d.data.count} })
-            .style("fill", "#000")
-            .style("font-size", "120%");
-
-          //Text außerhalb der Kuchenteile
-          g.append("text")
-            .attr("transform", function(d) {
-              var c = arc.centroid(d),
-              x = c[0],
-              y = c[1],
-              // pythagorean theorem for hypotenuse
-              h = Math.sqrt(x*x + y*y);
-              return "translate(" + (x/h * radius) +  ',' +
-              (y/h * radius) +  ")";
-            })
-            .attr("text-anchor", function(d) {
-              // are we past the center?
-              return (d.endAngle + d.startAngle)/2 > Math.PI ?
-              "end" : "start";
-            })
-            .text(function(d) { if(d.data.count > 0) {return d.data.name} });
-          })
-          //-------End of piechart-------
-
-          .on("mouseout", function(d) {
-              d3.select(this).style("stroke", "none");
-              div.transition()
-                  .duration(500)
-                  .style("opacity", 0);
-  });
-
-  d3.selectAll(".leaf.node.dh")
-    .transition()
-    .duration(2000)
-    .attr("r", function(d){return d.r;});
-
-  nodes.append("text")
-    .attr("class", function(d){return d.children ? "node" : "leaf node text";})
-    .style("text-anchor", "middle")
-    .attr("font-size", 0)
-    .text(function(d) { if(d.data.dh > 1) {return d.data.name} });
-
-  d3.selectAll(".leaf.node.text")
-    .transition()
-    .duration(2100)
-    .attr("font-size", 15);
-    }
-}// End of DH spells
-
-    function deleteChart() {
-        while (chart.firstChild) {
-            chart.removeChild(chart.firstChild);
+        while (oldChart.firstChild) {
+            oldChart.removeChild(oldChart.firstChild);
         }
     }
 
+    function fadeOut(book) {
+        if (d3.select("#Chart2").selectAll("g").size() > 1) {
+            d3.select("#Chart2")
+                .transition()
+                .duration(850)
+                .attr("opacity", 0);
 
-  that.setupButtons = setupButtons;
-  that.createSpellChart = createSpellChart;
-  that.createSpellSVG = createSpellSVG;
-  return that;
+            setTimeout(function() {
+                that.notifyAll("fadedOut", book)
+            }, 1000);
+        }
 
+    }
+
+    function popupFadeOut(book) {
+        if (d3.select("#Chart2Popup").selectAll("g").size() > 1) {
+            d3.select("#Chart2Popup")
+                .transition()
+                .duration(850)
+                .attr("opacity", 0);
+
+            setTimeout(function() {
+                that.notifyAll("popupFadedOut", book)
+            }, 1000);
+        }
+    }
+
+    that.popupFadeOut = popupFadeOut;
+    that.createSpellChart = createSpellChart;
+    that.createSVG = createSVG;
+    that.fadeOut = fadeOut;
+    that.spellsByBook = spellsByBook;
+    return that;
 };

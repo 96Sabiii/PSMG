@@ -1,14 +1,13 @@
+
+
 <!DOCTYPE html>
 <html>
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Harry Potter</title>
-      <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
-      <!-- 	<link type="text/css" rel="stylesheet" href="res/css/materialize/css/materialize.css" /> -->
+      <!--  <link type="text/css" rel="stylesheet" href="res/css/materialize/css/materialize.css" /> -->
+      <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Arizonia|Fredericka+the+Great|Gloria+Hallelujah|Indie+Flower|Kaushan+Script|Love+Ya+Like+A+Sister|Lovers+Quarrel|Ruthie|Special+Elite|Spirax" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="res/css/font-awesome/css/font-awesome.min.css">
       <link type="text/css" rel="stylesheet" href="res/css/cards.css">
       <link type="text/css" rel="stylesheet" href="res/css/app.css">
@@ -34,10 +33,10 @@
          <div class="collumns">
             <div class="collumn">
                <div class="head">
-                  <span class="headline h1">"SIRIUS — BLACK AS HE'S PAINTED?"</span>
+                  <span class="headline h1">"SIRIUS — <br>BLACK AS HE'S PAINTED?"</span>
                   <p><span class="subheadline h1">by Xenophilius Lovegood</span></p>
                </div>
-               For fourteen years Sirius Black has been believed guilty of the mass murder of twelve innocent Muggles and one wizard. Black's audacious escape from Azkaban two years ago has led to the widest manhunt ever conducted by the Ministry of Magic. None of us have ever questioned that he deserves to be recaptured and handed back to the Dementors.</p>
+               <p>For fourteen years Sirius Black has been believed guilty of the mass murder of twelve innocent Muggles and one wizard. Black's audacious escape from Azkaban two years ago has led to the widest manhunt ever conducted by the Ministry of Magic. None of us have ever questioned that he deserves to be recaptured and handed back to the Dementors.</p>
                <figure class="figure">
                   <img class="media" src="https://media.giphy.com/media/TzJxDdJckPQ9q/giphy.gif" alt="Sirius Black Wanted Gif">
                   <figcaption class="figcaption">Notorious Mass Murderer OR Innocent Singing Sensation?</figcaption>
@@ -47,39 +46,50 @@
                <div class="head">
                   <span class="headline h2">MARAUDER'S MAP</span>
                   <p><span class="subheadline h2">FINALLY FOUND AFTER 16 YEARS</span></p>
+                  <p>Yesterday, some students at Hogwarts found the Marauder's Map in the Hogwarts corridors. The map had previously belonged to Harry Potter, Ron Weasley, and Hermione Granger, the most superb students in the school`s history.The map was in great condition and was quickly com into use again. The students are currently looking for the Sorcerer's Stone, which hasn't been seen since Harry Potter first discovered it in his first year at Hogwarts. </p>
                </div>
-               Yesterday, some students at Hogwarts found the Marauder's Map in the Hogwarts corridors. The map had previously belonged to Harry Potter, Ron Weasley, and Hermione Granger, the most superb students in the school`s history.The map was in great condition and was quickly com into use again. The students are currently looking for the Sorcerer's Stone, which hasn't been seen since Harry Potter first discovered it in his first year at Hogwarts. </p>
                <figure class="figure">
                   <img class="media" src="https://media.giphy.com/media/rlY5Dqpi7ivja/giphy.gif" alt="Marauders Map Gif">
-                  <figcaption class="figcaption">Messrs Moony, Wormtail, Padfoot, and Prongs Purveyors of Aids to Magical Mischief-Makers are proud to present THE MARAUDER'S MAP</figcaption>
+                  <figcaption class="figcaption">Messrs Moony, Wormtail, Padfoot, and Prongs Purveyors of Aids to Magical Mischief-Makers are proud to present <br>THE MARAUDER'S MAP</figcaption>
                </figure>
                <p>If you see or find the Marauder's Map, please return it to the staff at Hogwarts. This magical artigact cannot be used anymore for keep. If you need help navigating around Hogwarts feel free to ask your local Ghosts.</p>
             </div>
             <div class="collumn">
                <div class="head">
-                  <span class="headline h3">Characters of the Potter Universe</span>
-                  <p><span class="subheadline h3">This is where the character magic happens</span></p>
-                  <svg class="expand" id="Chart3"  viewBox="0 0 1250 1250"></svg>
+                  <span class="headline h3 ">Characters of the Potter Universe</span>
+                  <p><span class="subheadline h3 info ">This is where the character magic happens</span></p>
+                  <p class="info">
+                     This awesome cration, called a Chord Diagram, shows you not only the characters of the Potter Universe, but also the interactions between these characters. Move your cursor over a name for more detailed information about the person, the chords show you with whom this person has been interacting.<br>
+                     <b>Click on the diagram to get a closer look!</b>
+                  </p>
+               </div>
+               <br>
+               <a class="openPopup" href="#popupRelations">
+                  <svg id="relationsChart" viewBox="-50 0  1050 1050"></svg>
+               </a>
+               <div id="popupRelations" class="overlay" style=" overflow: auto;">
+                  <div class="popup">
+                     <h2>Character Magic</h2>
+                     <a class="close" href="#">&times;</a>
+                     <svg  id="relationsChartPopup" style=" overflow-x:scroll; overflow-y:scroll;" viewBox="-300 0 1550 1550" preserveAspectRatio="xMaxYMax meet"></svg>
+                  </div>
                </div>
             </div>
          </div>
       </main>
    </body>
-   <script type="text/javascript" src="res/js/lib/jquery-3.3.1.min.js"></script>
-   <script src="res/js/lib/d3/d3.min.js"></script>
-   <script src="http://d3js.org/d3.v3.min.js"></script>
-   <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-   <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
    <script type="text/javascript" src="res/js/lib/events.js"></script>
-   <script type="text/javascript" src="res/js/lib/d3/d3.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
+   <script type="text/javascript" src="res/js/lib/d3/d3.min.js"></script>
+   <script type="text/javascript" src="res/js/lib/CodeFlower.js"></script>
    <script type="text/javascript" src="res/js/src/hp.js"></script>
    <script type="text/javascript" src="res/js/src/hpActionsModel.js"></script>
    <script type="text/javascript" src="res/js/src/hpSpellModel.js"></script>
    <script type="text/javascript" src="res/js/src/hpSpellView.js"></script>
-   <script type="text/javascript" src="res/js/src/hpActionsView.js"></script>
-   <script type="text/javascript" src="res/js/src/hpMainView.js"></script>
    <script type="text/javascript" src="res/js/src/hpRelationsView.js"></script>
    <script type="text/javascript" src="res/js/src/hpRelationsModel.js"></script>
+   <script type="text/javascript" src="res/js/src/hpFactsModel.js"></script>
+   <script type="text/javascript" src="res/js/src/hpFactsView.js"></script>
    <script>
       hp.init();
       hp.onCardThreeClicked();

@@ -1,0 +1,84 @@
+{  
+   "freqData":[  
+      {  
+         "name":"PS 2001",
+         "freq":{  
+            "USA":317600000,
+            "Overseas":657200000,
+            "Worldwide":974800000
+         }
+      },
+      {  
+         "name":"CoS 2002",
+         "freq":{  
+            "USA":262000000,
+            "Overseas":617000000,
+            "Worldwide":879000000
+         }
+      },
+      {  
+         "name":"PoA 2004",
+         "freq":{  
+            "USA":249500000,
+            "Overseas":547100000,
+            "Worldwide":796700000
+         }
+      },
+      {  
+         "name":"GoF 2005",
+         "freq":{  
+            "USA":290000000,
+            "Overseas":606900000,
+            "Worldwide":896900000
+         }
+      },
+      {  
+         "name":"OotP 2007",
+         "freq":{  
+            "USA":292000000,
+            "Overseas":647900000,
+            "Worldwide":939900000
+         }
+      },
+      {  
+         "name":"HBP 2009",
+         "freq":{  
+            "USA":302000000,
+            "Overseas":632500000,
+            "Worldwide":934400000
+         }
+      },
+      {  
+         "name":"DH1 2010",
+         "freq":{  
+            "USA":296000000,
+            "Overseas":664300000,
+            "Worldwide":960300000
+         }
+      },
+      {  
+         "name":"DH2 2011",
+         "freq":{  
+            "USA":381000000,
+            "Overseas":960500000,
+            "Worldwide":1341500000
+         }
+      },
+      {  
+         "name":"Total 2018",
+         "freq":{  
+            "USA":2390100000,
+            "Overseas":5333400000,
+            "Worldwide":7723400000
+         }
+      },
+      {  
+         "name":"Average 2018",
+         "freq":{  
+            "USA":298800000,
+            "Overseas":666700000,
+            "Worldwide":965400000
+         }
+      }
+   ]
+}
